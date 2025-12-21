@@ -1,69 +1,73 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { articlePreviews } from "@/content/home";
-import { siteConfig } from "@/config/site";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Artykuły i teksty",
+  title: "Artykuły eksperckie",
   description:
-    "Eseje, case studies i rozmowy o prowadzeniu szkół tańca. Zobacz, nad czym pracuję i zgłoś własny temat.",
+    "Pogłęb swoją wiedzę z różnych dziedzin – wciąż w kręgu tematów właścicieli szkół tańca. Tu znajdziesz aktualne artykuły i odniesienia do partnerów.",
 };
-
-const plannedSeries = [
-  "Ścieżka klienta od pierwszego kontaktu po absolwentów",
-  "Operacje szkoły: grafik, zastępstwa, komunikacja kryzysowa",
-  "Finanse i decyzje inwestycyjne",
-  "Case studies baileo.pl oraz zaprzyjaźnionych szkół",
-];
 
 export default function ArticlesPage() {
   return (
-    <div className="bg-background py-12">
-      <div className="mx-auto max-w-5xl space-y-12 px-4 md:px-6">
+    <div className="bg-gradient-to-b from-background to-muted/50 py-12">
+      <div className="mx-auto max-w-5xl space-y-10 px-4 md:px-6">
         <SectionHeading
-          eyebrow="Artykuły"
-          title="Teksty dla właścicieli szkół tańca"
-          description="Aktualnie redaguję pierwszą serię artykułów. Możesz sprawdzić plan i zapisać się, aby dostać je jako pierwsza osoba."
+          eyebrow="Artykuły eksperckie"
+          title="Pogłęb swoją wiedzę"
+          description={
+            <>
+              Pogłęb swoją wiedzę z różnych dziedzin – ale wszystko w kręgu zainteresowań właścicieli szkół tańca. Masz
+              temat, który powinien się tu znaleźć? A może chcesz podzielić się swoją wiedzą albo doświadczeniem? Daj
+              znać:{" "}
+              <a href="mailto:kontakt@taniecwbiznesie.pl" className="underline">
+                kontakt@taniecwbiznesie.pl
+              </a>
+              .
+            </>
+          }
         />
-        <div className="rounded-3xl border border-border/70 bg-muted/30 p-6">
-          <h2 className="text-xl font-semibold">Planowane serie</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-            {plannedSeries.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
+
+        <div className="space-y-6">
           {articlePreviews.map((article) => (
             <article
               key={article.slug}
               id={article.slug}
-              className="rounded-2xl border border-border/70 bg-card p-5"
+              className="flex flex-col gap-4 rounded-3xl border border-border/60 bg-card/70 p-6 shadow-sm md:flex-row"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-primary">
-                {article.category}
-              </p>
-              <h3 className="mt-3 text-lg font-semibold">{article.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{article.description}</p>
-              <p className="mt-4 text-xs text-muted-foreground">
-                Status: w redakcji • {article.readTime}
-              </p>
+              {article.cover && (
+                <div className="relative h-48 flex-shrink-0 overflow-hidden rounded-2xl md:h-auto md:w-64">
+                  <Image
+                    src={article.cover}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 256px"
+                  />
+                </div>
+              )}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-primary/80">
+                  <span>{article.category}</span>
+                  <span>{article.readTime}</span>
+                </div>
+                <h2 className="text-2xl font-semibold leading-tight">{article.title}</h2>
+                <p className="text-sm text-muted-foreground">{article.description}</p>
+                <div>
+                  <Link
+                    href={article.external ?? `/artykuly/${article.slug}`}
+                    className="text-sm font-semibold text-primary transition hover:text-primary/80"
+                    target={article.external ? "_blank" : undefined}
+                    rel={article.external ? "noreferrer" : undefined}
+                  >
+                    {article.external ? "Czytaj u partnera" : "Czytaj na stronie"}
+                  </Link>
+                </div>
+              </div>
             </article>
           ))}
-        </div>
-        <div className="rounded-3xl border border-dashed border-border/80 p-6 text-sm text-muted-foreground">
-          <p>
-            Masz temat, który pali Cię w szkole? Wyślij go na{" "}
-            <a className="underline" href={`mailto:${siteConfig.email}`}>
-              {siteConfig.email}
-            </a>{" "}
-            albo w formularzu feedbacku. Najciekawsze propozycje wejdą do publikacji + warsztatu online.
-          </p>
-          <Button asChild className="mt-4">
-            <Link href="/feedback">Zaproponuj temat</Link>
-          </Button>
         </div>
       </div>
     </div>

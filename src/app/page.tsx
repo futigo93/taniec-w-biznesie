@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { EbookSection } from "@/components/sections/ebook-section";
 import { ArticlesSection } from "@/components/sections/articles-section";
-import { CommunitySection } from "@/components/sections/community-section";
 import { ProductsSection } from "@/components/sections/products-section";
 import { FeedbackTeaser } from "@/components/sections/feedback-teaser";
 import { CallToActionSection } from "@/components/sections/call-to-action";
@@ -13,7 +12,6 @@ export default function Home() {
         <HeroSection />
         <EbookSection />
         <ArticlesSection />
-        <CommunitySection />
         <ProductsSection />
         <FeedbackTeaser />
         <CallToActionSection />

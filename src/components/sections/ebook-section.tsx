@@ -1,70 +1,85 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BookOpenCheck, Download } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { ebookThemes } from "@/content/home";
 import { Button } from "@/components/ui/button";
+
+const demoHref = "/Czego_nie_wiesz_o_prowadzeniu_szkoły_tanca_demo-Jakub_Nowak.pdf";
 
 export function EbookSection() {
   return (
     <section
       id="ebook"
-      className="scroll-mt-32 space-y-10 rounded-3xl border border-border/70 bg-card/70 p-6 shadow-sm md:p-10"
+      className="scroll-mt-32 rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#171210] to-[#231a14] p-6 text-white shadow-2xl md:p-10"
     >
-      <SectionHeading
-        eyebrow="Priorytet #1"
-        title="Ebook „Taniec w Biznesie” – najpierw rozdział startowy, potem pełne wydanie"
-        description="Darmowy rozdział rozsyłam od razu. Całość – tylko w społeczności / klubie, wraz z aktualizacjami i dodatkowymi notatkami właścicielskimi."
-      />
-      <div className="grid gap-8 md:grid-cols-2">
-        <div className="space-y-6 rounded-2xl border border-border/70 bg-background/70 p-6">
-          <div className="flex items-center gap-3 text-primary">
-            <BookOpenCheck className="h-5 w-5" />
-            <p className="text-sm font-semibold uppercase tracking-[0.2em]">
-              Co dokładnie dostajesz?
+      <div className="grid gap-10 md:grid-cols-[1.5fr,0.9fr] md:items-center">
+        <div className="space-y-6">
+          <div className="[&_h2]:text-white [&_p]:text-muted-foreground/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary/80">
+              Priorytet #1
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+              Ebook „Czego nie wiesz o prowadzeniu szkoły tańca”
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground/80">
+              Jeśli jesteś początkującym właścicielem szkoły, albo dopiero myślisz o jej założeniu –
+              długa taneczna droga już za Tobą, ale równie długa dopiero przed Tobą. Nie daj się zaskoczyć
+              nieznanemu. Dzielę się doświadczeniem z prowadzenia własnej szkoły w mniejszej miejscowości
+              i pracy menedżerskiej w ogromnej szkole w dużym mieście.
+            </p>
+            <p className="mt-2 text-base text-muted-foreground/80">
+              Pobierz bezpłatną próbkę – pierwszy rozdział – albo zapisz się do społeczności podobnych
+              osób i od razu otrzymaj pełną książkę wraz z aktualizacjami.
             </p>
           </div>
-          <ul className="space-y-4">
-            {ebookThemes.map((theme) => (
-              <li key={theme.title} className="space-y-1">
-                <div className="flex items-center gap-2 font-semibold">
-                  <theme.icon className="h-4 w-4 text-primary" />
-                  {theme.title}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {theme.description}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="space-y-6 rounded-2xl border border-dashed border-border/70 p-6">
-          <p className="font-serif text-2xl leading-snug">
-            „Widzę, jak decyzja o dodatkowym kursie w czwartki wpływa na grafik, finanse i relacje w zespole.
-            Już nie gaszę pożaru, tylko steruję systemem.”
-          </p>
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <p>
-              Tak chcę, żebyś mówił_a po lekturze. Rozdział startowy objaśnia zmianę roli. Pełne wydanie (tylko w klubie)
-              to mapy decyzji, cykl życia klienta, finanse i moduł o rozmowach z instruktorami.
-            </p>
-            <p>
-              Format: PDF + audio notatki. Każda aktualizacja trafia mailowo i w społeczności – niezależnie od tego, czy
-              zostaniesz w wersji free, czy wejdziesz do płatnego programu warsztatowego.
-            </p>
+          <div className="space-y-4">
+            <InfoTile
+              title="Rozdział dostępny dla wszystkich"
+              description="Dlaczego prowadzenie szkoły tańca wcale nie kręci się wokół techniki czy stylu, tylko wokół emocji, decyzji i momentu, gdy pasja zderza się z odpowiedzialnością właścicielską."
+            />
+            <InfoTile
+              title="Rozdziały po zapisie do społeczności"
+              description="Cykl życia klienta, oferta jako system, długoterminowe zarządzanie szkołą w perspektywie miesięcy i lat oraz najczęstsze błędy właścicieli, których konsekwencje ujawniają się po czasie."
+            />
+            <InfoTile
+              title="Dodatkowe treści"
+              description="Aktualizacje ebooka, artykuły, podsumowania i zaproszenia do warsztatów trafiają na Twojego maila – dostępne tylko dla osób z listy."
+            />
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href="/#zapis">
-                <Download className="mr-2 h-4 w-4" />
-                Pobierz darmowy rozdział teraz
-              </Link>
+            <Button asChild size="lg">
+              <a href={demoHref} download>
+                Pobierz darmowy rozdział
+              </a>
             </Button>
-            <Button variant="outline" asChild>
-              <Link href="/feedback">Podziel się wrażeniami</Link>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/#zapis">Dołącz do społeczności</Link>
             </Button>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+            <div className="absolute -left-8 top-8 hidden h-20 w-20 rounded-full bg-primary/30 blur-3xl md:block" />
+            <Image
+              src="/ebook_cover.webp"
+              alt="Okładka ebooka Czego nie wiesz o prowadzeniu szkoły tańca"
+              width={400}
+              height={560}
+              className="relative z-10 w-full rounded-xl object-cover"
+            />
+            <p className="mt-4 text-center text-sm text-muted-foreground/70">
+              Format PDF • regularne aktualizacje • nagrania audio w przygotowaniu
+            </p>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function InfoTile({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-muted-foreground/90 shadow-inner">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{title}</p>
+      <p className="mt-2 text-base text-white/85">{description}</p>
+    </div>
   );
 }

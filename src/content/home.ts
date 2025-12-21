@@ -26,29 +26,35 @@ export const ebookThemes: IconItem[] = [
   },
 ];
 
-export const articlePreviews = [
+export type ArticlePreview = {
+  title: string;
+  description: string;
+  category: string;
+  readTime: string;
+  slug: string;
+  external?: string;
+  cover?: string;
+};
+
+export const articlePreviews: ArticlePreview[] = [
   {
-    title: "Planowanie grafiku, które nie łamie ludzi",
+    title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
     description:
-      "Case study z małej szkoły, w której grafik przestał być łamigłówką o 1:00 w nocy.",
-    category: "Organizacja",
-    readTime: "12 min",
-    slug: "planowanie-grafiku",
+      "W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom.",
+    category: "Strategia",
+    readTime: "9 min",
+    slug: "instruktor-trener-nauczyciel",
+    cover: "/nomenklatura_cover.webp",
   },
   {
-    title: "Cykl życia kursanta w liczbach",
+    title: "Przewodnik po widokach grafiku: dopasuj prezentację zajęć do swojej szkoły tańca",
     description:
-      "Dlaczego churn w szkołach tańca zaczyna się w 3 miesiącu i jak się do tego przygotować.",
-    category: "Finanse",
-    readTime: "10 min",
-    slug: "cykl-zycia-kursanta",
-  },
-  {
-    title: "Jak rozmawiać z instruktorami o pieniądzach",
-    description: "Kontrakt, feedback i plan wynagrodzeń, który nie psuje relacji.",
-    category: "Liderstwo",
-    readTime: "8 min",
-    slug: "rozmowy-o-pieniadzach",
+      "Jak wykorzystać różne widoki grafiku w baileo.pl, aby kursanci łatwiej czytali ofertę i szybciej rezerwowali miejsca.",
+    category: "Narzędzia",
+    readTime: "15 min",
+    slug: "przewodnik-po-widokach-grafiku",
+    external: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+    cover: "/przewodnik-po-widokach-grafiku-cover.png",
   },
 ];
 

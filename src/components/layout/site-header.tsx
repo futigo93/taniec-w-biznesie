@@ -9,9 +9,7 @@ import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "/#dla-kogo", label: "Dla kogo", scroll: true },
   { href: "/#ebook", label: "Ebook", scroll: true },
-  { href: "/spolecznosc", label: "Społeczność" },
   { href: "/artykuly", label: "Artykuły" },
   { href: "/uslugi", label: "Usługi dodatkowe" },
   { href: "/feedback", label: "Feedback" },
@@ -77,11 +75,6 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <Button variant="ghost" asChild>
-            <Link href={siteConfig.socials.baileo} target="_blank" rel="noreferrer">
-              baileo.pl
-            </Link>
-          </Button>
           <Button asChild>
             <Link href="/#zapis">Zapisz się</Link>
           </Button>
@@ -136,15 +129,6 @@ function MobileNav({
               {link.label}
             </Link>
           ))}
-          <Link
-            href={siteConfig.socials.baileo}
-            target="_blank"
-            rel="noreferrer"
-            className="text-muted-foreground transition hover:text-foreground"
-            onClick={onClose}
-          >
-            baileo.pl
-          </Link>
           <Button asChild>
             <Link href="/#zapis" onClick={onClose}>
               Zapisz się
