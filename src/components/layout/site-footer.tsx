@@ -6,8 +6,8 @@ const footerLinks = [
   { label: "Start", href: "/" },
   { label: "Artykuły", href: "/artykuly" },
   { label: "Społeczność", href: "/spolecznosc" },
+  { label: "Usługi dodatkowe", href: "/uslugi" },
   { label: "Feedback", href: "/feedback" },
-  { label: "Consulting", href: "/consulting" },
 ];
 
 export function SiteFooter() {

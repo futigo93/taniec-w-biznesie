@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   creator: siteConfig.author,
   category: "business",
+  icons: {
+    icon: "/twb_logo.ico",
+    shortcut: "/twb_logo.ico",
+    apple: "/taniec_w_biznesie_logo.png",
+  },
   alternates: {
     canonical: siteConfig.url,
   },
@@ -38,12 +43,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.shortName,
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/taniec_w_biznesie_logo.png",
+        width: 800,
+        height: 800,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     creator: siteConfig.author,
+    images: ["/taniec_w_biznesie_logo.png"],
   },
 };
 
