@@ -56,7 +56,11 @@ export function EbookSection() {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="relative w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+          <a
+            href={demoHref}
+            download
+            className="relative block w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg transition hover:scale-[1.01]"
+          >
             <div className="absolute -left-8 top-8 hidden h-20 w-20 rounded-full bg-primary/30 blur-3xl md:block" />
             <Image
               src="/ebook_cover.webp"
@@ -65,10 +69,8 @@ export function EbookSection() {
               height={560}
               className="relative z-10 w-full rounded-xl object-cover"
             />
-            <p className="mt-4 text-center text-sm text-muted-foreground/70">
-              Format PDF • regularne aktualizacje • nagrania audio w przygotowaniu
-            </p>
-          </div>
+            <p className="mt-4 text-center text-sm text-muted-foreground/70">Format PDF</p>
+          </a>
         </div>
       </div>
     </section>

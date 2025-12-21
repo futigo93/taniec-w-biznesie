@@ -31,43 +31,43 @@ export default function ArticlesPage() {
         />
 
         <div className="space-y-6">
-          {articlePreviews.map((article) => (
-            <article
-              key={article.slug}
-              id={article.slug}
-              className="flex flex-col gap-4 rounded-3xl border border-border/60 bg-card/70 p-6 shadow-sm md:flex-row"
-            >
-              {article.cover && (
-                <div className="relative h-48 flex-shrink-0 overflow-hidden rounded-2xl md:h-auto md:w-64">
-                  <Image
-                    src={article.cover}
-                    alt={article.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 256px"
-                  />
+          {articlePreviews.map((article) => {
+            const href = article.external ?? `/artykuly/${article.slug}`;
+            const isExternal = Boolean(article.external);
+            return (
+              <Link
+                key={article.slug}
+                href={href}
+                id={article.slug}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noreferrer" : undefined}
+                className="flex flex-col gap-4 rounded-3xl border border-border/60 bg-card/70 p-6 shadow-sm transition hover:bg-card/80 focus-visible:outline focus-visible:outline-primary/60 md:flex-row"
+              >
+                {article.cover && (
+                  <div className="relative h-48 flex-shrink-0 overflow-hidden rounded-2xl md:h-auto md:w-64">
+                    <Image
+                      src={article.cover}
+                      alt={article.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 256px"
+                    />
+                  </div>
+                )}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-primary/80">
+                    <span>{article.category}</span>
+                    <span>{article.readTime}</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold leading-tight">{article.title}</h2>
+                  <p className="text-sm text-muted-foreground">{article.description}</p>
+                  <p className="text-sm font-semibold text-primary">
+                    {isExternal ? "Czytaj u partnera" : "Czytaj na stronie"}
+                  </p>
                 </div>
-              )}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-primary/80">
-                  <span>{article.category}</span>
-                  <span>{article.readTime}</span>
-                </div>
-                <h2 className="text-2xl font-semibold leading-tight">{article.title}</h2>
-                <p className="text-sm text-muted-foreground">{article.description}</p>
-                <div>
-                  <Link
-                    href={article.external ?? `/artykuly/${article.slug}`}
-                    className="text-sm font-semibold text-primary transition hover:text-primary/80"
-                    target={article.external ? "_blank" : undefined}
-                    rel={article.external ? "noreferrer" : undefined}
-                  >
-                    {article.external ? "Czytaj u partnera" : "Czytaj na stronie"}
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
