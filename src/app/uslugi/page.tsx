@@ -3,11 +3,12 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { BetaModalTrigger } from "@/components/beta-modal-trigger";
 
 export const metadata: Metadata = {
   title: "Usługi dodatkowe",
   description:
-    "Pakiet narzędzi i współprac wspierających właścicieli szkół tańca: baileo.pl, payroll dla instruktorów oraz konsulting.",
+    "Narzędzia i współprace wspierające właścicieli szkół tańca: baileo.pl, payroll dla instruktorów oraz consulting.",
 };
 
 export default function ServicesPage() {
@@ -17,66 +18,58 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="Usługi dodatkowe"
           title="Wsparcie poza ebookiem"
-          description="Obok treści tworzę narzędzia i współprace, które pomagają ogarnąć operacje szkoły tańca. Wybierz to, czego potrzebujesz dziś."
+          description="Obok treści tworzę narzędzia i usługi, które pomagają ogarnąć operacje szkoły tańca. Wybierz to, czego potrzebujesz dziś."
           align="left"
         />
 
         <section id="baileo" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">Produkt #1</p>
-          <h2 className="text-2xl font-semibold">baileo.pl – system do obsługi szkół tańca</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary">System obsługi studia</p>
+          <h2 className="text-2xl font-semibold">baileo.pl</h2>
           <p className="text-sm text-muted-foreground">
-            Zapisz kursantów, prowadź listy oczekujących, automatyzuj płatności i integracje z grafikiem. Tworzymy baileo
-            specjalnie z myślą o realiach szkół tańca, więc każdy moduł sprawdzam w praktyce z właścicielami.
+            Razem z zespołem przygotowuję system do zarządzania grafikiem, zapisami, karnetami i komunikacją z klientami –
+            łącznie z zakupami i zapisami online.
           </p>
           <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Panel kursanta, płatności online, cykliczne rozliczenia.</li>
-            <li>Zarządzanie grafikiem i listami rezerwowych.</li>
-            <li>Integracja z komunikacją (mail/SMS) i raportami frekwencji.</li>
+            <li>Moduł grafiku + widżet na Twoją stronę (już działa w pierwszych szkołach).</li>
+            <li>Wkrótce dostępne zapisy online i moduł płatności.</li>
           </ul>
           <Button asChild>
             <Link href={siteConfig.socials.baileo} target="_blank" rel="noreferrer">
-              Odwiedź baileo.pl
+              Sprawdź teraz
             </Link>
           </Button>
         </section>
 
         <section id="payroll" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">Produkt #2</p>
-          <h2 className="text-2xl font-semibold">Payroll dla szkół tańca (beta 2026)</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary">Narzędzia</p>
+          <h2 className="text-2xl font-semibold">Payroll w szkole tańca 2026</h2>
           <p className="text-sm text-muted-foreground">
-            Przygotowuję moduł wynagrodzeń dla instruktorów – rozlicza stawki motywacyjne, bonusy za frekwencję i
-            automatycznie generuje raporty dla księgowości. Integruje się z baileo.pl, aby pobierać realne dane o zajęciach.
+            Automatyczne liczenie skomplikowanych stawek wynagrodzeń dla instruktorów – jesteśmy w fazie beta, zapisz się, a
+            sprawdzimy to na Twoich danych.
           </p>
           <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Definicja modeli premiowych (frekwencja, retencja, projekty specjalne).</li>
-            <li>Eksport raportów i podsumowań do Excela/księgowości.</li>
-            <li>Bezpieczne udostępnianie wyników instruktorom.</li>
+            <li>Stawki motywacyjne, mnożniki, dodatki ręczne.</li>
+            <li>Panel instruktora do podglądu wynagrodzenia i powiadomienia mailowe.</li>
+            <li>Eksport raportów do księgowości.</li>
           </ul>
-          <Button asChild variant="outline">
-            <Link href="/#zapis">Dołącz do listy beta</Link>
-          </Button>
+          <BetaModalTrigger buttonLabel="Zapisz się na konsultację i testy" variant="outline" />
         </section>
 
         <section id="consulting" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">Usługa #3</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary">Usługi</p>
           <h2 className="text-2xl font-semibold">Consulting i warsztaty</h2>
           <p className="text-sm text-muted-foreground">
-            Pracuję z właścicielami szkół nad strategią, procesami i zespołem. Wybierasz model: audyt, warsztat właścicielski
-            albo mentoring 1:1. Każdy projekt zaczynamy od rozmowy o danych i celach – żadnych gotowych recept.
+            Pracuję z właścicielami szkół nad strategią, procesami i zespołem. Wybierasz model: audyt, warsztat albo mentoring
+            1:1. Każdy projekt zaczynamy od bezpłatnej konsultacji o celach – żadnych gotowych recept.
           </p>
           <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             <li>Audyt operacji i rekomendacje priorytetów.</li>
-            <li>Warsztaty dla zarządu / zespołu liderów.</li>
+            <li>Warsztaty dla właściciela / zespołu.</li>
             <li>Mentoring dla właściciela lub menedżera szkoły.</li>
           </ul>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href="/feedback">Opowiedz o potrzebach</Link>
-            </Button>
-            <Button asChild variant="ghost">
-              <Link href="/consulting">Zobacz szczegóły oferty</Link>
-            </Button>
-          </div>
+          <Button asChild>
+            <a href="mailto:kontakt@taniecwbiznesie.pl">Napisz, aby umówić rozmowę</a>
+          </Button>
         </section>
       </div>
     </div>

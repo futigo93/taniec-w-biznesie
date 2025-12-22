@@ -36,6 +36,18 @@ export type ArticlePreview = {
   cover?: string;
 };
 
+type ProductSpotlight = {
+  label: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  cta: string;
+  url?: string;
+  external?: boolean;
+  isNew?: boolean;
+  ctaModal?: boolean;
+};
+
 export const articlePreviews: ArticlePreview[] = [
   {
     title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
@@ -64,33 +76,34 @@ export const communityPromises = [
   "Społeczność (free) = listy dyskusyjne. Wersja płatna (Q2) = warsztaty, mastermindy, biblioteka procesów.",
 ];
 
-export const productSpotlight = [
+export const productSpotlight: ProductSpotlight[] = [
   {
-    label: "System operacyjny",
+    label: "System obsługi studia",
     title: "baileo.pl",
     description:
-      "CRM i zapisy dla szkół tańca – rozwijany przeze mnie i zespół, dedykowany realiom kursów.",
+      "Razem z zespołem przygotowuję system do zarządzania grafikiem, zapisami, karnetami i komunikacją z klientami – z zakupami i zapisami online.",
     highlights: [
-      "zapisy i listy oczekujących pod grafik szkoły",
-      "integracje z płatnościami, cykliczne rozliczenia",
+      "Moduł zarządzania grafikiem + widżet na Twoją stronę (już działa w pierwszych szkołach).",
+      "Wkrótce gotowe będą zapisy online.",
     ],
-    cta: "Sprawdź baileo.pl",
+    cta: "Sprawdź teraz",
     url: "https://baileo.pl",
     external: true,
     isNew: false,
   },
   {
-    label: "Payroll dla instruktorów",
-    title: "Nowe narzędzie 2026",
+    label: "Narzędzia",
+    title: "Payroll w szkole tańca 2026",
     description:
-      "Automatyczne liczenie stawek motywacyjnych i bonusów dla instruktorów w zależności od frekwencji.",
+      "Automatyczne liczenie skomplikowanych stawek i bonusów dla instruktorów – jesteśmy w fazie beta testów.",
     highlights: [
-      "konfigurowalne modele premiowe",
-      "eksport do księgowości + integracja z baileo.pl",
+      "Stawki motywacyjne, mnożniki, dodatki ręczne.",
+      "Panel instruktora do podglądu wynagrodzenia i powiadomienia mailowe.",
     ],
-    cta: "Zapisz się na beta-listę",
-    url: "/#zapis",
+    cta: "Zapisz się na konsultację i testy",
+    url: "#beta-modal",
     external: false,
     isNew: true,
+    ctaModal: true,
   },
 ];

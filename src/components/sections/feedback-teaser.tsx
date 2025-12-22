@@ -8,12 +8,9 @@ export function FeedbackTeaser() {
     <section className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm md:flex md:items-center md:justify-between md:gap-10 md:p-10">
       <div className="space-y-4">
         <SectionHeading
-          title="Feedback napędza pełny ebook i roadmapę społeczności"
-          description="Twoje refleksje, cytaty i historie trafiają do aktualizacji materiału oraz planu płatnych warsztatów. W zamian dostajesz wcześniejszy dostęp do nowych rozdziałów i pilotaży grupowych."
+          title="Feedback napędza rozwój ebooka i społeczności"
+          description="Będę wdzięczny za Twój feedback na temat ebooka oraz innych treści na stronie. Dzięki niemu dopasuję content do Twoich potrzeb albo po prostu będę miał motywację, by robić to dalej :) ."
         />
-        <p className="text-sm text-muted-foreground">
-          Masz już pierwsze przemyślenia? Zostaw je w dedykowanym formularzu. Możesz też wkleić cytat, który opublikuję na stronie.
-        </p>
       </div>
       <Button asChild className="mt-6 md:mt-0">
         <Link href="/feedback" className="inline-flex items-center gap-2">
