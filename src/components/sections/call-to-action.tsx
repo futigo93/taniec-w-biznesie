@@ -14,8 +14,8 @@ export function CallToActionSection() {
       />
       <NewsletterForm />
       <p className="text-xs text-muted-foreground/90">
-        Wysyłam kilka wiadomości w miesiącu. Zero spamu, zero automatycznych lejków. Możesz zrezygnować w każdej chwili –
-        link rezygnacji znajduje się w każdej wiadomości.
+        Wysyłam kilka wiadomości w miesiącu. Zero spamu, zero automatycznych lejków. Możesz zrezygnować w każdej chwili – link
+        rezygnacji znajduje się w każdej wiadomości.
       </p>
     </section>
   );
