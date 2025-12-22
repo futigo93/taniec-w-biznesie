@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/#ebook", label: "Ebook", scroll: true },
   { href: "/artykuly", label: "Artykuły" },
   { href: "/uslugi", label: "Usługi dodatkowe" },
+  { href: "/o-mnie", label: "O mnie" },
   { href: "/feedback", label: "Feedback" },
 ];
 

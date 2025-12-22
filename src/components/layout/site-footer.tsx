@@ -6,6 +6,7 @@ const footerLinks = [
   { label: "Start", href: "/" },
   { label: "Artykuły", href: "/artykuly" },
   { label: "Usługi dodatkowe", href: "/uslugi" },
+  { label: "O mnie", href: "/o-mnie" },
   { label: "Feedback", href: "/feedback" },
 ];
 
@@ -16,9 +17,10 @@ export function SiteFooter() {
     <footer className="border-t border-border/70 bg-muted/40 text-sm">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3 md:px-6">
         <div className="space-y-2">
-          <p className="font-semibold tracking-tight">{siteConfig.shortName}</p>
+          <p className="font-semibold tracking-tight">Taniec w Biznesie</p>
           <p className="text-muted-foreground">
-            {siteConfig.description} Tworzone przez {siteConfig.author}.
+            Strategiczne wsparcie dla instruktorów i właścicieli szkół tańca. Ebook, społeczność i narzędzia do spokojnego
+            skalowania biznesu. Tworzone przez byłego właściciela i menedżera szkół tańca Jakuba Nowaka.
           </p>
         </div>
         <div className="space-y-3">
@@ -46,8 +48,8 @@ export function SiteFooter() {
             </li>
             <li className="flex items-center gap-2">
               <MessageSquareText className="h-4 w-4" />
-              <Link href="/spolecznosc" className="hover:text-foreground">
-                Dołącz do rozmowy
+              <Link href="/feedback" className="hover:text-foreground">
+                Podziel się opinią
               </Link>
             </li>
             <li className="flex items-center gap-2">
