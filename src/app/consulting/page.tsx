@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { AnchorLink } from "@/components/ui/anchor-link";
 
 export const metadata: Metadata = {
   title: "Consulting i warsztaty",
@@ -42,7 +42,7 @@ export default function ConsultingPage() {
           ))}
         </div>
         <Button asChild>
-          <Link href="/#zapis">Chcę informacje o warsztatach</Link>
+          <AnchorLink anchor="zapis">Chcę informacje o warsztatach</AnchorLink>
         </Button>
       </div>
     </div>

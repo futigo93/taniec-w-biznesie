@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 
 const inter = Inter({
   subsets: ["latin-ext"],
@@ -76,6 +77,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </div>
+        <CookieConsentBanner />
       </body>
     </html>
   );

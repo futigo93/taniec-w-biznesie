@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { AnchorLink } from "@/components/ui/anchor-link";
 
 export const metadata: Metadata = {
   title: "Społeczność Taniec w Biznesie",
@@ -64,11 +64,11 @@ export default function CommunityPage() {
 
         <div className="rounded-3xl border border-dashed border-border/80 p-6 text-sm text-muted-foreground">
           <p>
-            Liczba miejsc dla założycieli: 30 osób. W tej grupie dopracujemy format i
-            zasady współpracy. Wkład: feedback + studium przypadku z Twojej szkoły.
+            Liczba miejsc dla założycieli: 30 osób. W tej grupie dopracujemy format i zasady współpracy. Wkład: feedback +
+            studium przypadku z Twojej szkoły.
           </p>
           <Button asChild className="mt-4">
-            <Link href="/#zapis">Dołącz do listy</Link>
+            <AnchorLink anchor="zapis">Dołącz do listy</AnchorLink>
           </Button>
         </div>
       </div>

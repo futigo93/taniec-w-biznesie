@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { AnchorLink } from "@/components/ui/anchor-link";
 
 const demoHref = "/Czego_nie_wiesz_o_prowadzeniu_szkoły_tanca_demo-Jakub_Nowak.pdf";
 
@@ -13,21 +13,16 @@ export function EbookSection() {
       <div className="grid gap-10 md:grid-cols-[1.5fr,0.9fr] md:items-center">
         <div className="space-y-6">
           <div className="[&_h2]:text-white [&_p]:text-muted-foreground/80">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary/80">
-              Priorytet #1
-            </p>
-            <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-              Ebook „Czego nie wiesz o prowadzeniu szkoły tańca”
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary/80">Priorytet #1</p>
+            <h2 className="text-3xl font-semibold leading-tight md:text-4xl">Ebook „Czego nie wiesz o prowadzeniu szkoły tańca”</h2>
             <p className="mt-4 text-base text-muted-foreground/80">
-              Jeśli jesteś początkującym właścicielem szkoły, albo dopiero myślisz o jej założeniu –
-              długa taneczna droga już za Tobą, ale równie długa dopiero przed Tobą. Nie daj się zaskoczyć
-              nieznanemu. Dzielę się doświadczeniem z prowadzenia własnej szkoły w mniejszej miejscowości
-              i pracy menedżerskiej w ogromnej szkole w dużym mieście.
+              Jeśli jesteś początkującym właścicielem szkoły albo dopiero myślisz o jej założeniu – długa taneczna droga już za
+              Tobą, ale równie długa dopiero przed Tobą. Nie daj się zaskoczyć nieznanemu. Dzielę się doświadczeniem z
+              prowadzenia szkoły w mniejszym mieście i pracy menedżerskiej w ogromnej szkole.
             </p>
             <p className="mt-2 text-base text-muted-foreground/80">
-              Pobierz bezpłatną próbkę – pierwszy rozdział – albo zapisz się do społeczności podobnych
-              osób i od razu otrzymaj pełną książkę wraz z aktualizacjami.
+              Pobierz bezpłatną próbkę – pierwszy rozdział – albo zapisz się do społeczności podobnych osób i od razu otrzymaj
+              pełną książkę wraz z aktualizacjami.
             </p>
           </div>
           <div className="space-y-4">
@@ -41,7 +36,7 @@ export function EbookSection() {
             />
             <InfoTile
               title="Dodatkowe treści"
-              description="Aktualizacje ebooka, artykuły, podsumowania i zaproszenia do warsztatów trafiają na Twojego maila – dostępne tylko dla osób z listy."
+              description="Aktualizacje ebooka, artykuły, podsumowania i zaproszenia do warsztatów trafiają na Twojego maila – tylko dla osób z listy."
             />
           </div>
           <div className="flex flex-wrap gap-3">
@@ -51,7 +46,7 @@ export function EbookSection() {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/#zapis">Dołącz do społeczności</Link>
+              <AnchorLink anchor="zapis">Dołącz do społeczności</AnchorLink>
             </Button>
           </div>
         </div>

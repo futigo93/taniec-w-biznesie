@@ -7,9 +7,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { AnchorLink } from "@/components/ui/anchor-link";
 
 const navLinks = [
-  { href: "/#ebook", label: "Ebook", scroll: true },
+  { anchor: "ebook", label: "Ebook" },
   { href: "/artykuly", label: "Artykuły" },
   { href: "/uslugi", label: "Usługi dodatkowe" },
   { href: "/o-mnie", label: "O mnie" },
@@ -47,7 +48,7 @@ export function SiteHeader() {
           </Link>
           <div className="flex items-center gap-3 md:hidden">
             <Button size="sm" asChild>
-              <Link href="/#zapis">Zapisz się</Link>
+              <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
             </Button>
             <button
               className="rounded-md border border-border/80 p-2 text-foreground"
@@ -59,25 +60,34 @@ export function SiteHeader() {
           </div>
           <div className="hidden items-center gap-3 md:flex lg:hidden">
             <Button asChild>
-              <Link href="/#zapis">Zapisz się</Link>
+              <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
             </Button>
           </div>
         </div>
         <nav className="hidden w-full flex-wrap gap-x-6 gap-y-3 text-sm font-medium md:flex lg:w-auto lg:flex-nowrap lg:items-center">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              scroll={link.scroll}
-              className="text-muted-foreground transition hover:text-foreground"
-            >
-              {link.label}
-            </Link>
+            link.anchor ? (
+              <AnchorLink
+                key={link.anchor}
+                anchor={link.anchor}
+                className="text-muted-foreground transition hover:text-foreground"
+              >
+                {link.label}
+              </AnchorLink>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href!}
+                className="text-muted-foreground transition hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild>
-            <Link href="/#zapis">Zapisz się</Link>
+            <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
           </Button>
         </div>
       </div>
@@ -119,21 +129,31 @@ function MobileNav({
           </Button>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              scroll={link.scroll}
-              onClick={onClose}
-              className="text-muted-foreground transition hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.anchor ? (
+              <AnchorLink
+                key={link.anchor}
+                anchor={link.anchor}
+                className="text-left text-muted-foreground transition hover:text-foreground"
+                onClick={onClose}
+              >
+                {link.label}
+              </AnchorLink>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href!}
+                onClick={onClose}
+                className="text-muted-foreground transition hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <Button asChild>
-            <Link href="/#zapis" onClick={onClose}>
+            <AnchorLink anchor="zapis" onClick={onClose}>
               Zapisz się
-            </Link>
+            </AnchorLink>
           </Button>
         </div>
       </div>

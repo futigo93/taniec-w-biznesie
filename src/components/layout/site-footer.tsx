@@ -7,6 +7,10 @@ const footerLinks = [
   { label: "Artykuły", href: "/artykuly" },
   { label: "Usługi dodatkowe", href: "/uslugi" },
   { label: "O mnie", href: "/o-mnie" },
+  { label: "Regulamin", href: "/regulamin" },
+  { label: "Polityka prywatności", href: "/polityka-prywatnosci" },
+  { label: "Polityka cookies", href: "/polityka-cookies" },
+  { label: "Lista podmiotów", href: "/lista-podmiotow-przetwarzajacych" },
   { label: "Feedback", href: "/feedback" },
 ];
 

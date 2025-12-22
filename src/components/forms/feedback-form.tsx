@@ -12,15 +12,10 @@ import { LoaderCircle } from "lucide-react";
 
 const feedbackSchema = z.object({
   name: z.string().min(2, "Podpisz się (imię lub pseudonim).").max(80),
-  email: z
-    .string()
-    .email("Podaj poprawny adres.")
-    .optional()
-    .or(z.literal("")),
-  takeaway: z
-    .string()
-    .min(20, "Napisz kilka zdań, co zadziałało / co zabolało."),
-  quote: z.string().max(280).optional().or(z.literal("")),
+  school: z.string().max(120).optional().or(z.literal("")),
+  email: z.string().email("Podaj poprawny adres."),
+  role: z.string().min(1, "Wybierz rolę."),
+  feedback: z.string().min(10, "Napisz kilka zdań."),
 });
 
 type FeedbackFormValues = z.infer<typeof feedbackSchema>;
@@ -77,71 +72,61 @@ export function FeedbackForm({
   };
 
   return (
-    <form
-      className={className}
-      onSubmit={handleSubmit(onSubmit)}
-      aria-live="polite"
-    >
+    <form className={className} onSubmit={handleSubmit(onSubmit)} aria-live="polite">
       <div className="grid gap-4">
         <div className="space-y-2">
           <label className="text-sm font-medium" htmlFor="feedback-name">
-            Imię lub pseudonim
+            Imię i nazwisko lub pseudonim*
           </label>
           <Input id="feedback-name" {...register("name")} />
-          {errors.name && (
-            <p className="text-sm text-destructive">{errors.name.message}</p>
-          )}
+          {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium" htmlFor="feedback-school">
+            Szkoła
+          </label>
+          <Input id="feedback-school" {...register("school")} />
         </div>
         <div className="space-y-2">
           <label className="text-sm font-medium" htmlFor="feedback-email">
-            E-mail (opcjonalnie)
+            Adres e-mail*
           </label>
-          <Input
-            id="feedback-email"
-            type="email"
-            placeholder="kontakt@twojaszkola.pl"
-            {...register("email")}
-          />
-          {errors.email && (
-            <p className="text-sm text-destructive">{errors.email.message}</p>
-          )}
+          <Input id="feedback-email" type="email" placeholder="kontakt@twojaszkola.pl" {...register("email")} />
+          {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-takeaway">
-            Co z Tobą zostało po lekturze?
+          <label className="text-sm font-medium" htmlFor="feedback-role">
+            Twoja rola*
+          </label>
+          <select
+            id="feedback-role"
+            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+            {...register("role")}
+          >
+            <option value="">Wybierz opcję</option>
+            <option value="owner">Właściciel/menedżer szkoły</option>
+            <option value="planning">Planuję założyć szkołę</option>
+            <option value="interested">Żadne z powyższych, ale treści mnie interesują</option>
+          </select>
+          {errors.role && <p className="text-sm text-destructive">{errors.role.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium" htmlFor="feedback-message">
+            Feedback
           </label>
           <Textarea
-            id="feedback-takeaway"
+            id="feedback-message"
             rows={5}
-            placeholder="Najmocniejszy fragment / decyzja, którą podejmujesz dzięki ebookowi…"
-            {...register("takeaway")}
+            placeholder="Podziel się opinią lub historią z Twojej szkoły."
+            {...register("feedback")}
           />
-          {errors.takeaway && (
-            <p className="text-sm text-destructive">{errors.takeaway.message}</p>
-          )}
-        </div>
-        <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-quote">
-            Cytat, który mogę opublikować (opcjonalnie)
-          </label>
-          <Textarea
-            id="feedback-quote"
-            rows={3}
-            maxLength={280}
-            placeholder="Jedno, dwa zdania – mogę podpisać imieniem i nazwą szkoły."
-            {...register("quote")}
-          />
-          {errors.quote && (
-            <p className="text-sm text-destructive">{errors.quote.message}</p>
-          )}
+          {errors.feedback && <p className="text-sm text-destructive">{errors.feedback.message}</p>}
         </div>
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? <LoaderCircle className="h-4 w-4 animate-spin" /> : "Wyślij feedback"}
         </Button>
         {status === "success" && (
-          <p className="text-sm text-primary">
-            Dzięki! Odpowiem, gdy tylko przeczytam Twoją wiadomość.
-          </p>
+          <p className="text-sm text-primary">Dzięki! Odpowiem, gdy tylko przeczytam Twoją wiadomość.</p>
         )}
         {status === "error" && (
           <p className="text-sm text-destructive">
