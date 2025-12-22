@@ -31,9 +31,9 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
         <div className="flex w-full items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-base font-semibold tracking-tight md:text-lg whitespace-nowrap"
+          <AnchorLink
+            anchor="start"
+            className="flex items-center gap-2 text-base font-semibold tracking-tight whitespace-nowrap md:text-lg"
             aria-label={siteConfig.shortName}
           >
             <Image
@@ -45,7 +45,7 @@ export function SiteHeader() {
               priority
             />
             Taniec w&nbsp;Biznesie
-          </Link>
+          </AnchorLink>
           <div className="flex items-center gap-3 md:hidden">
             <Button size="sm" asChild>
               <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
@@ -110,10 +110,11 @@ function MobileNav({
       <div className="fixed inset-0 z-[120] bg-black/60 backdrop-blur-sm" onClick={onClose} />
       <div className="fixed inset-y-0 right-0 z-[130] w-72 max-w-full overflow-y-auto border-l border-border/70 bg-background p-6 shadow-2xl">
         <div className="mb-6 flex items-center justify-between">
-          <Link
-            href="/"
+          <AnchorLink
+            anchor="start"
             className="flex items-center gap-2 text-base font-semibold tracking-tight whitespace-nowrap"
             onClick={onClose}
+            aria-label={siteConfig.shortName}
           >
             <Image
               src="/taniec_w_biznesie_logo.png"
@@ -123,7 +124,7 @@ function MobileNav({
               className="h-8 w-8 rounded-full border border-border/70 bg-white object-contain p-0.5"
             />
             Taniec w&nbsp;Biznesie
-          </Link>
+          </AnchorLink>
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Zamknij menu">
             <X className="h-4 w-4" />
           </Button>

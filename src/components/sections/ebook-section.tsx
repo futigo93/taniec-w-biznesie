@@ -64,7 +64,7 @@ export function EbookSection() {
               height={560}
               className="relative z-10 w-full rounded-xl object-cover"
             />
-            <p className="mt-4 text-center text-sm text-muted-foreground/70">Format PDF</p>
+            <p className="mt-4 text-center text-sm text-muted-foreground/70">Format PDF - Demo - Pierwszy rozdział</p>
           </a>
         </div>
       </div>
