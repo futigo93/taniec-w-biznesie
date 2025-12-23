@@ -20,8 +20,8 @@ const feedbackSchema = z.object({
   role: z.string().min(1, "Wybierz rolę."),
   feedback: z.string().min(10, "Napisz kilka zdań."),
   marketing: z.boolean().optional(),
-  regulationsAccepted: z.literal(true, {
-    errorMap: () => ({ message: "Zaakceptuj regulamin." }),
+  regulationsAccepted: z.boolean().refine((value) => value === true, {
+    message: "Zaakceptuj regulamin.",
   }),
 });
 

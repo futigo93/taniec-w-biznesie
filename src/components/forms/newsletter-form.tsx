@@ -17,7 +17,9 @@ const newsletterSchema = z.object({
   school: z.string().max(120).optional().or(z.literal("")),
   role: z.string().min(1, "Wybierz rolę."),
   marketing: z.boolean().optional(),
-  regulationsAccepted: z.literal(true, { errorMap: () => ({ message: "Zaakceptuj regulamin." }) }),
+  regulationsAccepted: z.boolean().refine((value) => value === true, {
+    message: "Zaakceptuj regulamin.",
+  }),
 });
 
 type NewsletterValues = z.infer<typeof newsletterSchema>;
