@@ -13,20 +13,16 @@ import { LoaderCircle } from "lucide-react";
 const marketingLabel =
   "Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną, dotyczących produktów i usług Jakuba Nowaka, w tym ofert komercyjnych oraz informacji o rozwiązaniach wspierających prowadzenie szkół tańca.";
 
-const checkboxValue = (value: unknown) => value === true || value === "on";
-
 const feedbackSchema = z.object({
   name: z.string().min(2, "Podpisz się (imię lub pseudonim).").max(80),
   school: z.string().max(120).optional().or(z.literal("")),
   email: z.string().email("Podaj poprawny adres."),
   role: z.string().min(1, "Wybierz rolę."),
   feedback: z.string().min(10, "Napisz kilka zdań."),
-  marketing: z
-    .preprocess((value) => checkboxValue(value) || undefined, z.boolean().optional())
-    .optional(),
-  regulationsAccepted: z
-    .preprocess((value) => checkboxValue(value), z.boolean())
-    .refine((val) => val === true, { message: "Zaakceptuj regulamin." }),
+  marketing: z.boolean().optional(),
+  regulationsAccepted: z.literal(true, {
+    errorMap: () => ({ message: "Zaakceptuj regulamin." }),
+  }),
 });
 
 type FeedbackFormValues = z.infer<typeof feedbackSchema>;
@@ -165,13 +161,21 @@ export function FeedbackForm({
             <p className="text-sm text-muted-foreground">
               Zaznaczenie nieobowiązkowych zgód pozwoli mi przedstawić Ci dopasowane produkty i usługi.
             </p>
-            <label className="flex items-start gap-2 text-sm">
-              <input type="checkbox" className="mt-1" {...register("marketing")} />
-              <span>{marketingLabel}</span>
-            </label>
-          </div>
-          <label className="flex items-start gap-2 text-sm font-medium">
-            <input type="checkbox" className="mt-1" {...register("regulationsAccepted")} />
+          <label className="flex items-start gap-2 text-sm">
+            <input
+              type="checkbox"
+              className="mt-1"
+              {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
+            />
+            <span>{marketingLabel}</span>
+          </label>
+        </div>
+        <label className="flex items-start gap-2 text-sm font-medium">
+          <input
+            type="checkbox"
+            className="mt-1"
+            {...register("regulationsAccepted", { setValueAs: (v) => v === true || v === "on" })}
+          />
             <span>
               Potwierdzam, że zapoznałem się z{" "}
               <a href="/regulamin" className="underline" target="_blank" rel="noreferrer">
