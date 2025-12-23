@@ -21,12 +21,9 @@ const newsletterSchema = z.object({
   marketing: z
     .preprocess((value) => checkboxValue(value) || undefined, z.boolean().optional())
     .optional(),
-  regulationsAccepted: z.preprocess(
-    (value) => checkboxValue(value),
-    z.literal(true, {
-      errorMap: () => ({ message: "Zaakceptuj regulamin." }),
-    }),
-  ),
+  regulationsAccepted: z
+    .preprocess((value) => checkboxValue(value), z.boolean())
+    .refine((val) => val === true, { message: "Zaakceptuj regulamin." }),
 });
 
 type NewsletterValues = z.infer<typeof newsletterSchema>;
