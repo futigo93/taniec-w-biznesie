@@ -147,21 +147,6 @@ export function NewsletterForm({
             </a>
             , aby dostarczać materiały społeczności.
           </p>
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Zgody marketingowe</p>
-            <p className="text-sm">
-              Zaznaczenie nieobowiązkowych zgód pozwoli mi informować Cię o narzędziach i usługach dopasowanych do szkół
-              tańca.
-            </p>
-            <label className="flex items-start gap-2 text-sm">
-              <input
-                type="checkbox"
-                className="mt-1"
-                {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
-              />
-              <span>{marketingLabel}</span>
-            </label>
-          </div>
           <label className="flex items-start gap-2 text-sm font-medium">
             <input
               type="checkbox"
@@ -179,6 +164,14 @@ export function NewsletterForm({
           {errors.regulationsAccepted && (
             <p className="text-sm text-destructive">{errors.regulationsAccepted.message}</p>
           )}
+          <label className="flex items-start gap-2 text-sm text-white/90">
+            <input
+              type="checkbox"
+              className="mt-1"
+              {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
+            />
+            <span>{marketingLabel}</span>
+          </label>
         </div>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <Button type="submit" size="lg" disabled={isSubmitting} className="w-full md:w-auto">

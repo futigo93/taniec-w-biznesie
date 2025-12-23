@@ -119,7 +119,7 @@ export function FeedbackForm({
           </label>
           <select
             id="feedback-role"
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+            className="w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground"
             {...register("role")}
           >
             <option value="">-</option>
@@ -156,26 +156,12 @@ export function FeedbackForm({
             </a>
             , aby odpowiedzieć na Twój feedback.
           </p>
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Zgody marketingowe</p>
-            <p className="text-sm text-muted-foreground">
-              Zaznaczenie nieobowiązkowych zgód pozwoli mi przedstawić Ci dopasowane produkty i usługi.
-            </p>
-          <label className="flex items-start gap-2 text-sm">
+          <label className="flex items-start gap-2 text-sm font-medium">
             <input
               type="checkbox"
               className="mt-1"
-              {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
+              {...register("regulationsAccepted", { setValueAs: (v) => v === true || v === "on" })}
             />
-            <span>{marketingLabel}</span>
-          </label>
-        </div>
-        <label className="flex items-start gap-2 text-sm font-medium">
-          <input
-            type="checkbox"
-            className="mt-1"
-            {...register("regulationsAccepted", { setValueAs: (v) => v === true || v === "on" })}
-          />
             <span>
               Potwierdzam, że zapoznałem się z{" "}
               <a href="/regulamin" className="underline" target="_blank" rel="noreferrer">
@@ -187,6 +173,14 @@ export function FeedbackForm({
           {errors.regulationsAccepted && (
             <p className="text-sm text-destructive">{errors.regulationsAccepted.message}</p>
           )}
+          <label className="flex items-start gap-2 text-sm text-muted-foreground">
+            <input
+              type="checkbox"
+              className="mt-1"
+              {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
+            />
+            <span>{marketingLabel}</span>
+          </label>
         </div>
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? <LoaderCircle className="h-4 w-4 animate-spin" /> : "Wyślij feedback"}
