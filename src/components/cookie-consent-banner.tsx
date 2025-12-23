@@ -7,6 +7,25 @@ declare global {
     cookieconsent: {
       initialise: (config: Record<string, unknown>) => void;
     };
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
+
+function updateAnalyticsConsent(granted: boolean) {
+  if (typeof window === "undefined") return;
+  const value = granted ? "granted" : "denied";
+
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
+      analytics_storage: value,
+      ad_storage: "denied",
+    });
+  } else if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push({
+      event: "consent-update",
+      consent: { analytics_storage: value },
+    });
   }
 }
 
@@ -23,6 +42,8 @@ export function CookieConsentBanner() {
     script.onload = () => {
       if (window.cookieconsent) {
         window.cookieconsent.initialise({
+          type: "opt-in",
+          revokable: true,
           palette: {
             popup: { background: "#2b1e16", text: "#f6efe4" },
             button: { background: "#d97706", text: "#1a110c" },
@@ -30,10 +51,17 @@ export function CookieConsentBanner() {
           theme: "classic",
           content: {
             message:
-              "Używam plików cookies w celach technicznych, a w przyszłości analitycznych i marketingowych. Korzystając z serwisu zgadzasz się na ich działanie.",
-            dismiss: "Zgadzam się",
-            link: "Czytaj więcej",
+              "Korzystam z plików cookies do celów technicznych. Potrzebuję Twojej zgody, aby uruchomić analitykę (Google Analytics) i rozwijać treści.",
+            allow: "Akceptuję analitykę",
+            deny: "Tylko techniczne",
+            link: "Polityka cookies",
             href: "/polityka-cookies",
+          },
+          onInitialise(status: string) {
+            updateAnalyticsConsent(status === "allow");
+          },
+          onStatusChange(status: string) {
+            updateAnalyticsConsent(status === "allow");
           },
         });
       }
