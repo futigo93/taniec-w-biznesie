@@ -84,18 +84,24 @@ export default function RootLayout({
         <CookieConsentBanner />
         {gaId && isProd ? (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
+            <Script id="ga-consent-default" strategy="beforeInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('consent', 'default', {
                   analytics_storage: 'denied',
-                  ad_storage: 'denied'
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  ad_personalization: 'denied'
                 });
+              `}
+            </Script>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="beforeInteractive"
+            />
+            <Script id="ga-config" strategy="afterInteractive">
+              {`
                 gtag('js', new Date());
                 gtag('config', '${gaId}');
               `}
