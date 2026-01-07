@@ -50,6 +50,15 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Tancerz ≠ instruktor ≠ właściciel",
+    description:
+      "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
+    category: "Blog",
+    readTime: "5 min",
+    slug: "tancerz-instruktor-wlasciciel",
+    cover: "/tancerz-instruktor-wlasciciel.png",
+  },
+  {
     title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
     description:
       "W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom.",
