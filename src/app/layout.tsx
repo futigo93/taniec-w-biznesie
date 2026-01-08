@@ -56,7 +56,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  other: fbAppId ? { "fb:app_id": fbAppId } : undefined,
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -76,6 +75,7 @@ export default function RootLayout({
 
   return (
     <html lang="pl">
+      <head>{fbAppId ? <meta property="fb:app_id" content={fbAppId} /> : null}</head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
