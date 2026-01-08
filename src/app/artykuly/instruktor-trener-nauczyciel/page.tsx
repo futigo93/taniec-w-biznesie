@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
   description:
     "Dlaczego nazewnictwo w szkołach tańca nigdy nie jest neutralne i jakie obietnice składa klientom.",
+  openGraph: {
+    title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
+    description:
+      "Dlaczego nazewnictwo w szkołach tańca nigdy nie jest neutralne i jakie obietnice składa klientom.",
+    type: "article",
+    images: [
+      {
+        url: "/nomenklatura_cover.webp",
+        width: 1200,
+        height: 630,
+        alt: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
+    description:
+      "Dlaczego nazewnictwo w szkołach tańca nigdy nie jest neutralne i jakie obietnice składa klientom.",
+    images: ["/nomenklatura_cover.webp"],
+  },
 };
 
 export default function NomenklaturaArticle() {

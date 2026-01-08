@@ -20,6 +20,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const fbAppId = process.env.NEXT_PUBLIC_FB_APP_ID;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -45,6 +47,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.shortName,
     locale: "pl_PL",
     type: "website",
+    appId: fbAppId,
     images: [
       {
         url: "/taniec_w_biznesie_logo.png",
@@ -54,6 +57,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  other: fbAppId ? { "fb:app_id": fbAppId } : undefined,
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,

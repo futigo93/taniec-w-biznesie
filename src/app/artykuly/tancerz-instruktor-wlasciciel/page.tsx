@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: "Tancerz ≠ instruktor ≠ właściciel",
   description:
     "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
+  openGraph: {
+    title: "Tancerz ≠ instruktor ≠ właściciel",
+    description:
+      "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
+    type: "article",
+    images: [
+      {
+        url: "/tancerz-instruktor-wlasciciel.png",
+        width: 1200,
+        height: 630,
+        alt: "Tancerz ≠ instruktor ≠ właściciel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tancerz ≠ instruktor ≠ właściciel",
+    description:
+      "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
+    images: ["/tancerz-instruktor-wlasciciel.png"],
+  },
 };
 
 export default function TancerzInstruktorWlascicielArticle() {
