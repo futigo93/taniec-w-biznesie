@@ -8,11 +8,15 @@ export const metadata: Metadata = {
   title: "Tancerz ≠ instruktor ≠ właściciel",
   description:
     "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
+  alternates: {
+    canonical: "/artykuly/tancerz-instruktor-wlasciciel",
+  },
   openGraph: {
     title: "Tancerz ≠ instruktor ≠ właściciel",
     description:
       "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
     type: "article",
+    url: "https://taniecwbiznesie.pl/artykuly/tancerz-instruktor-wlasciciel",
     images: [
       {
         url: "/tancerz-instruktor-wlasciciel.png",
