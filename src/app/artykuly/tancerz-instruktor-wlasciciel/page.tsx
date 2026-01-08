@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
+import { FacebookWidgets } from "@/components/social/facebook-widgets";
 
 export const metadata: Metadata = {
   title: "Tancerz ≠ instruktor ≠ właściciel",
@@ -24,6 +25,10 @@ export default function TancerzInstruktorWlascicielArticle() {
             <span>•</span>
             <span>7 stycznia 2026</span>
           </div>
+          <FacebookWidgets
+            path="/artykuly/tancerz-instruktor-wlasciciel"
+            className="mt-5"
+          />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
               src="/tancerz-instruktor-wlasciciel.png"

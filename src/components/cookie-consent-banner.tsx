@@ -5,14 +5,26 @@ import { useEffect } from "react";
 declare global {
   interface Window {
     cookieconsent: {
-      initialise: (config: Record<string, unknown>) => void;
+      initialise: (
+        config: Record<string, unknown>,
+        onSuccess?: (popup: { open?: () => void; close?: () => void }) => void,
+      ) => void;
+    };
+    cookieconsentInstance?: {
+      open?: () => void;
+      close?: () => void;
     };
     gtag?: (...args: unknown[]) => void;
     dataLayer?: unknown[];
+    FB?: {
+      XFBML?: {
+        parse: () => void;
+      };
+    };
   }
 }
 
-function updateAnalyticsConsent(granted: boolean) {
+function updateConsent(granted: boolean) {
   if (typeof window === "undefined") return;
   const value = granted ? "granted" : "denied";
 
@@ -20,6 +32,8 @@ function updateAnalyticsConsent(granted: boolean) {
     window.gtag("consent", "update", {
       analytics_storage: value,
       ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
     });
   } else if (Array.isArray(window.dataLayer)) {
     window.dataLayer.push({
@@ -27,6 +41,12 @@ function updateAnalyticsConsent(granted: boolean) {
       consent: { analytics_storage: value },
     });
   }
+
+  window.dispatchEvent(
+    new CustomEvent("consent:change", {
+      detail: { granted },
+    }),
+  );
 }
 
 export function CookieConsentBanner() {
@@ -41,7 +61,8 @@ export function CookieConsentBanner() {
     script.async = true;
     script.onload = () => {
       if (window.cookieconsent) {
-        window.cookieconsent.initialise({
+        window.cookieconsent.initialise(
+          {
           type: "opt-in",
           revokable: true,
           palette: {
@@ -51,19 +72,23 @@ export function CookieConsentBanner() {
           theme: "classic",
           content: {
             message:
-              "Korzystam z plików cookies do celów technicznych. Potrzebuję Twojej zgody, aby uruchomić analitykę (Google Analytics) i rozwijać treści.",
+              "Korzystam z plików cookies do celów technicznych. Potrzebuję Twojej zgody, aby uruchomić analitykę (Google Analytics) i wtyczki społecznościowe.",
             allow: "Akceptuję analitykę",
             deny: "Tylko techniczne",
             link: "Polityka cookies",
             href: "/polityka-cookies",
           },
           onInitialise(status: string) {
-            updateAnalyticsConsent(status === "allow");
+            updateConsent(status === "allow");
           },
           onStatusChange(status: string) {
-            updateAnalyticsConsent(status === "allow");
+            updateConsent(status === "allow");
           },
-        });
+          },
+          (popup) => {
+            window.cookieconsentInstance = popup;
+          },
+        );
       }
     };
     document.body.appendChild(script);

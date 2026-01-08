@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
+import { FacebookWidgets } from "@/components/social/facebook-widgets";
 
 export const metadata: Metadata = {
   title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
@@ -24,6 +25,10 @@ export default function NomenklaturaArticle() {
             <span>•</span>
             <span>21 grudnia 2025</span>
           </div>
+          <FacebookWidgets
+            path="/artykuly/instruktor-trener-nauczyciel"
+            className="mt-5"
+          />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
               src="/nomenklatura_cover.webp"
