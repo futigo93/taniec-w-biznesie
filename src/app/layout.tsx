@@ -47,7 +47,6 @@ export const metadata: Metadata = {
     siteName: siteConfig.shortName,
     locale: "pl_PL",
     type: "website",
-    appId: fbAppId,
     images: [
       {
         url: "/taniec_w_biznesie_logo.png",
