@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 
 const SURVEY_1_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSeju8WiuyPz2a3NKaH7K1d2S2kiCMQVqKa_rtnk82vFUhyQYQ/viewform?usp=header";
+const SURVEY_2_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSerjIruzqZrN9nroM_phDl7HRUioHe1vdRJnEac63exLaaFYQ/viewform?usp=header";
 
 export const metadata: Metadata = {
   title: "Ankiety",
@@ -54,6 +56,38 @@ export default function SurveysPage() {
               </a>
             </Button>
           </div>
+
+        </div>
+        <div className="grid gap-8 rounded-3xl border border-border/70 bg-card p-6 shadow-sm md:grid-cols-[1.1fr,1fr] md:items-center">
+
+          <div className="space-y-5">
+            <div className="space-y-3">
+              <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
+                Dlaczego przestajemy chodzić na zajęcia taneczne?
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Badanie dotyczy sytuacji, w których osoby uczęszczające na regularne zajęcia taneczne przestają chodzić do szkoły tańca — niezależnie od tego, czy zmieniają szkołę, rezygnują z regularnych zajęć, czy kończą swoją przygodę z tańcem.
+              </p>
+            </div>
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4 text-primary" />
+                <span>
+                  Dla osób, które przestały chodzić do szkoły tańca w ciągu ostatnich 12 miesięcy.
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-primary" />
+                <span>Czas wypełnienia: około 5 minut.</span>
+              </div>
+            </div>
+            <Button asChild size="lg">
+              <a href={SURVEY_2_URL} target="_blank" rel="noreferrer">
+                Otwórz ankietę w Google Forms
+              </a>
+            </Button>
+          </div>
+
         </div>
 
         <p className="text-sm text-muted-foreground">
