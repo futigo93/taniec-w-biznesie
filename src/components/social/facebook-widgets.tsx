@@ -92,22 +92,10 @@ export function FacebookWidgets({ path, className }: FacebookWidgetsProps) {
     <div className={cn("relative z-10 pointer-events-auto", className)}>
       {showWidgets ? (
         <div className="flex flex-wrap items-center gap-4 leading-none">
-          <div
-            className="fb-like"
-            data-href={url}
-            data-width=""
-            data-layout="button"
-            data-action="like"
-            data-size="small"
-            data-share="false"
-          />
           <div className="fb-share-button" data-href={url} data-layout="button" />
         </div>
       ) : (
         <div className="flex flex-wrap items-center gap-4 opacity-60 leading-none">
-          <div className="rounded-md border border-border/70 bg-card px-3 py-1 text-xs font-semibold">
-            Lubię to
-          </div>
           <div className="rounded-md border border-border/70 bg-card px-3 py-1 text-xs font-semibold">
             Udostępnij
           </div>
