@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 const footerLinks = [
   { label: "Start", href: "/" },
   { label: "Artykuły", href: "/artykuly" },
+  { label: "Ankiety", href: "/ankiety" },
   { label: "Usługi dodatkowe", href: "/uslugi" },
   { label: "O mnie", href: "/o-mnie" },
   { label: "Regulamin", href: "/regulamin" },
@@ -23,8 +24,10 @@ export function SiteFooter() {
         <div className="space-y-2">
           <p className="font-semibold tracking-tight">Taniec w Biznesie</p>
           <p className="text-muted-foreground">
-            Strategiczne wsparcie dla instruktorów i właścicieli szkół tańca. Ebook, społeczność i narzędzia do spokojnego
-            skalowania biznesu. Tworzone przez byłego właściciela i menedżera szkół tańca Jakuba Nowaka.
+            Strategiczne wsparcie dla instruktorów i właścicieli szkół tańca.
+            Ebook, społeczność i narzędzia do spokojnego skalowania biznesu.
+            Tworzone przez byłego właściciela i menedżera szkół tańca Jakuba
+            Nowaka.
           </p>
         </div>
         <div className="space-y-3">
@@ -46,7 +49,10 @@ export function SiteFooter() {
           <ul className="space-y-1 text-muted-foreground">
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-foreground">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="hover:text-foreground"
+              >
                 {siteConfig.email}
               </a>
             </li>
@@ -66,7 +72,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60 px-4 py-4 text-center text-muted-foreground md:px-6">
-        © {year} {siteConfig.shortName}. Zbudowano na fundamencie relacji i systemów.
+        © {year} {siteConfig.shortName}. Zbudowano na fundamencie relacji i
+        systemów.
       </div>
     </footer>
   );
