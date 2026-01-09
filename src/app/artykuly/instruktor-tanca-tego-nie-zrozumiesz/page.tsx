@@ -7,14 +7,14 @@ import { FacebookWidgets } from "@/components/social/facebook-widgets";
 export const metadata: Metadata = {
   title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
   description:
-    "Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z poczuciem sensu, po innych z irytacją albo obojętnością.",
+    "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
   alternates: {
     canonical: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
   },
   openGraph: {
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
-      "Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z poczuciem sensu, po innych z irytacją albo obojętnością.",
+      "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
     type: "article",
     url: "https://taniecwbiznesie.pl/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
-      "Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z poczuciem sensu, po innych z irytacją albo obojętnością.",
+      "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
     images: ["/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"],
   },
 };
@@ -43,7 +43,7 @@ export default function InstruktorTancaArticle() {
           <SectionHeading
             eyebrow="Blog"
             title="Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)"
-            description="Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z poczuciem sensu, po innych z irytacją albo obojętnością."
+            description="Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji."
           />
           <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
             <span>Jakub Nowak</span>
