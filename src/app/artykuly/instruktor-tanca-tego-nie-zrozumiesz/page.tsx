@@ -111,7 +111,7 @@ export default function InstruktorTancaArticle() {
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-inner">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-            Macierz instruktora
+            Macierz umiejętności instruktora
           </p>
           <h3 className="mt-2 text-lg font-semibold">
             Umiejętności taneczne a umiejętności instruktorskie
@@ -137,25 +137,25 @@ export default function InstruktorTancaArticle() {
                 </div>
                 <div className="col-start-1 row-start-1 md:row-start-1 md:col-start-3">
                   <MatrixCard
-                    title="Wysokie umiejętności instruktorskie, średnie taneczne"
+                    title="Wysokie instruktorskie, średnie taneczne"
                     description="To wystarczający skill do pracy z grupami od podstaw do poziomów średnich. Twoją przewagą jest umiejętność sprawiania, że ludziom wychodzi, a ludzie wracają tam, gdzie czują progres."
                   />
                 </div>
                 <div className="col-start-2 row-start-1 md:row-start-1 md:col-start-4">
                   <MatrixCard
-                    title="Wysokie umiejętności"
+                    title="Wysokie instruktorskie i taneczne"
                     description="Największy potencjał i największa odpowiedzialność. Możesz prowadzić ludzi od podstaw do bardzo wysokiego poziomu i budować społeczności, które wracają po doświadczenie."
                   />
                 </div>
                 <div className="col-start-1 row-start-2 md:row-start-2 md:col-start-3">
                   <MatrixCard
-                    title="Średnie umiejętności"
+                    title="Średnie instruktorskie i taneczne"
                     description="To poziom, który wciąż może wystarczyć do prowadzenia zajęć w mniejszych miejscowościach lub małych szkołach, gdzie konkurencja jest niewielka."
                   />
                 </div>
                 <div className="col-start-2 row-start-2 md:row-start-2 md:col-start-4">
                   <MatrixCard
-                    title="Wysokie taneczne"
+                    title="Średnie instruktorskie, wysokie taneczne"
                     description="Możesz inspirować ludzi „na odległość”: nagrania, social media, pokazy. To dobry set do prowadzenia warsztatów festiwalowych, gdzie ludzie często przychodzą za twarzą, nie za jakością dydaktyczną."
                   />
                 </div>
@@ -255,8 +255,8 @@ export default function InstruktorTancaArticle() {
 function MatrixCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-3 text-xs text-white/80 md:p-4 md:text-sm">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary/80 md:text-xs md:tracking-[0.2em]">{title}</p>
-      <p className="mt-2 text-xs text-white/85 md:text-sm">{description}</p>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary/80 md:hidden">{title}</p>
+      <p className="mt-2 text-xs text-white/85 md:mt-0 md:text-sm">{description}</p>
     </div>
   );
 }
