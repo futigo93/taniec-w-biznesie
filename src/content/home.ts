@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+    description:
+      "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
+    category: "Blog",
+    readTime: "7 min",
+    slug: "instruktor-tanca-tego-nie-zrozumiesz",
+    cover: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+  },
+
+  {
     title: "Tancerz ≠ instruktor ≠ właściciel",
     description:
       "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",

@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useRef } from "react";
 import { SectionHeading } from "@/components/section-heading";
 import { articlePreviews, type ArticlePreview } from "@/content/home";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const MAX_ARTICLES = 3;
+const MAX_ARTICLES = 4;
 
 export function ArticlesSection() {
   const articles = useMemo(() => articlePreviews.slice(0, MAX_ARTICLES), []);
-  const [current, setCurrent] = useState(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const description = (
     <>
@@ -25,20 +25,37 @@ export function ArticlesSection() {
     </>
   );
 
-  const handlePrev = () => setCurrent((prev) => (prev - 1 + articles.length) % articles.length);
-  const handleNext = () => setCurrent((prev) => (prev + 1) % articles.length);
+  const handlePrev = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.scrollBy({
+      left: -sliderRef.current.clientWidth,
+      behavior: "smooth",
+    });
+  };
+
+  const handleNext = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.scrollBy({
+      left: sliderRef.current.clientWidth,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="space-y-8 rounded-3xl border border-border/60 bg-card/60 p-6 text-white shadow-lg md:p-10">
       <SectionHeading eyebrow="Artykuły eksperckie" title="Pogłęb swoją wiedzę" description={description} />
-      <div className="space-y-6 md:hidden">
+      <div className="space-y-6">
         <div className="relative overflow-hidden rounded-2xl">
           <div
-            className="flex transition-transform duration-300 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
+            ref={sliderRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} className="min-w-full" />
+              <ArticleCard
+                key={article.slug}
+                article={article}
+                className="w-full shrink-0 basis-1/2 lg:basis-1/3"
+              />
             ))}
           </div>
         </div>
@@ -52,11 +69,6 @@ export function ArticlesSection() {
             </Button>
           </div>
         )}
-      </div>
-      <div className="hidden gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
-        {articles.map((article) => (
-          <ArticleCard key={article.slug} article={article} />
-        ))}
       </div>
       <div className="flex justify-center">
         <Button variant="ghost" asChild>
@@ -86,7 +98,7 @@ function ArticleCard({ article, className }: { article: ArticlePreview; classNam
               alt={article.title}
               fill
               className="object-cover transition duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         )}
@@ -95,7 +107,7 @@ function ArticleCard({ article, className }: { article: ArticlePreview; classNam
           <span>{article.readTime}</span>
         </div>
         <h3 className="text-xl font-semibold leading-tight">{article.title}</h3>
-        <p className="text-sm text-muted-foreground/90 flex-1">{article.description}</p>
+        <p className="flex-1 text-sm text-muted-foreground/90">{article.description}</p>
         <p className="text-sm font-semibold text-primary">{isExternal ? "Czytaj u partnera" : "Czytaj na blogu"}</p>
       </article>
     </Link>
