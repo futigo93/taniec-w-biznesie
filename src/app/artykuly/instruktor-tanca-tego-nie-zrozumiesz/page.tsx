@@ -116,8 +116,8 @@ export default function InstruktorTancaArticle() {
           <h3 className="mt-2 text-lg font-semibold">
             Umiejętności taneczne a umiejętności instruktorskie
           </h3>
-          <div className="mt-6">
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-6 md:p-8">
+          <div className="mt-4 md:mt-6">
+            <div className="contents md:block md:rounded-2xl md:border md:border-white/10 md:bg-black/20 md:p-8">
               <div className="grid grid-cols-2 gap-3 md:gap-6 md:grid-cols-[max-content,72px,minmax(0,1fr),minmax(0,1fr)] md:grid-rows-[1fr,1fr,auto,auto]">
                 <div className="hidden md:flex md:row-span-4 md:col-start-1 items-center justify-center">
                   <span
