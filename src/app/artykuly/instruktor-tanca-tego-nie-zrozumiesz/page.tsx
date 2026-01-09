@@ -76,10 +76,7 @@ export default function InstruktorTancaArticle() {
           wydawać się prosta, ale to co dzieje się pod skórą, jest tą magią, którą uwielbiamy.
         </p>
         <p className="text-base text-muted-foreground">
-          Zajęcia taneczne działają podobnie. Ich odbiór jest prosty, ale proces ich tworzenia już nie. Instruktor nie „prowadzi
-          zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest
-          wynikiem dziesiątek drobnych decyzji podejmowanych w czasie rzeczywistym. Większość z nich pozostaje niewidoczna. Część
-          nawet dla samego instruktora - działa intuicyjnie, poza świadomością.
+          Zajęcia taneczne działają podobnie. Ich odbiór jest prosty, ale proces ich tworzenia już nie. Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, dobre albo złe zajęcia, jest wynikiem mnóstwa drobnych decyzji. Większość z nich pozostaje niewidoczna. Część nawet dla samego instruktora - działa intuicyjnie, poza świadomością.
         </p>
         <p className="text-base text-muted-foreground">
           Jakość tego doświadczenia kształtowana jest przez bardzo szeroki zestaw umiejętności: instruktorski toolbox. Składają
@@ -101,12 +98,7 @@ export default function InstruktorTancaArticle() {
           się na sali.
         </p>
         <p className="text-base text-muted-foreground">
-          Nie da się oprzeć kariery instruktora wyłącznie na umiejętnościach tanecznych. Tak samo jak nie przekonasz nikogo, że
-          jesteś dobrym tancerzem, tylko mówiąc o tańcu. Ale tak, są to umiejętności komplementarne i warto rozwijać je równolegle.
-          Nauczyciel, który jest świetnym tancerzem, ale kiepskim instruktorem jest ogromnym powodem frustracji kursantów, którzy
-          chcieliby nauczyć się tańczyć jak on, ale nie dostają merytoryki. Natomiast uczenie się od osoby o wysokich umiejętnościach
-          instruktorskich, ale która nie potrafi Cię zainspirować efektem, wizualiami własnego tańca wymaga dużo świadomości i
-          dojrzałości - mało kto będzie to potrafił. Jednak jesteśmy wzrokowcami.
+          Nie da się oprzeć kariery instruktora wyłącznie na umiejętnościach tanecznych. Tak samo jak nie przekonasz nikogo, że jesteś dobrym tancerzem, tylko mówiąc o tańcu. Ale tak - umiejętności taneczne i instruktorskie są komplementarne i warto rozwijać je równolegle. Nauczyciel, który jest świetnym tancerzem, ale kiepskim instruktorem jest ogromnym powodem frustracji kursantów, którzy chcieliby nauczyć się tańczyć jak on, ale nie dostają merytoryki. Natomiast uczenie się od osoby o wysokich umiejętnościach instruktorskich, ale która nie potrafi Cię zainspirować efektem, wizualiami własnego tańca wymaga dużo świadomości i dojrzałości - mało kto będzie tak potrafił. Jednak jesteśmy wzrokowcami.
         </p>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-inner">
