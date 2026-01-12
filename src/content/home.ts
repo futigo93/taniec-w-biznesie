@@ -50,6 +50,15 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Instruktor tańca - to człowiek z misją (zazwyczaj)",
+    description:
+      "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób. Można normalizować zdrowy ruch, akceptację ciała, szacunek do granic, partnerskie relacje. Można też wzmacniać napięcia, budować fałszywe wyobrażenia, utrwalać stereotypy.",
+    category: "Blog",
+    readTime: "10 min",
+    slug: "instruktor-tanca-czlowiek-z-misja",
+    cover: "/instruktor-tanca-czlowiek-z-misja-fb.webp",
+  },
+  {
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
       "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
