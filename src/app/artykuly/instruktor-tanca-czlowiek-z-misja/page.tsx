@@ -45,7 +45,7 @@ export default function InstruktorMisjaArticle() {
           <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
             <span>Jakub Nowak</span>
             <span>•</span>
-            <span>9 stycznia 2026</span>
+            <span>12 stycznia 2026</span>
           </div>
           <FacebookWidgets path="/artykuly/instruktor-tanca-czlowiek-z-misja" className="mt-5" />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
