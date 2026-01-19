@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Instruktor tańca - twardy zad świeżaka",
+    description:
+      "Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu.",
+    category: "Blog",
+    readTime: "10 min",
+    slug: "instruktor-tanca-twardy-zad-swiezaka",
+    cover: "/instruktor-tanca-twardy-zad.webp",
+  },
+
+  {
     title: "Instruktor tańca - to człowiek z misją (zazwyczaj)",
     description:
       "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób. Można normalizować zdrowy ruch, akceptację ciała, szacunek do granic, partnerskie relacje. Można też wzmacniać napięcia, budować fałszywe wyobrażenia, utrwalać stereotypy.",
@@ -82,7 +92,7 @@ export const articlePreviews: ArticlePreview[] = [
     description:
       "W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom.",
     category: "Strategia",
-    readTime: "9 min",
+    readTime: "5 min",
     slug: "instruktor-trener-nauczyciel",
     cover: "/nomenklatura_cover.webp",
   },
