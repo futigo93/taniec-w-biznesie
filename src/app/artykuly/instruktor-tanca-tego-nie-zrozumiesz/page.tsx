@@ -80,7 +80,7 @@ export default function InstruktorTancaArticle() {
           Zajęcia taneczne działają podobnie. Ich odbiór jest prosty, ale proces ich tworzenia już nie. Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, dobre albo złe zajęcia, jest wynikiem mnóstwa drobnych decyzji. Większość z nich pozostaje niewidoczna. Część nawet dla samego instruktora - działa intuicyjnie, poza świadomością.
         </p>
 
-        
+
 
         <p className="text-base text-muted-foreground">
           Jakość tego doświadczenia kształtowana jest przez bardzo szeroki zestaw umiejętności: instruktorski toolbox. Składają
@@ -216,7 +216,7 @@ export default function InstruktorTancaArticle() {
             {
               title: "Narzędzia i usługi dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "http://localhost:3000/uslugi",
+              href: "http://taniecwbiznesie.pl/uslugi",
               image: "/zestaw-narzedzi-dla-szkol.webp",
             },
           ]}

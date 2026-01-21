@@ -73,7 +73,7 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
         <p className="text-base text-muted-foreground">Po trzecich zajęć już nie ma. Kurs zostaje zamknięty. Ktoś decyduje, że to się nie spina. Wracasz do domu i przez kilka dni nie bardzo wiesz, co ze sobą zrobić. Emocjonalnie to jest dużo. Zderzenie z rzeczywistością przychodzi szybko i bez ostrzeżenia.
           Dla wielu osób to jest moment, który kończy historię zanim zdążyła się naprawdę zacząć. A jednocześnie — paradoksalnie — to bywa jedno z najważniejszych doświadczeń w całym instruktorskim rozwoju.</p>
 
-        
+
 
         <p className="text-base text-muted-foreground">Młody instruktor ma jedną rzecz, której później już nigdy nie będzie miał w takiej ilości: energię. Świeżą, intensywną, bezwarunkową. Gotowość do poświęcenia wszystkiego. Większość osób na starcie nie cierpi na brak motywacji. Cierpi na jej nadmiar. I właśnie dlatego tak łatwo ją zmarnować.
           Na początku bardzo łatwo założyć, że skoro umiesz tańczyć, to reszta „jakoś się ułoży”. Że promocja to kwestia kilku postów. Że prowadzenie zajęć to w dużej mierze improwizacja. Że grupa sama się zintegruje, bo przecież taniec łączy ludzi.</p>
@@ -115,7 +115,7 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
             {
               title: "Narzędzia i usługi dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "http://localhost:3000/uslugi",
+              href: "http://taniecwbiznesie.pl/uslugi",
               image: "/zestaw-narzedzi-dla-szkol.webp",
             },
           ]}

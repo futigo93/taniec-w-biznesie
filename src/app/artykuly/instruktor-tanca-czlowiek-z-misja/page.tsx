@@ -105,7 +105,7 @@ export default function InstruktorMisjaArticle() {
           właśnie od tej odpowiedzialności zaczyna się rola instruktora jako rola społeczna, a nie techniczna.
         </p>
 
-        
+
 
 
         <SectionSubheading title="Odpowiedzialność za środowisko i wpływ" />
@@ -167,7 +167,7 @@ export default function InstruktorMisjaArticle() {
             {
               title: "Narzędzia i usługi dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "http://localhost:3000/uslugi",
+              href: "http://taniecwbiznesie.pl/uslugi",
               image: "/zestaw-narzedzi-dla-szkol.webp",
             },
           ]}
