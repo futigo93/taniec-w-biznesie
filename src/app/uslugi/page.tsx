@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { BetaModalTrigger } from "@/components/beta-modal-trigger";
+import { ConsultingModalTrigger } from "@/components/consulting-modal-trigger";
 
 export const metadata: Metadata = {
   title: "Usługi dodatkowe",
@@ -114,9 +115,7 @@ export default function ServicesPage() {
             <li>Warsztaty dla właściciela / zespołu.</li>
             <li>Mentoring dla właściciela lub menedżera szkoły.</li>
           </ul>
-          <Button asChild>
-            <a href="mailto:kontakt@taniecwbiznesie.pl">Napisz, aby umówić rozmowę</a>
-          </Button>
+          <ConsultingModalTrigger buttonLabel="Umów konsultację" variant="outline" />
         </section>
       </div>
     </div>
