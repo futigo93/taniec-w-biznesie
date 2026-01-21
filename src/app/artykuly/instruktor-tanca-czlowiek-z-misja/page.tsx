@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 
 const title = "Instruktor tańca - to człowiek z misją (zazwyczaj)";
 const description =
@@ -104,6 +105,9 @@ export default function InstruktorMisjaArticle() {
           właśnie od tej odpowiedzialności zaczyna się rola instruktora jako rola społeczna, a nie techniczna.
         </p>
 
+        
+
+
         <SectionSubheading title="Odpowiedzialność za środowisko i wpływ" />
         <p className="text-base text-muted-foreground">
           Instruktor nie funkcjonuje w próżni. Nawet jeśli skupia się wyłącznie na swojej grupie, jego działania mają wpływ szerzej — na
@@ -131,6 +135,44 @@ export default function InstruktorMisjaArticle() {
           ich strategia. Kontrowersja generuje zasięgi. Hejt wzmacnia widoczność. Rynek, do którego trafiają, jest wąski, ale cały ich.
           Funkcjonują poza głównym nurtem środowiska i zaakceptowali koszt wykluczenia jako element modelu biznesowego.
         </p>
+
+        <InlineArticlePromo
+          label="Polecane"
+          ctaLabel="Sprawdź"
+          items={[
+            {
+              title: "Pobierz ebook: Taniec w biznesie",
+              description: "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
+              href: "https://taniecwbiznesie.pl/#ebook",
+              image: "/ebook_cover.webp",
+            },
+            {
+              title: "Badanie rynku szkół tańca",
+              description: "Pomóż zebrać dane i poznaj wnioski z ankiety.",
+              href: "https://taniecwbiznesie.pl/ankiety",
+              image: "/strony-szkol-tanca.webp",
+            },
+            {
+              title: "Chaos w grafiku zajęć?",
+              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
+              href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+              image: "/przewodnik-po-widokach-grafiku-cover.png",
+            },
+            {
+              title: "Baileo dla szkół tańca",
+              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
+              href: "https://baileo.pl/",
+              image: "/logo_icon_baileo_square.png",
+            },
+            {
+              title: "Narzędzia i usługi dla szkół tańca",
+              description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
+              href: "http://localhost:3000/uslugi",
+              image: "/zestaw-narzedzi-dla-szkol.webp",
+            },
+          ]}
+        />
+
         <p className="text-base text-muted-foreground">
           Nie będę podawał nazwisk, bo nie chcę ani publicznie piętnować, ani przede wszystkim promować tego podejścia. Bo choć zrozumiałe
           jest na czym polega kontrowersja i dlaczego działa, to w kategoriach społecznych takie zachowania wymagają potępienia. Nie
@@ -189,6 +231,20 @@ export default function InstruktorMisjaArticle() {
           schodził jeszcze głębiej — do błędów startu, spalania rynku i tego, czego środowisko naprawdę oczekuje od początkujących
           instruktorów.
         </p>
+
+        <InlineArticlePromo
+          label="Następny artykuł z serii"
+          ctaLabel="Przejdź do kolejnego"
+          items={[
+            {
+              title: "Istruktor tańca - twardy zad świeżaka",
+              description:
+                "Bycie świeżym instruktorem to zderzenie z rzeczywistością, ogromna energia i szybkie lekcje, które zostają na lata.",
+              href: "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
+              image: "/instruktor-tanca-twardy-zad.webp",
+            },
+          ]}
+        />
 
         <Link href="/artykuly" className="text-sm font-semibold text-primary">
           ← Wróć do listy artykułów

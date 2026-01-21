@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 
 export const metadata: Metadata = {
   title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
@@ -78,6 +79,9 @@ export default function InstruktorTancaArticle() {
         <p className="text-base text-muted-foreground">
           Zajęcia taneczne działają podobnie. Ich odbiór jest prosty, ale proces ich tworzenia już nie. Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, dobre albo złe zajęcia, jest wynikiem mnóstwa drobnych decyzji. Większość z nich pozostaje niewidoczna. Część nawet dla samego instruktora - działa intuicyjnie, poza świadomością.
         </p>
+
+        
+
         <p className="text-base text-muted-foreground">
           Jakość tego doświadczenia kształtowana jest przez bardzo szeroki zestaw umiejętności: instruktorski toolbox. Składają
           się na niego tematy nieoczywiste i bardzo szerokie: język, rytm wypowiedzi, dobór porównań, umiejętność utrzymania uwagi,
@@ -180,6 +184,44 @@ export default function InstruktorTancaArticle() {
           długoterminowy napęd. Instruktor działa w rytmie powtarzalności, odpowiedzialności i relacji. Bez stabilnego powodu, dla
           którego to robi, ten rytm szybko zaczyna ciążyć.
         </p>
+
+        <InlineArticlePromo
+          label="Polecane"
+          ctaLabel="Sprawdź"
+          items={[
+            {
+              title: "Pobierz ebook: Taniec w biznesie",
+              description: "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
+              href: "https://taniecwbiznesie.pl/#ebook",
+              image: "/ebook_cover.webp",
+            },
+            {
+              title: "Badanie rynku szkół tańca",
+              description: "Pomóż zebrać dane i poznaj wnioski z ankiety.",
+              href: "https://taniecwbiznesie.pl/ankiety",
+              image: "/strony-szkol-tanca.webp",
+            },
+            {
+              title: "Chaos w grafiku zajęć?",
+              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
+              href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+              image: "/przewodnik-po-widokach-grafiku-cover.png",
+            },
+            {
+              title: "Baileo dla szkół tańca",
+              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
+              href: "https://baileo.pl/",
+              image: "/logo_icon_baileo_square.png",
+            },
+            {
+              title: "Narzędzia i usługi dla szkół tańca",
+              description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
+              href: "http://localhost:3000/uslugi",
+              image: "/zestaw-narzedzi-dla-szkol.webp",
+            },
+          ]}
+        />
+
         <blockquote className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-muted-foreground">
           To, co piszę dalej, nie jest próbą stworzenia definicji zawodu instruktora ani uniwersalnego klucza do oceniania kto jest
           lepszym a kto gorszym instruktorem. To jest mój sposób widzenia tej roli, ukształtowany przez lata uczenia, prowadzenia
@@ -235,6 +277,20 @@ export default function InstruktorTancaArticle() {
           może nie napiszę, ale tym wpisem otwieram serię artykułów o moich doświadczeniach i przemyśleniach z bycia tancerzem i
           instruktorem.
         </p>
+
+        <InlineArticlePromo
+          label="Następny artykuł z serii"
+          ctaLabel="Przejdź do kolejnego"
+          items={[
+            {
+              title: "Instruktor tańca - to człowiek z misją (zazwyczaj)",
+              description:
+                "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób.",
+              href: "/artykuly/instruktor-tanca-czlowiek-z-misja",
+              image: "/instruktor-tanca-czlowiek-z-misja-fb.webp",
+            },
+          ]}
+        />
 
         <Link href="/artykuly" className="text-sm font-semibold text-primary">
           ↩ Wróć do listy artykułów

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 
 export const metadata: Metadata = {
   title: "Instruktor tańca - twardy zad świeżaka",
@@ -71,6 +72,9 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
         <p className="text-base text-muted-foreground">Na drugie zajęcia przychodzi połowa.</p>
         <p className="text-base text-muted-foreground">Po trzecich zajęć już nie ma. Kurs zostaje zamknięty. Ktoś decyduje, że to się nie spina. Wracasz do domu i przez kilka dni nie bardzo wiesz, co ze sobą zrobić. Emocjonalnie to jest dużo. Zderzenie z rzeczywistością przychodzi szybko i bez ostrzeżenia.
           Dla wielu osób to jest moment, który kończy historię zanim zdążyła się naprawdę zacząć. A jednocześnie — paradoksalnie — to bywa jedno z najważniejszych doświadczeń w całym instruktorskim rozwoju.</p>
+
+        
+
         <p className="text-base text-muted-foreground">Młody instruktor ma jedną rzecz, której później już nigdy nie będzie miał w takiej ilości: energię. Świeżą, intensywną, bezwarunkową. Gotowość do poświęcenia wszystkiego. Większość osób na starcie nie cierpi na brak motywacji. Cierpi na jej nadmiar. I właśnie dlatego tak łatwo ją zmarnować.
           Na początku bardzo łatwo założyć, że skoro umiesz tańczyć, to reszta „jakoś się ułoży”. Że promocja to kwestia kilku postów. Że prowadzenie zajęć to w dużej mierze improwizacja. Że grupa sama się zintegruje, bo przecież taniec łączy ludzi.</p>
         <p className="text-base text-muted-foreground">Problem polega na tym, że rynek nie daje przestrzeni na długie uczenie się „na żywo”. Zwłaszcza w dużych miastach. Konkurencja jest ogromna. Kursanci mają wybór. Szkoły nie mogą sobie pozwolić na eksperymenty. Jeśli jesteś związany z dużą szkołą, nikt nie odda Ci grupy tylko po to, żebyś się uczył. Ryzyko jest zbyt duże. Dlatego bardzo wiele osób odpada na samym początku - nie dlatego, że nie mają talentu czy predyspozycji by zostać świetnym instruktorem. Ale dlatego, że nie mieli gdzie bezpiecznie popełniać błędów.</p>
@@ -79,6 +83,44 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
           Na początku warto przyjąć jedno założenie: nie wiesz nic poza tym, jak się tańczy. Nie wiesz, jak prowadzi się grupy. Nie wiesz, jak buduje się wizerunek. Nie wiesz, co sprawia, że ludzie wracają. Nie wiesz, jak negocjuje się sloty godzinowe z właścicielem szkoły, jak integruje się uczestników, jak reaguje się na trudne sytuacje. To nie jest zarzut. To jest punkt startowy.
           Stoisz przed światem otwartych drzwi, ale z opaską na oczach. I właśnie dlatego popełnisz błędy. Dużo błędów. Nikt Cię przed nimi nie uchroni. Jedyną rzeczą, którą możesz zrobić, jest przygotować się na to mentalnie. Nie spalać całej energii na raz. Traktować ten etap jak długą drogę, a nie sprint.
           Bo młodzieńcza energia jest paliwem niepowtarzalnym. Masz ją tylko teraz. I jeśli zużyjesz ją na próby udowodnienia sobie i światu, że jesteś gotowy, zanim faktycznie będziesz, jeśli skoczysz na zbyt głęboką wodę— zabraknie Ci tej energii i motywacji w momencie, w którym najbardziej by się przydała.</p>
+
+        <InlineArticlePromo
+          label="Polecane"
+          ctaLabel="Sprawdź"
+          items={[
+            {
+              title: "Pobierz ebook: Taniec w biznesie",
+              description: "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
+              href: "https://taniecwbiznesie.pl/#ebook",
+              image: "/ebook_cover.webp",
+            },
+            {
+              title: "Badanie rynku szkół tańca",
+              description: "Pomóż zebrać dane i poznaj wnioski z ankiety.",
+              href: "https://taniecwbiznesie.pl/ankiety",
+              image: "/strony-szkol-tanca.webp",
+            },
+            {
+              title: "Chaos w grafiku zajęć?",
+              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
+              href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+              image: "/przewodnik-po-widokach-grafiku-cover.png",
+            },
+            {
+              title: "Baileo dla szkół tańca",
+              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
+              href: "https://baileo.pl/",
+              image: "/logo_icon_baileo_square.png",
+            },
+            {
+              title: "Narzędzia i usługi dla szkół tańca",
+              description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
+              href: "http://localhost:3000/uslugi",
+              image: "/zestaw-narzedzi-dla-szkol.webp",
+            },
+          ]}
+        />
+
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Wysiłek</h2>
         <p className="text-base text-muted-foreground">Jednym z moich największych błędów na początku było to, że nie rozumiałem, po co ludzie w ogóle przychodzą na zajęcia. Wywodzę się z tańca towarzyskiego i naturalnie przenosiłem logikę tańca sportowego na taniec użytkowy. Uczyłem tak, jak sam byłem uczony. Z perspektywy pasji, ambicji, techniki. Z perspektywy swojego świata.
           Zakładałem, że jeśli mnie coś fascynuje, to będzie fascynować wszystkich. Że skoro ja widzę sens w detalach, w pracy nad jakością, w strukturze ruchu, to inni też go zobaczą. To było myślenie tancerza, nie instruktora. I bardzo szybko okazało się, że to nie wystarcza.
@@ -105,6 +147,20 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
           Wiele osób wchodzących do zawodu nie docenia też skali pracy, która dzieje się poza salą. Prowadzenie zajęć jest tylko widoczną częścią. Reszta to przygotowania, rozmowy, integracja grupy, promocja, logistyka. To wszystko składa się na realny czas pracy instruktora. Dlatego myślenie o stawce „za godzinę zajęć” na początku bywa mylące. Doświadczenie kosztuje. Czasem więcej, niż się spodziewasz.
           Z czasem zaczynasz rozumieć, że ten zawód nie polega na szybkim sukcesie. Polega na wytrwaniu. Na uczeniu się mimo porażek. Na zbieraniu doświadczeń, które nie zawsze są przyjemne, ale są potrzebne. I na świadomości, że wiele osób odpada nie dlatego, że się nie nadawały, ale dlatego, że zabrakło im przestrzeni, czasu albo wsparcia.
           Być może właśnie dlatego tak ważna jest empatia wobec początkujących instruktorów. Kiedy następnym razem spotkasz kogoś nieopierzonego po drugiej stronie sali, warto pamiętać, jak wiele wyzwań stoi przed nim. Jak łatwo się potknąć. Jak trudno zbudować coś trwałego bez mapy i bez przewodnika.</p>
+
+        <InlineArticlePromo
+          label="Początek serii"
+          ctaLabel="Zobacz pierwszy artykuł"
+          items={[
+            {
+              title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              description:
+                "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
+              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
+              image: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+            },
+          ]}
+        />
 
         <Link href="/artykuly" className="text-sm font-semibold text-primary">
           ↩ Wróć do listy artykułów
