@@ -29,14 +29,9 @@ type FeedbackFormValues = z.infer<typeof feedbackSchema>;
 
 type FeedbackFormProps = {
   className?: string;
-  formAction?: string;
 };
 
-export function FeedbackForm({
-  className,
-  formAction = process.env.NEXT_PUBLIC_FEEDBACK_FORM_ACTION ??
-    "https://assets.mailerlite.com/jsonp/1997197/forms/174500145975526510/subscribe",
-}: FeedbackFormProps) {
+export function FeedbackForm({ className }: FeedbackFormProps) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const {
@@ -54,33 +49,18 @@ export function FeedbackForm({
 
   const onSubmit = async (values: FeedbackFormValues) => {
     try {
-      if (!formAction) {
-        console.warn("Brak akcji MailerLite / formularza feedbacku");
-        setStatus("success");
-        reset();
-        return;
-      }
-
-      const payload = new FormData();
-      payload.append("fields[name]", values.name);
-      payload.append("fields[email]", values.email);
-      if (values.school) {
-        payload.append("fields[company]", values.school);
-      }
-      payload.append("fields[last_name]", values.role);
-      payload.append("fields[feedback]", values.feedback);
-      payload.append("fields[tag]", "feedback");
-      payload.append("ml-submit", "1");
-      payload.append("anticsrf", "true");
-      if (values.marketing) {
-        payload.append("gdpr[]", "Marketing");
-      }
-
-      await fetch(formAction, {
+      setStatus("idle");
+      const response = await fetch("/api/feedback", {
         method: "POST",
-        body: payload,
-        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
       });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
 
       setStatus("success");
       reset();

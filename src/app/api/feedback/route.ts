@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-type BetaSignupPayload = {
+type FeedbackPayload = {
   name: string;
   email: string;
-  message?: string;
+  school?: string;
+  role: string;
+  feedback: string;
+  marketing?: boolean;
   regulationsAccepted?: boolean;
 };
 
@@ -15,26 +18,35 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Brak konfiguracji wysyłki." }, { status: 500 });
   }
 
-  let payload: BetaSignupPayload;
+  let payload: FeedbackPayload;
   try {
-    payload = (await request.json()) as BetaSignupPayload;
+    payload = (await request.json()) as FeedbackPayload;
   } catch {
     return NextResponse.json({ error: "Nieprawidłowe dane formularza." }, { status: 400 });
   }
 
   const name = payload.name?.trim();
   const email = payload.email?.trim();
-  const message = payload.message?.trim() ?? "";
+  const school = payload.school?.trim() ?? "";
+  const role = payload.role?.trim();
+  const feedback = payload.feedback?.trim();
+  const marketing = Boolean(payload.marketing);
   const regulationsAccepted = Boolean(payload.regulationsAccepted);
 
-  if (!name || !email) {
+  if (!name || !email || !role || !feedback) {
     return NextResponse.json({ error: "Uzupełnij wymagane pola." }, { status: 400 });
   }
   if (!regulationsAccepted) {
     return NextResponse.json({ error: "Wymagana akceptacja regulaminu." }, { status: 400 });
   }
 
-  if (name.length > 200 || email.length > 320 || message.length > 5000) {
+  if (
+    name.length > 80 ||
+    email.length > 320 ||
+    (school && school.length > 120) ||
+    role.length > 80 ||
+    feedback.length > 10000
+  ) {
     return NextResponse.json({ error: "Zbyt długie dane wejściowe." }, { status: 400 });
   }
 
@@ -43,14 +55,20 @@ export async function POST(request: Request) {
       from: "Taniec w biznesie <kontakt@taniecwbiznesie.pl>",
       to: ["kontakt@taniecwbiznesie.pl"],
       replyTo: email,
-      subject: "Payroll beta - zgłoszenie konsultacji",
+      subject: "Feedback - formularz na stronie",
       text: [
-        "Nowe zgłoszenie beta (Payroll):",
+        "Nowy feedback ze strony:",
         "",
-        `Imię i nazwisko: ${name}`,
+        `Imię i nazwisko / pseudonim: ${name}`,
         `Email: ${email}`,
-        message ? `Opis: ${message}` : "Opis: (brak)",
+        school ? `Szkoła: ${school}` : "Szkoła: (brak)",
+        `Rola: ${role}`,
+        "",
+        "Feedback:",
+        feedback,
+        "",
         `Regulamin zaakceptowany: ${regulationsAccepted ? "tak" : "nie"}`,
+        `Zgoda marketingowa: ${marketing ? "tak" : "nie"}`,
       ].join("\n"),
     });
 

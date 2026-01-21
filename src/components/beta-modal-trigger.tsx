@@ -15,16 +15,19 @@ type FormState = {
   name: string;
   email: string;
   message: string;
+  regulationsAccepted: boolean;
 };
 
 export function BetaModalTrigger({ buttonLabel, variant = "default" }: BetaModalTriggerProps) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [consentError, setConsentError] = useState(false);
   const [formData, setFormData] = useState<FormState>({
     name: "",
     email: "",
     message: "",
+    regulationsAccepted: false,
   });
 
   useEffect(() => {
@@ -37,7 +40,8 @@ export function BetaModalTrigger({ buttonLabel, variant = "default" }: BetaModal
   const handleClose = () => {
     setOpen(false);
     setStatus("idle");
-    setFormData({ name: "", email: "", message: "" });
+    setConsentError(false);
+    setFormData({ name: "", email: "", message: "", regulationsAccepted: false });
   };
 
   return (
@@ -57,8 +61,13 @@ export function BetaModalTrigger({ buttonLabel, variant = "default" }: BetaModal
                 className="mt-4 space-y-3"
                 onSubmit={async (event) => {
                   event.preventDefault();
+                  if (!formData.regulationsAccepted) {
+                    setConsentError(true);
+                    return;
+                  }
                   setIsSubmitting(true);
                   setStatus("idle");
+                  setConsentError(false);
                   try {
                     const response = await fetch("/api/beta-signup", {
                       method: "POST",
@@ -97,11 +106,46 @@ export function BetaModalTrigger({ buttonLabel, variant = "default" }: BetaModal
                   value={formData.message}
                   onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                 />
+                <div className="space-y-3 rounded-2xl border border-border/70 bg-muted/20 p-4 text-sm">
+                  <p>
+                    Zapisuję Twój adres zgodnie z{" "}
+                    <a href="/polityka-prywatnosci" className="underline" target="_blank" rel="noreferrer">
+                      Polityką Prywatności
+                    </a>{" "}
+                    oraz{" "}
+                    <a href="/polityka-cookies" className="underline" target="_blank" rel="noreferrer">
+                      Polityką Cookies
+                    </a>
+                    , aby odpowiedzieć na Twoje zapytanie.
+                  </p>
+                  <label className="flex items-start gap-2 text-sm font-medium">
+                    <input
+                      type="checkbox"
+                      className="mt-1"
+                      checked={formData.regulationsAccepted}
+                      onChange={(event) => {
+                        const checked = event.target.checked;
+                        setFormData((prev) => ({ ...prev, regulationsAccepted: checked }));
+                        if (checked) {
+                          setConsentError(false);
+                        }
+                      }}
+                    />
+                    <span>
+                      Potwierdzam, że zapoznałem się z{" "}
+                      <a href="/regulamin" className="underline" target="_blank" rel="noreferrer">
+                        Regulaminem Serwisu
+                      </a>{" "}
+                      i akceptuję jego treść.
+                    </span>
+                  </label>
+                  {consentError && <p className="text-sm text-destructive">Zaakceptuj regulamin.</p>}
+                </div>
                 {status === "success" && (
-                  <p className="text-sm text-emerald-600">Dzi?kuj?! Odezw? si? wkr?tce.</p>
+                  <p className="text-sm text-emerald-600">Dziękuję! Odezwę się wkrótce.</p>
                 )}
                 {status === "error" && (
-                  <p className="text-sm text-destructive">Nie uda?o si? wys?a? zg?oszenia. Spr?buj ponownie.</p>
+                  <p className="text-sm text-destructive">Nie udało się wysłać zgłoszenia. Spróbuj ponownie.</p>
                 )}
                 <div className="flex justify-end gap-3 pt-2">
                   <Button type="button" variant="ghost" onClick={handleClose}>
