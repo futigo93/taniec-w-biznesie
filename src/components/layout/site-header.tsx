@@ -21,17 +21,19 @@ const navLinks = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  if (pathname?.startsWith("/ebook")) {
-    return null;
-  }
+  const isEbook = pathname?.startsWith("/ebook");
 
   useEffect(() => {
+    if (isEbook) return;
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, isEbook]);
+
+  if (isEbook) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
