@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { AnchorLink } from "@/components/ui/anchor-link";
 import { trackEvent } from "@/lib/analytics";
@@ -29,11 +28,13 @@ export function EbookCta({
   primaryVariant = "default",
   secondaryVariant = "outline",
 }: EbookCtaProps) {
-  const searchParams = useSearchParams();
-  const communityAnchor = useMemo(() => {
-    const query = searchParams?.toString();
-    return query ? `/?${query}#zapis` : "/#zapis";
-  }, [searchParams]);
+  const [communityAnchor, setCommunityAnchor] = useState("/#zapis");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const query = window.location.search;
+    setCommunityAnchor(query ? `/${query}#zapis` : "/#zapis");
+  }, []);
 
   const handleDownload = () => {
     trackEvent("ebook_demo_download", { variant, source: "button" });
