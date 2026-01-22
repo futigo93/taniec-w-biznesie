@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-const routes = [
+const staticRoutes = [
   "",
   "/artykuly",
   "/spolecznosc",
@@ -12,12 +12,26 @@ const routes = [
   "/ebook1",
   "/ebook2",
   "/ebook3",
+  "/o-mnie",
+  "/regulamin",
+  "/polityka-prywatnosci",
+  "/polityka-cookies",
+  "/lista-podmiotow-przetwarzajacych",
+  "/ankiety",
+];
+
+const articleRoutes = [
+  "/artykuly/instruktor-tanca-czlowiek-z-misja",
+  "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
+  "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
+  "/artykuly/instruktor-trener-nauczyciel",
+  "/artykuly/tancerz-instruktor-wlasciciel",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((path) => ({
+  return [...staticRoutes, ...articleRoutes].map((path) => ({
     url: `${siteConfig.url}${path}`,
-    priority: path === "" ? 1 : 0.6,
-    changeFrequency: "weekly",
+    priority: path === "" ? 1 : path.startsWith("/artykuly/") ? 0.8 : 0.6,
+    changeFrequency: path === "" ? "weekly" : path.startsWith("/artykuly/") ? "monthly" : "monthly",
   }));
 }
