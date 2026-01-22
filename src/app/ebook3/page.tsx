@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EbookCta } from "@/components/ebook/ebook-cta";
 import { EbookVariantTracker } from "@/components/ebook/ebook-analytics";
-import { trackEvent } from "@/lib/analytics";
+import { EbookCoverLink } from "@/components/ebook/ebook-cover-link";
 
 export const metadata: Metadata = {
   title: "Demo ebooka: Diagnoza chaosu w szkole tańca",
@@ -83,12 +83,7 @@ export default function EbookLandingThree() {
             />
           </div>
           <div className="relative">
-            <a
-              href={demoHref}
-              download
-              className="block"
-              onClick={() => trackEvent("ebook_demo_download", { variant: "ebook3", source: "cover" })}
-            >
+            <EbookCoverLink demoHref={demoHref} variant="ebook3" className="block">
               <div className="mx-auto max-w-sm rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl transition hover:scale-[1.01]">
                 <Image
                   src="/ebook_cover.webp"
@@ -102,7 +97,7 @@ export default function EbookLandingThree() {
                   Demo - Rozdział 1 - PDF
                 </div>
               </div>
-            </a>
+            </EbookCoverLink>
           </div>
         </section>
 
