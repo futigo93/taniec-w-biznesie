@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +20,11 @@ const navLinks = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/ebook")) {
+    return null;
+  }
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

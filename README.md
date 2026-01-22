@@ -24,6 +24,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 All text files in this repo are UTF-8. If you open or process files in scripts, make sure they read/write with UTF-8 (e.g. `Get-Content -Encoding UTF8` in PowerShell, or `read_text(encoding="utf-8")` in Python).
 
+## Docs
+
+- `docs/ebook-landing-ab.md` - test A/B/C dla landingow ebooka, eventy analityczne.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

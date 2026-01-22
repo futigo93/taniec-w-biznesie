@@ -63,27 +63,27 @@ export function CookieConsentBanner() {
       if (window.cookieconsent) {
         window.cookieconsent.initialise(
           {
-          type: "opt-in",
-          revokable: true,
-          palette: {
-            popup: { background: "#2b1e16", text: "#f6efe4" },
-            button: { background: "#d97706", text: "#1a110c" },
-          },
-          theme: "classic",
-          content: {
-            message:
-              "Korzystam z plików cookies do celów technicznych. Potrzebuję Twojej zgody, aby uruchomić analitykę (Google Analytics) i wtyczki społecznościowe.",
-            allow: "Akceptuję analitykę",
-            deny: "Tylko techniczne",
-            link: "Polityka cookies",
-            href: "/polityka-cookies",
-          },
-          onInitialise(status: string) {
-            updateConsent(status === "allow");
-          },
-          onStatusChange(status: string) {
-            updateConsent(status === "allow");
-          },
+            type: "opt-in",
+            revokable: true,
+            palette: {
+              popup: { background: "#2b1e16", text: "#f6efe4" },
+              button: { background: "#d97706", text: "#1a110c" },
+            },
+            theme: "classic",
+            content: {
+              message:
+                "Korzystam z plików cookies do celów technicznych. Potrzebuję Twojej zgody, aby uruchomić analitykę (Google Analytics) i wtyczki społecznościowe.",
+              allow: "Akceptuję analitykę",
+              deny: "Tylko techniczne",
+              link: "Polityka cookies",
+              href: "/polityka-cookies",
+            },
+            onInitialise(status: string) {
+              updateConsent(status === "allow");
+            },
+            onStatusChange(status: string) {
+              updateConsent(status === "allow");
+            },
           },
           (popup) => {
             window.cookieconsentInstance = popup;

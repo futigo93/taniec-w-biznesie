@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, MessageSquareText, Rss } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -16,6 +19,10 @@ const footerLinks = [
 ];
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/ebook")) {
+    return null;
+  }
   const year = new Date().getFullYear();
 
   return (

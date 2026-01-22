@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { LoaderCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const marketingLabel =
   "Wyrażam zgodę na otrzymywanie informacji marketingowych drogą elektroniczną, dotyczących produktów i usług Jakuba Nowaka, w tym ofert komercyjnych oraz informacji o rozwiązaniach wspierających prowadzenie szkół tańca.";
@@ -54,6 +55,7 @@ export function NewsletterForm({
       if (!formAction) {
         console.warn("Brak akcji MailerLite / formularza społeczności");
         setStatus("success");
+        trackEvent("newsletter_submit", { source: "spolecznosc" });
         reset();
         return;
       }
@@ -79,6 +81,7 @@ export function NewsletterForm({
       });
 
       setStatus("success");
+      trackEvent("newsletter_submit", { source: "spolecznosc" });
       reset();
     } catch (error) {
       console.error("Newsletter submission error", error);
