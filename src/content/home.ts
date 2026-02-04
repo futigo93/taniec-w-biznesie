@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Wizerunek instruktora tańca - na co to komu?",
+    description:
+      "W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia.",
+    category: "Blog",
+    readTime: "9 min",
+    slug: "wizerunek-instruktora-tanca-na-co-to-komu",
+    cover: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
+  },
+
+  {
     title: "Instruktor tańca - twardy zad świeżaka",
     description:
       "Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu.",

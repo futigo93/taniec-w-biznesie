@@ -149,15 +149,15 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
           Być może właśnie dlatego tak ważna jest empatia wobec początkujących instruktorów. Kiedy następnym razem spotkasz kogoś nieopierzonego po drugiej stronie sali, warto pamiętać, jak wiele wyzwań stoi przed nim. Jak łatwo się potknąć. Jak trudno zbudować coś trwałego bez mapy i bez przewodnika.</p>
 
         <InlineArticlePromo
-          label="Początek serii"
-          ctaLabel="Zobacz pierwszy artykuł"
+          label="Następny artykuł"
+          ctaLabel="Przejdź dalej"
           items={[
             {
-              title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              title: "Wizerunek instruktora tańca - na co to komu?",
               description:
-                "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
-              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-              image: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+                "W świecie tańca social media stały się wspólnym rynkiem. To punkt wyjścia, ale nie gwarancja marki.",
+              href: "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
+              image: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
             },
           ]}
         />
