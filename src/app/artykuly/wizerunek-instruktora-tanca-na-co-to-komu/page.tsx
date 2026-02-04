@@ -104,7 +104,7 @@ export default function WizerunekInstruktoraArticle() {
         <p className="text-base text-muted-foreground">
           Budowanie marki przez social media to osobne rzemiosło. Czasochłonne,
           wymagające konsekwencji, odporności psychicznej i ciągłego testowania.
-          To praca bliska pracy influencera. Jeśli ktoś potrafi to robić —
+          To praca bliska pracy influencera. Jeśli ktoś potrafi to robić -
           świetnie. To potężne narzędzie. Ale trzeba mieć świadomość, że to
           kolejny etat. I że efekty rzadko przychodzą szybko.
         </p>
@@ -125,7 +125,7 @@ export default function WizerunekInstruktoraArticle() {
           mediach nie różniły się od setek innych instruktorów. Zwykłe nagrania
           po zajęciach, po warsztatach, przeciętne zasięgi. Z czasem widać było
           u nich moment szukania własnego języka, eksperymentowania z formą, aż
-          w końcu — wyrobienie rozpoznawalnego stylu.
+          w końcu - wyrobienie rozpoznawalnego stylu.
         </p>
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/60">
           <div className="relative aspect-[3/2] w-full">
@@ -226,7 +226,8 @@ export default function WizerunekInstruktoraArticle() {
           items={[
             {
               title: "Pobierz ebook: Taniec w biznesie",
-              description: "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
+              description:
+                "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
               href: "https://taniecwbiznesie.pl/#ebook",
               image: "/ebook_cover.webp",
             },
@@ -238,13 +239,15 @@ export default function WizerunekInstruktoraArticle() {
             },
             {
               title: "Chaos w grafiku zajęć?",
-              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
+              description:
+                "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
               href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
               image: "/przewodnik-po-widokach-grafiku-cover.png",
             },
             {
               title: "Baileo dla szkół tańca",
-              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
+              description:
+                "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
               href: "https://baileo.pl/",
               image: "/logo_icon_baileo_square.png",
             },
@@ -271,9 +274,9 @@ export default function WizerunekInstruktoraArticle() {
           patrzy na coś innego.
         </p>
         <p className="text-base text-muted-foreground">
-          Dla właściciela szkoły marka instruktora to przede wszystkim ryzyko
-          operacyjne. Pytanie nie brzmi: „czy on jest dobrym tancerzem?”.
-          Pytanie brzmi:
+          Dla właściciela szkoły marka instruktora służy szacowaniu ryzyka
+          operacyjnego. Pytanie nie brzmi: „czy on jest dobrym tancerzem?”, ani
+          nawet "czy jest dobrym instruktorem?". Pytanie brzmi:
         </p>
         <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
           <li>czy grupa ruszy?</li>
@@ -299,7 +302,7 @@ export default function WizerunekInstruktoraArticle() {
         <p className="text-base text-muted-foreground">
           Bardzo częsty błąd to instruktor, który buduje atrakcyjny wizerunek
           dla kursantów, ale jest postrzegany jako nieprzewidywalny przez
-          właścicieli. Albo odwrotnie — ktoś, kto jest „bezpieczny” operacyjnie,
+          właścicieli. Albo odwrotnie - ktoś, kto jest „bezpieczny” operacyjnie,
           ale kompletnie nie rezonuje z grupami.
         </p>
         <p className="text-base text-muted-foreground">
@@ -310,7 +313,7 @@ export default function WizerunekInstruktoraArticle() {
           Przez wiele lat pracy z grupami wyrobiłem sobie bardzo konkretny
           wizerunek instruktora. Uczyłem metodycznie. Miałem strukturę. Program.
           Zajęcia miały rytm i porządek. Kursanci wiedzieli, czego się
-          spodziewać — nie tylko w sensie materiału, ale też atmosfery.
+          spodziewać - nie tylko w sensie materiału, ale też atmosfery.
           Wiedzieli, że nikt ich nie wystawi na próbę ponad ich możliwości. Że
           nie będzie „pokazówki” dla samej pokazówki
         </p>
@@ -324,14 +327,14 @@ export default function WizerunekInstruktoraArticle() {
           Trafiali do mnie ludzie, którzy zostawali na długo. Grupy trwały przez
           kilka sezonów bez przerw. Były liczne, stabilne, ale nie masowe.
           Dokładnie takie, jakie chciałem prowadzić. I były też wygodne dla
-          właścicieli — bo stabilna grupa jest często cenniejsza niż ta, która
+          właścicieli - bo stabilna grupa jest często cenniejsza niż ta, która
           robi chwilowe piki, ale wymaga ciągłej uwagi, promocji i gaszenia
           problemów.
         </p>
         <p className="text-base text-muted-foreground">
           Oczywiście, zanim to się ułożyło, popełniłem mnóstwo błędów. Spaliłem
           grupy. Prowadziłem zajęcia, na które nie byłem gotowy. Widziałem też
-          instruktorów — często świetnych tancerzy — którym przez długie sezony
+          instruktorów - często świetnych tancerzy - którym przez długie sezony
           ciągnęły się łatki „nadaje się tylko na podstawy”. Nie dlatego, że
           brakowało im umiejętności, ale dlatego, że pierwsze próby
           poprowadzenia zaawansowanych zajęć były chaotyczne. A do odwrócenia
@@ -358,7 +361,7 @@ export default function WizerunekInstruktoraArticle() {
           piaskownice. Miejsca, w których można się uczyć bez niszczenia relacji
           i reputacji. Małe grupy. Mniejsze szkoły. Domy kultury. Format, który
           nie krzyczy, ale daje przestrzeń na iterację. Bo to właśnie iteracja
-          buduje realne kompetencje — i realną markę.
+          buduje realne kompetencje - i realną markę.
         </p>
         <p className="text-base text-muted-foreground">
           I tu wracamy do punktu wyjścia. Widoczność bez treści jest tylko
@@ -368,14 +371,13 @@ export default function WizerunekInstruktoraArticle() {
           Nigdy nie zastąpią.
         </p>
 
-        
-
         <InlineArticlePromo
           label="Początek serii"
           ctaLabel="Zobacz pierwszy artykuł"
           items={[
             {
-              title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              title:
+                "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
               description:
                 "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
               href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
@@ -383,7 +385,7 @@ export default function WizerunekInstruktoraArticle() {
             },
           ]}
         />
-<Link href="/artykuly" className="text-sm font-semibold text-primary">
+        <Link href="/artykuly" className="text-sm font-semibold text-primary">
           ← Wróć do listy artykułów
         </Link>
       </article>
