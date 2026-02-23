@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { AnchorLink } from "@/components/ui/anchor-link";
 import { trackEvent } from "@/lib/analytics";
@@ -28,13 +27,7 @@ export function EbookCta({
   primaryVariant = "default",
   secondaryVariant = "outline",
 }: EbookCtaProps) {
-  const [communityAnchor, setCommunityAnchor] = useState("/#zapis");
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const query = window.location.search;
-    setCommunityAnchor(query ? `/${query}#zapis` : "/#zapis");
-  }, []);
+  const communityAnchor = "/#zapis";
 
   const handleDownload = () => {
     trackEvent("ebook_demo_download", { variant, source: "button" });

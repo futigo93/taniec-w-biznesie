@@ -80,7 +80,7 @@ export default function EbookLandingOne() {
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c89c]">Dla kogo jeszcze</p>
                 <p className="mt-3 text-sm text-white/85">
                   Dla kursantów, którzy chcą zajrzeć za kulisy prowadzenia szkoły. Zrozumiesz, dlaczego niektóre decyzje
-                  "od środka" wyglądają inaczej niż na sali.
+                  „od środka” wyglądają inaczej niż na sali.
                 </p>
               </div>
             </div>

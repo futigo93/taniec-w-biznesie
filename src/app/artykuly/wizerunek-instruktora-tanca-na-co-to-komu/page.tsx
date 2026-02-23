@@ -276,7 +276,7 @@ export default function WizerunekInstruktoraArticle() {
         <p className="text-base text-muted-foreground">
           Dla właściciela szkoły marka instruktora służy szacowaniu ryzyka
           operacyjnego. Pytanie nie brzmi: „czy on jest dobrym tancerzem?”, ani
-          nawet "czy jest dobrym instruktorem?". Pytanie brzmi:
+          nawet „czy jest dobrym instruktorem?”. Pytanie brzmi:
         </p>
         <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
           <li>czy grupa ruszy?</li>

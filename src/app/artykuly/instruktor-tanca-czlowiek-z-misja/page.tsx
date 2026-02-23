@@ -204,7 +204,7 @@ export default function InstruktorMisjaArticle() {
         <p className="text-base text-muted-foreground">
           Kiedy ciężar przesuwa się w stronę autoprezentacji, narzędzie przestaje służyć kursantom, a zaczyna obsługiwać ego. Jeśli
           instruktor swoją karierę buduje na własnym wizerunku a nie wartości, którą wnosi do środowiska, jego sukces jest ulotny, bo nie
-          zostawia po sobie nic wartościowego, co może być przekazywane "z tanecznego pokolenia na pokolenie".
+          zostawia po sobie nic wartościowego, co może być przekazywane „z tanecznego pokolenia na pokolenie”.
         </p>
         <p className="text-base text-muted-foreground">
           Kolejny trudnym elementem pracy instruktora jest weryfikacja poziomu uczestników. Grupa funkcjonuje jako całość. Jej tempo,
