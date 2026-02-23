@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Tam, gdzie nam zależy. O pracy z głową w tańcu socialowym",
+    description:
+      "Taniec socialowy to nie zawody. Ale presja, porównania i wewnętrzny krytyk działają tu tak samo jak w sporcie. Magda Kochmańska z Tanecznika wyjaśnia czym naprawdę jest trening mentalny w tańcu – i dlaczego technika nie wystarczy, jeśli głowa nie rozwija się razem z nią.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "tam-gdzie-nam-zalezy",
+    cover: "/Tam-gdzie-nam-zalezy.webp",
+  },
+
+  {
     title: "Wizerunek instruktora tańca - na co to komu?",
     description:
       "W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia.",

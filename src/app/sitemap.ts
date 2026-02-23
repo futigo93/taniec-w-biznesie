@@ -25,7 +25,9 @@ const articleRoutes = [
   "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
   "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
   "/artykuly/instruktor-trener-nauczyciel",
+  "/artykuly/tam-gdzie-nam-zalezy",
   "/artykuly/tancerz-instruktor-wlasciciel",
+  "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
