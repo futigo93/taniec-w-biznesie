@@ -48,7 +48,14 @@ export default function TamGdzieNamZalezyArticle() {
             description={articleDescription}
           />
           <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
-            <span>Magda Kochmańska - Tanecznik</span>
+            <Link
+              href="https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie"
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-white/40 underline-offset-4 hover:decoration-white/80"
+            >
+              Magda Kochmańska - Tanecznik
+            </Link>
             <span>•</span>
             <span>23 lutego 2026</span>
             <span>•</span>
@@ -137,28 +144,10 @@ export default function TamGdzieNamZalezyArticle() {
               image: "/ebook_cover.webp",
             },
             {
-              title: "Badanie rynku szkół tańca",
-              description: "Pomóż zebrać dane i poznaj wnioski z ankiety.",
-              href: "https://taniecwbiznesie.pl/ankiety",
-              image: "/strony-szkol-tanca.webp",
-            },
-            {
-              title: "Chaos w grafiku zajęć?",
-              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
-              href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
-              image: "/przewodnik-po-widokach-grafiku-cover.png",
-            },
-            {
-              title: "Baileo dla szkół tańca",
-              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
-              href: "https://baileo.pl/",
-              image: "/logo_icon_baileo_square.png",
-            },
-            {
-              title: "Narzędzia i usługi dla szkół tańca",
-              description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "https://taniecwbiznesie.pl/uslugi",
-              image: "/zestaw-narzedzi-dla-szkol.webp",
+              title: "Seria artykułów o instruktorach tańca",
+              description: "Zajrzyj w świat ukryty pod powierzchnią.",
+              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
+              image: "/instruktor-tanca-tego-nie-zrozumiesz-insta.webp",
             },
           ]}
         />
@@ -215,14 +204,14 @@ export default function TamGdzieNamZalezyArticle() {
         </p>
 
         <InlineArticlePromo
-          label="Polecane dalej"
-          ctaLabel="Czytaj"
+          label="Polecane"
+          ctaLabel="Sprawdź"
           items={[
             {
-              title: "Wizerunek instruktora tańca - na co to komu?",
-              description: "Widoczność to dopiero początek. Sprawdź, jak budować markę instruktora świadomie.",
-              href: "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
-              image: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
+              title: "Workbook - Trwała pewność siebie na parkiecie",
+              description: "Nie czekaj na odwagę - zbuduj ją krok po kroku!",
+              href: "https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie",
+              image: "/twala-pewnosc-siebie.webp",
             },
           ]}
         />
