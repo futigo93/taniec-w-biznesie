@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/instruktor-tanca-czlowiek-z-misja",
     images: [
       {
-        url: "/instruktor-tanca-czlowiek-z-misja-fb.webp",
+        url: "/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp",
         width: 1200,
         height: 630,
         alt: title,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/instruktor-tanca-czlowiek-z-misja-fb.webp"],
+    images: ["/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp"],
   },
 };
 
@@ -51,7 +51,7 @@ export default function InstruktorMisjaArticle() {
           <FacebookWidgets path="/artykuly/instruktor-tanca-czlowiek-z-misja" className="mt-5" />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/instruktor-tanca-czlowiek-z-misja-fb.webp"
+              src="/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp"
               alt={title}
               width={800}
               height={420}
@@ -241,7 +241,7 @@ export default function InstruktorMisjaArticle() {
               description:
                 "Bycie świeżym instruktorem to zderzenie z rzeczywistością, ogromna energia i szybkie lekcje, które zostają na lata.",
               href: "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
-              image: "/instruktor-tanca-twardy-zad.webp",
+              image: "/artykuly/okladki/instruktor-tanca-twardy-zad.webp",
             },
           ]}
         />

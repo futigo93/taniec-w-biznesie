@@ -56,7 +56,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Dla tancerzy",
     readTime: "5 min",
     slug: "tam-gdzie-nam-zalezy",
-    cover: "/Tam-gdzie-nam-zalezy.webp",
+    cover: "/artykuly/okladki/Tam-gdzie-nam-zalezy.webp",
   },
 
   {
@@ -66,7 +66,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Blog",
     readTime: "9 min",
     slug: "wizerunek-instruktora-tanca-na-co-to-komu",
-    cover: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
+    cover: "/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
   },
 
   {
@@ -76,7 +76,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Blog",
     readTime: "10 min",
     slug: "instruktor-tanca-twardy-zad-swiezaka",
-    cover: "/instruktor-tanca-twardy-zad.webp",
+    cover: "/artykuly/okladki/instruktor-tanca-twardy-zad.webp",
   },
 
   {
@@ -86,7 +86,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Blog",
     readTime: "10 min",
     slug: "instruktor-tanca-czlowiek-z-misja",
-    cover: "/instruktor-tanca-czlowiek-z-misja-fb.webp",
+    cover: "/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp",
   },
   {
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
@@ -95,7 +95,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Blog",
     readTime: "7 min",
     slug: "instruktor-tanca-tego-nie-zrozumiesz",
-    cover: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+    cover: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
   },
 
   {
@@ -105,7 +105,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Blog",
     readTime: "5 min",
     slug: "tancerz-instruktor-wlasciciel",
-    cover: "/tancerz-instruktor-wlasciciel.png",
+    cover: "/artykuly/okladki/tancerz-instruktor-wlasciciel.png",
   },
   {
     title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
@@ -114,7 +114,7 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Strategia",
     readTime: "5 min",
     slug: "instruktor-trener-nauczyciel",
-    cover: "/nomenklatura_cover.webp",
+    cover: "/artykuly/okladki/nomenklatura_cover.webp",
   },
   {
     title: "Przewodnik po widokach grafiku: dopasuj prezentację zajęć do swojej szkoły tańca",

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/instruktor-trener-nauczyciel",
     images: [
       {
-        url: "/nomenklatura_cover.webp",
+        url: "/artykuly/okladki/nomenklatura_cover.webp",
         width: 1200,
         height: 630,
         alt: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
     description:
       "Dlaczego nazewnictwo w szkołach tańca nigdy nie jest neutralne i jakie obietnice składa klientom.",
-    images: ["/nomenklatura_cover.webp"],
+    images: ["/artykuly/okladki/nomenklatura_cover.webp"],
   },
 };
 
@@ -56,7 +56,7 @@ export default function NomenklaturaArticle() {
           />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/nomenklatura_cover.webp"
+              src="/artykuly/okladki/nomenklatura_cover.webp"
               alt="Instruktor, trener, nauczyciel – okładka"
               width={800}
               height={420}

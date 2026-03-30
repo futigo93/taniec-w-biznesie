@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
     images: [
       {
-        url: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
+        url: "/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
         width: 1200,
         height: 630,
         alt: "Wizerunek instruktora tańca - na co to komu?",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Wizerunek instruktora tańca - na co to komu?",
     description:
       "W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia.",
-    images: ["/Wizerunek-instruktora-tanca-na-co-to-komu.webp"],
+    images: ["/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp"],
   },
 };
 
@@ -59,7 +59,7 @@ export default function WizerunekInstruktoraArticle() {
           />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/Wizerunek-instruktora-tanca-na-co-to-komu.webp"
+              src="/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp"
               alt="Wizerunek instruktora tańca - na co to komu?"
               width={800}
               height={420}
@@ -130,7 +130,7 @@ export default function WizerunekInstruktoraArticle() {
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/60">
           <div className="relative aspect-[3/2] w-full">
             <Image
-              src="/Dorota-i-Piotr-transformacja.webp"
+              src="/artykuly/inline/Dorota-i-Piotr-transformacja.webp"
               alt="Transformacja rolek i zasięgów Doroty i Piotra"
               fill
               className="object-contain"
@@ -381,7 +381,7 @@ export default function WizerunekInstruktoraArticle() {
               description:
                 "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
               href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-              image: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+              image: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
             },
           ]}
         />

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/tancerz-instruktor-wlasciciel",
     images: [
       {
-        url: "/tancerz-instruktor-wlasciciel.png",
+        url: "/artykuly/okladki/tancerz-instruktor-wlasciciel.png",
         width: 1200,
         height: 630,
         alt: "Tancerz ≠ instruktor ≠ właściciel",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Tancerz ≠ instruktor ≠ właściciel",
     description:
       "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
-    images: ["/tancerz-instruktor-wlasciciel.png"],
+    images: ["/artykuly/okladki/tancerz-instruktor-wlasciciel.png"],
   },
 };
 
@@ -56,7 +56,7 @@ export default function TancerzInstruktorWlascicielArticle() {
           />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/tancerz-instruktor-wlasciciel.png"
+              src="/artykuly/okladki/tancerz-instruktor-wlasciciel.png"
               alt="Tancerz, instruktor, właściciel - okładka"
               width={800}
               height={420}

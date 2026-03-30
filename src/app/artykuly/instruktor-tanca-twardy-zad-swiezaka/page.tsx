@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/instruktor-tanca-twardy-zad-swiezaka",
     images: [
       {
-        url: "/instruktor-tanca-twardy-zad.webp",
+        url: "/artykuly/okladki/instruktor-tanca-twardy-zad.webp",
         width: 1200,
         height: 630,
         alt: "Istruktor tańca - twardy zad świeżaka",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Istruktor tańca - twardy zad świeżaka",
     description:
       "Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu.",
-    images: ["/instruktor-tanca-twardy-zad.webp"],
+    images: ["/artykuly/okladki/instruktor-tanca-twardy-zad.webp"],
   },
 };
 
@@ -54,7 +54,7 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
           <FacebookWidgets path="/artykuly/instruktor-tanca-twardy-zad-swiezaka" className="mt-5" />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/instruktor-tanca-twardy-zad.webp"
+              src="/artykuly/okladki/instruktor-tanca-twardy-zad.webp"
               alt="Instruktor tańca - twardy zad świeżaka"
               width={800}
               height={420}
@@ -157,7 +157,7 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
               description:
                 "W świecie tańca social media stały się wspólnym rynkiem. To punkt wyjścia, ale nie gwarancja marki.",
               href: "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
-              image: "/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
+              image: "/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
             },
           ]}
         />

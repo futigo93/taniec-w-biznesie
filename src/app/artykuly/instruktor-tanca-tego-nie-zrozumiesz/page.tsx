@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
     images: [
       {
-        url: "/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+        url: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
         width: 1200,
         height: 630,
         alt: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
       "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
-    images: ["/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"],
+    images: ["/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"],
   },
 };
 
@@ -54,7 +54,7 @@ export default function InstruktorTancaArticle() {
           <FacebookWidgets path="/artykuly/instruktor-tanca-tego-nie-zrozumiesz" className="mt-5" />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"
+              src="/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"
               alt="Instruktor tańca - tego nie zrozumiesz"
               width={800}
               height={420}
@@ -287,7 +287,7 @@ export default function InstruktorTancaArticle() {
               description:
                 "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób.",
               href: "/artykuly/instruktor-tanca-czlowiek-z-misja",
-              image: "/instruktor-tanca-czlowiek-z-misja-fb.webp",
+              image: "/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp",
             },
           ]}
         />

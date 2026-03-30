@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://taniecwbiznesie.pl/artykuly/tam-gdzie-nam-zalezy",
     images: [
       {
-        url: "/Tam-gdzie-nam-zalezy.webp",
+        url: "/artykuly/okladki/Tam-gdzie-nam-zalezy.webp",
         width: 1200,
         height: 630,
         alt: articleTitle,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: articleTitle,
     description: articleDescription,
-    images: ["/Tam-gdzie-nam-zalezy.webp"],
+    images: ["/artykuly/okladki/Tam-gdzie-nam-zalezy.webp"],
   },
 };
 
@@ -64,7 +64,7 @@ export default function TamGdzieNamZalezyArticle() {
           <FacebookWidgets path="/artykuly/tam-gdzie-nam-zalezy" className="mt-5" />
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
             <Image
-              src="/Tam-gdzie-nam-zalezy.webp"
+              src="/artykuly/okladki/Tam-gdzie-nam-zalezy.webp"
               alt={articleTitle}
               width={800}
               height={420}
@@ -147,7 +147,7 @@ export default function TamGdzieNamZalezyArticle() {
               title: "Seria artykułów o instruktorach tańca",
               description: "Zajrzyj w świat ukryty pod powierzchnią.",
               href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-              image: "/instruktor-tanca-tego-nie-zrozumiesz-insta.webp",
+              image: "/artykuly/inline/instruktor-tanca-tego-nie-zrozumiesz-insta.webp",
             },
           ]}
         />
@@ -211,7 +211,7 @@ export default function TamGdzieNamZalezyArticle() {
               title: "Workbook - Trwała pewność siebie na parkiecie",
               description: "Nie czekaj na odwagę - zbuduj ją krok po kroku!",
               href: "https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie",
-              image: "/twala-pewnosc-siebie.webp",
+              image: "/artykuly/inline/twala-pewnosc-siebie.webp",
             },
           ]}
         />
