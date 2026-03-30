@@ -198,7 +198,7 @@ export default function TamGdzieNamZalezyArticle() {
             rel="noreferrer"
             className="font-semibold text-primary underline decoration-primary/60 underline-offset-4"
           >
-            Promocyjna cena tylko do końca lutego - zobacz workbook
+            Zobacz workbook
           </Link>
           .
         </p>

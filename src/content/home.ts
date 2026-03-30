@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Po co tancerzowi cele?",
+    description:
+      "I nagle taniec zaczyna być częścią naszego życia. Jeździmy na warsztaty, zostajemy dłużej po zajęciach, wracamy do domu zmęczeni, ale szczęśliwi. Tańczymy coraz więcej. I przez długi czas to wystarcza. Wszystko jest nowe i ekscytujące, każdy taniec uczy nas czegoś nowego. Już sam fakt bycia na parkiecie daje radość. Aż w pewnym momencie coś się zmienia. Nie od razu, raczej po cichu.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "po-co-tancerzowi-cele",
+    cover: "/artykuly/okladki/po_co_tancerzowi_cele.webp",
+  },
+
+  {
     title: "Tam, gdzie nam zależy. O pracy z głową w tańcu socialowym",
     description:
       "Taniec socialowy to nie zawody. Ale presja, porównania i wewnętrzny krytyk działają tu tak samo jak w sporcie. Magda Kochmańska z Tanecznika wyjaśnia czym naprawdę jest trening mentalny w tańcu – i dlaczego technika nie wystarczy, jeśli głowa nie rozwija się razem z nią.",
