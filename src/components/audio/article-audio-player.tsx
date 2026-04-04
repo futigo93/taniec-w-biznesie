@@ -18,6 +18,21 @@ const formatTime = (seconds: number) => {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 };
 
+const resolveDuration = (audio: HTMLAudioElement) => {
+  if (Number.isFinite(audio.duration) && audio.duration > 0) {
+    return audio.duration;
+  }
+
+  if (audio.seekable.length > 0) {
+    const seekableEnd = audio.seekable.end(audio.seekable.length - 1);
+    if (Number.isFinite(seekableEnd) && seekableEnd > 0) {
+      return seekableEnd;
+    }
+  }
+
+  return 0;
+};
+
 export function ArticleAudioPlayer({
   src,
   title = "Ten artykuł jest dostępny także w wersji audio",
@@ -67,14 +82,30 @@ export function ArticleAudioPlayer({
     setVolume(value);
   };
 
+  const syncDuration = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    setDuration(resolveDuration(audio));
+  };
+
+  const timelineMax = duration > 0 ? duration : Math.max(currentTime, 0);
+
   return (
     <div className="rounded-3xl border border-primary/45 bg-gradient-to-br from-primary/18 via-card to-card p-5 shadow-lg shadow-primary/10">
       <audio
         ref={audioRef}
         preload="metadata"
         src={src}
-        onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)}
-        onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+        onLoadedMetadata={syncDuration}
+        onDurationChange={syncDuration}
+        onCanPlay={syncDuration}
+        onProgress={syncDuration}
+        onTimeUpdate={(event) => {
+          setCurrentTime(event.currentTarget.currentTime);
+          if (!duration) {
+            setDuration(resolveDuration(event.currentTarget));
+          }
+        }}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onEnded={() => setIsPlaying(false)}
@@ -102,9 +133,9 @@ export function ArticleAudioPlayer({
               <input
                 type="range"
                 min={0}
-                max={duration || 0}
+                max={timelineMax}
                 step={0.1}
-                value={Math.min(currentTime, duration || 0)}
+                value={Math.min(currentTime, timelineMax)}
                 onChange={(event) => handleSeek(Number(event.target.value))}
                 className="h-2 w-full cursor-pointer accent-primary"
                 aria-label="Postęp odtwarzania"
