@@ -5,6 +5,7 @@ import { Lightbulb } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { FacebookWidgets } from "@/components/social/facebook-widgets";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
+import { ArticleAudioPlayer } from "@/components/audio/article-audio-player";
 
 const articleTitle = "15 lat doświadczenia instruktora w 200 zdaniach";
 const articleDescription =
@@ -65,6 +66,11 @@ export default function DoswiadczenieInstruktoraArticle() {
             />
           </div>
         </div>
+
+        <ArticleAudioPlayer
+          src="https://hscychmgsmmrfyzt.public.blob.vercel-storage.com/audio-articles/15-lat-dowiadczenia-audio.mp3"
+          description="Odtwórz wersję audio tego tekstu bez opuszczania strony."
+        />
 
         <p className="text-base text-muted-foreground">
           Kiedy zaczynasz uczyć, bardzo łatwo jest patrzeć na swoją pracę w najprostszy możliwy sposób. Masz grupę,
