@@ -42,7 +42,7 @@ export default function InstruktorMisjaArticle() {
     <div className="bg-background py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
         <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
-          <SectionHeading eyebrow="Blog" title={title} description={description} />
+          <SectionHeading eyebrow="Dla instruktorów" title={title} description={description} />
           <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
             <span>Jakub Nowak</span>
             <span>•</span>

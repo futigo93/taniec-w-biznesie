@@ -42,7 +42,7 @@ export default function InstruktorTancaArticle() {
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
         <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
           <SectionHeading
-            eyebrow="Blog"
+            eyebrow="Dla instruktorów"
             title="Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)"
             description="Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji."
           />

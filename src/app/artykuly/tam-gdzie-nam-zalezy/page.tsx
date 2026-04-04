@@ -187,22 +187,6 @@ export default function TamGdzieNamZalezyArticle() {
         <p className="text-base text-muted-foreground">
           Bo odwaga w tańcu nie polega na braku stresu. Polega na tym, że mimo stresu robisz krok.
         </p>
-        <p className="text-base text-muted-foreground">
-          Jeśli czujesz, że chcesz popracować nad trwałą pewnością siebie na parkiecie, pracą z celami i radzeniem
-          sobie z presją, zajrzyj do Workbooka „Trwała pewność siebie na parkiecie”.
-        </p>
-        <p className="text-base text-muted-foreground">
-          <Link
-            href="https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-primary underline decoration-primary/60 underline-offset-4"
-          >
-            Zobacz workbook
-          </Link>
-          .
-        </p>
-
         <InlineArticlePromo
           label="Polecane"
           ctaLabel="Sprawdź"

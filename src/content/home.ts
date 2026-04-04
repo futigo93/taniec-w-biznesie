@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "15 lat doświadczenia instruktora w 200 zdaniach",
+    description:
+      "Oczekiwania warto rozwiewać możliwie szybko, ale spokojnie. Nie terapią szokową, nie brutalnym rozbijaniem cudzych wyobrażeń, tylko komunikacją. Trzeba tłumaczyć, co tu właściwie robimy, czym jest dany styl, na czym polega proces, jak działa grupa, szkoła, organizacja zajęć, partnerowanie, savoir-vivre, czego można się spodziewać, a czego nie. Początkujący potrafią mieć naprawdę wymyślne wyobrażenia. I dopiero kiedy te wyobrażenia zaczynają się uspokajać, można dokopać się do prawdziwych potrzeb.",
+    category: "Dla instruktorów",
+    readTime: "12 min",
+    slug: "15-lat-doswiadczenia-instruktora-w-200-zdaniach",
+    cover: "/artykuly/okladki/15-lat-doswiadczenia.webp",
+  },
+
+  {
     title: "Po co tancerzowi cele?",
     description:
       "I nagle taniec zaczyna być częścią naszego życia. Jeździmy na warsztaty, zostajemy dłużej po zajęciach, wracamy do domu zmęczeni, ale szczęśliwi. Tańczymy coraz więcej. I przez długi czas to wystarcza. Wszystko jest nowe i ekscytujące, każdy taniec uczy nas czegoś nowego. Już sam fakt bycia na parkiecie daje radość. Aż w pewnym momencie coś się zmienia. Nie od razu, raczej po cichu.",
@@ -73,7 +83,7 @@ export const articlePreviews: ArticlePreview[] = [
     title: "Wizerunek instruktora tańca - na co to komu?",
     description:
       "W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia.",
-    category: "Blog",
+    category: "Dla instruktorów",
     readTime: "9 min",
     slug: "wizerunek-instruktora-tanca-na-co-to-komu",
     cover: "/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
@@ -83,7 +93,7 @@ export const articlePreviews: ArticlePreview[] = [
     title: "Instruktor tańca - twardy zad świeżaka",
     description:
       "Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu.",
-    category: "Blog",
+    category: "Dla instruktorów",
     readTime: "10 min",
     slug: "instruktor-tanca-twardy-zad-swiezaka",
     cover: "/artykuly/okladki/instruktor-tanca-twardy-zad.webp",
@@ -93,7 +103,7 @@ export const articlePreviews: ArticlePreview[] = [
     title: "Instruktor tańca - to człowiek z misją (zazwyczaj)",
     description:
       "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób. Można normalizować zdrowy ruch, akceptację ciała, szacunek do granic, partnerskie relacje. Można też wzmacniać napięcia, budować fałszywe wyobrażenia, utrwalać stereotypy.",
-    category: "Blog",
+    category: "Dla instruktorów",
     readTime: "10 min",
     slug: "instruktor-tanca-czlowiek-z-misja",
     cover: "/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp",

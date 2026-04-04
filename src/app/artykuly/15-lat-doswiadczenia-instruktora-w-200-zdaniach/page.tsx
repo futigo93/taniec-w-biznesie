@@ -1,0 +1,240 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { SectionHeading } from "@/components/section-heading";
+import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
+
+const articleTitle = "15 lat doświadczenia instruktora w 200 zdaniach";
+const articleDescription =
+  "Oczekiwania warto rozwiewać możliwie szybko, ale spokojnie. Nie terapią szokową, nie brutalnym rozbijaniem cudzych wyobrażeń, tylko komunikacją. Trzeba tłumaczyć, co tu właściwie robimy, czym jest dany styl, na czym polega proces, jak działa grupa, szkoła, organizacja zajęć, partnerowanie, savoir-vivre, czego można się spodziewać, a czego nie. Początkujący potrafią mieć naprawdę wymyślne wyobrażenia. I dopiero kiedy te wyobrażenia zaczynają się uspokajać, można dokopać się do prawdziwych potrzeb.";
+
+export const metadata: Metadata = {
+  title: articleTitle,
+  description: articleDescription,
+  alternates: {
+    canonical: "/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach",
+  },
+  openGraph: {
+    title: articleTitle,
+    description: articleDescription,
+    type: "article",
+    url: "https://taniecwbiznesie.pl/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach",
+    images: [
+      {
+        url: "/artykuly/okladki/15-lat-doswiadczenia.webp",
+        width: 1200,
+        height: 630,
+        alt: articleTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: articleTitle,
+    description: articleDescription,
+    images: ["/artykuly/okladki/15-lat-doswiadczenia.webp"],
+  },
+};
+
+export default function DoswiadczenieInstruktoraArticle() {
+  return (
+    <div className="bg-background py-12">
+      <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
+        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
+          <SectionHeading eyebrow="Dla instruktorów" title={articleTitle} description={articleDescription} />
+          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
+            <Link href="/o-mnie" className="underline decoration-white/40 underline-offset-4 hover:decoration-white/80">
+              Jakub Nowak
+            </Link>
+            <span>•</span>
+            <span>4 kwietnia 2026</span>
+            <span>•</span>
+            <span>12 min</span>
+          </div>
+          <FacebookWidgets path="/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach" className="mt-5" />
+          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+            <Image
+              src="/artykuly/okladki/15-lat-doswiadczenia.webp"
+              alt={articleTitle}
+              width={800}
+              height={420}
+              className="w-full rounded-xl object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        <p className="text-base text-muted-foreground">
+          Kiedy zaczynasz uczyć, bardzo łatwo jest patrzeć na swoją pracę w najprostszy możliwy sposób. Masz grupę,
+          masz salę, masz materiał. Wchodzisz, prowadzisz zajęcia, wychodzisz. Na początku wydaje się, że właśnie na
+          tym polega cały sens tego zawodu: dobrze uczyć tańca.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Dopiero po czasie zaczyna docierać, że to tylko fasada. Instruktor nie pracuje wyłącznie z materiałem,
+          figurami i techniką. Pracuje z ludźmi, ich wyobrażeniami, potrzebami, emocjami i z całym systemem zależności,
+          którego z początku często nawet nie widać.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Instruktor działa między kilkoma światami</h2>
+        <p className="text-base text-muted-foreground">
+          Bardzo łatwo myśleć o tej pracy jak o relacji między instruktorem a kursantami. To oczywiście najważniejszy i
+          najbardziej widoczny wymiar tej roli, ale nie jedyny. Instruktor funkcjonuje jednocześnie pomiędzy kilkoma
+          grupami interesariuszy, z których każda ma wobec niego inne oczekiwania.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Są kursanci, ale jest też właściciel szkoły, recepcja, inni instruktorzy i wreszcie on sam, ze swoją energią,
+          motywacją i ograniczeniami. Jeśli ktoś tego nie rozumie, bardzo szybko zaczyna się frustrować, bo wydaje mu
+          się, że wystarczy dobrze uczyć albo nawet tylko dobrze tańczyć, a reszta sama się ułoży.
+        </p>
+        <p className="text-base text-muted-foreground">
+          W praktyce rzadko się układa. Właściciel szkoły nie patrzy na zajęcia w taki sam sposób jak instruktor.
+          Instruktor może widzieć proces, rozwój ludzi, atmosferę i sens pracy. Właściciel widzi również grafik,
+          frekwencję, rentowność, przewidywalność i liczbę problemów, które trzeba rozwiązywać wokół danej grupy.
+        </p>
+        <p className="text-base text-muted-foreground">
+          To nie jest cynizm ani brak serca do tańca. To po prostu inna odpowiedzialność. Dla właściciela kurs ma
+          działać jako element większego systemu. Ma się utrzymać, ma nie generować ciągłych pożarów, ma dawać szkole
+          spokój operacyjny. Instruktor, który tego nie rozumie, może mieć bardzo szlachetne intencje, ale będzie
+          regularnie zderzał się z rzeczywistością szkoły jako organizacji.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Podobnie niedocenianą rolę odgrywa recepcja. To ona bardzo często wysyła wiadomości z przypomnieniami,
+          publikuje promocje, rozmawia z kursantami, przyjmuje pytania, słyszy pierwsze sygnały niezadowolenia i
+          zarządza wieloma drobnymi decyzjami, które później realnie wpływają na komfort pracy instruktora.
+        </p>
+        <p className="text-base text-muted-foreground">
+          W tej układance jest jeszcze jeden interesariusz, o którym łatwo zapomnieć, szczególnie na początku: Ty sam.
+          Instruktor nie jest maszyną do prowadzenia zajęć. Musi zadbać o własną świeżość, balans, motywację i o to,
+          żeby nie wyczerpać się po cichu.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Grupa nie jest jedną grupą</h2>
+        <p className="text-base text-muted-foreground">
+          Dopiero w tym całym układzie pojawiają się kursanci. I tu zaczyna się najciekawsza część, bo bardzo szybko
+          okazuje się, że grupa nie jest jedną grupą. To tylko wygodne słowo.
+        </p>
+        <p className="text-base text-muted-foreground">
+          W praktyce na jednej sali spotykają się ludzie, którzy przyszli z bardzo różnych powodów i z bardzo różnymi
+          wyobrażeniami. Jedni trafili na zajęcia, bo ktoś ich namówił. Inni, bo zaczęli czuć, że coś ich omija. Jeszcze
+          inni przyszli po relacje, po lepsze czucie siebie, większą akceptację własnego ciała, po ruch, rekreację,
+          relaks albo po prostu po nowe środowisko.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Z zewnątrz może się wydawać, że najcenniejszym klientem jest ten, który dokładnie wie, po co przychodzi. A
+          jednak z mojego doświadczenia najdłużej zostają często ci, którzy trafiają trochę przez przypadek. Nie mają
+          wielkich oczekiwań, otwartą głowę i mniej ryzykują rozczarowaniem.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Potrzeby ukrywają się pod oczekiwaniami</h2>
+        <p className="text-base text-muted-foreground">
+          Żeby móc pracować z ludzkimi potrzebami, najpierw trzeba przebrnąć przez oczekiwania. To one są pierwszą
+          warstwą, z którą spotyka się instruktor. Często przesłaniają to, co jest pod spodem.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Ktoś mówi, że chce nauczyć się tańczyć świetnie. Ktoś inny, że chce szybko wejść na wyższy poziom. Jeszcze
+          ktoś deklaruje, że interesuje go technika. Ale jeśli dobrze się temu przyjrzeć, często okazuje się, że pod
+          tym wszystkim kryje się zupełnie inna potrzeba: odwaga, poczucie bezpieczeństwa, chęć bycia bliżej ludzi,
+          poczucie, że „ja też mogę”.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Dlatego oczekiwania warto rozwiewać możliwie szybko, ale spokojnie. Nie terapią szokową, nie brutalnym
+          rozbijaniem cudzych wyobrażeń, tylko komunikacją. Trzeba tłumaczyć, co tu właściwie robimy, czym jest dany
+          styl, na czym polega proces, jak działa grupa, szkoła, organizacja zajęć, partnerowanie, savoir-vivre, czego
+          można się spodziewać, a czego nie.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Początkujący potrafią mieć naprawdę wymyślne wyobrażenia. I dopiero kiedy te wyobrażenia zaczynają się
+          uspokajać, można dokopać się do prawdziwych potrzeb.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Na tym etapie bardzo łatwo popełnić podstawowy błąd początkującego instruktora: próbować zaspokoić każdego
+          kursanta jako jednostkę. To się po prostu nie uda. Od tego są lekcje prywatne. Na zajęciach grupowych nie
+          pracujesz z trzydziestoma osobnymi światami, tylko z kategoriami potrzeb, które powtarzają się w grupie.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Poznawanie grupy wymaga czasu</h2>
+        <p className="text-base text-muted-foreground">
+          O ile nie masz kilkunastoletniego doświadczenia, nie jesteś w stanie wejść na salę i jednym spojrzeniem
+          zrozumieć, z jaką grupą masz do czynienia. Potrzebujesz czasu. Po kilku zajęciach zaczynasz widzieć schematy,
+          po dziesięciu wydaje Ci się, że już łapiesz dynamikę.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Tylko że wtedy łatwo przeoczyć jedną rzecz: po pierwszych tygodniach często połowa grupy już nie chodzi.
+          Bardzo często są to osoby, których potrzeb nie udało się uchwycić albo które nie znalazły swojego miejsca w
+          tym, co działo się na zajęciach.
+        </p>
+        <p className="text-base text-muted-foreground">
+          W efekcie zostaje grupa bardziej kompatybilna z Twoim stylem prowadzenia. I wtedy łatwo powiedzieć sobie, że
+          „rozumiem tę grupę”, choć część tego zrozumienia bierze się z tego, że zniknęli ci mniej dopasowani.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Jednym z najprostszych narzędzi pozwalających poznać ludzi wcześniej są integracje. Z zewnątrz mogą wyglądać
+          jak miły dodatek, ale w praktyce są jednym z najskuteczniejszych sposobów pracy z grupą. Budują relacje
+          między kursantami i jednocześnie dają instruktorowi dużo lepszy wgląd w dynamikę ludzi poza formalną rolą z
+          sali.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Instruktor jest na świeczniku</h2>
+        <p className="text-base text-muted-foreground">
+          Musisz pamiętać, że jesteś obserwowany. Na początku nowy kursant nie ma innych odniesień. Nie zna jeszcze
+          ludzi, zasad ani kontekstu. Patrzy na jedną osobę i na tej podstawie buduje obraz całej sytuacji. Tą osobą
+          jesteś Ty.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Twój sposób mówienia, reakcje, zachowanie, sposób ubierania się, szacunek do czasu, podejście do ludzi -
+          wszystko to jest dla kursanta informacją, jak wygląda norma w tej przestrzeni. W ten sposób tworzy się
+          niepisany kodeks grupy.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Kursanci widzą Cię nie tylko na sali. Widzą Cię również w przestrzeni publicznej, w social mediach, na
+          wydarzeniach, w innych kontekstach. Budują sobie obraz i naturalnie oczekują, że będzie on spójny.
+        </p>
+        <p className="text-base text-muted-foreground">
+          Wizerunek instruktora nie jest więc czymś powierzchownym. To nie kwestia zdjęcia czy liczby obserwujących.
+          To suma decyzji, reakcji i sposobu bycia. Na podstawie tego obrazu ludzie podejmują decyzję, czy chcą zostać.
+        </p>
+
+        <h2 className="pt-4 text-2xl font-semibold text-foreground">Kilka rzeczy, które warto zapamiętać</h2>
+        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+          <li>
+            Kursanci to nie jedyne osoby, z którymi obcujesz w tym zawodzie. Zrozum perspektywę właściciela szkoły,
+            miej recepcję za sojusznika i dbaj o relacje z innymi instruktorami.
+          </li>
+          <li>
+            Nie zaspokoisz każdego kursanta jako jednostki. Na zajęciach grupowych pracujesz z grupą i powtarzalnymi
+            kategoriami potrzeb.
+          </li>
+          <li>
+            Potrzeby ukrywają się pod oczekiwaniami. Najpierw uporządkuj wyobrażenia ludzi, dopiero potem zobaczysz, co
+            naprawdę jest pod spodem.
+          </li>
+          <li>
+            Integruj. Dajesz ludziom dodatkowy powód, żeby przychodzić, a sobie przestrzeń, żeby ich naprawdę poznać.
+          </li>
+          <li>
+            Bądź takim przykładem, jakim chcesz, żeby była Twoja grupa. Niespójność bardzo szybko wychodzi i trudno ją
+            później odbudować.
+          </li>
+        </ul>
+
+        <InlineArticlePromo
+          label="Polecane"
+          ctaLabel="Sprawdź"
+          items={[
+            {
+              title: "Workbook - Trwała pewność siebie na parkiecie",
+              description: "Nie czekaj na odwagę - zbuduj ją krok po kroku!",
+              href: "https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie",
+              image: "/artykuly/inline/twala-pewnosc-siebie.webp",
+            },
+          ]}
+        />
+
+        <Link href="/artykuly" className="text-sm font-semibold text-primary">
+          ↩ Wróć do listy artykułów
+        </Link>
+      </article>
+    </div>
+  );
+}

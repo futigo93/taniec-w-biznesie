@@ -42,7 +42,7 @@ export default function InstruktorTancaTwardyZadSwiezakaArticle() {
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
         <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
           <SectionHeading
-            eyebrow="Blog"
+            eyebrow="Dla instruktorów"
             title="Instruktor tańca - twardy zad świeżaka"
             description="Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu."
           />
