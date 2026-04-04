@@ -372,16 +372,15 @@ export default function WizerunekInstruktoraArticle() {
         </p>
 
         <InlineArticlePromo
-          label="Początek serii"
-          ctaLabel="Zobacz pierwszy artykuł"
+          label="Polecany dalej"
+          ctaLabel="Czytaj dalej"
           items={[
             {
-              title:
-                "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              title: "15 lat doświadczenia instruktora w 200 zdaniach",
               description:
-                "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
-              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-              image: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+                "O pracy instruktora między oczekiwaniami kursantów, realiami szkoły i budowaniem grupy, która naprawdę zostaje.",
+              href: "/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach",
+              image: "/artykuly/okladki/15-lat-doswiadczenia.webp",
             },
           ]}
         />

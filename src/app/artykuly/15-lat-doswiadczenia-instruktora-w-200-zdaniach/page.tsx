@@ -153,6 +153,43 @@ export default function DoswiadczenieInstruktoraArticle() {
           pracujesz z trzydziestoma osobnymi światami, tylko z kategoriami potrzeb, które powtarzają się w grupie.
         </p>
 
+        <InlineArticlePromo
+          label="Polecane"
+          ctaLabel="Sprawdź"
+          items={[
+            {
+              title: "Pobierz ebook: Taniec w biznesie",
+              description: "Darmowy przewodnik i aktualizacje dla właścicieli szkół tańca.",
+              href: "https://taniecwbiznesie.pl/#ebook",
+              image: "/ebook_cover.webp",
+            },
+            {
+              title: "Badanie rynku szkół tańca",
+              description: "Pomóż zebrać dane i poznaj wnioski z ankiety.",
+              href: "https://taniecwbiznesie.pl/ankiety",
+              image: "/strony-szkol-tanca.webp",
+            },
+            {
+              title: "Chaos w grafiku zajęć?",
+              description: "Sprawdź, jak przygotować czytelny grafik i zwiększyć zapisy.",
+              href: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+              image: "/przewodnik-po-widokach-grafiku-cover.png",
+            },
+            {
+              title: "Baileo dla szkół tańca",
+              description: "System do obsługi zapisów, grafiku i komunikacji z kursantami.",
+              href: "https://baileo.pl/",
+              image: "/logo_icon_baileo_square.png",
+            },
+            {
+              title: "Narzędzia i usługi dla szkół tańca",
+              description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
+              href: "http://localhost:3000/uslugi",
+              image: "/zestaw-narzedzi-dla-szkol.webp",
+            },
+          ]}
+        />
+
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Poznawanie grupy wymaga czasu</h2>
         <p className="text-base text-muted-foreground">
           O ile nie masz kilkunastoletniego doświadczenia, nie jesteś w stanie wejść na salę i jednym spojrzeniem
@@ -219,14 +256,15 @@ export default function DoswiadczenieInstruktoraArticle() {
         </ul>
 
         <InlineArticlePromo
-          label="Polecane"
-          ctaLabel="Sprawdź"
+          label="Początek serii"
+          ctaLabel="Zobacz pierwszy artykuł"
           items={[
             {
-              title: "Workbook - Trwała pewność siebie na parkiecie",
-              description: "Nie czekaj na odwagę - zbuduj ją krok po kroku!",
-              href: "https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie",
-              image: "/artykuly/inline/twala-pewnosc-siebie.webp",
+              title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              description:
+                "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
+              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
+              image: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
             },
           ]}
         />
