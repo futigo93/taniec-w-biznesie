@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
@@ -64,25 +64,25 @@ export default function InstruktorTancaArticle() {
           </div>
         </div>
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z
           poczuciem sensu, po innych z irytacją albo obojętnością. Zostaje prosta ocena: podobało się albo nie. Było efektywne albo
           nie. To wystarczy. Kursant nie musi rozumieć, dlaczego coś działa. Jego rolą jest korzystać.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W tańcu często korzystamy z metody nauczania „monkey see, monkey do”. Widzisz ruch, próbujesz go powtórzyć. Na
           podstawach długo jest to całkiem skuteczne. Pamiętasz jeszcze, jak naiwnie myśli się będąc początkującym tancerzem - że
           to co widzisz to jest to co masz zrobić, że basic jest taki prosty jak Ci się wydaje? Aż w końcu okazuje się, że to, co
           wygląda na jeden gest, jest zbiorem mikroruchów, napięć i decyzji, których nie widać z zewnątrz. Ruch, izolacja może
           wydawać się prosta, ale to co dzieje się pod skórą, jest tą magią, którą uwielbiamy.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Zajęcia taneczne działają podobnie. Ich odbiór jest prosty, ale proces ich tworzenia już nie. Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, dobre albo złe zajęcia, jest wynikiem mnóstwa drobnych decyzji. Większość z nich pozostaje niewidoczna. Część nawet dla samego instruktora - działa intuicyjnie, poza świadomością.
         </p>
 
 
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jakość tego doświadczenia kształtowana jest przez bardzo szeroki zestaw umiejętności: instruktorski toolbox. Składają
           się na niego tematy nieoczywiste i bardzo szerokie: język, rytm wypowiedzi, dobór porównań, umiejętność utrzymania uwagi,
           perswazja, czyli przekonywanie ludzi do powtarzania, słuchania, angażowania się. Dochodzi do tego metodologia:
@@ -92,7 +92,7 @@ export default function InstruktorTancaArticle() {
           I bardzo dobrze, bo to jest dokładnie jego rola. Kursant ma korzystać, doświadczać i cieszyć się iluzją, nie analizować
           metodyki.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Zostanie instruktorem często wygląda jak naturalna kontynuacja drogi tanecznej. Ale jeśli ktoś chce zacząć budować takie
           doświadczenia dla innych osób, musi wiedzieć, że instruktor to zupełnie nowa rola, która wymaga zupełnie nowego zestawu
           kompetencji - to tylko, że jest świetnym tancerzem, nie zagwarantuje mu sukcesu. Tancerz pracuje nad sobą, nad swoją
@@ -101,7 +101,7 @@ export default function InstruktorTancaArticle() {
           ale nie są tożsame. Umiejętności taneczne są warunkiem koniecznym, ale same w sobie nie definiują tego, co później wydarzy
           się na sali.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Nie da się oprzeć kariery instruktora wyłącznie na umiejętnościach tanecznych. Tak samo jak nie przekonasz nikogo, że jesteś dobrym tancerzem, tylko mówiąc o tańcu. Ale tak - umiejętności taneczne i instruktorskie są komplementarne i warto rozwijać je równolegle. Nauczyciel, który jest świetnym tancerzem, ale kiepskim instruktorem jest ogromnym powodem frustracji kursantów, którzy chcieliby nauczyć się tańczyć jak on, ale nie dostają merytoryki. Natomiast uczenie się od osoby o wysokich umiejętnościach instruktorskich, ale która nie potrafi Cię zainspirować efektem, wizualiami własnego tańca wymaga dużo świadomości i dojrzałości - mało kto będzie tak potrafił. Jednak jesteśmy wzrokowcami.
         </p>
 
@@ -169,14 +169,14 @@ export default function InstruktorTancaArticle() {
           </div>
         </div>
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Z perspektywy osoby myślącej o uczeniu najważniejsze jest jedno: nie ma jednej „lepszej” ścieżki. Jest za to konieczność
           świadomości, co dokładnie się dostarcza i z czego to wynika. Inaczej łatwo uwierzyć, że bycie instruktorem to naturalna
           kontynuacja bycia tancerzem, kolejny poziom wtajemniczenia, awans w hierarchii. Ale tak naprawdę to wejście w całkiem nowe
           buty. Wymaga myślenia już nie tylko o rozwoju swoich umiejętności tanecznych, ale też swojego toolboxa instruktorskiego.
           Wymaga myślenia nie tylko o rozwoju siebie, ale jak pomagać innym się rozwijać.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Tancerz i instruktor poruszają się w tym samym środowisku, na tej samej sali, wśród tych samych ludzi. To podobieństwo
           bywa mylące. Tancerz rozwija się, inwestując uwagę w siebie. Instruktor rozwija się, inwestując uwagę w innych. Te dwie
           logiki da się przez jakiś czas łączyć, ale prędzej czy później zaczynają konkurować o czas, energię i sens. Dlatego to co
@@ -228,27 +228,27 @@ export default function InstruktorTancaArticle() {
           szkół i obserwowania środowiska z bardzo bliska. Mam własne poczucie etosu tej pracy, ale rozumiem, że inni instruktorzy
           mogą widzieć to inaczej i robić swoją robotę w inny sposób.
         </blockquote>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jedną z najbardziej konstruktywnych motywacji jest chęć uczenia innych, przekazywania wiedzy i porządkowania doświadczenia.
           To motywacja, która łączy dwa światy. Z jednej strony wymusza rozwój taneczny, bo trudno uczyć rzeczy, których się nie
           rozumie lub nie czuje. Z drugiej strony zmusza do budowania narzędzi instruktorskich: języka, struktury, tempa, metod.
           Pojawia się wyraźny adresat. Ktoś, dla kogo trzeba ten taniec rozłożyć, uprościć i złożyć na nowo. To była moja pierwsza
           motywacja wiele lat temu i do dziś uważam ją za jedną z najlepszych.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Bardzo bliska tej motywacji jest chęć pomagania innym i rozwiązywania realnych problemów. Taniec często dotyka obszarów
           znacznie szerszych niż technika. Samotność, wstyd, brak kompetencji społecznych, napięcie w relacjach - to wszystko pojawia
           się na sali, nawet jeśli nikt o tym głośno nie mówi. Instruktor, który potrafi to zobaczyć i udźwignąć, wykonuje pracę o
           dużej wartości. To nie tylko jest fajna motywacja, ale też bardzo fajna misja.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Innym motorem jest chęć budowania społeczności. W niektórych stylach działa to wyjątkowo dobrze. Salsa, swing, urban czy
           tango naturalnie tworzą środowiska, w których ludzie zostają na dłużej, spotykają się poza zajęciami, budują relacje. W
           innych stylach (disco-na-2, użytkowy) taniec bywa bardziej narzędziem niż celem samym w sobie. To nie deprecjonuje żadnej z
           tych dróg, ale pokazuje, że nie każda motywacja ma szansę się spełnić w każdym kontekście. Instruktor, który chce budować
           społeczność, musi trafić na grunt, który to uniesie.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Wiele osób powie też, że ich motywacją do uczenia innych jest własny rozwój taneczny. Rzeczywiście, ucząc innych, zaczyna
           się rozumieć taniec lepiej. Perspektywa się poszerza, schematy się kruszą, pojawiają się pytania, których wcześniej nie
           było. To wszystko jest prawdą. Jednocześnie taka motywacja rzadko wystarcza, żeby być dobrym instruktorem przez dłuższy
@@ -258,7 +258,7 @@ export default function InstruktorTancaArticle() {
           nie został odpowiednio dobrany do celu. Są dużo lepsze metody, aby osiągnąć ten sam cel: rozmowy o tańcu z bardziej lub
           mniej zaawansowanymi kolegami, pomaganie innym osobom z nauką kroków - nie trzeba od razu wiązać się z zawodem instruktora.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Natomiast jedną z najmocniejszych i bardzo często występujących motywacji jest potrzeba bycia widzianym i docenianym.
           Scena, uwaga, grupa ludzi patrzących w jednym kierunku, reakcje w social mediach. To bardzo silny bodziec, bardzo mocno
           oddziałujący na ego. I bardzo ulotny. Uznanie wymaga ciągłej obecności. Kiedy prowadzisz grupy regularne, raczej nie
@@ -266,12 +266,12 @@ export default function InstruktorTancaArticle() {
           się rozluźniają, rytm zanika, ludzie próbują innych miejsc. Bycie podziwianym ma swoją cenę, a tą ceną jest stała
           gotowość do podtrzymywania uwagi. Nie możesz zniknąć, nikt Cię też nie zastąpi.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Motywacja skierowana głównie do wewnątrz rzadko dobrze znosi realia tej pracy. Instruktor funkcjonuje w relacji. W
           dynamice grupy. W powtarzalności spotkań. W odpowiedzialności za atmosferę i sens. To nie jest po prostu kolejny poziom
           tanecznej kariery. To osobna ścieżka, z innymi nagrodami i innymi kosztami.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Ta motywacja jest bardzo potrzebna, bo powodów do wypalenia się w tym zawodzie jest mnóstwo. Wyzwań, które stoją przed
           instruktorem, nowych kompetencji, stresu, wyjść ze strefy komfortu, łączenia ról - o tym można napisać książkę. Książki
           może nie napiszę, ale tym wpisem otwieram serię artykułów o moich doświadczeniach i przemyśleniach z bycia tancerzem i
@@ -308,3 +308,4 @@ function MatrixCard({ title, description }: { title: string; description: string
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
@@ -74,25 +74,25 @@ export default function TamGdzieNamZalezyArticle() {
           </div>
         </div>
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Kiedy zaczęłam zajmować się psychologią sportu, taniec socialowy wydawał mi się kompletnie do tego nie
           pasować. „To nie o nas” - mówiłam sobie. „To o zawodnikach, rywalizacji, presji wyniku, medalach”.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Przecież my tańczymy dla przyjemności. Dla samego bycia na parkiecie, dla radości z ruchu i muzyki.
           Wspieramy się, a nie rywalizujemy, nie walczymy o podium, nie liczymy punktów.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           A jednak, im więcej poznawałam psychologię sportu, tym wyraźniej rozumiałam, że presja i porównania nie są
           zarezerwowane dla zawodów. Są wszędzie tam, gdzie nam zależy, gdzie chcemy się wykazać, rozwijać i czuć, że
           robimy coś naprawdę dobrze.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Bo choć nie ma sędziów - inne osoby nas obserwują. Choć nie ma punktów, łatwo wpaść w pułapkę porównań. Nie
           ma medali, a jednak odczuwamy presję nieustannego rozwoju. I przede wszystkim jest nasza własna głowa, która
           właśnie wtedy, gdy ma wydarzyć się coś ważnego, zaczyna mówić:
         </p>
-        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+        <ul className="list-disc space-y-1 pl-5 text-base leading-8 text-foreground/85">
           <li>„Powinnaś już umieć więcej”.</li>
           <li>„Widać, że się denerwujesz”.</li>
           <li>„Ona chyba czuje, że nie ogarniasz”.</li>
@@ -100,34 +100,34 @@ export default function TamGdzieNamZalezyArticle() {
         </ul>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Trening mentalny to nie tylko „pewność siebie”</h2>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Wyobraź sobie taki wieczór. Jesteś na imprezie, DJ gra Twoje ulubione kawałki, na sali jest pełno ludzi.
           Widzisz kilka osób, z którymi bardzo chcesz zatańczyć. Serce bije szybciej, ale w środku zaczyna się
           rozmowa: „Jaki poziom na parkiecie”, „Dlaczego ja się tak spinam?”, „Na pewno mi odmówi”, „Jak się pomylę,
           wszyscy to zobaczą”.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           I nagle okazuje się, że zamiast tańczyć - stoisz w tym samym miejscu i masz coraz mniejszą ochotę wyjść na
           parkiet.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Właśnie w takich momentach zaczęłam rozumieć, czym naprawdę jest trening mentalny. To nie są afirmacje przed
           lustrem i nie chodzi o hasło „muszę być pewna siebie”. To umiejętność poradzenia sobie z tym, co dzieje się
           w środku, kiedy bardzo nam zależy.
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Po co mi cel, skoro tańczę dla przyjemności?</h2>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Wiele osób myśli, że skoro nie startujemy w zawodach, to nie potrzebujemy pracy z celami. A przecież cel nie
           musi oznaczać czegoś wielkiego. Celem może być swobodniejszy taniec, odwaga do wyjścia na środek parkietu,
           mniej unikania trudniejszych partnerów czy większy spokój przy nagrywce.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Bez świadomości celu łatwo wpaść w poczucie, że „ciągle za mało”. Warsztat za warsztatem, event za eventem,
           a w głowie myśl: „nadal nie jestem tam, gdzie powinnam być”.
         </p>
-        <p className="text-base text-muted-foreground">Trening mentalny pomaga się zatrzymać i zapytać:</p>
-        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">Trening mentalny pomaga się zatrzymać i zapytać:</p>
+        <ul className="list-disc space-y-1 pl-5 text-base leading-8 text-foreground/85">
           <li>dokąd właściwie idę?</li>
           <li>dlaczego tańczę?</li>
           <li>kim chcę się w tym stawać?</li>
@@ -153,38 +153,38 @@ export default function TamGdzieNamZalezyArticle() {
         />
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Postęp nie jest linią prostą</h2>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W tańcu socialowym wytrwałość jest cicha. Nikt jej nie nagradza medalem czy dyplomem. Czasem przez miesiące
           wydaje się, że stoisz w miejscu i wszyscy idą szybciej. A prawda jest taka, że rozwój rzadko wygląda jak
           idealna rosnąca linia.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Trening mentalny nauczył mnie zauważać małe zmiany: jedno spokojniejsze wejście w taniec, jedno „nie
           uciekłam”, jedno „wróciłam do muzyki zamiast do porównań”. To właśnie z tych drobnych momentów buduje się
           poczucie skuteczności.
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Największy mit</h2>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Przez długi czas wierzyłam, że kiedy będę tańczyć lepiej, przestanę się stresować. Dziś wiem, że to tak nie
           działa. Im wyższy poziom, tym większa widoczność i większe oczekiwania, a więc często też większa presja.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jeśli głowa nie rozwija się razem z umiejętnościami, presja nie znika - tylko zmienia formę. Zamiast „czy ja
           się nadaję?” pojawia się „czy utrzymam poziom?”.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Trening mentalny nie usuwa stresu. Uczy, jak z nim tańczyć. Nie usuwa wątpliwości, ale pomaga nie traktować
           ich jak prawdy absolutnej.
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">To nie jest o wygrywaniu</h2>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W tańcu socialowym trening mentalny nie służy zdobywaniu medali. Służy jakości doświadczenia. Chodzi o to,
           żeby nie sabotować swojej przyjemności przez porównania, rozwijać się z wytrwałością, a nie przymusem, i
           skupiać się na tym, na co mamy wpływ.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Bo odwaga w tańcu nie polega na braku stresu. Polega na tym, że mimo stresu robisz krok.
         </p>
         <InlineArticlePromo
@@ -207,3 +207,4 @@ export default function TamGdzieNamZalezyArticle() {
     </div>
   );
 }
+

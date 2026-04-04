@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
@@ -69,20 +69,20 @@ export default function WizerunekInstruktoraArticle() {
           </div>
         </div>
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W świecie tańca social media stały się czymś w rodzaju wspólnego
           rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy.
           Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność
           w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem
           wyjścia.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jednym z pierwszych skojarzeń, kiedy mówi się o budowaniu marki
           instruktora, są dema taneczne. To najprostszy obraz: nagrywasz się,
           wrzucasz, ludzie oglądają, rozpoznawalność rośnie. Przynajmniej w
           teorii.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W praktyce to jedno z najtrudniejszych i najbardziej konkurencyjnych
           pól, jakie można sobie wybrać. Portale społecznościowe nie są
           przestrzenią lokalną. Wrzucając demo, nie konkurujesz z innymi
@@ -92,7 +92,7 @@ export default function WizerunekInstruktoraArticle() {
           bardziej angażujące. To bardzo trudne środowisko do zbudowania
           stabilnej, przewidywalnej pozycji.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dlatego tak często widać frustrację: ktoś robi „to samo”, co inni, a
           efekty są nieporównywalne. Kopiuje format, długość, estetykę. Próbuje
           naśladować twórców, którzy mają setki tysięcy wyświetleń. Tylko że ci
@@ -101,14 +101,14 @@ export default function WizerunekInstruktoraArticle() {
           nich działa, u Ciebie może nie zadziałać wcale. I to nie jest kwestia
           talentu. To kwestia bazy.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Budowanie marki przez social media to osobne rzemiosło. Czasochłonne,
           wymagające konsekwencji, odporności psychicznej i ciągłego testowania.
           To praca bliska pracy influencera. Jeśli ktoś potrafi to robić -
           świetnie. To potężne narzędzie. Ale trzeba mieć świadomość, że to
           kolejny etat. I że efekty rzadko przychodzą szybko.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dobrym przykładem tego, jak wygląda praca z social mediami jest para,
           którą z przyjemnością obserwuję na FB -{" "}
           <Link
@@ -138,16 +138,16 @@ export default function WizerunekInstruktoraArticle() {
             />
           </div>
         </div>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           To pokazuje jedną ważną rzecz: social media rzadko nagradzają talent
           sam w sobie. Nagradzają konsekwencję, zrozumienie medium i umiejętność
           opowiadania historii. Taniec jest tu tylko jednym z elementów.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Skoro social media nie są magicznym skrótem do marki, to czym
           właściwie są dla instruktora?
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W naszym środowisku obecność w social mediach przestała być opcją. Nie
           dlatego, że każdy instruktor powinien być twórcą treści (choć jest to
           pomocne), ale dlatego, że tam dziś dzieje się komunikacja. Szkoły tam
@@ -155,22 +155,22 @@ export default function WizerunekInstruktoraArticle() {
           rozmawiają z kursantami. Instruktor, który funkcjonuje całkowicie poza
           tym obiegiem, sam wycina się z części ekosystemu.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           To nie znaczy, że social media muszą być Twoim głównym kanałem
           budowania marki. Ale w praktyce bardzo często stają się punktem styku:
         </p>
-        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+        <ul className="list-disc space-y-1 pl-5 text-base leading-8 text-foreground/85">
           <li>między Tobą a szkołą, organizatorem,</li>
           <li>między Tobą a grupą,</li>
           <li>między Tobą a potencjalnym kursantem.</li>
         </ul>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jeśli prowadzisz zajęcia w szkole, Twoja obecność w social mediach
           pozwala „podpiąć się” pod jej marketing. Udostępniać posty o
           zajęciach, komentować, reagować, wzmacniać zasięgi. Dla szkoły to
           konkretna wartość. Dla Ciebie – dodatkowa ekspozycja.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jeśli masz już swoje grupy, social media stają się ‘miejscem zbiórki’.
           Punktem, do którego możesz kierować ludzi. Łatwiej jest stworzyć
           fanpage niż stronę WWW. Łatwiej utrzymać prosty kanał komunikacji niż
@@ -178,14 +178,14 @@ export default function WizerunekInstruktoraArticle() {
           prosta nazwa profilu, regularne przypominanie – to są drobiazgi, które
           realnie robią różnicę.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Co ważne: Twoi obserwujący to nie tylko „lajki”. To konkretna karta
           przetargowa w rozmowach z właścicielami szkół i organizatorami. Nie
           jako dowód popularności, ale jako sygnał, że potrafisz zebrać ludzi
           wokół siebie i utrzymać z nimi relację. Dla wielu właścicieli to jest
           język, który rozumieją bardzo dobrze.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Social media pełnią też rolę zarządczą. W wielu szkołach komunikacja
           zespołowa, organizacyjna, a nawet pracownicza odbywa się właśnie tam.
           Można się z tym nie zgadzać – i ja prywatnie też mam do tego sporo
@@ -193,7 +193,7 @@ export default function WizerunekInstruktoraArticle() {
           Instruktor, który chce funkcjonować w środowisku, musi umieć się w
           niej poruszać.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Jednocześnie właśnie tutaj pojawia się jedno z najważniejszych napięć.
           Social media bardzo łatwo wciągają. Mieszają role. Zacierają granice
           między prywatnym a zawodowym. Dlatego jeśli chcesz zachować w miarę
@@ -201,7 +201,7 @@ export default function WizerunekInstruktoraArticle() {
           swoim środowisku, oddzielenie kanałów komunikacji jest obowiązkową
           higieną pracy.
         </p>
-        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+        <ul className="list-disc space-y-1 pl-5 text-base leading-8 text-foreground/85">
           <li>
             Jeśli ze znajomymi przez WhatsApp – kursantom go nie podawaj. Kieruj
             ich na przykład na Messengera.
@@ -215,7 +215,7 @@ export default function WizerunekInstruktoraArticle() {
             świadomie.
           </li>
         </ul>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           To nie jest dystansowanie się od ludzi. To jest dbanie o własne
           granice w zawodzie, który bardzo łatwo te granice rozmywa.
         </p>
@@ -260,25 +260,25 @@ export default function WizerunekInstruktoraArticle() {
           ]}
         />
 
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           I w tym miejscu warto wrócić do sedna: widoczność sama w sobie niczego
           nie gwarantuje. Social media mogą wzmacniać markę, ale nie są w stanie
           jej zastąpić. Jeśli nie idzie za nimi treść, relacje, odpowiedzialność
           i realna wartość dla kursantów i właścicieli, zostają tylko szumem.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Najczęstszy błąd w myśleniu o marce instruktora polega na tym, że
           traktuje się ją jak coś jednorodnego. Jak jeden obraz, jeden
           komunikat, jedną narrację. Tymczasem marka instruktora jest czytana
           równolegle przez co najmniej dwie bardzo różne grupy. I każda z nich
           patrzy na coś innego.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dla właściciela szkoły marka instruktora służy szacowaniu ryzyka
           operacyjnego. Pytanie nie brzmi: „czy on jest dobrym tancerzem?”, ani
           nawet „czy jest dobrym instruktorem?”. Pytanie brzmi:
         </p>
-        <ul className="list-disc space-y-1 pl-5 text-base text-muted-foreground">
+        <ul className="list-disc space-y-1 pl-5 text-base leading-8 text-foreground/85">
           <li>czy grupa ruszy?</li>
           <li>czy się utrzyma?</li>
           <li>czy będą reklamacje?</li>
@@ -287,29 +287,29 @@ export default function WizerunekInstruktoraArticle() {
           </li>
           <li>czy ten człowiek pasuje do zespołu i do wizerunku szkoły?</li>
         </ul>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           W tym sensie marka instruktora to nie jest coś abstrakcyjnego. To
           bardzo konkretna informacja: ile spokoju albo ile chaosu wnosi dana
           osoba do organizmu szkoły.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dla kursantów filtr jest zupełnie inny. Oni nie analizują procesów,
           grafików i rentowności. Kursanci podejmują decyzje emocjonalnie.
           Zostają tam, gdzie czują się dobrze. Gdzie widzą sens. Gdzie czują
           progres albo przynajmniej poczucie, że „to jest dla mnie”. Często nie
           potrafią tego nazwać, ale potrafią to bardzo szybko poczuć.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Bardzo częsty błąd to instruktor, który buduje atrakcyjny wizerunek
           dla kursantów, ale jest postrzegany jako nieprzewidywalny przez
           właścicieli. Albo odwrotnie - ktoś, kto jest „bezpieczny” operacyjnie,
           ale kompletnie nie rezonuje z grupami.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Do tego trzeba jeszcze pamiętać, że do świadomej, kontrolowanej pracy
           nad wizerunkiem potrzebny jest czas.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Przez wiele lat pracy z grupami wyrobiłem sobie bardzo konkretny
           wizerunek instruktora. Uczyłem metodycznie. Miałem strukturę. Program.
           Zajęcia miały rytm i porządek. Kursanci wiedzieli, czego się
@@ -317,13 +317,13 @@ export default function WizerunekInstruktoraArticle() {
           Wiedzieli, że nikt ich nie wystawi na próbę ponad ich możliwości. Że
           nie będzie „pokazówki” dla samej pokazówki
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Może to nie był wizerunek, który generuje wielkie zachwyty. Nie dawał
           efektu „wow” po dwóch zajęciach. Nie był szczególnie instagramowy. Ale
           dawał coś, co w dłuższej perspektywie miało dla mnie większą wartość:
           poczucie bezpieczeństwa i przewidywalności.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Trafiali do mnie ludzie, którzy zostawali na długo. Grupy trwały przez
           kilka sezonów bez przerw. Były liczne, stabilne, ale nie masowe.
           Dokładnie takie, jakie chciałem prowadzić. I były też wygodne dla
@@ -331,7 +331,7 @@ export default function WizerunekInstruktoraArticle() {
           robi chwilowe piki, ale wymaga ciągłej uwagi, promocji i gaszenia
           problemów.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Oczywiście, zanim to się ułożyło, popełniłem mnóstwo błędów. Spaliłem
           grupy. Prowadziłem zajęcia, na które nie byłem gotowy. Widziałem też
           instruktorów - często świetnych tancerzy - którym przez długie sezony
@@ -340,7 +340,7 @@ export default function WizerunekInstruktoraArticle() {
           poprowadzenia zaawansowanych zajęć były chaotyczne. A do odwrócenia
           wizerunku potrzeba trochę czasu.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           To jest jeden z najtrudniejszych momentów w tym zawodzie: zrozumienie,
           że nie każda szansa jest dobra i nie każda ekspozycja jest warta
           kosztu. Pierwsze warsztaty, które poprowadziłem a na które mentalnie
@@ -349,21 +349,21 @@ export default function WizerunekInstruktoraArticle() {
           już znacznie lepiej, feedback był dobry. Ale tamta łatka w tamtej
           szkole została.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dziś patrzę na to inaczej. Widzę, że marka instruktora nie powinna
           wyprzedzać jego doświadczenia. Powinna za nim podążać. Wizerunek,
           który powstaje z pracy u podstaw, z cierpliwości, z konsekwencji, jest
           mniej spektakularny na starcie. Ale znacznie stabilniejszy i pozwala
           na sobie budować całą karierę.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           Dlatego młodym instruktorom polecam jedno: cierpliwość i własne
           piaskownice. Miejsca, w których można się uczyć bez niszczenia relacji
           i reputacji. Małe grupy. Mniejsze szkoły. Domy kultury. Format, który
           nie krzyczy, ale daje przestrzeń na iterację. Bo to właśnie iteracja
           buduje realne kompetencje - i realną markę.
         </p>
-        <p className="text-base text-muted-foreground">
+        <p className="text-base leading-8 text-foreground/85">
           I tu wracamy do punktu wyjścia. Widoczność bez treści jest tylko
           szumem. Zasięg bez wartości nie buduje nic trwałego. Marka instruktora
           rodzi się tam, gdzie spotykają się kompetencje, relacje i
@@ -391,3 +391,4 @@ export default function WizerunekInstruktoraArticle() {
     </div>
   );
 }
+
