@@ -55,7 +55,7 @@ export default function DoswiadczenieInstruktoraArticle() {
             <span>12 min</span>
           </div>
           <FacebookWidgets path="/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach" className="mt-5" />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="mt-6 overflow-hidden rounded-2xl border border-white/25 bg-white/10 p-4 shadow-lg shadow-black/20">
             <Image
               src="/artykuly/okladki/15-lat-doswiadczenia.webp"
               alt={articleTitle}
@@ -78,18 +78,18 @@ export default function DoswiadczenieInstruktoraArticle() {
           tym polega cały sens tego zawodu: dobrze uczyć tańca.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          Dopiero po czasie zaczyna docierać, że to tylko fasada. <strong className="font-semibold text-foreground">Instruktor nie pracuje wyłącznie z materiałem, figurami i techniką.</strong>{" "}
+          Dopiero po czasie zaczyna docierać, że to tylko fasada. <strong className="font-bold text-white">Instruktor nie pracuje wyłącznie z materiałem, figurami i techniką.</strong>{" "}
           Pracuje z ludźmi, ich wyobrażeniami, potrzebami, emocjami i z całym systemem zależności, którego z początku
           często nawet nie widać.
         </p>
 
-        <div className="rounded-3xl border border-primary/20 bg-primary/5 p-5 shadow-sm">
+        <div className="rounded-3xl border border-primary/45 bg-primary/12 p-5 shadow-lg shadow-primary/10">
           <div className="flex items-start gap-3">
-            <div className="rounded-2xl bg-primary/10 p-2 text-primary">
+            <div className="rounded-2xl border border-primary/35 bg-primary/20 p-2 text-primary">
               <Lightbulb className="h-5 w-5" />
             </div>
             <p className="text-sm leading-7 text-foreground/90">
-              <strong className="font-semibold text-foreground">
+              <strong className="font-bold text-white">
                 Ten tekst nie jest o figurach, tylko o architekturze pracy instruktora:
               </strong>{" "}
               relacjach, oczekiwaniach, dynamice grupy i odpowiedzialności, której z zewnątrz zwykle nie widać.
@@ -100,38 +100,38 @@ export default function DoswiadczenieInstruktoraArticle() {
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Instruktor działa między kilkoma światami</h2>
         <p className="text-base leading-8 text-foreground/85">
           Bardzo łatwo myśleć o tej pracy jak o relacji między instruktorem a kursantami. To oczywiście{" "}
-          <strong className="font-semibold text-foreground">najważniejszy i najbardziej widoczny wymiar tej roli</strong>, ale nie
+          <strong className="font-bold text-white">najważniejszy i najbardziej widoczny wymiar tej roli</strong>, ale nie
           jedyny. Instruktor funkcjonuje jednocześnie pomiędzy kilkoma grupami interesariuszy, z których każda ma
           wobec niego inne oczekiwania.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Są kursanci, ale jest też właściciel szkoły, recepcja, inni instruktorzy i wreszcie on sam, ze swoją energią,
           motywacją i ograniczeniami. Jeśli ktoś tego nie rozumie, bardzo szybko zaczyna się frustrować, bo wydaje mu
-          się, że <strong className="font-semibold text-foreground">wystarczy dobrze uczyć albo nawet tylko dobrze tańczyć</strong>, a
+          się, że <strong className="font-bold text-white">wystarczy dobrze uczyć albo nawet tylko dobrze tańczyć</strong>, a
           reszta sama się ułoży.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          W praktyce rzadko się układa. <strong className="font-semibold text-foreground">Właściciel szkoły nie patrzy na zajęcia w
+          W praktyce rzadko się układa. <strong className="font-bold text-white">Właściciel szkoły nie patrzy na zajęcia w
           taki sam sposób jak instruktor.</strong>{" "}
           Instruktor może widzieć proces, rozwój ludzi, atmosferę i sens pracy. Właściciel widzi również grafik,
           frekwencję, rentowność, przewidywalność i liczbę problemów, które trzeba rozwiązywać wokół danej grupy.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           To nie jest cynizm ani brak serca do tańca. To po prostu inna odpowiedzialność. Dla właściciela kurs ma
-          działać jako element większego systemu. <strong className="font-semibold text-foreground">Ma się utrzymać, ma nie
+          działać jako element większego systemu. <strong className="font-bold text-white">Ma się utrzymać, ma nie
           generować ciągłych pożarów, ma dawać szkole spokój operacyjny.</strong>{" "}
           Instruktor, który tego nie rozumie, może mieć bardzo szlachetne intencje, ale będzie regularnie zderzał się
           z rzeczywistością szkoły jako organizacji.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-semibold text-foreground">Podobnie niedocenianą rolę odgrywa recepcja.</strong> To ona bardzo często
+          <strong className="font-bold text-white">Podobnie niedocenianą rolę odgrywa recepcja.</strong> To ona bardzo często
           wysyła wiadomości z przypomnieniami,
           publikuje promocje, rozmawia z kursantami, przyjmuje pytania, słyszy pierwsze sygnały niezadowolenia i
           zarządza wieloma drobnymi decyzjami, które później realnie wpływają na komfort pracy instruktora.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           W tej układance jest jeszcze jeden interesariusz, o którym łatwo zapomnieć, szczególnie na początku: Ty sam.
-          <strong className="font-semibold text-foreground">Instruktor nie jest maszyną do prowadzenia zajęć.</strong> Musi zadbać o
+          <strong className="font-bold text-white">Instruktor nie jest maszyną do prowadzenia zajęć.</strong> Musi zadbać o
           własną świeżość, balans, motywację i o to, żeby nie wyczerpać się po cichu.
         </p>
 
@@ -148,13 +148,13 @@ export default function DoswiadczenieInstruktoraArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Z zewnątrz może się wydawać, że najcenniejszym klientem jest ten, który dokładnie wie, po co przychodzi. A
-          jednak z mojego doświadczenia <strong className="font-semibold text-foreground">najdłużej zostają często ci, którzy trafiają
+          jednak z mojego doświadczenia <strong className="font-bold text-white">najdłużej zostają często ci, którzy trafiają
           trochę przez przypadek.</strong> Nie mają wielkich oczekiwań, otwartą głowę i mniej ryzykują rozczarowaniem.
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Potrzeby ukrywają się pod oczekiwaniami</h2>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-semibold text-foreground">Żeby móc pracować z ludzkimi potrzebami, najpierw trzeba przebrnąć przez
+          <strong className="font-bold text-white">Żeby móc pracować z ludzkimi potrzebami, najpierw trzeba przebrnąć przez
           oczekiwania.</strong> To one są pierwszą
           warstwą, z którą spotyka się instruktor. Często przesłaniają to, co jest pod spodem.
         </p>
@@ -171,11 +171,11 @@ export default function DoswiadczenieInstruktoraArticle() {
           można się spodziewać, a czego nie.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-semibold text-foreground">Początkujący potrafią mieć naprawdę wymyślne wyobrażenia.</strong> I dopiero
+          <strong className="font-bold text-white">Początkujący potrafią mieć naprawdę wymyślne wyobrażenia.</strong> I dopiero
           kiedy te wyobrażenia zaczynają się uspokajać, można dokopać się do prawdziwych potrzeb.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          Na tym etapie bardzo łatwo popełnić <strong className="font-semibold text-foreground">podstawowy błąd początkującego
+          Na tym etapie bardzo łatwo popełnić <strong className="font-bold text-white">podstawowy błąd początkującego
           instruktora</strong>: próbować zaspokoić każdego kursanta jako jednostkę. To się po prostu nie uda. Od tego
           są lekcje prywatne. Na zajęciach grupowych nie pracujesz z trzydziestoma osobnymi światami, tylko z
           kategoriami potrzeb, które powtarzają się w grupie.
@@ -226,7 +226,7 @@ export default function DoswiadczenieInstruktoraArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Tylko że wtedy łatwo przeoczyć jedną rzecz: po pierwszych tygodniach często połowa grupy już nie chodzi.
-          <strong className="font-semibold text-foreground">Bardzo często są to osoby, których potrzeb nie udało się uchwycić</strong>{" "}
+          <strong className="font-bold text-white">Bardzo często są to osoby, których potrzeb nie udało się uchwycić</strong>{" "}
           albo które nie znalazły swojego miejsca w tym, co działo się na zajęciach.
         </p>
         <p className="text-base leading-8 text-foreground/85">
@@ -235,7 +235,7 @@ export default function DoswiadczenieInstruktoraArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Jednym z najprostszych narzędzi pozwalających poznać ludzi wcześniej są integracje. Z zewnątrz mogą wyglądać
-          jak miły dodatek, ale w praktyce są <strong className="font-semibold text-foreground">jednym z najskuteczniejszych sposobów
+          jak miły dodatek, ale w praktyce są <strong className="font-bold text-white">jednym z najskuteczniejszych sposobów
           pracy z grupą.</strong> Budują relacje między kursantami i jednocześnie dają instruktorowi dużo lepszy wgląd
           w dynamikę ludzi poza formalną rolą z sali.
         </p>
@@ -253,44 +253,44 @@ export default function DoswiadczenieInstruktoraArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Kursanci widzą Cię nie tylko na sali. Widzą Cię również w przestrzeni publicznej, w social mediach, na
-          wydarzeniach, w innych kontekstach. <strong className="font-semibold text-foreground">Budują sobie obraz i naturalnie
+          wydarzeniach, w innych kontekstach. <strong className="font-bold text-white">Budują sobie obraz i naturalnie
           oczekują, że będzie on spójny.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-semibold text-foreground">Wizerunek instruktora nie jest więc czymś powierzchownym.</strong> To nie
+          <strong className="font-bold text-white">Wizerunek instruktora nie jest więc czymś powierzchownym.</strong> To nie
           kwestia zdjęcia czy liczby obserwujących. To suma decyzji, reakcji i sposobu bycia. Na podstawie tego obrazu
           ludzie podejmują decyzję, czy chcą zostać.
         </p>
 
-        <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 shadow-sm">
+        <div className="rounded-3xl border border-primary/45 bg-gradient-to-br from-primary/18 via-primary/10 to-background p-6 shadow-lg shadow-primary/10">
           <div className="mb-4 flex items-center gap-3">
-            <div className="rounded-2xl bg-primary/10 p-2 text-primary">
+            <div className="rounded-2xl border border-primary/35 bg-primary/20 p-2 text-primary">
               <Lightbulb className="h-5 w-5" />
             </div>
             <h2 className="text-2xl font-semibold text-foreground">Kilka rzeczy, które warto zapamiętać</h2>
           </div>
           <ul className="space-y-3 text-base leading-8 text-foreground/85">
-            <li className="rounded-2xl border border-border/60 bg-background/70 p-4">
-              <strong className="font-semibold text-foreground">Kursanci to nie jedyne osoby, z którymi obcujesz w tym zawodzie.</strong>{" "}
+            <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
+              <strong className="font-bold text-white">Kursanci to nie jedyne osoby, z którymi obcujesz w tym zawodzie.</strong>{" "}
               Zrozum perspektywę właściciela szkoły,
               miej recepcję za sojusznika i dbaj o relacje z innymi instruktorami.
             </li>
-            <li className="rounded-2xl border border-border/60 bg-background/70 p-4">
-              <strong className="font-semibold text-foreground">Nie zaspokoisz każdego kursanta jako jednostki.</strong> Na zajęciach
+            <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
+              <strong className="font-bold text-white">Nie zaspokoisz każdego kursanta jako jednostki.</strong> Na zajęciach
               grupowych pracujesz z grupą i powtarzalnymi
               kategoriami potrzeb.
             </li>
-            <li className="rounded-2xl border border-border/60 bg-background/70 p-4">
-              <strong className="font-semibold text-foreground">Potrzeby ukrywają się pod oczekiwaniami.</strong> Najpierw uporządkuj
+            <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
+              <strong className="font-bold text-white">Potrzeby ukrywają się pod oczekiwaniami.</strong> Najpierw uporządkuj
               wyobrażenia ludzi, dopiero potem zobaczysz, co
               naprawdę jest pod spodem.
             </li>
-            <li className="rounded-2xl border border-border/60 bg-background/70 p-4">
-              <strong className="font-semibold text-foreground">Integruj.</strong> Dajesz ludziom dodatkowy powód, żeby przychodzić, a
+            <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
+              <strong className="font-bold text-white">Integruj.</strong> Dajesz ludziom dodatkowy powód, żeby przychodzić, a
               sobie przestrzeń, żeby ich naprawdę poznać.
             </li>
-            <li className="rounded-2xl border border-border/60 bg-background/70 p-4">
-              <strong className="font-semibold text-foreground">Bądź takim przykładem, jakim chcesz, żeby była Twoja grupa.</strong>{" "}
+            <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
+              <strong className="font-bold text-white">Bądź takim przykładem, jakim chcesz, żeby była Twoja grupa.</strong>{" "}
               Niespójność bardzo szybko wychodzi i trudno ją
               później odbudować.
             </li>

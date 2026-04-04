@@ -68,7 +68,7 @@ export function ArticleAudioPlayer({
   };
 
   return (
-    <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card/90 to-card p-5 shadow-sm">
+    <div className="rounded-3xl border border-primary/45 bg-gradient-to-br from-primary/18 via-card to-card p-5 shadow-lg shadow-primary/10">
       <audio
         ref={audioRef}
         preload="metadata"
@@ -87,7 +87,7 @@ export function ArticleAudioPlayer({
           <p className="text-sm text-muted-foreground">{description}</p>
         </div>
 
-        <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/80 p-4">
+        <div className="flex flex-col gap-4 rounded-2xl border border-primary/25 bg-background p-4 shadow-sm shadow-black/10">
           <div className="flex flex-wrap items-center gap-3">
             <button
               type="button"
