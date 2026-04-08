@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność",
+    description:
+      "Będąc instruktorem, nie jesteś tylko lepszym tancerzem. Bierzesz na siebie rolę reprezentanta całego środowiska i zaczynasz mieć wpływ. Dla wielu osób jesteś pierwszym kontaktem z tańcem, pierwszym doświadczeniem, pierwszym skojarzeniem i pierwszą odpowiedzią na pytanie „czym to w ogóle jest”. Wszystko, co będą o tańcu wiedzieli na początku, będzie pochodziło właśnie z tego doświadczenia.",
+    category: "Dla instruktorów",
+    readTime: "8 min",
+    slug: "instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
+    cover: "/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp",
+  },
+
+  {
     title: "15 lat doświadczenia instruktora w 200 zdaniach",
     description:
       "Oczekiwania warto rozwiewać możliwie szybko, ale spokojnie. Nie terapią szokową, nie brutalnym rozbijaniem cudzych wyobrażeń, tylko komunikacją. Trzeba tłumaczyć, co tu właściwie robimy, czym jest dany styl, na czym polega proces, jak działa grupa, szkoła, organizacja zajęć, partnerowanie, savoir-vivre, czego można się spodziewać, a czego nie. Początkujący potrafią mieć naprawdę wymyślne wyobrażenia. I dopiero kiedy te wyobrażenia zaczynają się uspokajać, można dokopać się do prawdziwych potrzeb.",
@@ -112,7 +122,7 @@ export const articlePreviews: ArticlePreview[] = [
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
       "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
-    category: "Blog",
+    category: "Dla instruktorów",
     readTime: "7 min",
     slug: "instruktor-tanca-tego-nie-zrozumiesz",
     cover: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",

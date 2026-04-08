@@ -23,6 +23,7 @@ const staticRoutes = [
 const articleRoutes = [
   "/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach",
   "/artykuly/instruktor-tanca-czlowiek-z-misja",
+  "/artykuly/instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
   "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
   "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
   "/artykuly/instruktor-trener-nauczyciel",

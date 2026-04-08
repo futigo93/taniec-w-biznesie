@@ -298,15 +298,15 @@ export default function DoswiadczenieInstruktoraArticle() {
         </div>
 
         <InlineArticlePromo
-          label="Początek serii"
-          ctaLabel="Zobacz pierwszy artykuł"
+          label="Polecany dalej"
+          ctaLabel="Czytaj dalej"
           items={[
             {
-              title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
+              title: "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność",
               description:
-                "Instruktor nie prowadzi zajęć. Instruktor projektuje doświadczenie, które kursant odbiera jako atmosferę, tempo i sens.",
-              href: "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-              image: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
+                "O tym, że instruktor buduje pierwszy obraz tańca, reprezentuje całe środowisko i odpowiada za więcej niż same kroki.",
+              href: "/artykuly/instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
+              image: "/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp",
             },
           ]}
         />
