@@ -30,6 +30,7 @@ const articleRoutes = [
   "/artykuly/po-co-tancerzowi-cele",
   "/artykuly/tam-gdzie-nam-zalezy",
   "/artykuly/tancerz-instruktor-wlasciciel",
+  "/artykuly/wartosci-w-tancu",
   "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
 ];
 

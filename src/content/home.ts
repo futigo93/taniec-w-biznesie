@@ -50,6 +50,16 @@ type ProductSpotlight = {
 
 export const articlePreviews: ArticlePreview[] = [
   {
+    title: "Wartości w tańcu",
+    description:
+      "W tańcu bardzo łatwo nam wejść w tryb „więcej”: więcej godzin na sali, więcej figur, więcej warsztatów. Z zewnątrz wszystko wygląda jak rozwój, ale w środku często pojawia się napięcie, frustracja albo poczucie, że coś nie do końca ma sens. Bo samo działanie to jeszcze nie kierunek.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "wartosci-w-tancu",
+    cover: "/artykuly/okladki/Wartosci-w-tancu.webp",
+  },
+
+  {
     title: "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność",
     description:
       "Będąc instruktorem, nie jesteś tylko lepszym tancerzem. Bierzesz na siebie rolę reprezentanta całego środowiska i zaczynasz mieć wpływ. Dla wielu osób jesteś pierwszym kontaktem z tańcem, pierwszym doświadczeniem, pierwszym skojarzeniem i pierwszą odpowiedzią na pytanie „czym to w ogóle jest”. Wszystko, co będą o tańcu wiedzieli na początku, będzie pochodziło właśnie z tego doświadczenia.",
