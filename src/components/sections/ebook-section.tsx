@@ -53,11 +53,11 @@ export function EbookSection() {
               zapisie na listę.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {ebookReasons.map((reason) => (
+          <div className="grid gap-4 md:grid-cols-2">
+            {ebookReasons.map((reason, index) => (
               <article
                 key={reason.title}
-                className="surface-card accent-hover-lift p-4"
+                className={`surface-card accent-hover-lift p-4 ${index === 2 ? "md:col-span-2" : ""}`}
               >
                 <h3 className="heading-display-soft text-heading text-2xl leading-tight">{reason.title}</h3>
                 <p className="text-body mt-3 text-sm leading-7">{reason.description}</p>

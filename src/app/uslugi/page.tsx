@@ -71,7 +71,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="surface-section grid gap-6 p-6 md:p-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <section className="surface-section p-6 md:p-10">
           <div className="space-y-5">
             <p className="eyebrow-accent">Consulting i mentoring</p>
             <h2 className="heading-display text-heading text-4xl leading-tight md:text-5xl">
@@ -96,10 +96,6 @@ export default function ServicesPage() {
                 <Link href="/artykuly">Najpierw poczytaj teksty</Link>
               </Button>
             </div>
-          </div>
-          <div className="surface-focus rounded-[1.8rem] p-6 text-body text-sm leading-7">
-            Jeśli temat payrollu albo zaplecza danych wraca przy Twojej szkole, to traktuję go jako część szerszego
-            porządkowania operacji, a nie osobny produkt stawiany na froncie.
           </div>
         </section>
       </div>

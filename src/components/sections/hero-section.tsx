@@ -22,7 +22,6 @@ export function HeroSection() {
       className="surface-focus relative overflow-hidden rounded-[2.5rem] shadow-[0_32px_120px_rgba(24,28,38,0.12)]"
     >
       <div className="hero-glow absolute inset-y-0 right-0 hidden w-[38%] lg:block" />
-      <div className="surface-highlight-band absolute inset-x-0 top-0 h-24 opacity-80" />
       <div className="relative grid gap-10 px-6 py-10 md:px-10 md:py-14 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)] lg:items-end">
         <div className="space-y-7">
           <div className="space-y-4">
@@ -47,7 +46,7 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        <aside className="surface-card accent-hover-lift focus-ring-accent rounded-[2rem] p-6 text-heading">
+        <aside className="accent-hover-lift rounded-[2rem] border border-[color:var(--surface-focus-border)] bg-[var(--surface-focus)] p-6 text-heading">
           <div className="flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-primary/80">
             <BookOpenText className="h-4 w-4" />
             Dla kogo jest to miejsce
