@@ -27,7 +27,7 @@ const consultingHighlights = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_40%,#fbf8f4_100%)] py-12">
+    <div className="page-wash py-12">
       <div className="mx-auto max-w-6xl space-y-10 px-4 md:px-6">
         <SectionHeading
           eyebrow="Dalsze wsparcie"
@@ -35,10 +35,10 @@ export default function ServicesPage() {
           description="Ta strona nie jest katalogiem modułów. Pokazuje dwa kierunki, które realnie pomagają właścicielowi: uporządkowanie ścieżki szkoły od oferty do zapisu oraz bezpośrednią pracę nad decyzjami, procesami i komunikacją."
         />
 
-        <section className="surface-feature grid gap-6 p-6 text-heading md:p-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
+        <section className="surface-focus grid gap-6 p-6 text-heading md:p-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
           <div className="space-y-5">
             <p className="eyebrow-accent">Baileo</p>
-            <h2 className="text-heading text-4xl leading-tight md:text-5xl">
+            <h2 className="heading-display text-heading text-4xl leading-tight md:text-5xl">
               Porządkowanie drogi od sociali, grafiku i pytań do właściwego zapisu
             </h2>
             <p className="text-body max-w-2xl text-base leading-8">
@@ -74,7 +74,7 @@ export default function ServicesPage() {
         <section className="surface-section grid gap-6 p-6 md:p-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
           <div className="space-y-5">
             <p className="eyebrow-accent">Consulting i mentoring</p>
-            <h2 className="text-heading text-4xl leading-tight md:text-5xl">
+            <h2 className="heading-display text-heading text-4xl leading-tight md:text-5xl">
               Wsparcie dla właściciela, który chce poukładać decyzje zanim szkoła zacznie ciągnąć go w każdą stronę naraz
             </h2>
             <p className="text-body max-w-2xl text-base leading-8">
@@ -97,7 +97,7 @@ export default function ServicesPage() {
               </Button>
             </div>
           </div>
-          <div className="surface-card-inset rounded-[1.8rem] p-6 text-body text-sm leading-7">
+          <div className="surface-focus rounded-[1.8rem] p-6 text-body text-sm leading-7">
             Jeśli temat payrollu albo zaplecza danych wraca przy Twojej szkole, to traktuję go jako część szerszego
             porządkowania operacji, a nie osobny produkt stawiany na froncie.
           </div>

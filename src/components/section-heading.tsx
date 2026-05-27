@@ -7,6 +7,7 @@ type SectionHeadingProps = {
   description?: ReactNode;
   align?: "left" | "center";
   className?: string;
+  titleClassName?: string;
   descriptionClassName?: string;
 };
 
@@ -16,6 +17,7 @@ export function SectionHeading({
   description,
   align = "left",
   className,
+  titleClassName,
   descriptionClassName,
 }: SectionHeadingProps) {
   return (
@@ -28,11 +30,11 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/80">{eyebrow}</p>
+        <p className="eyebrow-accent">{eyebrow}</p>
       )}
-      <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
+      <h2 className={cn("heading-display-soft text-heading text-2xl md:text-3xl", titleClassName)}>{title}</h2>
       {description && (
-        <p className={cn("text-base text-muted-foreground", descriptionClassName)}>{description}</p>
+        <p className={cn("text-body text-base", descriptionClassName)}>{description}</p>
       )}
     </div>
   );

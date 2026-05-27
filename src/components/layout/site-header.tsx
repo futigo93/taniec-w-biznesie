@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { AnchorLink } from "@/components/ui/anchor-link";
+import { DEFAULT_THEME_PREVIEW, THEME_PREVIEW_KEY, themePreviewOptions, type ThemePreviewId } from "@/lib/theme-preview";
 
 const navLinks = [
   { anchor: "ebook", label: "Ebook" },
@@ -16,10 +17,26 @@ const navLinks = [
   { href: "/uslugi", label: "Wsparcie" },
   { href: "/o-mnie", label: "O mnie" },
 ];
+const themePreviewEnabled = process.env.NODE_ENV !== "production";
+const emptySubscribe = () => () => {};
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [themePreview, setThemePreview] = useState<ThemePreviewId>(() => {
+    if (!themePreviewEnabled || typeof window === "undefined") {
+      return DEFAULT_THEME_PREVIEW;
+    }
+
+    const stored = window.localStorage.getItem(THEME_PREVIEW_KEY) as ThemePreviewId | null;
+    if (themePreviewOptions.some((option) => option.id === stored)) {
+      return stored!;
+    }
+
+    const htmlTheme = document.documentElement.dataset.theme as ThemePreviewId | undefined;
+    return themePreviewOptions.some((option) => option.id === htmlTheme) ? htmlTheme! : DEFAULT_THEME_PREVIEW;
+  });
   const pathname = usePathname();
+  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const isEbook = pathname?.startsWith("/ebook");
 
   useEffect(() => {
@@ -30,9 +47,22 @@ export function SiteHeader() {
     };
   }, [open, isEbook]);
 
+  useEffect(() => {
+    if (!themePreviewEnabled || typeof window === "undefined") return;
+    document.documentElement.dataset.theme = themePreview;
+  }, [themePreview]);
+
   if (isEbook) {
     return null;
   }
+
+  const applyThemePreview = (themeId: ThemePreviewId) => {
+    setThemePreview(themeId);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(THEME_PREVIEW_KEY, themeId);
+    }
+    document.documentElement.dataset.theme = themeId;
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
@@ -93,12 +123,18 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
+          {themePreviewEnabled && isClient ? <ThemePreviewSwitcher activeTheme={themePreview} onChange={applyThemePreview} /> : null}
           <Button asChild>
             <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
           </Button>
         </div>
       </div>
-      <MobileNav open={open} onClose={() => setOpen(false)} />
+      <MobileNav
+        open={open}
+        onClose={() => setOpen(false)}
+        themePreview={themePreview}
+        onThemeChange={applyThemePreview}
+      />
     </header>
   );
 }
@@ -106,9 +142,13 @@ export function SiteHeader() {
 function MobileNav({
   open,
   onClose,
+  themePreview,
+  onThemeChange,
 }: {
   open: boolean;
   onClose: () => void;
+  themePreview: ThemePreviewId;
+  onThemeChange: (themeId: ThemePreviewId) => void;
 }) {
   if (!open || typeof window === "undefined") return null;
 
@@ -158,6 +198,24 @@ function MobileNav({
               </Link>
             ),
           )}
+          {themePreviewEnabled ? (
+            <div className="surface-card mt-2 space-y-3 rounded-[1.5rem] p-4">
+              <p className="eyebrow-accent">Graphite preview</p>
+              <div className="grid gap-2">
+                {themePreviewOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    data-active={themePreview === option.id}
+                    className="theme-preview-control justify-center"
+                    onClick={() => onThemeChange(option.id)}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <Button asChild>
             <AnchorLink anchor="zapis" onClick={onClose}>
               Odbierz ebook
@@ -167,5 +225,29 @@ function MobileNav({
       </div>
     </div>,
     document.body,
+  );
+}
+
+function ThemePreviewSwitcher({
+  activeTheme,
+  onChange,
+}: {
+  activeTheme: ThemePreviewId;
+  onChange: (themeId: ThemePreviewId) => void;
+}) {
+  return (
+    <div className="surface-card flex items-center gap-1 rounded-full p-1">
+      {themePreviewOptions.map((option) => (
+        <button
+          key={option.id}
+          type="button"
+          data-active={activeTheme === option.id}
+          className="theme-preview-control"
+          onClick={() => onChange(option.id)}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -13,6 +13,12 @@ const inter = Inter({
   display: "swap",
 });
 
+const manrope = Manrope({
+  subsets: ["latin-ext"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
 const playfair = Playfair_Display({
   subsets: ["latin-ext"],
   weight: ["400", "500", "600"],
@@ -21,6 +27,20 @@ const playfair = Playfair_Display({
 });
 
 const fbAppId = process.env.NEXT_PUBLIC_FB_APP_ID;
+const themeInitScript = `
+  (function() {
+    try {
+      var key = "twb-theme-preview";
+      var fallback = "graphite-balanced";
+      var allowed = ["graphite-quiet", "graphite-balanced", "graphite-bold"];
+      var stored = window.localStorage.getItem(key);
+      var theme = allowed.indexOf(stored) >= 0 ? stored : fallback;
+      document.documentElement.dataset.theme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = "graphite-balanced";
+    }
+  })();
+`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -74,10 +94,15 @@ export default function RootLayout({
   const isProd = process.env.NODE_ENV === "production";
 
   return (
-    <html lang="pl">
-      <head>{fbAppId ? <meta property="fb:app_id" content={fbAppId} /> : null}</head>
+    <html lang="pl" data-theme="graphite-balanced" suppressHydrationWarning>
+      <head>
+        {fbAppId ? <meta property="fb:app_id" content={fbAppId} /> : null}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+      </head>
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+        className={`${inter.variable} ${manrope.variable} ${playfair.variable} font-sans antialiased`}
       >
         <div className="flex min-h-screen flex-col bg-background text-foreground">
           <SiteHeader />

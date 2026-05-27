@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 export const metadata: Metadata = {
   title: "Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych",
@@ -38,36 +36,18 @@ export const metadata: Metadata = {
 
 export default function DataCaseStudyArticle() {
   return (
-    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_45%,#fbf8f4_100%)] py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-4xl space-y-6 px-4 md:px-6">
-        <div className="surface-feature p-6 text-heading md:p-8">
-          <SectionHeading
-            eyebrow="Case study"
-            title="Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych"
-            description="O porządkowaniu danych, raportów i payrollu w dojrzałej szkole tańca bez zatrzymywania codziennej pracy organizacji."
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-[#6f5c50]">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>22 maja 2026</span>
-          </div>
-          <FacebookWidgets
-            path="/artykuly/jak-szkola-tanca-przeszla-z-recznie-sklejanych-raportow-do-dojrzalszego-systemu-danych"
-            className="mt-5"
-          />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-[1.75rem] p-4">
-            <Image
-              src="/artykuly/okladki/case-study-salsa-libre.webp"
-              alt="Okładka case study Salsa Libre"
-              width={1254}
-              height={824}
-              className="w-full rounded-[1.25rem] object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Case study"
+          title="Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych"
+          description="O porządkowaniu danych, raportów i payrollu w dojrzałej szkole tańca bez zatrzymywania codziennej pracy organizacji."
+          path="/artykuly/jak-szkola-tanca-przeszla-z-recznie-sklejanych-raportow-do-dojrzalszego-systemu-danych"
+          imageSrc="/artykuly/okladki/case-study-salsa-libre.webp"
+          imageAlt="Okładka case study Salsa Libre"
+          authorName="Jakub Nowak"
+          date="22 maja 2026"
+        />
 
         <ArticleSection title="1. Otwarcie">
           <p>

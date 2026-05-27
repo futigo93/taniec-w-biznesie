@@ -33,7 +33,7 @@ export function ArticlesLibraryPage() {
   const [leadArticle, ...libraryArticles] = filteredArticles;
 
   return (
-    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_35%,#fbf8f4_100%)] py-12">
+    <div className="page-wash py-12">
       <div className="mx-auto max-w-6xl space-y-10 px-4 md:px-6">
         <SectionHeading
           eyebrow="Biblioteka treści"
@@ -124,11 +124,11 @@ function ArticleCard({
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
-        className="surface-feature grid gap-6 rounded-[2rem] p-6 text-heading transition hover:translate-y-[-2px] lg:grid-cols-[minmax(0,1fr)_300px]"
+        className="surface-focus accent-hover-lift grid gap-6 rounded-[2rem] p-6 text-heading lg:grid-cols-[minmax(0,1fr)_300px]"
       >
         <div className="space-y-4">
           <MetaLine article={article} dark />
-          <h2 className="text-heading max-w-3xl text-3xl leading-tight md:text-4xl">{article.title}</h2>
+          <h2 className="heading-display-soft text-heading max-w-3xl text-3xl leading-tight md:text-4xl">{article.title}</h2>
           <p className="text-body max-w-2xl text-base leading-8">{article.description}</p>
           <p className="cta-link">
             {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}
@@ -155,7 +155,7 @@ function ArticleCard({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="surface-card group flex h-full flex-col gap-4 rounded-[1.75rem] p-5 transition hover:translate-y-[-2px] hover:shadow-md"
+      className="surface-card accent-hover-lift group flex h-full flex-col gap-4 rounded-[1.75rem] p-5"
     >
       {article.cover && !compact ? (
         <div className="relative h-52 overflow-hidden rounded-[1.4rem]">
@@ -164,7 +164,7 @@ function ArticleCard({
       ) : null}
       <div className="space-y-3">
         <MetaLine article={article} />
-        <h3 className="text-heading text-2xl leading-tight">{article.title}</h3>
+        <h3 className="heading-display-soft text-heading text-2xl leading-tight">{article.title}</h3>
         <p className="text-body text-sm leading-7">{article.description}</p>
       </div>
       <p className="cta-link mt-auto">

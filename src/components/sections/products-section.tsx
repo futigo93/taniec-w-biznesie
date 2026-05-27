@@ -18,7 +18,7 @@ export function ProductsSection() {
         {supportPaths.map((path) => (
           <article
             key={path.title}
-            className="surface-card-soft flex h-full flex-col p-5"
+            className="surface-focus accent-hover-lift flex h-full flex-col p-5"
           >
             <div className="eyebrow-accent">{path.label}</div>
             <h3 className="text-heading mt-4 font-serif text-3xl leading-tight">{path.title}</h3>

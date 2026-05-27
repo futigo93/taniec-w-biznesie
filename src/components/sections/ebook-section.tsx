@@ -38,16 +38,16 @@ export function EbookSection() {
   return (
     <section
       id="ebook"
-      className="scroll-mt-32 rounded-[2.25rem] border border-[#d8c2af] bg-[linear-gradient(180deg,#fffdf9_0%,#f7efe6_100%)] p-6 shadow-[0_24px_80px_rgba(49,34,24,0.08)] md:p-10"
+      className="surface-focus scroll-mt-32 p-6 md:p-10"
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)] lg:items-center">
         <div className="space-y-6">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary/85">Na start</p>
-            <h2 className="max-w-3xl font-serif text-4xl leading-tight text-[#2b1f18] md:text-5xl">
+            <p className="eyebrow-accent">Na start</p>
+            <h2 className="heading-display text-heading max-w-3xl text-4xl leading-tight md:text-5xl">
               Ebook, który pomaga zobaczyć szkołę szerzej niż przez grafik, nabór i bieżące pożary.
             </h2>
-            <p className="max-w-2xl text-base leading-8 text-[#5f4c42] md:text-lg">
+            <p className="text-body max-w-2xl text-base leading-8 md:text-lg">
               „Czego nie wiesz o prowadzeniu szkoły tańca” to materiał dla osób, które czują, że szkoła coraz bardziej
               zależy od jakości decyzji, komunikacji i procesów, a nie tylko od energii na sali. Pełną wersję dostajesz po
               zapisie na listę.
@@ -57,10 +57,10 @@ export function EbookSection() {
             {ebookReasons.map((reason) => (
               <article
                 key={reason.title}
-                className="rounded-[1.75rem] border border-[#e5d6c8] bg-white/80 p-4 shadow-sm"
+                className="surface-card accent-hover-lift p-4"
               >
-                <h3 className="font-serif text-2xl leading-tight text-[#2b1f18]">{reason.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#665246]">{reason.description}</p>
+                <h3 className="heading-display-soft text-heading text-2xl leading-tight">{reason.title}</h3>
+                <p className="text-body mt-3 text-sm leading-7">{reason.description}</p>
               </article>
             ))}
           </div>
@@ -80,9 +80,9 @@ export function EbookSection() {
           </div>
         </div>
         <div className="flex justify-center lg:justify-end">
-          <div className="surface-card relative w-full max-w-sm rounded-[2rem] p-5 text-heading">
-            <div className="absolute -right-6 top-8 hidden h-24 w-24 rounded-full bg-[#d39a69]/18 blur-3xl md:block" />
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">W środku</p>
+          <div className="surface-focus accent-hover-lift relative w-full max-w-sm rounded-[2rem] p-5 text-heading">
+            <div className="surface-orb absolute -right-6 top-8 hidden h-24 w-24 rounded-full blur-3xl md:block" />
+            <p className="surface-chip">W środku</p>
             <p className="text-body mt-3 text-sm leading-7">
               Jak przejść z trybu instruktora do trybu właściciela, jak widzieć ukryte koszty chaosu i jak nie budować
               szkoły wyłącznie na improwizacji oraz pamięci kilku osób.

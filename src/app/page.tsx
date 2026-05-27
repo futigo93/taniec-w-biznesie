@@ -8,7 +8,7 @@ import { CallToActionSection } from "@/components/sections/call-to-action";
 
 export default function Home() {
   return (
-    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_35%,#fbf8f4_100%)] py-10 md:py-12">
+    <div className="page-wash py-10 md:py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:gap-10 md:px-6">
         <HeroSection />
         <ValuePropositionSection />

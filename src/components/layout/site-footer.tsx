@@ -24,7 +24,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/70 bg-muted/40 text-sm">
+    <footer className="border-t border-border/70 bg-[color:color-mix(in_srgb,var(--surface-quiet)_72%,transparent)] text-sm backdrop-blur-sm">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3 md:px-6">
         <div className="space-y-2">
           <p className="font-semibold tracking-tight">Taniec w Biznesie</p>

@@ -52,9 +52,9 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
       {open &&
         createPortal(
           <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/70 p-4">
-            <div className="w-full max-w-md rounded-3xl border border-border/60 bg-card p-6 shadow-2xl">
-              <h2 className="text-xl font-semibold">Umów konsultację</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
+            <div className="surface-card w-full max-w-md rounded-3xl p-6 shadow-2xl">
+              <h2 className="text-heading text-xl font-semibold">Umów konsultację</h2>
+              <p className="text-body mt-2 text-sm">
                 Zostaw podstawowe informacje, a odezwę się z propozycją terminu i krótką agendą rozmowy.
               </p>
               <form
@@ -106,7 +106,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                   value={formData.message}
                   onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                 />
-                <div className="space-y-3 rounded-2xl border border-border/70 bg-muted/20 p-4 text-sm">
+                <div className="surface-card-inset text-body space-y-3 rounded-2xl p-4 text-sm">
                   <p>
                     Zapisuję Twój adres zgodnie z{" "}
                     <a href="/polityka-prywatnosci" className="link-accent" target="_blank" rel="noreferrer">

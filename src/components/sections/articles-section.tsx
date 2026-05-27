@@ -52,14 +52,14 @@ function FeaturedArticleCard() {
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="surface-feature grid gap-6 rounded-[2rem] p-6 text-heading transition hover:translate-y-[-2px] md:grid-cols-[minmax(0,1.1fr)_320px]"
+      className="surface-focus accent-hover-lift grid gap-6 rounded-[2rem] p-6 text-heading md:grid-cols-[minmax(0,1.1fr)_320px]"
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-primary/80">
           <span>{article.category}</span>
           <span>{article.readTime}</span>
         </div>
-        <h3 className="text-heading max-w-3xl font-serif text-3xl leading-tight md:text-4xl">{article.title}</h3>
+        <h3 className="heading-display-soft text-heading max-w-3xl text-3xl leading-tight md:text-4xl">{article.title}</h3>
         <p className="text-body max-w-2xl text-base leading-8">{article.description}</p>
         <p className="text-body text-sm leading-7">
           To historia o tym, jak uporządkowanie danych i procesów może zdjąć ze szkoły sporą część ręcznej pracy i dać
@@ -94,13 +94,13 @@ function ArticleCard({ article }: { article: (typeof articlePreviews)[number] })
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="surface-card group rounded-[1.75rem] p-5 transition hover:translate-y-[-2px] hover:shadow-md"
+      className="surface-card accent-hover-lift group rounded-[1.75rem] p-5"
     >
       <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.24em] text-primary/80">
         <span>{article.category}</span>
         <span>{article.readTime}</span>
       </div>
-      <h3 className="text-heading mt-4 font-serif text-3xl leading-tight">{article.title}</h3>
+      <h3 className="heading-display-soft text-heading mt-4 text-3xl leading-tight">{article.title}</h3>
       <p className="text-body mt-3 text-sm leading-7">{article.description}</p>
       <p className="cta-link mt-5">
         {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}

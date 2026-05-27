@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/section-heading";
 
 export function ValuePropositionSection() {
   return (
-    <section className="space-y-8 rounded-[2rem] border border-border/70 bg-white/80 p-6 shadow-[0_24px_80px_rgba(49,34,24,0.08)] md:p-10">
+    <section className="surface-section space-y-8 rounded-[2rem] p-6 md:p-10">
       <SectionHeading
         eyebrow="Dla kogo jest to miejsce"
         title="To miejsce dla właściciela szkoły tańca, który chce prowadzić ją mądrzej, a nie tylko szybciej"
@@ -13,11 +13,11 @@ export function ValuePropositionSection() {
         {homeValuePoints.map((point) => (
           <article
             key={point.title}
-            className="rounded-[1.75rem] border border-border/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,243,235,0.88))] p-5 shadow-sm"
+            className="surface-card accent-hover-lift p-5 shadow-sm"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/80">Co zyskasz</p>
-            <h3 className="mt-4 font-serif text-2xl leading-tight text-foreground">{point.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">{point.description}</p>
+            <p className="eyebrow-accent tracking-[0.2em]">Co zyskasz</p>
+            <h3 className="heading-display-soft text-heading mt-4 text-2xl leading-tight">{point.title}</h3>
+            <p className="text-body mt-3 text-sm leading-7">{point.description}</p>
           </article>
         ))}
       </div>

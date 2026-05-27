@@ -39,20 +39,22 @@ export const metadata: Metadata = {
 
 export default function TamGdzieNamZalezyArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
+        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
           <SectionHeading
             eyebrow="Dla tancerzy"
             title={articleTitle}
             description={articleDescription}
+            descriptionClassName="text-body"
+            className="[&_h2]:text-heading [&_p]:text-body"
           />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
+          <div className="text-body mt-4 flex items-center gap-4 text-sm">
             <Link
               href="https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie"
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-white/40 underline-offset-4 hover:decoration-white/80"
+              className="link-accent"
             >
               Magda Kochmańska - Tanecznik
             </Link>
@@ -62,7 +64,7 @@ export default function TamGdzieNamZalezyArticle() {
             <span>5 min</span>
           </div>
           <FacebookWidgets path="/artykuly/tam-gdzie-nam-zalezy" className="mt-5" />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
             <Image
               src="/artykuly/okladki/Tam-gdzie-nam-zalezy.webp"
               alt={articleTitle}

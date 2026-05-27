@@ -37,15 +37,17 @@ export const metadata: Metadata = {
 
 export default function NomenklaturaArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
+        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
           <SectionHeading
             eyebrow="Strategia"
             title="Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub."
             description="W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom."
+            descriptionClassName="text-body"
+            className="[&_h2]:text-heading [&_p]:text-body"
           />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
+          <div className="text-body mt-4 flex items-center gap-4 text-sm">
             <span>Jakub Nowak</span>
             <span>•</span>
             <span>21 grudnia 2025</span>
@@ -54,7 +56,7 @@ export default function NomenklaturaArticle() {
             path="/artykuly/instruktor-trener-nauczyciel"
             className="mt-5"
           />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
             <Image
               src="/artykuly/okladki/nomenklatura_cover.webp"
               alt="Instruktor, trener, nauczyciel – okładka"

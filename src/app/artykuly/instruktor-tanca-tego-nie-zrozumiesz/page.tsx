@@ -38,21 +38,23 @@ export const metadata: Metadata = {
 
 export default function InstruktorTancaArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
+        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
           <SectionHeading
             eyebrow="Dla instruktorów"
             title="Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)"
             description="Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji."
+            descriptionClassName="text-body"
+            className="[&_h2]:text-heading [&_p]:text-body"
           />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
+          <div className="text-body mt-4 flex items-center gap-4 text-sm">
             <span>Jakub Nowak</span>
             <span>•</span>
             <span>9 stycznia 2026</span>
           </div>
           <FacebookWidgets path="/artykuly/instruktor-tanca-tego-nie-zrozumiesz" className="mt-5" />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
             <Image
               src="/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"
               alt="Instruktor tańca - tego nie zrozumiesz"

@@ -1,11 +1,9 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Lightbulb } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 import { ArticleAudioPlayer } from "@/components/audio/article-audio-player";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 const articleTitle = "15 lat doświadczenia instruktora w 200 zdaniach";
 const articleDescription =
@@ -41,31 +39,19 @@ export const metadata: Metadata = {
 
 export default function DoswiadczenieInstruktoraArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
-          <SectionHeading eyebrow="Dla instruktorów" title={articleTitle} description={articleDescription} />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
-            <Link href="/o-mnie" className="underline decoration-white/40 underline-offset-4 hover:decoration-white/80">
-              Jakub Nowak
-            </Link>
-            <span>•</span>
-            <span>4 kwietnia 2026</span>
-            <span>•</span>
-            <span>12 min</span>
-          </div>
-          <FacebookWidgets path="/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach" className="mt-5" />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/25 bg-white/10 p-4 shadow-lg shadow-black/20">
-            <Image
-              src="/artykuly/okladki/15-lat-doswiadczenia.webp"
-              alt={articleTitle}
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla instruktorów"
+          title={articleTitle}
+          description={articleDescription}
+          path="/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach"
+          imageSrc="/artykuly/okladki/15-lat-doswiadczenia.webp"
+          imageAlt={articleTitle}
+          authorName="Jakub Nowak"
+          date="4 kwietnia 2026"
+          readTime="12 min"
+        />
 
         <ArticleAudioPlayer
           src="https://hscychmgsmmrfyzt.public.blob.vercel-storage.com/audio-articles/15-lat-dowiadczenia-audio.mp3"

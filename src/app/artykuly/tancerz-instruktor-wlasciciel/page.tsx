@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 export const metadata: Metadata = {
   title: "Tancerz ≠ instruktor ≠ właściciel",
@@ -37,34 +35,18 @@ export const metadata: Metadata = {
 
 export default function TancerzInstruktorWlascicielArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
-          <SectionHeading
-            eyebrow="Blog"
-            title="Tancerz ≠ instruktor ≠ właściciel"
-            description="Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu."
-          />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>7 stycznia 2026</span>
-          </div>
-          <FacebookWidgets
-            path="/artykuly/tancerz-instruktor-wlasciciel"
-            className="mt-5"
-          />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
-            <Image
-              src="/artykuly/okladki/tancerz-instruktor-wlasciciel.png"
-              alt="Tancerz, instruktor, właściciel - okładka"
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Blog"
+          title="Tancerz ≠ instruktor ≠ właściciel"
+          description="Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu."
+          path="/artykuly/tancerz-instruktor-wlasciciel"
+          imageSrc="/artykuly/okladki/tancerz-instruktor-wlasciciel.png"
+          imageAlt="Tancerz, instruktor, właściciel - okładka"
+          authorName="Jakub Nowak"
+          date="7 stycznia 2026"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           Uczyłem tańca od osiemnastego roku życia. Przez lata przewinęły się przez moje zajęcia tysiące osób. Obserwowałem,

@@ -91,24 +91,24 @@ export function NewsletterForm({
 
   return (
     <form className={className} onSubmit={handleSubmit(onSubmit)} aria-live="polite">
-      <div className="space-y-4 rounded-[1.8rem] border border-white/12 bg-[#fff9f3] p-6 text-[#2b1f18] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] md:p-8">
+      <div className="surface-card form-neutral-surface focus-ring-accent space-y-4 rounded-[1.8rem] p-6 text-[var(--heading)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] [&_input]:text-[var(--foreground)] [&_label]:text-[var(--body-strong)] [&_p]:text-[var(--body)] [&_select]:text-[var(--foreground)] md:p-8">
         <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">Szybki zapis</p>
-          <p className="text-sm leading-7 text-[#665246]">
+          <p className="eyebrow-accent tracking-[0.22em]">Szybki zapis</p>
+          <p className="text-body text-sm leading-7">
             Po zapisie od razu dostaniesz pełny ebook na maila. Dodatkowe pola pomagają mi lepiej rozumieć, kto trafia do
             tego miejsca i jakich treści najbardziej potrzebuje.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="text-sm font-medium" htmlFor="cta-name">
+            <label className="text-body-strong text-sm font-medium" htmlFor="cta-name">
               Jak się do Ciebie zwracać?*
             </label>
             <Input id="cta-name" {...register("name")} />
             {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium" htmlFor="cta-email">
+            <label className="text-body-strong text-sm font-medium" htmlFor="cta-email">
               Adres e-mail*
             </label>
             <Input
@@ -120,18 +120,18 @@ export function NewsletterForm({
             {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
           </div>
           <div className="space-y-2 md:col-span-2">
-            <label className="text-sm font-medium" htmlFor="cta-school">
-              Nazwa szkoły <span className="text-[#8b7567]">(opcjonalnie)</span>
+            <label className="text-body-strong text-sm font-medium" htmlFor="cta-school">
+              Nazwa szkoły <span className="text-body">(opcjonalnie)</span>
             </label>
             <Input id="cta-school" placeholder="Nazwa szkoły lub projektu" {...register("school")} />
           </div>
           <div className="space-y-2 md:col-span-2">
-            <label className="text-sm font-medium" htmlFor="cta-role">
+            <label className="text-body-strong text-sm font-medium" htmlFor="cta-role">
               Twoja rola dzisiaj*
             </label>
             <select
               id="cta-role"
-              className="w-full rounded-xl border border-border/70 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-foreground w-full rounded-xl border border-border/70 bg-[var(--surface-inset)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               {...register("role")}
             >
               <option value="">-</option>
@@ -145,7 +145,7 @@ export function NewsletterForm({
             {errors.role && <p className="text-sm text-destructive">{errors.role.message}</p>}
           </div>
         </div>
-        <div className="space-y-3 rounded-[1.4rem] border border-[#e5d6c8] bg-[#f7efe6] p-4 text-sm text-[#57463c]">
+        <div className="surface-card-inset text-body space-y-3 rounded-[1.4rem] p-4 text-sm">
           <p>
             Zapisuję Twój adres zgodnie z{" "}
             <a href="/polityka-prywatnosci" className="link-accent" target="_blank" rel="noreferrer">
@@ -174,7 +174,7 @@ export function NewsletterForm({
           {errors.regulationsAccepted && (
             <p className="text-sm text-destructive">{errors.regulationsAccepted.message}</p>
           )}
-          <label className="flex items-start gap-2 text-sm text-[#57463c]">
+          <label className="text-body flex items-start gap-2 text-sm">
             <input
               type="checkbox"
               className="mt-1"

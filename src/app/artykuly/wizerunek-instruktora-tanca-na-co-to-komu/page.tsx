@@ -1,9 +1,8 @@
 ﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 export const metadata: Metadata = {
   title: "Wizerunek instruktora tańca - na co to komu?",
@@ -38,36 +37,19 @@ export const metadata: Metadata = {
 
 export default function WizerunekInstruktoraArticle() {
   return (
-    <div className="bg-background py-12">
+    <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#15100d] to-[#231a14] p-6 text-white shadow-xl">
-          <SectionHeading
-            eyebrow="Blog"
-            title="Wizerunek instruktora tańca - na co to komu?"
-            description="W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia."
-          />
-          <div className="mt-4 flex items-center gap-4 text-sm text-white/80">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>2 lutego 2026</span>
-            <span>•</span>
-            <span>9 min</span>
-          </div>
-          <FacebookWidgets
-            path="/artykuly/wizerunek-instruktora-tanca-na-co-to-komu"
-            className="mt-5"
-          />
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
-            <Image
-              src="/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp"
-              alt="Wizerunek instruktora tańca - na co to komu?"
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Blog"
+          title="Wizerunek instruktora tańca - na co to komu?"
+          description="W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia."
+          path="/artykuly/wizerunek-instruktora-tanca-na-co-to-komu"
+          imageSrc="/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp"
+          imageAlt="Wizerunek instruktora tańca - na co to komu?"
+          authorName="Jakub Nowak"
+          date="2 lutego 2026"
+          readTime="9 min"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           W świecie tańca social media stały się czymś w rodzaju wspólnego

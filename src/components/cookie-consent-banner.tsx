@@ -49,6 +49,12 @@ function updateConsent(granted: boolean) {
   );
 }
 
+function readThemeValue(name: string, fallback: string) {
+  if (typeof window === "undefined") return fallback;
+  const value = window.getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return value || fallback;
+}
+
 export function CookieConsentBanner() {
   useEffect(() => {
     const css = document.createElement("link");
@@ -66,8 +72,14 @@ export function CookieConsentBanner() {
             type: "opt-in",
             revokable: true,
             palette: {
-              popup: { background: "#2b1e16", text: "#f6efe4" },
-              button: { background: "#d97706", text: "#1a110c" },
+              popup: {
+                background: readThemeValue("--surface-focus", "#f4f6f6"),
+                text: readThemeValue("--body-strong", "#2a2f36"),
+              },
+              button: {
+                background: readThemeValue("--cta-bg", "#355d73"),
+                text: readThemeValue("--cta-fg", "#f8fafb"),
+              },
             },
             theme: "classic",
             content: {
