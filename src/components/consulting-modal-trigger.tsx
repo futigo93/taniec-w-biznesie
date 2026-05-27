@@ -109,11 +109,11 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                 <div className="space-y-3 rounded-2xl border border-border/70 bg-muted/20 p-4 text-sm">
                   <p>
                     Zapisuję Twój adres zgodnie z{" "}
-                    <a href="/polityka-prywatnosci" className="underline" target="_blank" rel="noreferrer">
+                    <a href="/polityka-prywatnosci" className="link-accent" target="_blank" rel="noreferrer">
                       Polityką Prywatności
                     </a>{" "}
                     oraz{" "}
-                    <a href="/polityka-cookies" className="underline" target="_blank" rel="noreferrer">
+                    <a href="/polityka-cookies" className="link-accent" target="_blank" rel="noreferrer">
                       Polityką Cookies
                     </a>
                     , aby odpowiedzieć na Twój feedback.
@@ -133,7 +133,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                     />
                     <span>
                       Potwierdzam, że zapoznałem się z{" "}
-                      <a href="/regulamin" className="underline" target="_blank" rel="noreferrer">
+                      <a href="/regulamin" className="link-accent" target="_blank" rel="noreferrer">
                         Regulaminem Serwisu
                       </a>{" "}
                       i akceptuję jego treść.

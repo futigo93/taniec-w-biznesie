@@ -4,36 +4,35 @@ import { SectionHeading } from "@/components/section-heading";
 
 export function AboutSection() {
   return (
-    <section className="rounded-3xl border border-border/60 bg-[#f3eadf] p-6 text-[#2b1a12] shadow-sm md:flex md:items-center md:gap-10 md:p-10">
-      <div className="space-y-4 md:flex-1">
+    <section className="grid gap-8 rounded-[2.25rem] border border-border/70 bg-[linear-gradient(135deg,#f7efe6_0%,#fffdf9_100%)] p-6 shadow-[0_24px_80px_rgba(49,34,24,0.08)] md:p-10 lg:grid-cols-[minmax(0,1.1fr)_320px] lg:items-center">
+      <div className="space-y-5">
         <SectionHeading
-          eyebrow="O mnie"
-          title="Łączę doświadczenie instruktora i menedżera z analityką biznesową"
-          description="Od lat działam w świecie tańca – jako instruktor, właściciel szkoły i manager – a równolegle zawodowo zajmuję się analizą biznesową i budowaniem systemów. Prowadzę startup (system do zarządzania szkołą tańca), dzięki czemu na ten rynek patrzę zarówno z perspektywy sali, jak i danych, procesów i decyzji właścicielskich."
+          eyebrow="O autorze"
+          title="Łączę doświadczenie z parkietu, prowadzenia szkoły i budowania systemów, które porządkują pracę od środka"
+          description="Nie piszę o szkołach tańca z dystansu. Patrzę na nie jednocześnie z perspektywy instruktora, byłego właściciela i managera oraz osoby, która zawodowo pracuje na procesach, danych i logice decyzji."
         />
-        <p className="text-sm leading-relaxed text-[#4b342a]">
-          Studiowałem Zarządzanie w SGH i psychologię zarządzania na studiach podyplomowych. Zrozumiałem, że wiele problemów
-          właścicieli szkół wynika z braku narzędzi i języka do myślenia o szkole jako systemie. Ten projekt porządkuje te
-          doświadczenia i nazywa rzeczy, o których w branży rzadko mówi się wprost.
+        <p className="text-sm leading-8 text-[#5f4c42] md:text-base">
+          Dzięki temu Taniec w Biznesie nie jest tylko zbiorem inspiracji. To miejsce, w którym można nazwać rzeczy, które
+          w szkołach często dzieją się po cichu: rozjazd między rolą instruktora i właściciela, chaos komunikacyjny, brak
+          języka do decyzji czy zbyt duże poleganie na pamięci i improwizacji.
         </p>
-        <p className="text-sm leading-relaxed text-[#4b342a]">
-          Obecnie tworzę rozwiązania, które mają realnie wspierać właścicieli w codziennym prowadzeniu szkół – od strony
-          organizacyjnej i decyzyjnej. To część większej drogi: budowania przestrzeni, w której taniec rozwija się w sposób
-          zdrowy i długoterminowy, bez wypalania.
+        <p className="text-sm leading-8 text-[#5f4c42] md:text-base">
+          Obok treści rozwijam też kierunki wdrożeniowe, które pomagają porządkować wejście nowych osób, zapisy, dane i
+          operacje szkoły. Chcę, żeby to miejsce było dla właściciela realnym zapleczem do myślenia, porządkowania i
+          podejmowania lepszych decyzji.
         </p>
-        <Link href="mailto:kontakt@taniecwbiznesie.pl" className="text-sm font-semibold text-primary">
+        <Link href="mailto:kontakt@taniecwbiznesie.pl" className="cta-link">
           kontakt@taniecwbiznesie.pl
         </Link>
       </div>
-      <div className="mt-6 flex justify-center md:mt-0 md:flex-1">
-        <div className="relative h-80 w-80 overflow-hidden rounded-3xl border border-border/40 bg-white shadow-lg">
+      <div className="flex justify-center lg:justify-end">
+        <div className="relative h-80 w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-[#dcc6b3] bg-white shadow-xl">
           <Image
             src="/jakub_nowak.webp"
             alt="Jakub Nowak"
             fill
             className="object-cover"
             sizes="320px"
-            priority
           />
         </div>
       </div>

@@ -237,6 +237,6 @@ export default function TancerzInstruktorWlascicielArticle() {
 }
 
 function SectionSubheading({ title }: { title: string }) {
-  return <h3 className="text-xl font-semibold text-white">{title}</h3>;
+  return <h3 className="text-xl font-semibold text-foreground">{title}</h3>;
 }
 

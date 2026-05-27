@@ -76,11 +76,11 @@ export default function WartosciWTancuArticle() {
           coś nie do końca ma sens. Bo samo działanie to jeszcze nie kierunek.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">I właśnie tutaj pojawiają się wartości.</strong>
+          <strong className="font-semibold text-foreground">I właśnie tutaj pojawiają się wartości.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Wartości w tańcu to nie są konkretne cele. Nie da się ich „odhaczyć”. To raczej{" "}
-          <strong className="font-bold text-white">kierunek</strong>, w którym chcesz iść - sposób, w jaki chcesz
+          <strong className="font-semibold text-foreground">kierunek</strong>, w którym chcesz iść - sposób, w jaki chcesz
           tańczyć, rozwijać się i być na parkiecie.
         </p>
         <p className="text-base leading-8 text-foreground/85">Jeśli myślisz sobie:</p>
@@ -91,7 +91,7 @@ export default function WartosciWTancuArticle() {
           <li>„Chcę mieć odwagę próbować, nawet jeśli nie wychodzi.”</li>
         </ul>
         <p className="text-base leading-8 text-foreground/85">
-          To są <strong className="font-bold text-white">jakości</strong>, które nadają sens temu, co robisz - nawet
+          To są <strong className="font-semibold text-foreground">jakości</strong>, które nadają sens temu, co robisz - nawet
           wtedy, gdy nie wszystko wychodzi.
         </p>
 
@@ -99,14 +99,14 @@ export default function WartosciWTancuArticle() {
         <p className="text-base leading-8 text-foreground/85">
           Bez tego łatwo zacząć gubić się w porównaniach, w gonieniu za poziomem albo w robieniu rzeczy „bo tak
           trzeba”. Możesz trenować coraz więcej, a jednocześnie mieć wrażenie, że stoisz w miejscu. Nie dlatego, że
-          robisz za mało, tylko dlatego, że nie wiesz, <strong className="font-bold text-white">dokąd właściwie
+          robisz za mało, tylko dlatego, że nie wiesz, <strong className="font-semibold text-foreground">dokąd właściwie
           zmierzasz</strong>.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Kiedy jednak ustalisz już, co jest dla Ciebie ważne, taniec zaczyna się układać{" "}
-          <strong className="font-bold text-white">w spójną całość</strong>. Nagle decyzje stają się prostsze, a
+          <strong className="font-semibold text-foreground">w spójną całość</strong>. Nagle decyzje stają się prostsze, a
           rozwój bardziej świadomy. Bo zamiast pytać „Co jeszcze powinnam zrobić?”, zaczynasz pytać:
-          <strong className="font-bold text-white"> „Co przybliża mnie do tego, jak chcę tańczyć?”</strong>
+          <strong className="font-semibold text-foreground"> „Co przybliża mnie do tego, jak chcę tańczyć?”</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
           To właśnie na tej podstawie zaczynają mieć sens cele.
@@ -114,12 +114,12 @@ export default function WartosciWTancuArticle() {
         <p className="text-base leading-8 text-foreground/85">
           Cele same w sobie nie są problemem. Pojawia się on dopiero wtedy, kiedy są one oderwane od tego, co dla
           Ciebie naprawdę ważne. Wtedy łatwo przejąć je od innych - chcieć być na jakimś poziomie, umieć konkretne
-          rzeczy, wyglądać w określony sposób - ale bez głębszego <strong className="font-bold text-white">„dlaczego?”
+          rzeczy, wyglądać w określony sposób - ale bez głębszego <strong className="font-semibold text-foreground">„dlaczego?”
           i „po co?”</strong> szybko tracą sens albo zaczynają ciążyć.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Kiedy wychodzisz od wartości, cele przestają być przypadkowe. Stają się naturalnym{" "}
-          <strong className="font-bold text-white">przedłużeniem kierunku</strong>, który wybierasz.
+          <strong className="font-semibold text-foreground">przedłużeniem kierunku</strong>, który wybierasz.
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Cele zaczynają służyć Tobie</h2>
@@ -136,7 +136,7 @@ export default function WartosciWTancuArticle() {
           „trzeba”, ale dlatego, że to część drogi, którą chcesz iść.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          I wtedy dzieje się coś ważnego: <strong className="font-bold text-white">zmienia się sposób patrzenia na
+          I wtedy dzieje się coś ważnego: <strong className="font-semibold text-foreground">zmienia się sposób patrzenia na
           postęp</strong>.
         </p>
         <p className="text-base leading-8 text-foreground/85">
@@ -145,7 +145,7 @@ export default function WartosciWTancuArticle() {
           taniec może mieć większą wartość niż dziesięć „dobrych”, ale odtworzonych automatycznie.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          To daje zupełnie <strong className="font-bold text-white">inne poczucie rozwoju</strong> - bardziej stabilne,
+          To daje zupełnie <strong className="font-semibold text-foreground">inne poczucie rozwoju</strong> - bardziej stabilne,
           mniej zależne od chwilowej formy, opinii innych czy porównań.
         </p>
 
@@ -170,7 +170,7 @@ export default function WartosciWTancuArticle() {
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Wartości porządkują codzienne wybory</h2>
         <p className="text-base leading-8 text-foreground/85">
-          Wartości działają też jak <strong className="font-bold text-white">filtr</strong> w codziennych wyborach.
+          Wartości działają też jak <strong className="font-semibold text-foreground">filtr</strong> w codziennych wyborach.
           Pomagają zdecydować, na czym się skupić na treningu, kiedy odpuścić, a kiedy się zmobilizować, czego się
           uczyć, a co nie jest teraz dla Ciebie istotne. Dzięki nim taniec przestaje być zbiorem przypadkowych
           działań, a zaczyna być świadomą drogą.
@@ -178,7 +178,7 @@ export default function WartosciWTancuArticle() {
         <p className="text-base leading-8 text-foreground/85">
           Możesz tańczyć coraz więcej i dalej czuć niedosyt. Ale kiedy wiesz, co jest dla Ciebie ważne i budujesz na
           tym swoje cele, zaczynasz nie tylko się rozwijać - zaczynasz naprawdę czuć, że jesteś na dobrej drodze, bo
-          <strong className="font-bold text-white"> swojej drodze</strong>.
+          <strong className="font-semibold text-foreground"> swojej drodze</strong>.
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Jeśli chcesz wspólnie wyjść od wartości, żeby zaplanować świadomie swój rozwój na parkiecie, Magda zaprasza
@@ -189,7 +189,7 @@ export default function WartosciWTancuArticle() {
             href="https://tanecznikpodcast.my.canva.site/mentaldancelab"
             target="_blank"
             rel="noreferrer"
-            className="font-semibold text-primary underline decoration-primary/50 underline-offset-4"
+            className="link-accent font-semibold"
           >
             tanecznikpodcast.my.canva.site/mentaldancelab
           </Link>

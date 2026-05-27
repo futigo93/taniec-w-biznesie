@@ -61,7 +61,7 @@ export function InlineArticlePromo({ items, label = DEFAULT_LABEL, ctaLabel = DE
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{label}</p>
           <h3 className="text-lg font-semibold leading-snug text-foreground">{selected.title}</h3>
           <p className="text-sm text-muted-foreground">{selected.description}</p>
-          <Link href={selected.href} className="text-sm font-semibold text-primary">
+          <Link href={selected.href} className="cta-link">
             {ctaLabel}
           </Link>
         </div>

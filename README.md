@@ -29,6 +29,7 @@ All text files in this repo are UTF-8. If you open or process files in scripts, 
 ## Docs
 
 - `docs/ebook-landing-ab.md` - test A/B/C dla landingow ebooka, eventy analityczne.
+- `docs/site-refresh-plan.md` - plan przebudowy strony: strategia, UX, copy i refresh wizualny.
 
 ## Learn More
 

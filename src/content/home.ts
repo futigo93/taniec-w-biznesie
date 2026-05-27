@@ -1,30 +1,7 @@
-import type { LucideIcon } from "lucide-react";
-import { FileText, ListChecks, PenSquare } from "lucide-react";
-
-type IconItem = {
+type ValuePoint = {
   title: string;
   description: string;
-  icon: LucideIcon;
 };
-
-export const ebookThemes: IconItem[] = [
-  {
-    title: "Rozdział dla każdego",
-    description:
-      "Jak przejść z trybu instruktora w rolę właściciela i uporządkować odpowiedzialność.",
-    icon: FileText,
-  },
-  {
-    title: "Pełen ebook w klubie",
-    description: "Mapy decyzji, cykl życia kursanta, korepetycje z finansów szkoły.",
-    icon: ListChecks,
-  },
-  {
-    title: "Aktualizacje społeczności",
-    description: "Nowe wersje trafiają najpierw do członków – razem dopisujemy case studies.",
-    icon: PenSquare,
-  },
-];
 
 export type ArticlePreview = {
   title: string;
@@ -32,11 +9,14 @@ export type ArticlePreview = {
   category: string;
   readTime: string;
   slug: string;
+  audience: "owner" | "instructor" | "dancer";
+  topic?: "case-study" | "strategia" | "komunikacja" | "zespol" | "rozwoj";
   external?: string;
   cover?: string;
+  featured?: boolean;
 };
 
-type ProductSpotlight = {
+type SupportPath = {
   label: string;
   title: string;
   description: string;
@@ -44,117 +24,159 @@ type ProductSpotlight = {
   cta: string;
   url?: string;
   external?: boolean;
-  isNew?: boolean;
   ctaModal?: boolean;
 };
 
+export const homeValuePoints: ValuePoint[] = [
+  {
+    title: "Lepsze decyzje właścicielskie",
+    description:
+      "Treści pomagają poukładać ofertę, zespół, komunikację i sposób myślenia o szkole, zanim chaos zacznie kosztować czas i energię.",
+  },
+  {
+    title: "Mniej ręcznej improwizacji",
+    description:
+      "Zamiast kolejnych obejść, gaszenia wyjątków i pamiętania wszystkiego w głowie, dostajesz język i ramy do spokojniejszego prowadzenia szkoły.",
+  },
+  {
+    title: "Rozwój bez udawania, że wszystko jest proste",
+    description:
+      "Tu nie ma katalogu trików. Są realne napięcia właściciela szkoły tańca, ich koszt i sposoby, żeby zacząć nimi zarządzać mądrzej.",
+  },
+];
+
 export const articlePreviews: ArticlePreview[] = [
   {
-    title: "Wartości w tańcu",
+    title: "Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych",
     description:
-      "W tańcu bardzo łatwo nam wejść w tryb „więcej”: więcej godzin na sali, więcej figur, więcej warsztatów. Z zewnątrz wszystko wygląda jak rozwój, ale w środku często pojawia się napięcie, frustracja albo poczucie, że coś nie do końca ma sens. Bo samo działanie to jeszcze nie kierunek.",
-    category: "Dla tancerzy",
-    readTime: "5 min",
-    slug: "wartosci-w-tancu",
-    cover: "/artykuly/okladki/Wartosci-w-tancu.webp",
+      "Case study o tym, jak duża szkoła uporządkowała dane, raporty i payroll bez zatrzymywania codziennej pracy zespołu.",
+    category: "Case study",
+    readTime: "17 min",
+    slug: "jak-szkola-tanca-przeszla-z-recznie-sklejanych-raportow-do-dojrzalszego-systemu-danych",
+    audience: "owner",
+    topic: "case-study",
+    cover: "/artykuly/okladki/case-study-salsa-libre.webp",
+    featured: true,
   },
-
   {
-    title: "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność",
+    title: "Tancerz ≠ instruktor ≠ właściciel",
     description:
-      "Będąc instruktorem, nie jesteś tylko lepszym tancerzem. Bierzesz na siebie rolę reprezentanta całego środowiska i zaczynasz mieć wpływ. Dla wielu osób jesteś pierwszym kontaktem z tańcem, pierwszym doświadczeniem, pierwszym skojarzeniem i pierwszą odpowiedzią na pytanie „czym to w ogóle jest”. Wszystko, co będą o tańcu wiedzieli na początku, będzie pochodziło właśnie z tego doświadczenia.",
-    category: "Dla instruktorów",
-    readTime: "8 min",
-    slug: "instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
-    cover: "/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp",
+      "Trzy role, trzy różne odpowiedzialności i trzy różne pułapki. Dobry tancerz nie staje się automatycznie dobrym instruktorem ani właścicielem.",
+    category: "Właściciel",
+    readTime: "5 min",
+    slug: "tancerz-instruktor-wlasciciel",
+    audience: "owner",
+    topic: "strategia",
   },
-
+  {
+    title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
+    description:
+      "Nazwy nie są neutralne. Każde słowo ustawia klientowi obietnicę i wpływa na to, jak szkoła jest odbierana jeszcze przed pierwszym zapisem.",
+    category: "Strategia",
+    readTime: "5 min",
+    slug: "instruktor-trener-nauczyciel",
+    audience: "owner",
+    topic: "strategia",
+    cover: "/artykuly/okladki/nomenklatura_cover.webp",
+  },
   {
     title: "15 lat doświadczenia instruktora w 200 zdaniach",
     description:
-      "Oczekiwania warto rozwiewać możliwie szybko, ale spokojnie. Nie terapią szokową, nie brutalnym rozbijaniem cudzych wyobrażeń, tylko komunikacją. Trzeba tłumaczyć, co tu właściwie robimy, czym jest dany styl, na czym polega proces, jak działa grupa, szkoła, organizacja zajęć, partnerowanie, savoir-vivre, czego można się spodziewać, a czego nie. Początkujący potrafią mieć naprawdę wymyślne wyobrażenia. I dopiero kiedy te wyobrażenia zaczynają się uspokajać, można dokopać się do prawdziwych potrzeb.",
-    category: "Dla instruktorów",
+      "O zarządzaniu oczekiwaniami, procesem nauki i tym, dlaczego dobra szkoła musi umieć tłumaczyć ludziom, w co naprawdę wchodzą.",
+    category: "Zespół i proces",
     readTime: "12 min",
     slug: "15-lat-doswiadczenia-instruktora-w-200-zdaniach",
+    audience: "owner",
+    topic: "zespol",
     cover: "/artykuly/okladki/15-lat-doswiadczenia.webp",
   },
-
-  {
-    title: "Po co tancerzowi cele?",
-    description:
-      "I nagle taniec zaczyna być częścią naszego życia. Jeździmy na warsztaty, zostajemy dłużej po zajęciach, wracamy do domu zmęczeni, ale szczęśliwi. Tańczymy coraz więcej. I przez długi czas to wystarcza. Wszystko jest nowe i ekscytujące, każdy taniec uczy nas czegoś nowego. Już sam fakt bycia na parkiecie daje radość. Aż w pewnym momencie coś się zmienia. Nie od razu, raczej po cichu.",
-    category: "Dla tancerzy",
-    readTime: "5 min",
-    slug: "po-co-tancerzowi-cele",
-    cover: "/artykuly/okladki/po_co_tancerzowi_cele.webp",
-  },
-
-  {
-    title: "Tam, gdzie nam zależy. O pracy z głową w tańcu socialowym",
-    description:
-      "Taniec socialowy to nie zawody. Ale presja, porównania i wewnętrzny krytyk działają tu tak samo jak w sporcie. Magda Kochmańska z Tanecznika wyjaśnia czym naprawdę jest trening mentalny w tańcu – i dlaczego technika nie wystarczy, jeśli głowa nie rozwija się razem z nią.",
-    category: "Dla tancerzy",
-    readTime: "5 min",
-    slug: "tam-gdzie-nam-zalezy",
-    cover: "/artykuly/okladki/Tam-gdzie-nam-zalezy.webp",
-  },
-
   {
     title: "Wizerunek instruktora tańca - na co to komu?",
     description:
-      "W świecie tańca social media stały się czymś w rodzaju wspólnego rynku. Wszyscy tam są. Szkoły, instruktorzy, kursanci, organizatorzy. Jeśli Cię tam nie ma, to w pewnym sensie nie istniejesz. Ale obecność w tym miejscu nie jest jeszcze żadnym osiągnięciem. Jest punktem wyjścia.",
-    category: "Dla instruktorów",
+      "O tym, jak komunikacja i obecność instruktora pracują na zaufanie, pozycję szkoły i jakość pierwszego kontaktu z nową osobą.",
+    category: "Komunikacja",
     readTime: "9 min",
     slug: "wizerunek-instruktora-tanca-na-co-to-komu",
+    audience: "owner",
+    topic: "komunikacja",
     cover: "/artykuly/okladki/Wizerunek-instruktora-tanca-na-co-to-komu.webp",
   },
-
+  {
+    title: "Wartości w tańcu",
+    description:
+      "O napięciu między ruchem, rozwojem i kierunkiem. Tekst dla osób, które chcą spojrzeć na taniec głębiej niż przez pryzmat kolejnych figur i warsztatów.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "wartosci-w-tancu",
+    audience: "dancer",
+    topic: "rozwoj",
+    cover: "/artykuly/okladki/Wartosci-w-tancu.webp",
+  },
+  {
+    title: "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność",
+    description:
+      "O wpływie instruktora na pierwsze doświadczenie kursanta i na to, co ludzie później myślą o całym świecie tańca.",
+    category: "Dla instruktorów",
+    readTime: "8 min",
+    slug: "instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
+    audience: "instructor",
+    topic: "zespol",
+    cover: "/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp",
+  },
+  {
+    title: "Po co tancerzowi cele?",
+    description:
+      "O momencie, w którym samo bycie na parkiecie przestaje wystarczać i pojawia się potrzeba bardziej świadomego kierunku.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "po-co-tancerzowi-cele",
+    audience: "dancer",
+    topic: "rozwoj",
+    cover: "/artykuly/okladki/po_co_tancerzowi_cele.webp",
+  },
+  {
+    title: "Tam, gdzie nam zależy. O pracy z głową w tańcu socialowym",
+    description:
+      "O treningu mentalnym, presji i tym, dlaczego technika bez pracy z głową często nie wystarcza.",
+    category: "Dla tancerzy",
+    readTime: "5 min",
+    slug: "tam-gdzie-nam-zalezy",
+    audience: "dancer",
+    topic: "rozwoj",
+    cover: "/artykuly/okladki/Tam-gdzie-nam-zalezy.webp",
+  },
   {
     title: "Instruktor tańca - twardy zad świeżaka",
     description:
-      "Nasz rynek rzadko oferuje pozycję „junior instruktora”. Rzadko daje mentora, który będzie czuwał nad procesem, brał na siebie część odpowiedzialności i pozwalał bezpiecznie popełniać błędy. W większości przypadków trzeba nauczyć się tego zawodu samemu - obserwując, próbując i poprawiając się w biegu.",
+      "O wejściu w rolę instruktora bez mentora, bez bezpiecznego modelu juniora i z koniecznością uczenia się zawodu w biegu.",
     category: "Dla instruktorów",
     readTime: "10 min",
     slug: "instruktor-tanca-twardy-zad-swiezaka",
+    audience: "instructor",
+    topic: "zespol",
     cover: "/artykuly/okladki/instruktor-tanca-twardy-zad.webp",
   },
-
   {
     title: "Instruktor tańca - to człowiek z misją (zazwyczaj)",
     description:
-      "Dojrzały idol rozumie, że bycie wzorem jest odpowiedzialnością. Bo wpływ można wykorzystywać w różny sposób. Można normalizować zdrowy ruch, akceptację ciała, szacunek do granic, partnerskie relacje. Można też wzmacniać napięcia, budować fałszywe wyobrażenia, utrwalać stereotypy.",
+      "O odpowiedzialności za wpływ, wzorce i napięcia, które instruktor potrafi wzmacniać albo rozbrajać.",
     category: "Dla instruktorów",
     readTime: "10 min",
     slug: "instruktor-tanca-czlowiek-z-misja",
+    audience: "instructor",
+    topic: "komunikacja",
     cover: "/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp",
   },
   {
     title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
     description:
-      "Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji.",
+      "O tym, że instruktor nie tylko prowadzi zajęcia, ale projektuje doświadczenie, atmosferę i sens całego spotkania z tańcem.",
     category: "Dla instruktorów",
     readTime: "7 min",
     slug: "instruktor-tanca-tego-nie-zrozumiesz",
+    audience: "instructor",
+    topic: "zespol",
     cover: "/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp",
-  },
-
-  {
-    title: "Tancerz ≠ instruktor ≠ właściciel",
-    description:
-      "Widziałem wielu świetnych tancerzy, którzy uczyli - ale nie byli instruktorami. Były zajęcia, była sala, byli ludzie. Ale ciężar zajęć znajdował się tuż przy lustrze, a nie na środku parkietu.",
-    category: "Blog",
-    readTime: "5 min",
-    slug: "tancerz-instruktor-wlasciciel",
-    cover: "/artykuly/okladki/tancerz-instruktor-wlasciciel.png",
-  },
-  {
-    title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
-    description:
-      "W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom.",
-    category: "Strategia",
-    readTime: "5 min",
-    slug: "instruktor-trener-nauczyciel",
-    cover: "/artykuly/okladki/nomenklatura_cover.webp",
   },
   {
     title: "Przewodnik po widokach grafiku: dopasuj prezentację zajęć do swojej szkoły tańca",
@@ -163,45 +185,39 @@ export const articlePreviews: ArticlePreview[] = [
     category: "Narzędzia",
     readTime: "15 min",
     slug: "przewodnik-po-widokach-grafiku",
+    audience: "owner",
+    topic: "komunikacja",
     external: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
     cover: "/przewodnik-po-widokach-grafiku-cover.png",
   },
 ];
 
-export const communityPromises = [
-  "Pełen ebook „Taniec w biznesie” (PDF + aktualizacje) tylko dla zapisanych.",
-  "Newsletter klubowy z dodatkowymi notatkami i case studies, których nie publikuję publicznie.",
-  "Społeczność (free) = listy dyskusyjne. Wersja płatna (Q2) = warsztaty, mastermindy, biblioteka procesów.",
-];
-
-export const productSpotlight: ProductSpotlight[] = [
+export const supportPaths: SupportPath[] = [
   {
-    label: "System obsługi studia",
-    title: "baileo.pl",
+    label: "Porządkowanie wejścia i zapisów",
+    title: "Baileo",
     description:
-      "Razem z zespołem przygotowuję system do zarządzania grafikiem, zapisami, karnetami i komunikacją z klientami – z zakupami i zapisami online.",
+      "Jeśli poza treściami potrzebujesz też bardziej wiarygodnego wejścia od sociali i grafiku do zapisu, pokazuję kierunek, który porządkuje ten fragment działania szkoły.",
     highlights: [
-      "Moduł zarządzania grafikiem + widżet na Twoją stronę (już działa w pierwszych szkołach).",
-      "Wkrótce gotowe będą zapisy online.",
+      "Jedno sensowne miejsce zamiast rozjazdu między postem, grafikiem i wiadomościami.",
+      "Mniej ręcznego tłumaczenia wyjątków, poziomów i startów grup.",
+      "Model wdrożenia jako osobny hub albo warstwa na stronie szkoły.",
     ],
-    cta: "Sprawdź teraz",
+    cta: "Zobacz kierunek Baileo",
     url: "https://baileo.pl",
     external: true,
-    isNew: false,
   },
   {
-    label: "Narzędzia",
-    title: "Payroll w szkole tańca 2026",
+    label: "Wsparcie właściciela",
+    title: "Consulting i mentoring",
     description:
-      "Automatyczne liczenie skomplikowanych stawek i bonusów dla instruktorów – jesteśmy w fazie beta testów.",
+      "Pracuję z właścicielami szkół nad decyzjami, procesami i komunikacją wtedy, gdy sama wiedza to za mało, a potrzebne jest przełożenie jej na realia konkretnej szkoły.",
     highlights: [
-      "Stawki motywacyjne, mnożniki, dodatki ręczne.",
-      "Panel instruktora do podglądu wynagrodzenia i powiadomienia mailowe.",
+      "Rozmowa o priorytetach, zanim zaczniesz dokładać kolejne narzędzia i procesy.",
+      "Wsparcie w ofercie, zespole, komunikacji i codziennym ogarnianiu szkoły.",
+      "Podejście branżowe, nie generyczny consulting dla małego biznesu.",
     ],
-    cta: "Zapisz się na konsultację i testy",
-    url: "#beta-modal",
-    external: false,
-    isNew: true,
+    cta: "Umów rozmowę wstępną",
     ctaModal: true,
   },
 ];

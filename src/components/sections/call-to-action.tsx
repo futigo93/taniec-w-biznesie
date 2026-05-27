@@ -5,17 +5,22 @@ export function CallToActionSection() {
   return (
     <section
       id="zapis"
-      className="scroll-mt-32 space-y-6 rounded-3xl border border-border/70 bg-[radial-gradient(circle_at_top,_#462f1f,_#2b1e16,_#130d0a)] p-6 text-white shadow-lg md:p-10"
+      className="surface-feature scroll-mt-32 rounded-[2.5rem] p-6 text-heading md:p-10"
     >
-      <SectionHeading
-        eyebrow="Społeczność + Ebook"
-        title="Dołącz do nas, w pierwszej kolejności dostaniesz pełną wersję Ebooka"
-        description="Dołączenie nic nie kosztuje. Po zapisaniu się dostaniesz na maila pełną wersję ebooka, a następnie limitowane treści, informacje o wydarzeniach, promocjach i zaproszenia do ekskluzywnych grup warsztatowych. Społeczność jest jeszcze w trakcie tworzenia – dzięki Twojemu zaangażowaniu pójdzie nam szybciej."
-      />
-      <NewsletterForm />
-      <p className="text-xs text-muted-foreground/90">
-        Wysyłam kilka wiadomości w miesiącu. Zero spamu, zero automatycznych lejków. Możesz zrezygnować w każdej chwili – link
-        rezygnacji znajduje się w każdej wiadomości.
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+        <SectionHeading
+          eyebrow="Dołącz do listy"
+          title="Zostaw mail i odbierz pełną wersję ebooka oraz kilka sensownych wiadomości dla właściciela szkoły tańca"
+          description="To nie jest społeczność dla samej społeczności. To spokojny kanał wiedzy o decyzjach, procesach, komunikacji i rozwoju szkoły. Kilka wiadomości w miesiącu, bez spamu i bez sztucznego lejka."
+          descriptionClassName="text-body"
+          className="[&_h2]:font-serif [&_h2]:text-4xl [&_h2]:leading-tight [&_h2]:text-heading [&_h2]:md:text-5xl [&_p]:leading-8 [&_p]:text-body"
+        />
+        <div className="surface-card-inset rounded-[2rem] p-1 shadow-sm backdrop-blur-sm">
+          <NewsletterForm />
+        </div>
+      </div>
+      <p className="mt-5 text-xs uppercase tracking-[0.24em] text-primary/75">
+        Po zapisie dostaniesz pełną wersję ebooka. Jeśli wolisz, wcześniej możesz pobrać też darmowy rozdział.
       </p>
     </section>
   );

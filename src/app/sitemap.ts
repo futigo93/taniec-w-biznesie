@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 const staticRoutes = [
   "",
   "/artykuly",
-  "/spolecznosc",
   "/uslugi",
   "/feedback",
   "/consulting",

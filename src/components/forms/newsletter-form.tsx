@@ -91,11 +91,18 @@ export function NewsletterForm({
 
   return (
     <form className={className} onSubmit={handleSubmit(onSubmit)} aria-live="polite">
-      <div className="space-y-4 rounded-3xl border border-border/70 bg-card/60 p-6 shadow-inner md:p-8">
+      <div className="space-y-4 rounded-[1.8rem] border border-white/12 bg-[#fff9f3] p-6 text-[#2b1f18] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] md:p-8">
+        <div className="space-y-2">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">Szybki zapis</p>
+          <p className="text-sm leading-7 text-[#665246]">
+            Po zapisie od razu dostaniesz pełny ebook na maila. Dodatkowe pola pomagają mi lepiej rozumieć, kto trafia do
+            tego miejsca i jakich treści najbardziej potrzebuje.
+          </p>
+        </div>
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2">
             <label className="text-sm font-medium" htmlFor="cta-name">
-              Imię i nazwisko*
+              Jak się do Ciebie zwracać?*
             </label>
             <Input id="cta-name" {...register("name")} />
             {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
@@ -114,17 +121,17 @@ export function NewsletterForm({
           </div>
           <div className="space-y-2 md:col-span-2">
             <label className="text-sm font-medium" htmlFor="cta-school">
-              Nazwa szkoły
+              Nazwa szkoły <span className="text-[#8b7567]">(opcjonalnie)</span>
             </label>
             <Input id="cta-school" placeholder="Nazwa szkoły lub projektu" {...register("school")} />
           </div>
           <div className="space-y-2 md:col-span-2">
             <label className="text-sm font-medium" htmlFor="cta-role">
-              Twoja rola*
+              Twoja rola dzisiaj*
             </label>
             <select
               id="cta-role"
-              className="w-full rounded-xl border border-border/70 bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-xl border border-border/70 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               {...register("role")}
             >
               <option value="">-</option>
@@ -138,14 +145,14 @@ export function NewsletterForm({
             {errors.role && <p className="text-sm text-destructive">{errors.role.message}</p>}
           </div>
         </div>
-        <div className="space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4 text-sm text-white/90">
+        <div className="space-y-3 rounded-[1.4rem] border border-[#e5d6c8] bg-[#f7efe6] p-4 text-sm text-[#57463c]">
           <p>
             Zapisuję Twój adres zgodnie z{" "}
-            <a href="/polityka-prywatnosci" className="underline" target="_blank" rel="noreferrer">
+            <a href="/polityka-prywatnosci" className="link-accent" target="_blank" rel="noreferrer">
               Polityką Prywatności
             </a>{" "}
             oraz{" "}
-            <a href="/polityka-cookies" className="underline" target="_blank" rel="noreferrer">
+            <a href="/polityka-cookies" className="link-accent" target="_blank" rel="noreferrer">
               Polityką Cookies
             </a>
             , aby dostarczać materiały społeczności.
@@ -158,7 +165,7 @@ export function NewsletterForm({
             />
             <span>
               Potwierdzam, że zapoznałem się z{" "}
-              <a href="/regulamin" className="underline" target="_blank" rel="noreferrer">
+              <a href="/regulamin" className="link-accent" target="_blank" rel="noreferrer">
                 Regulaminem Serwisu
               </a>{" "}
               i akceptuję jego treść.
@@ -167,7 +174,7 @@ export function NewsletterForm({
           {errors.regulationsAccepted && (
             <p className="text-sm text-destructive">{errors.regulationsAccepted.message}</p>
           )}
-          <label className="flex items-start gap-2 text-sm text-white/90">
+          <label className="flex items-start gap-2 text-sm text-[#57463c]">
             <input
               type="checkbox"
               className="mt-1"
@@ -177,7 +184,7 @@ export function NewsletterForm({
           </label>
         </div>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <Button type="submit" size="lg" disabled={isSubmitting} className="w-full md:w-auto">
+          <Button type="submit" size="lg" disabled={isSubmitting} className="h-12 w-full rounded-full px-6 md:w-auto">
             {isSubmitting ? <LoaderCircle className="h-4 w-4 animate-spin" /> : "Zapisz się"}
           </Button>
           {status === "success" && (

@@ -1,82 +1,105 @@
+"use client";
+
 import Image from "next/image";
+import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnchorLink } from "@/components/ui/anchor-link";
+import { trackEvent } from "@/lib/analytics";
 
 const demoHref = "/Czego_nie_wiesz_o_prowadzeniu_szkoły_tanca_demo-Jakub_Nowak.pdf";
 
+const ebookReasons = [
+  {
+    title: "Nazwanie realnych kosztów chaosu",
+    description:
+      "Nie tylko co działa źle, ale dlaczego błędy właścicielskie tak długo potrafią wyglądać jak zwykły brak czasu.",
+  },
+  {
+    title: "Perspektywa szkoły jako systemu",
+    description:
+      "Oferta, decyzje, ludzie i codzienne napięcia nie żyją osobno. Ebook pomaga spojrzeć na szkołę szerzej niż przez grafik i zajęcia.",
+  },
+  {
+    title: "Pierwszy sensowny krok, nie kolejny newsletter o wszystkim",
+    description:
+      "Po zapisie dostajesz pełną wersję materiału i kilka wartościowych wiadomości miesięcznie, które rozwijają ten kierunek.",
+  },
+];
+
 export function EbookSection() {
+  const handlePrimaryClick = () => {
+    trackEvent("ebook_full_interest", { source: "ebook_section_primary" });
+  };
+
+  const handleDemoClick = () => {
+    trackEvent("ebook_demo_download", { variant: "homepage_refresh", source: "ebook_section_secondary" });
+  };
+
   return (
     <section
       id="ebook"
-      className="scroll-mt-32 rounded-3xl border border-border/60 bg-gradient-to-br from-[#1f1b18] via-[#171210] to-[#231a14] p-6 text-white shadow-2xl md:p-10"
+      className="scroll-mt-32 rounded-[2.25rem] border border-[#d8c2af] bg-[linear-gradient(180deg,#fffdf9_0%,#f7efe6_100%)] p-6 shadow-[0_24px_80px_rgba(49,34,24,0.08)] md:p-10"
     >
-      <div className="grid gap-10 md:grid-cols-[1.5fr,0.9fr] md:items-center">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)] lg:items-center">
         <div className="space-y-6">
-          <div className="[&_h2]:text-white [&_p]:text-muted-foreground/80">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary/80">Priorytet #1</p>
-            <h2 className="text-3xl font-semibold leading-tight md:text-4xl">Ebook „Czego nie wiesz o prowadzeniu szkoły tańca”</h2>
-            <p className="mt-4 text-base text-muted-foreground/80">
-              Jeśli jesteś początkującym właścicielem szkoły albo dopiero myślisz o jej założeniu – długa taneczna droga już za
-              Tobą, ale równie długa dopiero przed Tobą. Nie daj się zaskoczyć nieznanemu. Dzielę się doświadczeniem z
-              prowadzenia szkoły w mniejszym mieście i pracy menedżerskiej w ogromnej szkole.
-            </p>
-            <p className="mt-2 text-base text-muted-foreground/80">
-              Pobierz bezpłatną próbkę – pierwszy rozdział – albo zapisz się do społeczności podobnych osób i od razu otrzymaj
-              pełną książkę wraz z aktualizacjami.
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary/85">Na start</p>
+            <h2 className="max-w-3xl font-serif text-4xl leading-tight text-[#2b1f18] md:text-5xl">
+              Ebook, który pomaga zobaczyć szkołę szerzej niż przez grafik, nabór i bieżące pożary.
+            </h2>
+            <p className="max-w-2xl text-base leading-8 text-[#5f4c42] md:text-lg">
+              „Czego nie wiesz o prowadzeniu szkoły tańca” to materiał dla osób, które czują, że szkoła coraz bardziej
+              zależy od jakości decyzji, komunikacji i procesów, a nie tylko od energii na sali. Pełną wersję dostajesz po
+              zapisie na listę.
             </p>
           </div>
-          <div className="space-y-4">
-            <InfoTile
-              title="Rozdział dostępny dla wszystkich"
-              description="Dlaczego prowadzenie szkoły tańca wcale nie kręci się wokół techniki czy stylu, tylko wokół emocji, decyzji i momentu, gdy pasja zderza się z odpowiedzialnością właścicielską."
-            />
-            <InfoTile
-              title="Rozdziały po zapisie do społeczności"
-              description="Cykl życia klienta, oferta jako system, długoterminowe zarządzanie szkołą w perspektywie miesięcy i lat oraz najczęstsze błędy właścicieli, których konsekwencje ujawniają się po czasie."
-            />
-            <InfoTile
-              title="Dodatkowe treści"
-              description="Aktualizacje ebooka, artykuły, podsumowania i zaproszenia do warsztatów trafiają na Twojego maila – tylko dla osób z listy."
-            />
+          <div className="grid gap-4 md:grid-cols-3">
+            {ebookReasons.map((reason) => (
+              <article
+                key={reason.title}
+                className="rounded-[1.75rem] border border-[#e5d6c8] bg-white/80 p-4 shadow-sm"
+              >
+                <h3 className="font-serif text-2xl leading-tight text-[#2b1f18]">{reason.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#665246]">{reason.description}</p>
+              </article>
+            ))}
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg">
-              <a href={demoHref} download>
-                Pobierz darmowy rozdział
-              </a>
+            <Button asChild size="lg" className="h-12 rounded-full px-6 text-base" onClick={handlePrimaryClick}>
+              <AnchorLink anchor="zapis">
+                Odbierz pełny ebook
+                <ArrowRight className="h-4 w-4" />
+              </AnchorLink>
             </Button>
-            <Button asChild size="lg" variant="outline">
-              <AnchorLink anchor="zapis">Dołącz do społeczności</AnchorLink>
+            <Button asChild size="lg" variant="outline" className="h-12 rounded-full px-6 text-base">
+              <a href={demoHref} download onClick={handleDemoClick}>
+                Pobierz darmowy rozdział
+                <Download className="h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
-        <div className="flex justify-center">
-          <a
-            href={demoHref}
-            download
-            className="relative block w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg transition hover:scale-[1.01]"
-          >
-            <div className="absolute -left-8 top-8 hidden h-20 w-20 rounded-full bg-primary/30 blur-3xl md:block" />
-            <Image
-              src="/ebook_cover.webp"
-              alt="Okładka ebooka Czego nie wiesz o prowadzeniu szkoły tańca"
-              width={400}
-              height={560}
-              className="relative z-10 w-full rounded-xl object-cover"
-            />
-            <p className="mt-4 text-center text-sm text-muted-foreground/70">Format PDF - Demo - Pierwszy rozdział</p>
-          </a>
+        <div className="flex justify-center lg:justify-end">
+          <div className="surface-card relative w-full max-w-sm rounded-[2rem] p-5 text-heading">
+            <div className="absolute -right-6 top-8 hidden h-24 w-24 rounded-full bg-[#d39a69]/18 blur-3xl md:block" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">W środku</p>
+            <p className="text-body mt-3 text-sm leading-7">
+              Jak przejść z trybu instruktora do trybu właściciela, jak widzieć ukryte koszty chaosu i jak nie budować
+              szkoły wyłącznie na improwizacji oraz pamięci kilku osób.
+            </p>
+            <div className="surface-card-inset mt-5 overflow-hidden p-3">
+              <Image
+                src="/ebook_cover.webp"
+                alt="Okładka ebooka Czego nie wiesz o prowadzeniu szkoły tańca"
+                width={400}
+                height={560}
+                className="w-full rounded-[1.1rem] object-cover"
+              />
+            </div>
+            <p className="mt-4 text-center text-xs uppercase tracking-[0.24em] text-primary/75">Pełna wersja po zapisie</p>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function InfoTile({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-muted-foreground/90 shadow-inner">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{title}</p>
-      <p className="mt-2 text-base text-white/85">{description}</p>
-    </div>
   );
 }

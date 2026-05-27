@@ -6,42 +6,40 @@ import { SectionHeading } from "@/components/section-heading";
 export const metadata: Metadata = {
   title: "O mnie",
   description:
-    "Poznaj Jakuba Nowaka – instruktora, właściciela szkół i analityka, który stoi za projektem Taniec w Biznesie.",
+    "Jakub Nowak o prowadzeniu szkół tańca, decyzjach właścicielskich i porządkowaniu tego, co zwykle dzieje się po cichu.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#f6efe4] py-12">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 md:flex-row md:items-start md:px-6">
-        <div className="flex-1 space-y-6 text-[#2b1a12]">
+    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_35%,#fbf8f4_100%)] py-12">
+      <div className="mx-auto grid max-w-5xl gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="space-y-6 text-[#2b1f18]">
           <SectionHeading
-            eyebrow="O mnie"
-            title="Jakub Nowak"
-            description="Od lat działam w świecie tańca – jako instruktor, właściciel szkoły, manager – a równolegle tworzę systemy i analizuję biznesy. Dzięki temu patrzę na szkołę tańca jednocześnie z perspektywy sali, danych i decyzji właścicielskich."
-            descriptionClassName="text-[#4b342a]"
+            eyebrow="O autorze"
+            title="Patrzę na szkołę tańca jednocześnie z perspektywy sali, właściciela i człowieka od procesów"
+            description="Przez lata działałem w tańcu jako instruktor, prowadziłem własną szkołę i pracowałem managersko w dużej organizacji. Równolegle zawodowo zajmuję się analizą biznesową i budowaniem rozwiązań, które porządkują pracę od środka."
+            descriptionClassName="text-[#5f4c42]"
           />
-          <p className="text-sm text-[#4b342a]">
-            Prowadziłem własną szkołę w mniejszym mieście i byłem menedżerem w dużej szkole w metropolii. Wiem, co oznacza
-            grafik ułożony o 2 w nocy i jak wygląda rozmowa z inwestorem, który pyta o rentowność. Równolegle pracuję nad
-            baileo.pl – systemem do zarządzania szkołą tańca – dlatego problem operacyjny od razu przekładam na język
-            procesów i narzędzi.
+          <p className="text-sm leading-8 text-[#5f4c42] md:text-base">
+            Dzięki temu wiem, jak wygląda szkoła wtedy, gdy z jednej strony żyje energią sali, a z drugiej coraz mocniej
+            zaczyna zależeć od decyzji, komunikacji, rytmu pracy i tego, jak radzi sobie z wyjątkami. Właśnie o tym jest
+            Taniec w Biznesie.
           </p>
-          <p className="text-sm text-[#4b342a]">
-            Studiowałem Zarządzanie w SGH oraz Psychologię zarządzania dla managerów. Ta mieszanka doświadczeń pokazała mi, jak
-            bardzo w naszej branży brakuje języka do mówienia o systemach, zależnościach i konsekwencjach decyzji. Ten projekt
-            jest próbą uporządkowania tych obserwacji – najpierw w formie ebooka, potem społeczności i narzędzi.
+          <p className="text-sm leading-8 text-[#5f4c42] md:text-base">
+            Nie interesuje mnie opowiadanie o prowadzeniu szkoły wyłącznie przez pryzmat motywacji albo przez katalog
+            narzędzi. Bardziej interesuje mnie to, co dzieje się po cichu: gdzie szkoła się rozjeżdża, co najbardziej kosztuje
+            właściciela i jak zacząć to porządkować bez dokładania kolejnej warstwy chaosu.
           </p>
-          <p className="text-sm text-[#4b342a]">
-            Obecnie pracuję nad rozwiązaniami, które mają realnie wspierać właścicieli szkół: od wdrożenia grafiku i payrollu
-            po warsztaty strategiczne. Jeśli chcesz porozmawiać o swojej szkole, napisz – nawet jeśli na razie masz tylko
-            szkic pomysłu.
+          <p className="text-sm leading-8 text-[#5f4c42] md:text-base">
+            Z tego miejsca wyrastają ebook, artykuły, case studies i dalsze kierunki wsparcia. Jeśli chcesz porozmawiać o
+            swojej szkole albo po prostu podzielić się tym, co u Ciebie dziś najbardziej waży, napisz.
           </p>
-          <Link href="mailto:kontakt@taniecwbiznesie.pl" className="text-sm font-semibold text-primary">
+          <Link href="mailto:kontakt@taniecwbiznesie.pl" className="cta-link">
             kontakt@taniecwbiznesie.pl
           </Link>
         </div>
-        <div className="flex justify-center md:flex-1">
-          <div className="relative h-96 w-80 overflow-hidden rounded-3xl border border-border/60 bg-white shadow-lg">
+        <div className="flex justify-center lg:justify-end">
+          <div className="relative h-96 w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-[#dcc6b3] bg-white shadow-xl">
             <Image
               src="/jakub_nowak.webp"
               alt="Jakub Nowak"

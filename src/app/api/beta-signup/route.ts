@@ -8,12 +8,13 @@ type BetaSignupPayload = {
   regulationsAccepted?: boolean;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
-  if (!process.env.RESEND_API_KEY) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
     return NextResponse.json({ error: "Brak konfiguracji wysyłki." }, { status: 500 });
   }
+
+  const resend = new Resend(apiKey);
 
   let payload: BetaSignupPayload;
   try {

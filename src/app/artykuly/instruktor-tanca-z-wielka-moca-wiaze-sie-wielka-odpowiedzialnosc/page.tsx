@@ -77,7 +77,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           kurs się nie zbiera - wszystko ruszało i ruszało dobrze.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">Ale to nie był najważniejszy efekt.</strong>
+          <strong className="font-semibold text-foreground">Ale to nie był najważniejszy efekt.</strong>
         </p>
 
         <h2 className="pt-4 text-2xl font-semibold text-foreground">Kiedy kursanci wracają, zaczynasz widzieć więcej</h2>
@@ -91,7 +91,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
         <p className="text-base leading-8 text-foreground/85">
           Znali mnie i znali mój styl. Wiedzieli czego się spodziewać. Byli też tacy, którzy po drodze próbowali innych
           instruktorów, innych szkół, innych stylów, szukając czegoś co bardziej im „siądzie”. A mimo to wracali.
-          <strong className="font-bold text-white"> To jest zupełnie inny typ kursanta.</strong> Nie bardziej
+          <strong className="font-semibold text-foreground"> To jest zupełnie inny typ kursanta.</strong> Nie bardziej
           zaawansowany technicznie, ale bardziej świadomy i bardziej osadzony w tym, czego szuka. I to robi ogromną
           różnicę w pracy z grupą.
         </p>
@@ -99,7 +99,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           Takie osoby bardzo mocno budują atmosferę. Dają innym odwagę, pokazują że można przejść przez ten proces, że
           warto zostać, że to ma sens. Często przejmują część dynamiki grupy - nie wchodząc w rolę instruktora, ale
           wspierając ją od środka. Kiedy takich osób jest kilka, zaczynasz czuć, że nie prowadzisz już grupy sam, tylko
-          że masz ludzi, którzy idą z Tobą w tym procesie. <strong className="font-bold text-white">To jest zupełnie
+          że masz ludzi, którzy idą z Tobą w tym procesie. <strong className="font-semibold text-foreground">To jest zupełnie
           inna jakość pracy.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
@@ -113,7 +113,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           miejsca, innych ludzi. I jednocześnie zostawić po sobie coś, co sprawi, że będą mieli do czego wrócić.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">Nie zawsze wrócą. Ale jeśli wracają, to znaczy, że zrobiłeś coś dobrze.</strong>
+          <strong className="font-semibold text-foreground">Nie zawsze wrócą. Ale jeśli wracają, to znaczy, że zrobiłeś coś dobrze.</strong>
         </p>
 
         <div className="rounded-3xl border border-primary/45 bg-primary/12 p-5 shadow-lg shadow-primary/10">
@@ -122,7 +122,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
               <Lightbulb className="h-5 w-5" />
             </div>
             <p className="text-sm leading-7 text-foreground/90">
-              <strong className="font-bold text-white">Najmocniejsza myśl tego tekstu:</strong> pracuj z ludźmi tak,
+              <strong className="font-semibold text-foreground">Najmocniejsza myśl tego tekstu:</strong> pracuj z ludźmi tak,
               żeby nie bali się do Ciebie wracać. To buduje grupę, opinię o Tobie i pierwszy obraz tańca, jaki niosą
               dalej.
             </p>
@@ -139,7 +139,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
         <p className="text-base leading-8 text-foreground/85">
           To jest coś, co bardzo łatwo przeoczyć, bo na początku instruktor najczęściej myśli „jak wypadłem?”, a trochę
           później „czy wrócą za tydzień?”. Z czasem zaczynasz widzieć, że to nie są najważniejsze pytania.
-          <strong className="font-bold text-white"> Dużo ważniejsze jest to, jaki obraz tańca stworzyłeś w ich głowach.</strong>{" "}
+          <strong className="font-semibold text-foreground"> Dużo ważniejsze jest to, jaki obraz tańca stworzyłeś w ich głowach.</strong>{" "}
           Co będą opowiadać znajomym po tych zajęciach, jakie zdanie o bachacie, swingu czy breakdance zostanie z nimi
           na dłużej i jakie zdanie o nauczycielach tańca wyniosą z tego doświadczenia.
         </p>
@@ -150,7 +150,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           W tym wszystkim jest jeszcze jedna ważna rzecz - w tym obrazie Ty nie jesteś najważniejszy. Jesteś tylko
-          reprezentacją czegoś większego. <strong className="font-bold text-white">Reprezentujesz styl, środowisko i
+          reprezentacją czegoś większego. <strong className="font-semibold text-foreground">Reprezentujesz styl, środowisko i
           taniec jako zjawisko.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
@@ -159,7 +159,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           środowisko, wkładają w nie czas, energię i serce, tworzą społeczności, wydarzenia i przestrzenie do rozwoju.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">Każde Twoje zajęcia dokładają coś do tego obrazu - albo go
+          <strong className="font-semibold text-foreground">Każde Twoje zajęcia dokładają coś do tego obrazu - albo go
           wzmacniają, albo osłabiają.</strong>
         </p>
 
@@ -192,9 +192,9 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
               image: "/logo_icon_baileo_square.png",
             },
             {
-              title: "Narzędzia i usługi dla szkół tańca",
+              title: "Dalsze wsparcie dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "https://taniecwbiznesie.pl/uslugi",
+              href: "/uslugi",
               image: "/zestaw-narzedzi-dla-szkol.webp",
             },
           ]}
@@ -207,7 +207,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           się naprawdę ważna w budowaniu kariery i wizerunku instruktora.
         </p>
         <p className="text-lg leading-8 text-foreground/90">
-          <strong className="font-bold text-white">Pracuj z ludźmi tak, żeby nie bali się do Ciebie wracać.</strong>
+          <strong className="font-semibold text-foreground">Pracuj z ludźmi tak, żeby nie bali się do Ciebie wracać.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Żeby czuli się mile widziani, nawet jeśli mieli przerwę. Żeby czuli ciepło grupy, akceptację i to, że wracają
@@ -227,7 +227,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           prowadzimy ludzi, ma dużo większe znaczenie niż tylko to, czy dobrze nauczymy ich figur.
         </p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">Dlatego nauka kroków to w pewnym sensie tylko formalność.</strong> Ten
+          <strong className="font-semibold text-foreground">Dlatego nauka kroków to w pewnym sensie tylko formalność.</strong> Ten
           zawód zaczyna się naprawdę dopiero wtedy, kiedy zobaczysz, że ludzie wcale nie przychodzą po kroki.
         </p>
 
@@ -241,7 +241,7 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
         <p className="text-base leading-8 text-foreground/85">
           Próbuj, odkrywaj, dawaj sobie czas i pozwól sobie na to, że sukces nie przyjdzie od razu. Jednocześnie dobrze
           mieć świadomość, że nie wszystkie błędy są tak samo „bezpieczne”. Niektóre uczą i prowadzą do rozwoju, inne
-          potrafią zamknąć drzwi na dłużej. <strong className="font-bold text-white">Dlatego ogromną wartością jest
+          potrafią zamknąć drzwi na dłużej. <strong className="font-semibold text-foreground">Dlatego ogromną wartością jest
           praca pod czyimiś skrzydłami.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">
@@ -268,12 +268,12 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
         </p>
         <p className="text-base leading-8 text-foreground/85">
           Nie chodzi o to, żeby iść pod prąd dla samej zasady, ani o to, żeby się dopasować do wszystkiego i
-          wszystkich. <strong className="font-bold text-white">Najtrudniejsze - i jednocześnie najważniejsze - jest
+          wszystkich. <strong className="font-semibold text-foreground">Najtrudniejsze - i jednocześnie najważniejsze - jest
           znalezienie równowagi między tym, czego potrzebujesz Ty, a tym, czego potrzebują inni.</strong>
         </p>
         <p className="text-base leading-8 text-foreground/85">I zrobienie tego w sposób możliwie najbardziej naturalny.</p>
         <p className="text-base leading-8 text-foreground/85">
-          <strong className="font-bold text-white">Bo na końcu i tak zawsze wychodzi to, kim naprawdę jesteś.</strong>
+          <strong className="font-semibold text-foreground">Bo na końcu i tak zawsze wychodzi to, kim naprawdę jesteś.</strong>
         </p>
 
         <div className="rounded-3xl border border-primary/45 bg-gradient-to-br from-primary/18 via-primary/10 to-background p-6 shadow-lg shadow-primary/10">
@@ -285,19 +285,19 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
           </div>
           <ul className="space-y-3 text-base leading-8 text-foreground/85">
             <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
-              <strong className="font-bold text-white">Powroty kursantów nie biorą się z przypadku.</strong> Są efektem
+              <strong className="font-semibold text-foreground">Powroty kursantów nie biorą się z przypadku.</strong> Są efektem
               atmosfery, jakości doświadczenia i poczucia, że można wrócić bez wstydu i bez napięcia.
             </li>
             <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
-              <strong className="font-bold text-white">Instruktor buduje pierwszy obraz tańca.</strong> To, co ludzie
+              <strong className="font-semibold text-foreground">Instruktor buduje pierwszy obraz tańca.</strong> To, co ludzie
               zobaczą u Ciebie, bardzo często stanie się ich definicją całego środowiska.
             </li>
             <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
-              <strong className="font-bold text-white">Ten zawód zaczyna się dalej niż kroki.</strong> W relacji, w
+              <strong className="font-semibold text-foreground">Ten zawód zaczyna się dalej niż kroki.</strong> W relacji, w
               odpowiedzialności i w sposobie prowadzenia ludzi przez proces.
             </li>
             <li className="rounded-2xl border border-primary/30 bg-background p-4 shadow-sm shadow-black/10">
-              <strong className="font-bold text-white">Rozwój instruktora potrzebuje czasu i pokory.</strong> Warto
+              <strong className="font-semibold text-foreground">Rozwój instruktora potrzebuje czasu i pokory.</strong> Warto
               eksperymentować, ale jeszcze bardziej warto mieć świadomość, które błędy uczą, a które zostawiają ślad na
               długo.
             </li>

@@ -13,9 +13,8 @@ import { AnchorLink } from "@/components/ui/anchor-link";
 const navLinks = [
   { anchor: "ebook", label: "Ebook" },
   { href: "/artykuly", label: "Artykuły" },
-  { href: "/uslugi", label: "Usługi dodatkowe" },
+  { href: "/uslugi", label: "Wsparcie" },
   { href: "/o-mnie", label: "O mnie" },
-  { href: "/feedback", label: "Feedback" },
 ];
 
 export function SiteHeader() {
@@ -56,7 +55,7 @@ export function SiteHeader() {
           </AnchorLink>
           <div className="flex items-center gap-3 md:hidden">
             <Button size="sm" asChild>
-              <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
+              <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
             </Button>
             <button
               className="rounded-md border border-border/80 p-2 text-foreground"
@@ -68,7 +67,7 @@ export function SiteHeader() {
           </div>
           <div className="hidden items-center gap-3 md:flex lg:hidden">
             <Button asChild>
-              <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
+              <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
             </Button>
           </div>
         </div>
@@ -95,7 +94,7 @@ export function SiteHeader() {
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild>
-            <AnchorLink anchor="zapis">Zapisz się</AnchorLink>
+            <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
           </Button>
         </div>
       </div>
@@ -161,7 +160,7 @@ function MobileNav({
           )}
           <Button asChild>
             <AnchorLink anchor="zapis" onClick={onClose}>
-              Zapisz się
+              Odbierz ebook
             </AnchorLink>
           </Button>
         </div>

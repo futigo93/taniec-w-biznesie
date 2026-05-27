@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Taniec w Biznesie – szkoły tańca bez chaosu",
   shortName: "Taniec w Biznesie",
   description:
-    "Strategiczne wsparcie dla instruktorów i właścicieli szkół tańca. Ebook, społeczność i narzędzia do spokojnego skalowania biznesu.",
+    "Marka ekspercka dla właścicieli i managerów szkół tańca. Ebook, analizy i praktyczne kierunki porządkowania decyzji, komunikacji i operacji szkoły.",
   url: "https://taniecwbiznesie.pl",
   author: "Jakub Nowak",
   email: "kontakt@taniecwbiznesie.pl",
@@ -15,7 +15,7 @@ export const siteConfig = {
     "szkoła tańca",
     "zarządzanie szkołą tańca",
     "ebook",
-    "społeczność instruktorów",
+    "właściciel szkoły tańca",
     "taniec w biznesie",
     "konsulting taneczny",
   ],

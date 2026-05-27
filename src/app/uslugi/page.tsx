@@ -1,121 +1,106 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
-import { BetaModalTrigger } from "@/components/beta-modal-trigger";
+import { Button } from "@/components/ui/button";
 import { ConsultingModalTrigger } from "@/components/consulting-modal-trigger";
 
 export const metadata: Metadata = {
-  title: "Usługi dodatkowe",
+  title: "Wsparcie",
   description:
-    "Narzędzia i współprace wspierające właścicieli szkół tańca: baileo.pl, payroll dla instruktorów oraz consulting.",
+    "Baileo i consulting jako dwa kierunki dalszego porządkowania szkoły tańca: od ścieżki wejścia i zapisów po decyzje właścicielskie.",
 };
+
+const baileoHighlights = [
+  "Jedno sensowne miejsce zamiast rozjazdu między postem, grafikiem i wiadomościami.",
+  "Mniej ręcznego tłumaczenia poziomów, wyjątków, startów grup i zmian.",
+  "Prostsza droga od zainteresowania do zapisu bez dokładania kolejnego chaosu po stronie szkoły.",
+];
+
+const consultingHighlights = [
+  "Pomoc w poukładaniu priorytetów, zanim dołożysz kolejne narzędzie albo proces.",
+  "Rozmowa o ofercie, komunikacji, zespole i tym, gdzie szkoła dziś najbardziej się rozjeżdża.",
+  "Podejście osadzone w realiach szkół tańca, nie ogólny consulting dla każdego biznesu.",
+];
 
 export default function ServicesPage() {
   return (
-    <div className="bg-gradient-to-b from-background to-muted/50 py-12">
-      <div className="mx-auto max-w-5xl space-y-12 px-4 md:px-6">
+    <div className="bg-[linear-gradient(180deg,#faf5ee_0%,#f7efe6_40%,#fbf8f4_100%)] py-12">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 md:px-6">
         <SectionHeading
-          eyebrow="Usługi dodatkowe"
-          title="Wsparcie poza ebookiem"
-          description="Obok treści tworzę narzędzia i usługi, które pomagają ogarnąć operacje szkoły tańca. Wybierz to, czego potrzebujesz dziś."
-          align="left"
+          eyebrow="Dalsze wsparcie"
+          title="Jeśli sama wiedza to za mało, możesz wejść głębiej w porządkowanie szkoły"
+          description="Ta strona nie jest katalogiem modułów. Pokazuje dwa kierunki, które realnie pomagają właścicielowi: uporządkowanie ścieżki szkoły od oferty do zapisu oraz bezpośrednią pracę nad decyzjami, procesami i komunikacją."
         />
 
-        <section id="baileo" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <div className="space-y-4 md:flex-1">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">System obsługi studia</p>
-              <h2 className="text-2xl font-semibold">baileo.pl</h2>
-              <div className="relative h-48 w-full overflow-hidden rounded-2xl bg-muted/30 md:hidden">
-                <Image
-                  src="/baileo-system-screen.webp"
-                  alt="baileo.pl - podgląd systemu"
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                />
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Razem z zespołem przygotowuję system do zarządzania grafikiem, zapisami, karnetami i komunikacją z klientami –
-                łącznie z zakupami i zapisami online.
-              </p>
-              <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                <li>Moduł grafiku + widżet na Twoją stronę (już działa w pierwszych szkołach).</li>
-                <li>Wkrótce dostępne zapisy online i moduł płatności.</li>
-              </ul>
-              <Button asChild>
-                <Link href={siteConfig.socials.baileo} target="_blank" rel="noreferrer">
-                  Sprawdź teraz
-                </Link>
+        <section className="surface-feature grid gap-6 p-6 text-heading md:p-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
+          <div className="space-y-5">
+            <p className="eyebrow-accent">Baileo</p>
+            <h2 className="text-heading text-4xl leading-tight md:text-5xl">
+              Porządkowanie drogi od sociali, grafiku i pytań do właściwego zapisu
+            </h2>
+            <p className="text-body max-w-2xl text-base leading-8">
+              Baileo rozwijam z myślą o szkołach, które już mają ruch i ofertę, ale nadal ręcznie domykają wejście nowych
+              osób, tłumaczą wyjątki w wiadomościach i łatają komunikację między różnymi kanałami.
+            </p>
+            <ul className="text-body-strong space-y-3 text-sm leading-7">
+              {baileoHighlights.map((highlight) => (
+                <li key={highlight} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="rounded-full">
+              <Link href={siteConfig.socials.baileo} target="_blank" rel="noreferrer">
+                Zobacz kierunek Baileo
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="surface-card-inset relative min-h-72 overflow-hidden rounded-[1.8rem]">
+            <Image
+              src="/baileo-system-screen.webp"
+              alt="Podgląd Baileo"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 340px"
+            />
+          </div>
+        </section>
+
+        <section className="surface-section grid gap-6 p-6 md:p-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+          <div className="space-y-5">
+            <p className="eyebrow-accent">Consulting i mentoring</p>
+            <h2 className="text-heading text-4xl leading-tight md:text-5xl">
+              Wsparcie dla właściciela, który chce poukładać decyzje zanim szkoła zacznie ciągnąć go w każdą stronę naraz
+            </h2>
+            <p className="text-body max-w-2xl text-base leading-8">
+              To miejsce na rozmowę o tym, gdzie dziś naprawdę boli: w ofercie, komunikacji, zespole, rytmie pracy albo
+              codziennym zarządzaniu wyjątkami. Nie chodzi o gotowy pakiet usług, tylko o sensowne uporządkowanie tego, co
+              najbardziej waży w konkretnej szkole.
+            </p>
+            <ul className="text-body-strong space-y-3 text-sm leading-7">
+              {consultingHighlights.map((highlight) => (
+                <li key={highlight} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <ConsultingModalTrigger buttonLabel="Umów rozmowę wstępną" variant="outline" />
+              <Button asChild variant="ghost" className="rounded-full">
+                <Link href="/artykuly">Najpierw poczytaj teksty</Link>
               </Button>
             </div>
-            <div className="relative hidden h-60 w-full max-w-sm overflow-hidden rounded-2xl bg-muted/30 md:block">
-              <Image
-                src="/baileo-system-screen.webp"
-                alt="baileo.pl - podgląd systemu"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 40vw, 360px"
-              />
-            </div>
           </div>
-
-        </section>
-
-        <section id="payroll" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <div className="space-y-4 md:flex-1">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">Narzędzia</p>
-              <h2 className="text-2xl font-semibold">Payroll w szkole tańca 2026</h2>
-              <div className="relative h-48 w-full overflow-hidden rounded-2xl bg-muted/30 md:hidden">
-                <Image
-                  src="/payroll-demo.webp"
-                  alt="Payroll - podgląd narzędzia"
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                />
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Automatyczne liczenie skomplikowanych stawek wynagrodzeń dla instruktorów – jesteśmy w fazie beta, zapisz się, a
-                sprawdzimy to na Twoich danych.
-              </p>
-              <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                <li>Stawki motywacyjne, mnożniki, dodatki ręczne.</li>
-                <li>Panel instruktora do podglądu wynagrodzenia i powiadomienia mailowe.</li>
-                <li>Eksport raportów do księgowości.</li>
-              </ul>
-              <BetaModalTrigger buttonLabel="Zapisz się na konsultację i testy" variant="outline" />
-            </div>
-            <div className="relative hidden h-60 w-full max-w-sm overflow-hidden rounded-2xl bg-muted/30 md:block">
-              <Image
-                src="/payroll-demo.webp"
-                alt="Payroll - podgląd narzędzia"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 40vw, 360px"
-              />
-            </div>
+          <div className="surface-card-inset rounded-[1.8rem] p-6 text-body text-sm leading-7">
+            Jeśli temat payrollu albo zaplecza danych wraca przy Twojej szkole, to traktuję go jako część szerszego
+            porządkowania operacji, a nie osobny produkt stawiany na froncie.
           </div>
-
-        </section>
-
-        <section id="consulting" className="scroll-mt-32 space-y-4 rounded-3xl border border-border/70 bg-card p-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">Usługi</p>
-          <h2 className="text-2xl font-semibold">Consulting i warsztaty</h2>
-          <p className="text-sm text-muted-foreground">
-            Pracuję z właścicielami szkół nad strategią, procesami i zespołem. Wybierasz model: audyt, warsztat albo mentoring
-            1:1. Każdy projekt zaczynamy od bezpłatnej konsultacji o celach – żadnych gotowych recept.
-          </p>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>Audyt operacji i rekomendacje priorytetów.</li>
-            <li>Warsztaty dla właściciela / zespołu.</li>
-            <li>Mentoring dla właściciela lub menedżera szkoły.</li>
-          </ul>
-          <ConsultingModalTrigger buttonLabel="Umów konsultację" variant="outline" />
         </section>
       </div>
     </div>

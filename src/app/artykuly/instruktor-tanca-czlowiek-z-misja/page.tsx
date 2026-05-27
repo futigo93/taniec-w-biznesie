@@ -165,9 +165,9 @@ export default function InstruktorMisjaArticle() {
               image: "/logo_icon_baileo_square.png",
             },
             {
-              title: "Narzędzia i usługi dla szkół tańca",
+              title: "Dalsze wsparcie dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
-              href: "http://taniecwbiznesie.pl/uslugi",
+              href: "/uslugi",
               image: "/zestaw-narzedzi-dla-szkol.webp",
             },
           ]}
@@ -255,6 +255,6 @@ export default function InstruktorMisjaArticle() {
 }
 
 function SectionSubheading({ title }: { title: string }) {
-  return <h3 className="text-xl font-semibold text-white">{title}</h3>;
+  return <h3 className="text-xl font-semibold text-foreground">{title}</h3>;
 }
 
