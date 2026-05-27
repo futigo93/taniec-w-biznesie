@@ -91,18 +91,18 @@ export function FacebookWidgets({ path, className }: FacebookWidgetsProps) {
   return (
     <div className={cn("relative z-10 pointer-events-auto", className)}>
       {showWidgets ? (
-        <div className="flex flex-wrap items-center gap-4 leading-none">
+        <div className="flex flex-wrap items-center gap-3 leading-none">
           <div className="fb-share-button" data-href={url} data-layout="button" />
         </div>
       ) : (
-        <div className="flex flex-wrap items-center gap-4 opacity-60 leading-none">
+        <div className="flex flex-wrap items-center gap-3 leading-none opacity-60">
           <div className="rounded-md border border-border/70 bg-card px-3 py-1 text-xs font-semibold">
             Udostępnij
           </div>
         </div>
       )}
       {!showWidgets && (
-        <div className="mt-2 text-xs text-muted-foreground pointer-events-auto relative z-10">
+        <div className="relative z-10 mt-2 text-[0.78rem] leading-5 text-muted-foreground pointer-events-auto">
           <p>
             Wtyczki Facebooka są dostępne po akceptacji cookies analitycznych.
           </p>

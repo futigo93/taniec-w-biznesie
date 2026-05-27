@@ -245,6 +245,7 @@ html[data-theme="graphite-bold"] {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
 }
 
@@ -330,12 +331,14 @@ html[data-theme="graphite-bold"] {
     font-family: var(--font-manrope), sans-serif;
     font-weight: 700;
     letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
   }
 
   .heading-display-soft {
     font-family: var(--font-manrope), sans-serif;
     font-weight: 650;
     letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
   }
 
   .text-heading {

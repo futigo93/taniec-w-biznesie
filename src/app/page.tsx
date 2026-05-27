@@ -8,8 +8,8 @@ import { CallToActionSection } from "@/components/sections/call-to-action";
 
 export default function Home() {
   return (
-    <div className="page-wash py-10 md:py-12">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:gap-10 md:px-6">
+    <div className="page-wash py-8 md:py-12">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 md:gap-10 md:px-6">
         <HeroSection />
         <ValuePropositionSection />
         <EbookSection />

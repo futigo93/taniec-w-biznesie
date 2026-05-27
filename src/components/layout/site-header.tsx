@@ -38,6 +38,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const isEbook = pathname?.startsWith("/ebook");
+  const isHome = pathname === "/";
 
   useEffect(() => {
     if (isEbook) return;
@@ -66,40 +67,46 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
-        <div className="flex w-full items-center justify-between">
-          <AnchorLink
-            anchor="start"
-            className="flex items-center gap-2 text-base font-semibold tracking-tight whitespace-nowrap md:text-lg"
-            aria-label={siteConfig.shortName}
-          >
-            <Image
-              src="/taniec_w_biznesie_logo.png"
-              alt={`${siteConfig.shortName} logo`}
-              width={40}
-              height={40}
-              className="h-10 w-10 shrink-0 rounded-full border border-border/70 bg-white object-contain p-1"
-              priority
-            />
-            Taniec w&nbsp;Biznesie
-          </AnchorLink>
-          <div className="flex items-center gap-3 md:hidden">
-            <Button size="sm" asChild>
-              <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
-            </Button>
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-3 md:py-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+        <div className="flex w-full flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex min-w-0 items-center justify-between gap-3 md:block">
+            <AnchorLink
+              anchor="start"
+              className="flex min-w-0 flex-1 items-center gap-2 text-[0.95rem] font-semibold tracking-tight whitespace-nowrap md:text-lg"
+              aria-label={siteConfig.shortName}
+            >
+              <Image
+                src="/taniec_w_biznesie_logo.png"
+                alt={`${siteConfig.shortName} logo`}
+                width={36}
+                height={36}
+                className="h-9 w-9 shrink-0 rounded-full border border-border/70 bg-white object-contain p-1 md:h-10 md:w-10"
+                priority
+              />
+              <span className="truncate">Taniec w&nbsp;Biznesie</span>
+            </AnchorLink>
             <button
-              className="rounded-md border border-border/80 p-2 text-foreground"
+              className="shrink-0 rounded-full border border-border/80 p-2 text-foreground md:hidden"
               onClick={() => setOpen(true)}
               aria-label="Otwórz menu"
             >
               <Menu className="h-5 w-5" />
             </button>
           </div>
+          {isHome ? (
           <div className="hidden items-center gap-3 md:flex lg:hidden">
             <Button asChild>
               <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
             </Button>
           </div>
+          ) : null}
+          {isHome ? (
+            <div className="md:hidden">
+              <Button asChild className="h-11 w-full rounded-full text-base">
+                <AnchorLink anchor="zapis">Odbierz ebook</AnchorLink>
+              </Button>
+            </div>
+          ) : null}
         </div>
         <nav className="hidden w-full flex-wrap gap-x-6 gap-y-3 text-sm font-medium md:flex lg:w-auto lg:flex-nowrap lg:items-center">
           {navLinks.map((link) => (
@@ -216,7 +223,7 @@ function MobileNav({
               </div>
             </div>
           ) : null}
-          <Button asChild>
+          <Button asChild className="h-11 rounded-full">
             <AnchorLink anchor="zapis" onClick={onClose}>
               Odbierz ebook
             </AnchorLink>

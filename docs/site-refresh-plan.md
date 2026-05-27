@@ -60,6 +60,74 @@ Zrobione:
 Najbliższy krok:
 - wizualny i redakcyjny pass po całości na żywo po obejrzeniu nowych podstron w przeglądarce
 
+### Etap 4.5: Mobile-first polish homepage + shared
+
+Status: **wdrożony**
+
+Zakres:
+- homepage
+- mobile header i mobile menu
+- CTA na homepage
+- cookie banner
+
+Problemy wykryte w audycie:
+- header mobile był zbyt ciężki i zbyt ciasny w jednym rzędzie
+- hero na telefonie był za wysoki i za długo dochodził do sensu
+- pierwsze sekcje częściowo powielały framing `dla kogo`
+- copy w kilku miejscach było za długie jak na mobile
+- cookie banner potrzebował własnych proporcji mobile
+
+Zrobione:
+- mobile header został przebudowany do układu dwurzędowego z osobnym pełnowymiarowym CTA
+- branding w headerze został odchudzony na telefonie
+- hero został skrócony copywritersko i zagęszczony pionowo na mobile
+- wtórne CTA w hero i ebooku zostały odciążone na telefonie
+- sekcja po hero została przestawiona z powtórki `dla kogo` na bardziej konkretne `co zyskasz`
+- sekcje homepage dostały mniejsze mobile paddingi i lżejszy rytm
+- skrócone zostały opisy w sekcjach: hero, wartości, ebook, artykuły, wsparcie, final CTA i szybki zapis
+- cookie banner dostał własne override'y mobile dla wysokości, czcionki i przycisków
+
+Świadomie odłożone:
+- osobny mobile polish dla `/artykuly`, szablonu artykułu i `/uslugi`
+- głębsze uproszczenie logiki formularza zapisowego
+
+Najbliższy krok:
+- kolejny pass mobile dla listingu artykułów, szablonu artykułu i wybranych podstron wspierających
+
+### Etap 4.6: Mobile-first polish dla artykułów i usług
+
+Status: **wdrożony**
+
+Zakres:
+- homepage
+- shared mobile header i mobile menu
+- `/artykuly`
+- wspólny hero artykułu
+- `/uslugi`
+- dalszy pass cookie banneru
+
+Problemy wykryte po obejrzeniu podstron na żywo:
+- CTA w mobile headerze nie powinno być pokazywane na każdej podstronie
+- największe nagłówki na mobile były nadal za agresywne i łamały się zbyt drobno
+- listing `/artykuly`, hero artykułu i top `/uslugi` były za wysokie pionowo
+- mobile cookie banner nadal zbyt mocno nachodził na pierwszy ekran
+
+Zrobione:
+- CTA w mobile headerze zostało ograniczone do homepage
+- w mobile menu przycisk `Odbierz ebook` dostał pełny styling CTA
+- mobile H1 i duże H2 zostały dalej obniżone i lepiej zbalansowane
+- listing `/artykuly` został skrócony i spłaszczony w topowych sekcjach i kartach
+- `ArticleHero` został zagęszczony i skrócony na mobile
+- `/uslugi` zostało skrócone i odciążone typograficznie na wejściu
+- cookie banner dostał drugi pass pod mniejszą wysokość i bardziej zwarte przyciski
+
+Świadomie odłożone:
+- osobny mobile pass dla `/o-mnie` i `/feedback`
+- pełniejszy cleanup wszystkich historycznych szablonów artykułów, które nie korzystają jeszcze z tych samych wzorców
+
+Najbliższy krok:
+- osobny pass mobile dla `/o-mnie`, `/feedback` i pozostałych publicznych podstron, jeśli po obejrzeniu live nadal będą odstawać
+
 ### Kolejne etapy
 
 - Etap 2: uporządkowanie strony artykułów i lepsza ekspozycja treści dla różnych odbiorców

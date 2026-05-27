@@ -33,15 +33,15 @@ export function ArticlesLibraryPage() {
   const [leadArticle, ...libraryArticles] = filteredArticles;
 
   return (
-    <div className="page-wash py-12">
-      <div className="mx-auto max-w-6xl space-y-10 px-4 md:px-6">
+    <div className="page-wash py-8 md:py-12">
+      <div className="mx-auto max-w-6xl space-y-8 px-4 md:space-y-10 md:px-6">
         <SectionHeading
           eyebrow="Biblioteka treści"
-          title="Teksty o decyzjach, procesach, komunikacji i tym, co naprawdę zaczyna ważyć w szkole tańca"
+          title="Teksty o decyzjach, procesach i tym, co naprawdę zaczyna ważyć w szkole tańca"
           description={
             <>
               Na górze znajdziesz materiały, od których najczęściej warto zacząć jako właściciel lub manager. Niżej możesz
-              wejść szerzej w teksty dla instruktorów i ludzi tańca. Jeśli brakuje Ci ważnego tematu, napisz na{" "}
+              wejść szerzej w teksty dla instruktorów i ludzi tańca. Jeśli brakuje ważnego tematu, napisz na{" "}
               <a href="mailto:kontakt@taniecwbiznesie.pl" className="link-accent">
                 kontakt@taniecwbiznesie.pl
               </a>
@@ -50,11 +50,11 @@ export function ArticlesLibraryPage() {
           }
         />
 
-        <section className="surface-section space-y-6 p-6 md:p-10">
+        <section className="surface-section space-y-5 p-5 md:space-y-6 md:p-10">
           <SectionHeading
             eyebrow="Na początek"
             title="Jeśli prowadzisz szkołę, od tych materiałów najłatwiej zacząć"
-            description="To teksty, które pomagają zobaczyć szkołę szerzej niż przez grafik, nabór i bieżące gaszenie wyjątków."
+            description="To teksty, które pomagają zobaczyć szkołę szerzej niż przez grafik, nabór i bieżące wyjątki."
           />
           <div className="grid gap-4 md:grid-cols-2">
             {featuredArticles.map((article) => (
@@ -63,8 +63,8 @@ export function ArticlesLibraryPage() {
           </div>
         </section>
 
-        <section className="surface-section space-y-6 p-6 md:p-10">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <section className="surface-section space-y-5 p-5 md:space-y-6 md:p-10">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Przeglądaj dalej"
               title="Wybierz ścieżkę, od której chcesz czytać dalej"
@@ -76,7 +76,7 @@ export function ArticlesLibraryPage() {
                   key={filter.id}
                   type="button"
                   variant={activeFilter === filter.id ? "default" : "outline"}
-                  className="rounded-full"
+                  className="rounded-full px-4"
                   onClick={() => setActiveFilter(filter.id)}
                 >
                   {filter.label}
@@ -124,12 +124,12 @@ function ArticleCard({
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
-        className="surface-focus accent-hover-lift grid gap-6 rounded-[2rem] p-6 text-heading lg:grid-cols-[minmax(0,1fr)_300px]"
+        className="surface-focus accent-hover-lift grid gap-5 rounded-[2rem] p-5 text-heading md:p-6 lg:grid-cols-[minmax(0,1fr)_300px]"
       >
         <div className="space-y-4">
           <MetaLine article={article} dark />
-          <h2 className="heading-display-soft text-heading max-w-3xl text-3xl leading-tight md:text-4xl">{article.title}</h2>
-          <p className="text-body max-w-2xl text-base leading-8">{article.description}</p>
+          <h2 className="heading-display-soft text-heading max-w-3xl text-[1.62rem] leading-tight md:text-4xl">{article.title}</h2>
+          <p className="text-body max-w-2xl text-[0.98rem] leading-7 md:text-base md:leading-8">{article.description}</p>
           <p className="cta-link">
             {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}
             <ArrowUpRight className="h-4 w-4" />
@@ -155,7 +155,7 @@ function ArticleCard({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="surface-card accent-hover-lift group flex h-full flex-col gap-4 rounded-[1.75rem] p-5"
+      className="surface-card accent-hover-lift group flex h-full flex-col gap-3 rounded-[1.75rem] p-4 md:gap-4 md:p-5"
     >
       {article.cover && !compact ? (
         <div className="relative h-52 overflow-hidden rounded-[1.4rem]">
@@ -164,8 +164,8 @@ function ArticleCard({
       ) : null}
       <div className="space-y-3">
         <MetaLine article={article} />
-        <h3 className="heading-display-soft text-heading text-2xl leading-tight">{article.title}</h3>
-        <p className="text-body text-sm leading-7">{article.description}</p>
+        <h3 className="heading-display-soft text-heading text-[1.45rem] leading-tight md:text-2xl">{article.title}</h3>
+        <p className="text-body text-sm leading-6 md:leading-7">{article.description}</p>
       </div>
       <p className="cta-link mt-auto">
         {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}

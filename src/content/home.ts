@@ -31,17 +31,17 @@ export const homeValuePoints: ValuePoint[] = [
   {
     title: "Lepsze decyzje właścicielskie",
     description:
-      "Treści pomagają poukładać ofertę, zespół, komunikację i sposób myślenia o szkole, zanim chaos zacznie kosztować czas i energię.",
+      "Treści pomagają poukładać ofertę, zespół i komunikację, zanim chaos zacznie kosztować czas i energię.",
   },
   {
     title: "Mniej ręcznej improwizacji",
     description:
-      "Zamiast kolejnych obejść, gaszenia wyjątków i pamiętania wszystkiego w głowie, dostajesz język i ramy do spokojniejszego prowadzenia szkoły.",
+      "Zamiast kolejnych obejść i pamiętania wszystkiego w głowie, dostajesz ramy do spokojniejszego prowadzenia szkoły.",
   },
   {
     title: "Rozwój bez udawania, że wszystko jest proste",
     description:
-      "Tu nie ma katalogu trików. Są realne napięcia właściciela szkoły tańca, ich koszt i sposoby, żeby zacząć nimi zarządzać mądrzej.",
+      "Tu nie ma katalogu trików. Są realne napięcia właściciela szkoły i sposoby, żeby zacząć nimi zarządzać mądrzej.",
   },
 ];
 
@@ -197,7 +197,7 @@ export const supportPaths: SupportPath[] = [
     label: "Porządkowanie wejścia i zapisów",
     title: "Baileo",
     description:
-      "Jeśli poza treściami potrzebujesz też bardziej wiarygodnego wejścia od sociali i grafiku do zapisu, pokazuję kierunek, który porządkuje ten fragment działania szkoły.",
+      "Jeśli poza treściami potrzebujesz też lepiej poukładanej drogi od oferty i grafiku do zapisu, pokazuję kierunek dla tego fragmentu szkoły.",
     highlights: [
       "Jedno sensowne miejsce zamiast rozjazdu między postem, grafikiem i wiadomościami.",
       "Mniej ręcznego tłumaczenia wyjątków, poziomów i startów grup.",
@@ -211,7 +211,7 @@ export const supportPaths: SupportPath[] = [
     label: "Wsparcie właściciela",
     title: "Consulting i mentoring",
     description:
-      "Pracuję z właścicielami szkół nad decyzjami, procesami i komunikacją wtedy, gdy sama wiedza to za mało, a potrzebne jest przełożenie jej na realia konkretnej szkoły.",
+      "Pracuję z właścicielami szkół nad decyzjami, procesami i komunikacją wtedy, gdy sama wiedza to za mało i trzeba przełożyć ją na realia konkretnej szkoły.",
     highlights: [
       "Rozmowa o priorytetach, zanim zaczniesz dokładać kolejne narzędzia i procesy.",
       "Wsparcie w ofercie, zespole, komunikacji i codziennym ogarnianiu szkoły.",

@@ -11,12 +11,12 @@ export function ArticlesSection() {
   return (
     <section
       id="artykuly"
-      className="surface-section space-y-8 p-6 md:p-10"
+      className="surface-section space-y-6 p-5 md:space-y-8 md:p-10"
     >
       <SectionHeading
         eyebrow="Wybrane treści"
         title="Teksty o tym, co naprawdę zaczyna ważyć w szkole, kiedy sama pasja już nie wystarcza"
-        description="Znajdziesz tu materiały o decyzjach, procesach, komunikacji i codziennym prowadzeniu szkoły. Na stronie artykułów czeka też szersza biblioteka tekstów dla instruktorów i ludzi tańca."
+        description="Znajdziesz tu materiały o decyzjach, procesach i codziennym prowadzeniu szkoły. Szersza biblioteka czeka niżej na stronie artykułów."
       />
       {featuredArticle ? (
         <FeaturedArticleCard />
@@ -59,11 +59,11 @@ function FeaturedArticleCard() {
           <span>{article.category}</span>
           <span>{article.readTime}</span>
         </div>
-        <h3 className="heading-display-soft text-heading max-w-3xl text-3xl leading-tight md:text-4xl">{article.title}</h3>
-        <p className="text-body max-w-2xl text-base leading-8">{article.description}</p>
-        <p className="text-body text-sm leading-7">
+        <h3 className="heading-display-soft text-heading max-w-3xl text-[2.3rem] leading-tight md:text-4xl">{article.title}</h3>
+        <p className="text-body max-w-2xl text-base leading-7 md:leading-8">{article.description}</p>
+        <p className="text-body text-sm leading-6 md:leading-7">
           To historia o tym, jak uporządkowanie danych i procesów może zdjąć ze szkoły sporą część ręcznej pracy i dać
-          dużo większy spokój operacyjny bez wywracania wszystkiego do góry nogami.
+          większy spokój operacyjny.
         </p>
         <div className="cta-link">
           Czytaj case study
@@ -94,14 +94,14 @@ function ArticleCard({ article }: { article: (typeof articlePreviews)[number] })
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="surface-card accent-hover-lift group rounded-[1.75rem] p-5"
+      className="surface-card accent-hover-lift group rounded-[1.75rem] p-4 md:p-5"
     >
       <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.24em] text-primary/80">
         <span>{article.category}</span>
         <span>{article.readTime}</span>
       </div>
-      <h3 className="heading-display-soft text-heading mt-4 text-3xl leading-tight">{article.title}</h3>
-      <p className="text-body mt-3 text-sm leading-7">{article.description}</p>
+      <h3 className="heading-display-soft text-heading mt-3 text-[2rem] leading-tight md:mt-4 md:text-3xl">{article.title}</h3>
+      <p className="text-body mt-3 text-sm leading-6 md:leading-7">{article.description}</p>
       <p className="cta-link mt-5">
         {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}
         <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

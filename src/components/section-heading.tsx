@@ -32,9 +32,9 @@ export function SectionHeading({
       {eyebrow && (
         <p className="eyebrow-accent">{eyebrow}</p>
       )}
-      <h2 className={cn("heading-display-soft text-heading text-2xl md:text-3xl", titleClassName)}>{title}</h2>
+      <h2 className={cn("heading-display-soft text-heading text-[1.55rem] leading-tight md:text-3xl", titleClassName)}>{title}</h2>
       {description && (
-        <p className={cn("text-body text-base", descriptionClassName)}>{description}</p>
+        <p className={cn("text-body text-[0.98rem] leading-7 md:text-base md:leading-8", descriptionClassName)}>{description}</p>
       )}
     </div>
   );

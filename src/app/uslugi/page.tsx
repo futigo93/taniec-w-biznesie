@@ -27,25 +27,25 @@ const consultingHighlights = [
 
 export default function ServicesPage() {
   return (
-    <div className="page-wash py-12">
-      <div className="mx-auto max-w-6xl space-y-10 px-4 md:px-6">
+    <div className="page-wash py-8 md:py-12">
+      <div className="mx-auto max-w-6xl space-y-8 px-4 md:space-y-10 md:px-6">
         <SectionHeading
           eyebrow="Dalsze wsparcie"
           title="Jeśli sama wiedza to za mało, możesz wejść głębiej w porządkowanie szkoły"
-          description="Ta strona nie jest katalogiem modułów. Pokazuje dwa kierunki, które realnie pomagają właścicielowi: uporządkowanie ścieżki szkoły od oferty do zapisu oraz bezpośrednią pracę nad decyzjami, procesami i komunikacją."
+          description="To są dwa kierunki dalszej pracy: uporządkowanie ścieżki od oferty do zapisu albo bezpośrednia praca nad decyzjami, procesami i komunikacją."
         />
 
-        <section className="surface-focus grid gap-6 p-6 text-heading md:p-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
+        <section className="surface-focus grid gap-5 p-5 text-heading md:p-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
           <div className="space-y-5">
             <p className="eyebrow-accent">Baileo</p>
-            <h2 className="heading-display text-heading text-4xl leading-tight md:text-5xl">
+            <h2 className="heading-display text-heading text-[1.68rem] leading-tight md:text-5xl">
               Porządkowanie drogi od sociali, grafiku i pytań do właściwego zapisu
             </h2>
-            <p className="text-body max-w-2xl text-base leading-8">
-              Baileo rozwijam z myślą o szkołach, które już mają ruch i ofertę, ale nadal ręcznie domykają wejście nowych
-              osób, tłumaczą wyjątki w wiadomościach i łatają komunikację między różnymi kanałami.
+            <p className="text-body max-w-2xl text-[0.98rem] leading-7 md:text-base md:leading-8">
+              Baileo rozwijam z myślą o szkołach, które mają już ruch i ofertę, ale nadal ręcznie domykają wejście nowych
+              osób i łatają komunikację między kanałami.
             </p>
-            <ul className="text-body-strong space-y-3 text-sm leading-7">
+            <ul className="text-body-strong space-y-2.5 text-sm leading-6 md:space-y-3 md:leading-7">
               {baileoHighlights.map((highlight) => (
                 <li key={highlight} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -71,18 +71,18 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="surface-section p-6 md:p-10">
+        <section className="surface-section p-5 md:p-10">
           <div className="space-y-5">
             <p className="eyebrow-accent">Consulting i mentoring</p>
-            <h2 className="heading-display text-heading text-4xl leading-tight md:text-5xl">
+            <h2 className="heading-display text-heading text-[1.62rem] leading-tight md:text-5xl">
               Wsparcie dla właściciela, który chce poukładać decyzje zanim szkoła zacznie ciągnąć go w każdą stronę naraz
             </h2>
-            <p className="text-body max-w-2xl text-base leading-8">
+            <p className="text-body max-w-2xl text-[0.98rem] leading-7 md:text-base md:leading-8">
               To miejsce na rozmowę o tym, gdzie dziś naprawdę boli: w ofercie, komunikacji, zespole, rytmie pracy albo
               codziennym zarządzaniu wyjątkami. Nie chodzi o gotowy pakiet usług, tylko o sensowne uporządkowanie tego, co
               najbardziej waży w konkretnej szkole.
             </p>
-            <ul className="text-body-strong space-y-3 text-sm leading-7">
+            <ul className="text-body-strong space-y-2.5 text-sm leading-6 md:space-y-3 md:leading-7">
               {consultingHighlights.map((highlight) => (
                 <li key={highlight} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />

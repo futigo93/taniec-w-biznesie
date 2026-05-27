@@ -91,12 +91,12 @@ export function NewsletterForm({
 
   return (
     <form className={className} onSubmit={handleSubmit(onSubmit)} aria-live="polite">
-      <div className="surface-card form-neutral-surface focus-ring-accent space-y-4 rounded-[1.8rem] p-6 text-[var(--heading)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] [&_input]:text-[var(--foreground)] [&_label]:text-[var(--body-strong)] [&_p]:text-[var(--body)] [&_select]:text-[var(--foreground)] md:p-8">
+      <div className="surface-card form-neutral-surface focus-ring-accent space-y-4 rounded-[1.8rem] p-5 text-[var(--heading)] shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] [&_input]:text-[var(--foreground)] [&_label]:text-[var(--body-strong)] [&_p]:text-[var(--body)] [&_select]:text-[var(--foreground)] md:p-8">
         <div className="space-y-2">
           <p className="eyebrow-accent tracking-[0.22em]">Szybki zapis</p>
-          <p className="text-body text-sm leading-7">
-            Po zapisie od razu dostaniesz pełny ebook na maila. Dodatkowe pola pomagają mi lepiej rozumieć, kto trafia do
-            tego miejsca i jakich treści najbardziej potrzebuje.
+          <p className="text-body text-sm leading-6 md:leading-7">
+            Po zapisie od razu dostaniesz pełny ebook na maila. Dodatkowe pola pomagają mi lepiej dopasowywać kolejne
+            treści.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
