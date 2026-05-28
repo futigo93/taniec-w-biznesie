@@ -19,14 +19,14 @@ export function JourneyMarker({ step, label, className }: JourneyMarkerProps) {
           transform: "scale(var(--journey-marker-scale, 1))",
         }}
       >
-        <span className="surface-card-soft inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-primary/85 shadow-sm">
+        <span className="surface-card-soft inline-flex max-w-[min(14.5rem,calc(100vw-7.5rem))] items-center justify-center gap-2 rounded-full px-3 py-1.5 text-center text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-primary/85 shadow-sm">
           {step ? <span className="text-primary/65">{step}.</span> : null}
-          <span>{label}</span>
+          <span className="text-balance whitespace-normal leading-4">{label}</span>
         </span>
       </div>
-      <div className="absolute left-0 top-8 hidden -translate-x-[calc(100%+1.15rem)] xl:flex xl:flex-col xl:items-end xl:gap-2">
+      <div className="absolute left-0 top-8 hidden max-w-[10.5rem] -translate-x-[calc(100%+1.15rem)] xl:flex xl:flex-col xl:items-end xl:gap-2">
         {step ? <span className="heading-display text-[2.6rem] leading-none text-primary/14">{step}</span> : null}
-        <span className="eyebrow-accent whitespace-nowrap text-[0.68rem] tracking-[0.22em] text-primary/65">
+        <span className="eyebrow-accent max-w-full text-right text-[0.68rem] leading-5 tracking-[0.18em] text-primary/65 whitespace-normal text-balance">
           {label}
         </span>
       </div>

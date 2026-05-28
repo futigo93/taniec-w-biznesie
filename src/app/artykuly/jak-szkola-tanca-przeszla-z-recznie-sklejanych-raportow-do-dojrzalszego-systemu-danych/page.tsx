@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleHero } from "@/components/articles/article-hero";
 import { MarginNote } from "@/components/articles/margin-note";
+import { JourneyMarker } from "@/components/journey-marker";
 
 export const metadata: Metadata = {
   title: "Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych",
@@ -50,7 +51,7 @@ export default function DataCaseStudyArticle() {
           date="22 maja 2026"
         />
 
-        <ArticleSection title="1. Otwarcie">
+        <ArticleSection label="1. Otwarcie">
           <p>
             Jeśli prowadzisz szkołę tańca i interesujesz się tym, jak działają najmocniejsze organizmy na rynku, to Salsa
             Libre prawdopodobnie nie jest Ci obca. To jedna z tych szkół, którym przyglądają się i mniejsi, i więksi. Nie
@@ -99,7 +100,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="2. Stan wyjścia: co naprawdę zaczęło boleć">
+        <ArticleSection label="2. Stan wyjścia: co naprawdę zaczęło boleć">
           <p>
             Żeby dobrze zrozumieć sens tej zmiany, trzeba zacząć od jednej rzeczy: problemem nie było samo istnienie
             arkuszy. Google Sheets przez długi czas bardzo dobrze spełniały swoją rolę. Pozwalały szybko budować zestawienia,
@@ -155,7 +156,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="3. Najważniejsze ograniczenie: nie można było zatrzymać szkoły">
+        <ArticleSection label="3. Najważniejsze ograniczenie: nie można było zatrzymać szkoły">
           <p>
             W wielu podobnych historiach najłatwiej brzmi rada: skoro dotychczasowy model przestaje działać, to trzeba go po
             prostu wymienić. W praktyce duże szkoły rzadko mogą sobie pozwolić na takie czyste cięcie.
@@ -190,7 +191,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="4. Kluczowa decyzja projektowa">
+        <ArticleSection label="4. Kluczowa decyzja projektowa">
           <p>
             Skoro nie dało się po prostu zatrzymać szkoły i wymienić całego środowiska pracy, potrzebna była inna logika
             zmiany. Najważniejsza decyzja była tu dość prosta, ale miała duże konsekwencje: nie rozwijać dalej dziesiątek
@@ -249,7 +250,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="5. Co zostało zbudowane">
+        <ArticleSection label="5. Co zostało zbudowane">
           <p>
             Kiedy patrzy się na taki projekt z zewnątrz, łatwo wyobrazić go sobie jako jedną zmianę: przenieśli dane z
             miejsca A do miejsca B i gotowe. W praktyce tutaj powstał znacznie szerszy system, który porządkuje zarówno
@@ -314,7 +315,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="6. Co to realnie zmieniło w codziennej pracy szkoły">
+        <ArticleSection label="6. Co to realnie zmieniło w codziennej pracy szkoły">
           <p>
             Najciekawsze w tym projekcie jest to, że z perspektywy codziennej pracy szkoły ta zmiana nie przyszła w formie
             widowiskowej rewolucji. I właśnie o to chodziło.
@@ -349,7 +350,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="7. Co ten fundament umożliwia dalej">
+        <ArticleSection label="7. Co ten fundament umożliwia dalej">
           <p>
             To z kolei otworzyło kolejny, bardzo ważny etap: skoro świeże i wiarygodne dane są już dostępne, trzeba dobrze
             zdecydować, jak najlepiej z nich skorzystać.
@@ -370,7 +371,7 @@ export default function DataCaseStudyArticle() {
           </p>
         </ArticleSection>
 
-        <ArticleSection title="8. Zakończenie">
+        <ArticleSection label="8. Zakończenie">
           <p>
             Z zewnątrz taki projekt może wyglądać jak techniczne zaplecze, którego na co dzień prawie nie widać. I w pewnym
             sensie właśnie tak jest. Najlepsze tego typu zmiany często nie objawiają się wielkim show na froncie, tylko tym,
@@ -405,16 +406,17 @@ export default function DataCaseStudyArticle() {
 }
 
 function ArticleSection({
-  title,
+  label,
   children,
 }: {
-  title: string;
+  label: string;
   children: React.ReactNode;
 }) {
   return (
     <section className="surface-section relative overflow-visible rounded-[2rem] p-6 shadow-[0_20px_60px_rgba(49,34,24,0.08)]">
-      <h2 className="text-heading text-2xl leading-tight md:text-3xl">{title}</h2>
-      <div className="text-body relative mt-4 space-y-4 text-base leading-8 xl:min-h-[8rem]" data-margin-note-scope>
+      <JourneyMarker label={label} />
+      <h2 className="sr-only">{label}</h2>
+      <div className="text-body relative space-y-4 text-base leading-8 xl:min-h-[8rem]" data-margin-note-scope>
         {children}
       </div>
     </section>
