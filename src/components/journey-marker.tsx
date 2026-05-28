@@ -7,6 +7,9 @@ type JourneyMarkerProps = {
 };
 
 export function JourneyMarker({ step, label, className }: JourneyMarkerProps) {
+  const chipClasses =
+    "surface-card-soft inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-center text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-primary/85 shadow-sm";
+
   return (
     <>
       <div
@@ -19,7 +22,13 @@ export function JourneyMarker({ step, label, className }: JourneyMarkerProps) {
           transform: "scale(var(--journey-marker-scale, 1))",
         }}
       >
-        <span className="surface-card-soft inline-flex max-w-[min(14.5rem,calc(100vw-7.5rem))] items-center justify-center gap-2 rounded-full px-3 py-1.5 text-center text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-primary/85 shadow-sm">
+        <span className={cn(chipClasses, "max-w-[min(14.5rem,calc(100vw-7.5rem))]")}>
+          {step ? <span className="text-primary/65">{step}.</span> : null}
+          <span className="text-balance whitespace-normal leading-4">{label}</span>
+        </span>
+      </div>
+      <div className={cn("mb-4 hidden justify-center md:flex xl:hidden", className)}>
+        <span className={cn(chipClasses, "max-w-[16rem]")}>
           {step ? <span className="text-primary/65">{step}.</span> : null}
           <span className="text-balance whitespace-normal leading-4">{label}</span>
         </span>
