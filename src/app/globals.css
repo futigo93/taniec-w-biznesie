@@ -439,4 +439,70 @@ html[data-theme="graphite-bold"] {
   .form-neutral-surface .eyebrow-accent {
     color: var(--eyebrow);
   }
+
+  .margin-note-trigger {
+    @apply inline-flex items-center gap-1 font-semibold transition;
+    color: color-mix(in srgb, var(--primary) 86%, black 14%);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--primary) 34%, transparent);
+  }
+
+  .margin-note-trigger:hover {
+    color: color-mix(in srgb, var(--primary) 74%, black 26%);
+    text-decoration-color: color-mix(in srgb, var(--primary) 54%, transparent);
+  }
+
+  .margin-note-trigger__badge {
+    @apply inline-flex h-5 w-5 items-center justify-center rounded-full border text-[0.65rem] shadow-sm;
+    border-color: color-mix(in srgb, var(--primary) 26%, transparent);
+    background: color-mix(in srgb, var(--primary) 11%, white 89%);
+    color: color-mix(in srgb, var(--primary) 82%, black 18%);
+  }
+
+  .margin-note-desktop {
+    @apply absolute z-10 w-44;
+  }
+
+  .margin-note-card {
+    @apply w-full rounded-[1.5rem] border p-4 shadow-sm;
+    border-color: color-mix(in srgb, var(--border) 72%, transparent);
+    background: var(--surface-card);
+    transition: box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease, transform 220ms ease;
+  }
+
+  .margin-note-card--highlighted {
+    border-color: color-mix(in srgb, var(--primary) 42%, transparent);
+    background: color-mix(in srgb, var(--primary) 11%, white 89%);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 12%, transparent);
+  }
+
+  .margin-note-card__eyebrow {
+    @apply block text-[0.62rem] font-semibold uppercase tracking-[0.2em];
+    color: color-mix(in srgb, var(--primary) 72%, transparent);
+  }
+
+  .margin-note-card__title {
+    @apply mt-2 block text-sm font-semibold leading-5;
+    color: var(--heading);
+  }
+
+  .margin-note-card__body {
+    @apply mt-2 block text-[0.82rem] leading-6;
+    color: var(--body);
+  }
+
+  .margin-note-line {
+    @apply absolute inset-0 z-0 h-full w-full overflow-visible;
+  }
+
+  .margin-note-line path {
+    fill: none;
+    stroke: color-mix(in srgb, var(--primary) 42%, transparent);
+    stroke-dasharray: 5 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.35;
+  }
 }

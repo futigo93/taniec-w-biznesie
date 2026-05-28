@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleHero } from "@/components/articles/article-hero";
+import { MarginNote } from "@/components/articles/margin-note";
 
 export const metadata: Metadata = {
   title: "Jak szkoła tańca przeszła z ręcznie sklejanych raportów do dojrzalszego systemu danych",
@@ -213,9 +214,15 @@ export default function DataCaseStudyArticle() {
             Przy małej skali taki układ bywa bardzo skuteczny. Przy większej zaczyna mieszać role, które lepiej rozdzielić.
           </p>
           <p>
-            Dlatego część operacyjnych „excelików” została przeniesiona do AppSheet. Najprościej mówiąc, AppSheet pozwolił
-            zamienić część arkuszowych procesów na prostsze, bardziej uporządkowane narzędzia do codziennej pracy, ale bez
-            odrywania zespołu od środowiska, które już znał.
+            Dlatego część operacyjnych „excelików” została przeniesiona do{" "}
+            <MarginNote
+              title="Co to jest AppSheet?"
+              note="AppSheet to narzędzie Google do budowania prostych aplikacji biznesowych na bazie danych z arkuszy, formularzy i innych źródeł, bez klasycznego programowania."
+            >
+              AppSheet
+            </MarginNote>
+            . Najprościej mówiąc, AppSheet pozwolił zamienić część arkuszowych procesów na prostsze, bardziej
+            uporządkowane narzędzia do codziennej pracy, ale bez odrywania zespołu od środowiska, które już znał.
           </p>
           <p>
             Nie chodziło więc o to, żeby zachwycać się nowym narzędziem. Chodziło o to, żeby zachować dla zespołu możliwie
@@ -405,9 +412,11 @@ function ArticleSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="surface-section rounded-[2rem] p-6 shadow-[0_20px_60px_rgba(49,34,24,0.08)]">
+    <section className="surface-section relative overflow-visible rounded-[2rem] p-6 shadow-[0_20px_60px_rgba(49,34,24,0.08)]">
       <h2 className="text-heading text-2xl leading-tight md:text-3xl">{title}</h2>
-      <div className="text-body mt-4 space-y-4 text-base leading-8">{children}</div>
+      <div className="text-body relative mt-4 space-y-4 text-base leading-8 xl:min-h-[8rem]" data-margin-note-scope>
+        {children}
+      </div>
     </section>
   );
 }
