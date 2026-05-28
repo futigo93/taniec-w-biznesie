@@ -394,19 +394,6 @@ html[data-theme="graphite-bold"] {
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 22%, transparent);
   }
 
-  .theme-preview-control {
-    @apply rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition;
-    border-color: var(--cta-outline-border);
-    background: var(--surface-inset);
-    color: var(--body-strong);
-  }
-
-  .theme-preview-control[data-active="true"] {
-    background: var(--cta-bg);
-    color: var(--cta-fg);
-    border-color: transparent;
-  }
-
   .surface-signal .text-heading,
   .surface-signal .text-body,
   .surface-signal .text-body-strong,

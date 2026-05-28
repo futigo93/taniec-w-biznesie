@@ -28,18 +28,7 @@ const playfair = Playfair_Display({
 
 const fbAppId = process.env.NEXT_PUBLIC_FB_APP_ID;
 const themeInitScript = `
-  (function() {
-    try {
-      var key = "twb-theme-preview";
-      var fallback = "graphite-balanced";
-      var allowed = ["graphite-quiet", "graphite-balanced", "graphite-bold"];
-      var stored = window.localStorage.getItem(key);
-      var theme = allowed.indexOf(stored) >= 0 ? stored : fallback;
-      document.documentElement.dataset.theme = theme;
-    } catch (error) {
-      document.documentElement.dataset.theme = "graphite-balanced";
-    }
-  })();
+  document.documentElement.dataset.theme = "graphite-bold";
 `;
 
 export const metadata: Metadata = {
@@ -94,7 +83,7 @@ export default function RootLayout({
   const isProd = process.env.NODE_ENV === "production";
 
   return (
-    <html lang="pl" data-theme="graphite-balanced" suppressHydrationWarning>
+    <html lang="pl" data-theme="graphite-bold" suppressHydrationWarning>
       <head>
         {fbAppId ? <meta property="fb:app_id" content={fbAppId} /> : null}
         <Script id="theme-init" strategy="beforeInteractive">
