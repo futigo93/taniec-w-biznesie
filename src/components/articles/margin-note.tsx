@@ -89,10 +89,13 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
           const lineHeight = Number.parseFloat(triggerStyle.lineHeight) || triggerRect.height * 1.75;
           const badge = triggerElement.querySelector("[data-margin-note-badge]");
           const badgeRect = badge instanceof HTMLElement ? badge.getBoundingClientRect() : null;
-          const anchorY = (badgeRect?.top ?? triggerRect.top) - scopeRect.top + (badgeRect?.height ?? triggerRect.height) / 2;
+          const referenceTop = badgeRect?.top ?? triggerRect.top;
+          const referenceBottom = badgeRect?.bottom ?? triggerRect.bottom;
+          const referenceHeight = badgeRect?.height ?? triggerRect.height;
+          const anchorY = referenceTop - scopeRect.top + referenceHeight / 2;
           const desiredTop = anchorY - pairedNote.offsetHeight / 2;
-          const gapBelow = triggerRect.bottom - scopeRect.top + Math.max(6, (lineHeight - triggerRect.height) / 2);
-          const gapAbove = triggerRect.top - scopeRect.top - Math.max(6, (lineHeight - triggerRect.height) / 2);
+          const gapBelow = referenceBottom - scopeRect.top + Math.max(6, (lineHeight - referenceHeight) / 2);
+          const gapAbove = referenceTop - scopeRect.top - Math.max(6, (lineHeight - referenceHeight) / 2);
           const startX = (badgeRect?.left ?? triggerRect.right) - scopeRect.left + (badgeRect?.width ?? 0) / 2;
 
           return {

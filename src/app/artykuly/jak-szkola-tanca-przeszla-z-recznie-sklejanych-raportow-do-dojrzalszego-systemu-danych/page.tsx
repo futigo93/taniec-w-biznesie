@@ -71,6 +71,7 @@ export default function DataCaseStudyArticle() {
           </p>
           <p>
             Przez długi czas ten model dało się utrzymać. W przypadku szkoły tej skali oczywiste jest, że w grę wchodzi już
+            {" "}
             <MarginNote
               title="Co to jest system obsługi kursów?"
               note="System obsługi studia, system obsługi kursów, program dla szkoły tańca: główny system operacyjny szkoły. To tam zwykle żyją kursanci, grupy, zapisy, płatności, karnety albo obecności. Takich systemów nadal brakuje w realiach szkół tańca, dlatego Salsa Libre wdrożyła i dostosowała do swoich procesów rozwiązanie dla branży fitness."
@@ -89,8 +90,10 @@ export default function DataCaseStudyArticle() {
             Z czasem jednak taki układ zaczął coraz wyraźniej pokazywać swój koszt. Rosła ręczna praca. Rosło ryzyko błędów.
             Coraz trudniej było rozwijać kolejne procesy bez dokładania następnych obejść, rozproszonych pomocniczych
             arkuszy i dodatkowej wiedzy trzymanej w głowie jednej osoby. W pewnym momencie przestało już chodzić o wygodę.
-            Zaczęło chodzić o to, czy szkoła ma wystarczająco stabilne zaplecze danych i operacji, żeby dalej rosnąć w
-            uporządkowany sposób.
+            <strong className="text-body-strong">
+              Zaczęło chodzić o to, czy szkoła ma wystarczająco stabilne zaplecze danych i operacji, żeby dalej rosnąć w
+              uporządkowany sposób.
+            </strong>
           </p>
           <p>
             Najtrudniejsze było to, że tej zmiany nie dało się zrobić przez prostą rewolucję. Bieżąca praca szkoły musiała
@@ -107,9 +110,11 @@ export default function DataCaseStudyArticle() {
             zmianę zbyt wysokiej ceny.
           </p>
           <p>
-            To właśnie było osią tego projektu: przejść z modelu opartego głównie na ręcznie sklejanych raportach i
-            operacyjnych arkuszach do bardziej uporządkowanego systemu danych, automatyzacji i rozliczeń, ale bez
-            zatrzymywania szkoły po drodze.
+            <strong className="text-body-strong">
+              To właśnie było osią tego projektu: przejść z modelu opartego głównie na ręcznie sklejanych raportach i
+              operacyjnych arkuszach do bardziej uporządkowanego systemu danych, automatyzacji i rozliczeń, ale bez
+              zatrzymywania szkoły po drodze.
+            </strong>
           </p>
         </ArticleSection>
 
@@ -192,9 +197,11 @@ export default function DataCaseStudyArticle() {
             procesy, ale codzienna praca ludzi miała pozostać możliwie bliska temu, co już znali i rozumieli.
           </p>
           <p>
-            To bardzo ważna część tej historii, bo właśnie tutaj ten projekt przestaje być zwykłą migracją danych. Zaczyna
-            być próbą zbudowania dojrzalszego systemu bez przerywania działania szkoły i bez wywracania ludziom pracy w imię
-            samej technologicznej elegancji.
+            <strong className="text-body-strong">
+              To bardzo ważna część tej historii, bo właśnie tutaj ten projekt przestaje być zwykłą migracją danych.
+              Zaczyna być próbą zbudowania dojrzalszego systemu bez przerywania działania szkoły i bez wywracania ludziom
+              pracy w imię samej technologicznej elegancji.
+            </strong>
           </p>
           <p>
             W praktyce oznaczało to{" "}
@@ -270,10 +277,12 @@ export default function DataCaseStudyArticle() {
             zestawieniami i utrzymywania coraz bardziej kruchego układu zależności w samych arkuszach.
           </p>
           <p>
-            To była chyba najważniejsza decyzja w całym projekcie: nie traktować zmiany jako jednej wielkiej migracji z
-            narzędzia A do narzędzia B, tylko jako uporządkowanie całego przepływu. Od bardziej sensownych inputów
-            operacyjnych, przez centralną warstwę danych, aż po stabilniejsze raportowanie i rozliczenia. Dzięki temu szkoła
-            nie dostała tylko „nowej technologii”. Dostała bardziej logiczny model pracy z danymi.
+            <strong className="text-body-strong">
+              To była chyba najważniejsza decyzja w całym projekcie: nie traktować zmiany jako jednej wielkiej migracji z
+              narzędzia A do narzędzia B, tylko jako uporządkowanie całego przepływu.
+            </strong>{" "}
+            Od bardziej sensownych inputów operacyjnych, przez centralną warstwę danych, aż po stabilniejsze raportowanie i
+            rozliczenia. <strong className="text-body-strong">Dzięki temu szkoła nie dostała tylko „nowej technologii”. Dostała bardziej logiczny model pracy z danymi.</strong>
           </p>
         </ArticleSection>
 
@@ -356,9 +365,11 @@ export default function DataCaseStudyArticle() {
             obejściami.
           </p>
           <p>
-            Najkrócej: nie powstał tu pojedynczy raport ani pojedyncza integracja. Powstało uporządkowane zaplecze danych i
-            procesów, które zaczyna działać jak wspólny system, a nie zbiór sprytnych, ale coraz trudniejszych do utrzymania
-            rozwiązań.
+            <strong className="text-body-strong">
+              Najkrócej: nie powstał tu pojedynczy raport ani pojedyncza integracja. Powstało uporządkowane zaplecze danych
+              i procesów, które zaczyna działać jak wspólny system, a nie zbiór sprytnych, ale coraz trudniejszych do
+              utrzymania rozwiązań.
+            </strong>
           </p>
         </ArticleSection>
 
@@ -394,8 +405,10 @@ export default function DataCaseStudyArticle() {
           <p>
             To jest zmiana, która z zewnątrz może wyglądać jak detal operacyjny, ale w praktyce mocno wpływa na sposób
             zarządzania szkołą. Co innego pracować na obrazie sytuacji sprzed kilkunastu dni, a co innego mieć aktualne dane
-            dostępne praktycznie od ręki. To skraca dystans między tym, co dzieje się w szkole, a tym, co naprawdę widać w
-            liczbach.
+            dostępne praktycznie od ręki.{" "}
+            <strong className="text-body-strong">
+              To skraca dystans między tym, co dzieje się w szkole, a tym, co naprawdę widać w liczbach.
+            </strong>
           </p>
           <p>
             Co ważne, efekt tej zmiany był odczuwalny szybciej, niż można było się spodziewać. Już po wdrożeniu pierwszych
@@ -418,17 +431,21 @@ export default function DataCaseStudyArticle() {
             >
               KPI
             </MarginNote>{" "}
-            i sensowne decyzje. Ten projekt nie
-            kończy się więc na pytaniu „czy dane są?”, tylko prowadzi do znacznie ciekawszego pytania: „jak najlepiej
-            wykorzystać to, że wreszcie można im ufać i mieć je na czas?”.
+            i sensowne decyzje.{" "}
+            <strong className="text-body-strong">
+              Ten projekt nie kończy się więc na pytaniu „czy dane są?”, tylko prowadzi do znacznie ciekawszego pytania:
+              „jak najlepiej wykorzystać to, że wreszcie można im ufać i mieć je na czas?”.
+            </strong>
           </p>
           <p>
             Druga zmiana jest jeszcze bardziej ekscytująca, bo dotyczy obszarów, które wcześniej były raczej marzeniem niż
             realnym planem. Kiedy szkoła ma już porządną warstwę danych i automatyczne odświeżanie, dużo bliżej stają się
             rzeczy takie jak komunikacja urodzinowa, urodzinowe upominki, prostsze programy lojalnościowe czy bardziej
-            świadoma praca na relacji z klientem. Na samym początku trudno nawet zdecydować, co uruchamiać najpierw. To jest
-            ten moment, w którym porządek w danych przestaje być tylko zapleczem operacyjnym, a zaczyna realnie pracować na
-            sprzedaż, relacje i markę szkoły.
+            świadoma praca na relacji z klientem. Na samym początku trudno nawet zdecydować, co uruchamiać najpierw. To jest{" "}
+            <strong className="text-body-strong">
+              ten moment, w którym porządek w danych przestaje być tylko zapleczem operacyjnym, a zaczyna realnie pracować
+              na sprzedaż, relacje i markę szkoły.
+            </strong>
           </p>
         </ArticleSection>
 
@@ -447,14 +464,19 @@ export default function DataCaseStudyArticle() {
           <p>
             Właśnie dlatego ten case wydaje mi się ciekawy nie tylko jako historia jednego projektu. Taka skala operacji i
             takie potrzeby dotyczą raczej policzalnej grupy szkół. Ale sama lekcja jest szersza: w pewnym momencie przestaje
-            chodzić o samą technologię, a zaczyna chodzić o porządek w danych i w logice biznesowej. Jeśli ten porządek jest
-            zaniedbany, organizacja wcześniej czy później zaczyna płacić za to wolniejszym rozwojem, większą ręczną pracą i
-            coraz trudniejszym podejmowaniem decyzji.
+            chodzić o samą technologię, a zaczyna chodzić o porządek w danych i w logice biznesowej.{" "}
+            <strong className="text-body-strong">
+              Jeśli ten porządek jest zaniedbany, organizacja wcześniej czy później zaczyna płacić za to wolniejszym
+              rozwojem, większą ręczną pracą i coraz trudniejszym podejmowaniem decyzji.
+            </strong>
           </p>
           <p>
-            I chyba to jest najlepsze podsumowanie tej pracy: nie zbudowaliśmy po prostu kolejnego raportu ani kolejnego
-            narzędzia. Udało się zbudować podstawę, na której szkoła może dalej rosnąć bardziej świadomie, z lepszym
-            spokojem operacyjnym i z dużo większym potencjałem na kolejne sensowne automatyzacje.
+            <strong className="text-body-strong">
+              I chyba to jest najlepsze podsumowanie tej pracy: nie zbudowaliśmy po prostu kolejnego raportu ani kolejnego
+              narzędzia.
+            </strong>{" "}
+            Udało się zbudować podstawę, na której szkoła może dalej rosnąć bardziej świadomie, z lepszym spokojem
+            operacyjnym i z dużo większym potencjałem na kolejne sensowne automatyzacje.
           </p>
         </ArticleSection>
 
