@@ -237,7 +237,7 @@ export default function WizerunekInstruktoraArticle() {
               title: "Dalsze wsparcie dla szkół tańca",
               description: "Zobacz zestaw rozwiązań i wsparcie rozwoju szkoły.",
               href: "/uslugi",
-              image: "/zestaw-narzedzi-dla-szkol.webp",
+              image: "/baileo-system-overview.webp",
             },
           ]}
         />

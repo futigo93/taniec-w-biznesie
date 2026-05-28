@@ -60,12 +60,12 @@ export default function ServicesPage() {
               </Link>
             </Button>
           </div>
-          <div className="surface-card-inset relative min-h-72 overflow-hidden rounded-[1.8rem]">
+          <div className="surface-card-inset relative flex min-h-72 items-center justify-center overflow-hidden rounded-[1.8rem] p-4">
             <Image
               src="/baileo-system-overview.webp"
               alt="Podgląd Baileo"
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 1024px) 100vw, 340px"
             />
           </div>
