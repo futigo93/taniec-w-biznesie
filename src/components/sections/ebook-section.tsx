@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnchorLink } from "@/components/ui/anchor-link";
+import { JourneyMarker } from "@/components/journey-marker";
 import { trackEvent } from "@/lib/analytics";
 
 const demoHref = "/Czego_nie_wiesz_o_prowadzeniu_szkoły_tanca_demo-Jakub_Nowak.pdf";
@@ -38,18 +39,17 @@ export function EbookSection() {
   return (
     <section
       id="ebook"
-      className="surface-focus scroll-mt-32 p-5 md:p-10"
+      className="surface-focus relative scroll-mt-32 p-5 md:p-10"
     >
+      <JourneyMarker step="1" label="Na start: ebook" />
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)] lg:items-center">
         <div className="space-y-5">
           <div className="space-y-3">
-            <p className="eyebrow-accent">Na start</p>
-            <h2 className="heading-display text-heading max-w-3xl text-[2.5rem] leading-tight md:text-5xl">
-              Ebook, który pomaga zobaczyć szkołę szerzej niż przez grafik, nabór i bieżące pożary.
+            <h2 className="heading-display text-heading max-w-3xl text-[2.15rem] leading-tight md:text-5xl">
+              Ebook, który pomaga zobaczyć szkołę szerzej niż przez grafik i bieżące pożary.
             </h2>
             <p className="text-body max-w-2xl text-base leading-7 md:text-lg md:leading-8">
-              „Czego nie wiesz o prowadzeniu szkoły tańca” to materiał dla osób, które chcą lepiej ogarniać decyzje,
-              komunikację i procesy. Pełną wersję dostajesz po zapisie.
+              „Czego nie wiesz o prowadzeniu szkoły tańca” porządkuje decyzje, komunikację i procesy. Pełną wersję dostajesz po zapisie.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -58,7 +58,7 @@ export function EbookSection() {
                 key={reason.title}
                 className={`surface-card accent-hover-lift p-4 ${index === 2 ? "md:col-span-2" : ""}`}
               >
-                <h3 className="heading-display-soft text-heading text-[1.95rem] leading-tight md:text-2xl">{reason.title}</h3>
+                <h3 className="heading-display-soft text-heading text-[1.65rem] leading-tight md:text-2xl">{reason.title}</h3>
                 <p className="text-body mt-3 text-sm leading-6 md:leading-7">{reason.description}</p>
               </article>
             ))}
@@ -83,12 +83,11 @@ export function EbookSection() {
           </div>
         </div>
         <div className="flex justify-center lg:justify-end">
-          <div className="surface-focus accent-hover-lift relative w-full max-w-sm rounded-[2rem] p-4 text-heading md:p-5">
+          <div className="surface-card accent-hover-lift relative w-full max-w-sm rounded-[2rem] p-4 text-heading md:p-5">
             <div className="surface-orb absolute -right-6 top-8 hidden h-24 w-24 rounded-full blur-3xl md:block" />
             <p className="surface-chip">W środku</p>
             <p className="text-body mt-3 text-sm leading-6 md:leading-7">
-              Jak przejść z trybu instruktora do trybu właściciela, widzieć ukryte koszty chaosu i nie budować szkoły tylko
-              na improwizacji.
+              Jak przejść z trybu instruktora do trybu właściciela, widzieć koszty chaosu i nie budować szkoły tylko na improwizacji.
             </p>
             <div className="surface-card-inset mt-5 overflow-hidden p-3">
               <Image

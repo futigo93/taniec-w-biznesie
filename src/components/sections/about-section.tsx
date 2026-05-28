@@ -1,32 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
+import { JourneyMarker } from "@/components/journey-marker";
 
 export function AboutSection() {
   return (
-    <section className="surface-section grid gap-6 p-5 md:gap-8 md:p-10 lg:grid-cols-[minmax(0,1.1fr)_320px] lg:items-center">
-      <div className="space-y-5">
+    <section className="relative grid gap-5 px-1 py-2 md:gap-6 md:px-2 md:py-4 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-center">
+      <JourneyMarker label="O autorze" />
+      <div className="space-y-4">
         <SectionHeading
-          eyebrow="O autorze"
-          title="Łączę doświadczenie z parkietu, prowadzenia szkoły i budowania systemów, które porządkują pracę od środka"
+          title="Perspektywa z parkietu, prowadzenia szkoły i pracy nad procesami"
           description="Nie piszę o szkołach tańca z dystansu. Patrzę na nie z perspektywy instruktora, byłego właściciela i osoby pracującej zawodowo na procesach, danych i decyzjach."
         />
         <p className="text-body text-sm leading-7 md:text-base md:leading-8">
-          Dzięki temu Taniec w Biznesie nie jest tylko zbiorem inspiracji. To miejsce, w którym można nazwać rzeczy, które
-          w szkołach często dzieją się po cichu: rozjazd między rolą instruktora i właściciela, chaos komunikacyjny, brak
-          języka do decyzji czy zbyt duże poleganie na pamięci i improwizacji.
-        </p>
-        <p className="text-body text-sm leading-7 md:text-base md:leading-8">
-          Obok treści rozwijam też kierunki wdrożeniowe, które pomagają porządkować wejście nowych osób, zapisy, dane i
-          operacje szkoły. Chcę, żeby to miejsce było dla właściciela realnym zapleczem do myślenia, porządkowania i
-          podejmowania lepszych decyzji.
+          Dzięki temu można tu nazwać rzeczy, które w szkołach dzieją się po cichu: rozjazd między rolą instruktora i
+          właściciela, chaos komunikacyjny i zbyt duże poleganie na pamięci oraz improwizacji.
         </p>
         <Link href="mailto:kontakt@taniecwbiznesie.pl" className="cta-link">
           kontakt@taniecwbiznesie.pl
         </Link>
       </div>
       <div className="flex justify-center lg:justify-end">
-        <div className="surface-card accent-hover-lift relative h-80 w-full max-w-[320px] overflow-hidden rounded-[2rem] shadow-xl">
+        <div className="surface-card-soft relative h-72 w-full max-w-[280px] overflow-hidden rounded-[1.8rem] shadow-sm">
           <Image
             src="/jakub_nowak.webp"
             alt="Jakub Nowak"

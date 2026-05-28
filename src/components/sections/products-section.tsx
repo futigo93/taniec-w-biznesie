@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
+import { JourneyMarker } from "@/components/journey-marker";
 import { supportPaths } from "@/content/home";
 import { ConsultingModalTrigger } from "@/components/consulting-modal-trigger";
 
 export function ProductsSection() {
   return (
-    <section className="surface-section space-y-6 p-5 md:space-y-8 md:p-10">
+    <section className="surface-section relative space-y-6 p-5 md:space-y-8 md:p-10">
+      <JourneyMarker step="3" label="Dalsze wsparcie" />
       <SectionHeading
-        eyebrow="Dalsze wsparcie"
         title="Kiedy sama wiedza nie wystarcza, są też kierunki głębszego uporządkowania szkoły"
         description="Jeśli sama lektura to za mało, możesz wejść w porządkowanie ścieżki od oferty do zapisu albo w pracę nad decyzjami właścicielskimi."
       />
@@ -21,7 +22,7 @@ export function ProductsSection() {
             className="surface-focus accent-hover-lift flex h-full flex-col p-4 md:p-5"
           >
             <div className="eyebrow-accent">{path.label}</div>
-            <h3 className="heading-display-soft text-heading mt-3 text-[2rem] leading-tight md:mt-4 md:text-3xl">{path.title}</h3>
+            <h3 className="heading-display-soft text-heading mt-3 text-[1.72rem] leading-tight md:mt-4 md:text-3xl">{path.title}</h3>
             <p className="text-body mt-3 flex-1 text-sm leading-6 md:mt-4 md:leading-7">{path.description}</p>
             <ul className="text-body-strong mt-4 space-y-2.5 text-sm leading-6 md:mt-5 md:space-y-3">
               {path.highlights.map((highlight) => (

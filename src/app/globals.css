@@ -412,6 +412,14 @@ html[data-theme="graphite-bold"] {
     background: color-mix(in srgb, white 10%, transparent);
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .accent-hover-lift,
+    .cta-link,
+    .link-accent {
+      transition: none;
+    }
+  }
+
   .form-neutral-surface {
     color: var(--heading);
   }

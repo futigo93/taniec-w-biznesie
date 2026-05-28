@@ -1,15 +1,16 @@
 import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { SectionHeading } from "@/components/section-heading";
+import { JourneyMarker } from "@/components/journey-marker";
 
 export function CallToActionSection() {
   return (
     <section
       id="zapis"
-      className="surface-signal scroll-mt-32 rounded-[2.5rem] p-5 text-heading md:p-10"
+      className="surface-signal relative scroll-mt-32 rounded-[2.5rem] p-5 text-heading md:p-10"
     >
+      <JourneyMarker label="Dołącz do listy" />
       <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
         <SectionHeading
-          eyebrow="Dołącz do listy"
           title="Zostaw mail i odbierz pełną wersję ebooka oraz kilka sensownych wiadomości dla właściciela szkoły tańca"
           description="To spokojny kanał wiedzy o decyzjach, procesach i rozwoju szkoły. Kilka wiadomości w miesiącu, bez spamu i bez sztucznego lejka."
           titleClassName="heading-display text-[2.35rem] leading-tight md:text-5xl"

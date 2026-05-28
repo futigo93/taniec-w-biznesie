@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
+import { JourneyMarker } from "@/components/journey-marker";
 import { articlePreviews } from "@/content/home";
 
 export function ArticlesSection() {
@@ -11,12 +12,12 @@ export function ArticlesSection() {
   return (
     <section
       id="artykuly"
-      className="surface-section space-y-6 p-5 md:space-y-8 md:p-10"
+      className="surface-section relative space-y-5 p-5 md:space-y-8 md:p-10"
     >
+      <JourneyMarker step="2" label="Wybrane treści" />
       <SectionHeading
-        eyebrow="Wybrane treści"
         title="Teksty o tym, co naprawdę zaczyna ważyć w szkole, kiedy sama pasja już nie wystarcza"
-        description="Znajdziesz tu materiały o decyzjach, procesach i codziennym prowadzeniu szkoły. Szersza biblioteka czeka niżej na stronie artykułów."
+        description="Materiały o decyzjach, procesach i codziennym prowadzeniu szkoły. Szersza biblioteka czeka na stronie artykułów."
       />
       {featuredArticle ? (
         <FeaturedArticleCard />
@@ -59,11 +60,10 @@ function FeaturedArticleCard() {
           <span>{article.category}</span>
           <span>{article.readTime}</span>
         </div>
-        <h3 className="heading-display-soft text-heading max-w-3xl text-[2.3rem] leading-tight md:text-4xl">{article.title}</h3>
+        <h3 className="heading-display-soft text-heading max-w-3xl text-[1.95rem] leading-tight md:text-4xl">{article.title}</h3>
         <p className="text-body max-w-2xl text-base leading-7 md:leading-8">{article.description}</p>
         <p className="text-body text-sm leading-6 md:leading-7">
-          To historia o tym, jak uporządkowanie danych i procesów może zdjąć ze szkoły sporą część ręcznej pracy i dać
-          większy spokój operacyjny.
+          Historia o tym, jak uporządkowanie danych i procesów może zdjąć ze szkoły sporą część ręcznej pracy.
         </p>
         <div className="cta-link">
           Czytaj case study
@@ -100,7 +100,7 @@ function ArticleCard({ article }: { article: (typeof articlePreviews)[number] })
         <span>{article.category}</span>
         <span>{article.readTime}</span>
       </div>
-      <h3 className="heading-display-soft text-heading mt-3 text-[2rem] leading-tight md:mt-4 md:text-3xl">{article.title}</h3>
+      <h3 className="heading-display-soft text-heading mt-3 text-[1.7rem] leading-tight md:mt-4 md:text-3xl">{article.title}</h3>
       <p className="text-body mt-3 text-sm leading-6 md:leading-7">{article.description}</p>
       <p className="cta-link mt-5">
         {isExternal ? "Czytaj u partnera" : "Czytaj tekst"}
