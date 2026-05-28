@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -15,10 +15,12 @@ type MarginNoteProps = {
 type NotePosition = {
   top: number;
   left: number;
+  width: number;
   path: string;
 };
 
 export function MarginNote({ children, title, note, className }: MarginNoteProps) {
+  const noteId = useId().replace(/:/g, "");
   const [open, setOpen] = useState(false);
   const [isDesktopNote, setIsDesktopNote] = useState(false);
   const [isHighlighted, setIsHighlighted] = useState(false);
@@ -58,29 +60,90 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
         return;
       }
 
-      const triggerRect = trigger.getBoundingClientRect();
       const scopeRect = scope.getBoundingClientRect();
-      const scopeHeight = scope.clientHeight;
-      const noteHeight = noteCard.offsetHeight;
-      const noteGap = 20;
-      const triggerStyle = window.getComputedStyle(trigger);
-      const lineHeight = Number.parseFloat(triggerStyle.lineHeight) || triggerRect.height * 1.75;
-      const badge = trigger.querySelector("[data-margin-note-badge]");
-      const badgeRect = badge instanceof HTMLElement ? badge.getBoundingClientRect() : null;
-      const triggerCenterY = (badgeRect?.top ?? triggerRect.top) - scopeRect.top + (badgeRect?.height ?? triggerRect.height) / 2;
-      const nextTop = Math.max(24, Math.min(triggerCenterY - noteHeight / 2, Math.max(24, scopeHeight - noteHeight - 16)));
+      const noteGap = 44;
+      const viewportPadding = 28;
+      const availableWidth = Math.max(196, window.innerWidth - scopeRect.right - noteGap - viewportPadding);
+      const noteWidth = Math.min(320, availableWidth);
+
+      const noteCards = Array.from(scope.querySelectorAll<HTMLElement>("[data-margin-note-desktop-id]"));
+      noteCards.forEach((element) => {
+        element.style.width = `${noteWidth}px`;
+      });
+
+      const allTriggers = Array.from(scope.querySelectorAll<HTMLElement>("[data-margin-note-trigger-id]"));
+      const noteMap = new Map(
+        noteCards.map((element) => [element.dataset.marginNoteDesktopId, element]),
+      );
+
+      const plannedNotes = allTriggers
+        .map((triggerElement) => {
+          const id = triggerElement.dataset.marginNoteTriggerId;
+          const pairedNote = id ? noteMap.get(id) : null;
+          if (!id || !pairedNote) {
+            return null;
+          }
+
+          const triggerRect = triggerElement.getBoundingClientRect();
+          const triggerStyle = window.getComputedStyle(triggerElement);
+          const lineHeight = Number.parseFloat(triggerStyle.lineHeight) || triggerRect.height * 1.75;
+          const badge = triggerElement.querySelector("[data-margin-note-badge]");
+          const badgeRect = badge instanceof HTMLElement ? badge.getBoundingClientRect() : null;
+          const anchorY = (badgeRect?.top ?? triggerRect.top) - scopeRect.top + (badgeRect?.height ?? triggerRect.height) / 2;
+          const desiredTop = anchorY - pairedNote.offsetHeight / 2;
+          const gapBelow = triggerRect.bottom - scopeRect.top + Math.max(6, (lineHeight - triggerRect.height) / 2);
+          const gapAbove = triggerRect.top - scopeRect.top - Math.max(6, (lineHeight - triggerRect.height) / 2);
+          const startX = (badgeRect?.left ?? triggerRect.right) - scopeRect.left + (badgeRect?.width ?? 0) / 2;
+
+          return {
+            id,
+            anchorY,
+            desiredTop,
+            startX,
+            height: pairedNote.offsetHeight,
+            gapAbove,
+            gapBelow,
+          };
+        })
+        .filter((item): item is NonNullable<typeof item> => Boolean(item))
+        .sort((a, b) => a.anchorY - b.anchorY);
+
+      const minTop = 24;
+      const minGapBetweenNotes = 22;
+      let currentFloor = minTop;
+      const resolvedNotes = new Map<
+        string,
+        { top: number; anchorY: number; startX: number; height: number; gapAbove: number; gapBelow: number }
+      >();
+
+      for (const item of plannedNotes) {
+        const top = Math.max(item.desiredTop, currentFloor);
+        resolvedNotes.set(item.id, {
+          top,
+          anchorY: item.anchorY,
+          startX: item.startX,
+          height: item.height,
+          gapAbove: item.gapAbove,
+          gapBelow: item.gapBelow,
+        });
+        currentFloor = top + item.height + minGapBetweenNotes;
+      }
+
+      const ownNote = resolvedNotes.get(noteId);
+      if (!ownNote) {
+        return;
+      }
+
       const noteLeft = scope.clientWidth + noteGap;
-      const startX = (badgeRect?.left ?? triggerRect.right) - scopeRect.left + (badgeRect?.width ?? 0) / 2;
-      const gapBelow = triggerRect.bottom - scopeRect.top + Math.max(6, (lineHeight - triggerRect.height) / 2);
-      const gapAbove = triggerRect.top - scopeRect.top - Math.max(6, (lineHeight - triggerRect.height) / 2);
-      const routeY = gapBelow <= scopeHeight - 18 ? gapBelow : Math.max(18, gapAbove);
-      const bendX = Math.max(startX + 34, noteLeft - 34);
-      const endY = nextTop + Math.min(38, noteHeight / 2);
+      const bendX = Math.max(ownNote.startX + 42, noteLeft - 34);
+      const attachmentY = ownNote.top + 22;
+      const routeY = attachmentY < ownNote.anchorY ? Math.max(18, ownNote.gapAbove) : ownNote.gapBelow;
 
       setPosition({
-        top: nextTop,
+        top: ownNote.top,
         left: noteLeft,
-        path: `M ${startX} ${triggerCenterY} L ${startX} ${routeY} L ${bendX} ${routeY} L ${bendX} ${endY} L ${noteLeft} ${endY}`,
+        width: noteWidth,
+        path: `M ${ownNote.startX} ${ownNote.anchorY} L ${ownNote.startX} ${routeY} L ${bendX} ${routeY} L ${bendX} ${attachmentY} L ${noteLeft} ${attachmentY}`,
       });
     };
 
@@ -115,7 +178,7 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
       window.removeEventListener("load", updatePosition);
       mediaQuery.removeEventListener("change", syncViewportMode);
     };
-  }, [scopeElement]);
+  }, [noteId, scopeElement]);
 
   useEffect(() => {
     return () => {
@@ -143,6 +206,7 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
       <button
         ref={triggerRef}
         type="button"
+        data-margin-note-trigger-id={noteId}
         className={cn("margin-note-trigger", className)}
         onClick={handleActivate}
         aria-label={isDesktopNote ? `${title}. Pokaż notatkę na marginesie.` : `${title}. Otwórz notatkę na marginesie.`}
@@ -158,11 +222,16 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
             <>
               <div
                 className="margin-note-desktop hidden xl:block"
-                style={position ? { top: `${position.top}px`, left: `${position.left}px` } : { top: "1.5rem", left: "calc(100% + 1.25rem)" }}
+                style={
+                  position
+                    ? { top: `${position.top}px`, left: `${position.left}px`, width: `${position.width}px` }
+                    : { top: "1.5rem", left: "calc(100% + 2.75rem)" }
+                }
               >
                 <button
                   ref={noteRef}
                   type="button"
+                  data-margin-note-desktop-id={noteId}
                   className={cn("margin-note-card accent-hover-lift text-left", isHighlighted && "margin-note-card--highlighted")}
                   onClick={handleActivate}
                 >

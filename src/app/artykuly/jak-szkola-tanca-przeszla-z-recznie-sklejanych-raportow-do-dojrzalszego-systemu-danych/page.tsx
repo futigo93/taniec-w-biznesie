@@ -71,7 +71,13 @@ export default function DataCaseStudyArticle() {
           </p>
           <p>
             Przez długi czas ten model dało się utrzymać. W przypadku szkoły tej skali oczywiste jest, że w grę wchodzi już
-            system obsługi kursów, z którego regularnie pobiera się dane i raporty. Później te dane trafiały do arkuszy, z
+            <MarginNote
+              title="Co to jest system obsługi kursów?"
+              note="System obsługi studia, system obsługi kursów, program dla szkoły tańca: główny system operacyjny szkoły. To tam zwykle żyją kursanci, grupy, zapisy, płatności, karnety albo obecności. Takich systemów nadal brakuje w realiach szkół tańca, dlatego Salsa Libre wdrożyła i dostosowała do swoich procesów rozwiązanie dla branży fitness."
+            >
+              system obsługi kursów
+            </MarginNote>
+            , z którego regularnie pobiera się dane i raporty. Później te dane trafiały do arkuszy, z
             jednych zestawień powstawały kolejne, a część procesów wspierały dodatkowe skrypty i robocze narzędzia.
           </p>
           <p>
@@ -88,7 +94,14 @@ export default function DataCaseStudyArticle() {
           </p>
           <p>
             Najtrudniejsze było to, że tej zmiany nie dało się zrobić przez prostą rewolucję. Bieżąca praca szkoły musiała
-            toczyć się dalej. Payroll nie mógł się zatrzymać. Raporty nie mogły nagle zniknąć. Zespół nie mógł z dnia na
+            toczyć się dalej.{" "}
+            <MarginNote
+              title="Co tu znaczy payroll?"
+              note="Payroll to nie tylko przeliczenie brutto na netto. W szkole tańca to często cały system rozliczeń oparty na wielu warunkach: stawkach motywacyjnych, dodatkach zależnych od frekwencji, innych zasadach dla weekendów, poziomów zaawansowania albo doświadczenia instruktora. Przy takiej liczbie wyjątków nie da się polegać dopiero na uwagach po przelewie, dlatego potrzebny jest także uporządkowany proces sprawdzenia i akceptacji rozliczeń przed wypłatą."
+            >
+              Payroll
+            </MarginNote>{" "}
+            nie mógł się zatrzymać. Raporty nie mogły nagle zniknąć. Zespół nie mógł z dnia na
             dzień dostać zupełnie nowego środowiska, które wymagałoby zmiany wszystkich nawyków. Trzeba więc było zbudować
             dojrzalszy system pod spodem, ale zrobić to tak, żeby z perspektywy codziennej pracy szkoła nie zapłaciła za tę
             zmianę zbyt wysokiej ceny.
@@ -184,7 +197,14 @@ export default function DataCaseStudyArticle() {
             samej technologicznej elegancji.
           </p>
           <p>
-            W praktyce oznaczało to podejście warstwowe. Zamiast robić jedną wielką zmianę, trzeba było uporządkować wejścia
+            W praktyce oznaczało to{" "}
+            <MarginNote
+              title="Co znaczy podejście warstwowe?"
+              note="Czyli zmiana robiona etapami. Najpierw porządkuje się miejsca, w których dane wchodzą do systemu albo są tworzone, a dopiero później przenosi cięższą logikę pod spód. Dzięki temu zespół nie musi od razu zmieniać całego sposobu pracy."
+            >
+              podejście warstwowe
+            </MarginNote>
+            . Zamiast robić jedną wielką zmianę, trzeba było uporządkować wejścia
             do systemu, przejąć cięższą logikę danych pod spodem i zostawić zespołowi możliwie bezpieczny sposób pracy na co
             dzień. Dopiero taki układ dawał szansę, żeby nowa architektura naprawdę została w organizacji na dłużej, a nie
             skończyła jako ambitny projekt zbyt oderwany od realiów szkoły.
@@ -232,7 +252,14 @@ export default function DataCaseStudyArticle() {
             inputów bez dokładania niepotrzebnego kosztu zmiany.
           </p>
           <p>
-            Pod spodem cięższa warstwa zaczęła trafiać do centralnej bazy danych i narzędzi do automatycznego przetwarzania
+            Pod spodem cięższa warstwa zaczęła trafiać do{" "}
+            <MarginNote
+              title="Co tu znaczy centralna baza danych?"
+              note="Jedno wspólne miejsce, w którym dane są zbierane, przechowywane i porządkowane zanim trafią do raportów. Taka baza wymaga też ustalenia wspólnego modelu danych: jeśli szkoła chce połączyć informacje z dwóch systemów i ręcznych wpisów, trzeba najpierw pogodzić je ze sobą i znaleźć dla nich wspólną warstwę."
+            >
+              centralnej bazy danych
+            </MarginNote>{" "}
+            i narzędzi do automatycznego przetwarzania
             danych, również dobranych wewnątrz ekosystemu Google. Tam można już było pracować dużo dojrzalej niż w jednym
             dużym arkuszu. Dane z systemów mogły być najpierw przechowywane w surowej postaci, potem porządkowane i
             przeliczane do formy pośredniej, a dopiero na końcu zamieniane w dane gotowe pod raporty, payroll i dalsze
@@ -264,14 +291,28 @@ export default function DataCaseStudyArticle() {
             zestawieniami.
           </p>
           <p>
-            Na tym fundamencie została zbudowana logika regularnych synchronizacji. Dane nie muszą już być w tak dużym
+            Na tym fundamencie została zbudowana logika{" "}
+            <MarginNote
+              title="Co tu znaczy regularna synchronizacja?"
+              note="Automatyczne pobieranie i odświeżanie danych z używanych systemów. Zamiast ręcznie przenosić liczby, pilnować, czy wszystko zostało doklejone, i czekać kilka dni na pełne złożenie raportów, proces robi to sam według ustalonego rytmu: niektóre rzeczy miesięcznie, inne codziennie, na przykład w nocy między jednym dniem pracy a drugim."
+            >
+              regularnych synchronizacji
+            </MarginNote>
+            . Dane nie muszą już być w tak dużym
             stopniu ręcznie przenoszone i dokładane miesiąc po miesiącu. Zostały przygotowane procesy, które pobierają je
             automatycznie, zapisują przebieg działania i pozwalają odtwarzać, co się wydarzyło, jeśli coś wymaga sprawdzenia.
             To bardzo ważny detal, bo przy większej skali nie wystarczy już samo „żeby się zaciągnęło”. Potrzebna jest też
             kontrola nad tym, czy proces rzeczywiście przebiegł poprawnie.
           </p>
           <p>
-            Najprościej mówiąc, w systemie zaczęły pojawiać się bezpieczniki. Takie miejsca, które dają sygnał, jeśli coś
+            Najprościej mówiąc, w systemie zaczęły pojawiać się{" "}
+            <MarginNote
+              title="Co tu znaczy bezpiecznik?"
+              note="Czyli kontrolki i punkty sprawdzające, które pokazują, czy proces przeszedł poprawnie. Dzięki nim nie trzeba ufać “na słowo”, że wszystko się policzyło dobrze."
+            >
+              bezpieczniki
+            </MarginNote>
+            . Takie miejsca, które dają sygnał, jeśli coś
             potencjalnie poszło nie tak, coś się nie odświeżyło albo jakiś etap wymaga uwagi. To trochę jak kontrolki i
             lampki ostrzegawcze, dzięki którym nie trzeba zgadywać, czy można ufać temu, co widać w raporcie. Przy danych tej
             skali taki spokój i przewidywalność są bardzo dużo warte.
@@ -289,8 +330,14 @@ export default function DataCaseStudyArticle() {
             współpracownikami, razem z lepszym zapleczem do dokumentów, podsumowań i miesięcznej pracy operacyjnej.
           </p>
           <p>
-            Miłym, ale wcale nie błahym efektem ubocznym tej zmiany były też nowe, estetyczne formatki HTML z miesięcznym
-            podsumowaniem wynagrodzenia. Zamiast surowego arkusza czy roboczego eksportu szkoła może przekazać ludziom
+            Miłym, ale wcale nie błahym efektem ubocznym tej zmiany były też nowe, estetyczne{" "}
+            <MarginNote
+              title="Po co tu te formatki HTML?"
+              note="To nie tylko ładniejszy dokument i nie tylko ekspozycja logotypu czy marki szkoły. To także mniej pytań, większa czytelność rozliczeń, większe zaufanie do wyliczonych liczb i poczucie, że szkoła działa profesjonalnie również od środka."
+            >
+              formatki HTML z miesięcznym podsumowaniem wynagrodzenia
+            </MarginNote>
+            . Zamiast surowego arkusza czy roboczego eksportu szkoła może przekazać ludziom
             czytelne podsumowanie spójne z własną identyfikacją wizualną. To może wyglądać jak detal, ale w praktyce buduje
             wizerunek szkoły także od środka, jako uporządkowanego i profesjonalnego miejsca pracy.
           </p>
@@ -335,7 +382,14 @@ export default function DataCaseStudyArticle() {
             Jednocześnie efekty były bardzo realne i bardzo szybko odczuwalne. Po pierwszym etapie przepięcia szkoła miała
             świeże i wiarygodne dane już na samym początku miesiąca. Wcześniej dojście do takiego stanu potrafiło zająć nawet
             kilkanaście dni, a przy największych problemach z arkuszami zdarzały się też dużo większe opóźnienia. Po drugim
-            etapie sytuacja zmieniła się jeszcze mocniej: świeże dane zaczęły czekać codziennie rano.
+            etapie sytuacja zmieniła się jeszcze mocniej:{" "}
+            <MarginNote
+              title="Co zmieniało to, że dane czekały codziennie rano?"
+              note="To ważne, bo właściciel nie patrzy już na sytuację sprzed tygodnia czy dwóch. Może szybciej zauważyć spadek zapisów, słabszy kurs albo problem operacyjny, zanim zrobi się z niego większy temat. Może też eksperymentować z nowymi rozwiązaniami i na bieżąco sprawdzać ich efekt."
+            >
+              świeże dane zaczęły czekać codziennie rano
+            </MarginNote>
+            .
           </p>
           <p>
             To jest zmiana, która z zewnątrz może wyglądać jak detal operacyjny, ale w praktyce mocno wpływa na sposób
@@ -357,7 +411,14 @@ export default function DataCaseStudyArticle() {
           </p>
           <p>
             I tu pojawia się ważne rozróżnienie. Same dane nie rozwiązują jeszcze wszystkiego. Dane trzeba jeszcze sensownie
-            zsyntetyzować: zamienić na dobre raporty, czytelne widoki, użyteczne KPI i sensowne decyzje. Ten projekt nie
+            zsyntetyzować: zamienić na dobre raporty, czytelne widoki, użyteczne{" "}
+            <MarginNote
+              title="Co tu znaczy KPI?"
+              note="KPI, czyli kluczowe wskaźniki, na które właściciel patrzy regularnie, żeby ocenić kondycję szkoły. Mogą to być na przykład liczba aktywnych kursantów, retencja, frekwencja, sprzedaż albo obłożenie grup. Ich sens polega na tym, że są powtarzalne i porównywalne między okresami, więc pomagają lepiej rozumieć realny obraz szkoły."
+            >
+              KPI
+            </MarginNote>{" "}
+            i sensowne decyzje. Ten projekt nie
             kończy się więc na pytaniu „czy dane są?”, tylko prowadzi do znacznie ciekawszego pytania: „jak najlepiej
             wykorzystać to, że wreszcie można im ufać i mieć je na czas?”.
           </p>
