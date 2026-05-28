@@ -62,7 +62,7 @@ export default function ServicesPage() {
           </div>
           <div className="surface-card-inset relative min-h-72 overflow-hidden rounded-[1.8rem]">
             <Image
-              src="/baileo-system-screen.webp"
+              src="/baileo-system-overview.webp"
               alt="Podgląd Baileo"
               fill
               className="object-cover"
