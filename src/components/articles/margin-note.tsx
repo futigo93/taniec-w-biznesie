@@ -26,7 +26,7 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [position, setPosition] = useState<NotePosition | null>(null);
   const [scopeElement, setScopeElement] = useState<HTMLElement | null>(null);
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const triggerRef = useRef<HTMLSpanElement | null>(null);
   const noteRef = useRef<HTMLButtonElement | null>(null);
   const highlightTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -201,21 +201,40 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
     setOpen(true);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleActivate();
+    }
+  };
+
   return (
     <>
-      <button
+      <span
         ref={triggerRef}
-        type="button"
         data-margin-note-trigger-id={noteId}
         className={cn("margin-note-trigger", className)}
-        onClick={handleActivate}
-        aria-label={isDesktopNote ? `${title}. Pokaż notatkę na marginesie.` : `${title}. Otwórz notatkę na marginesie.`}
       >
-        <span>{children}</span>
-        <span className="margin-note-trigger__badge" aria-hidden="true" data-margin-note-badge>
-          <Info className="h-3.5 w-3.5" />
+        <span
+          role="button"
+          tabIndex={0}
+          className="margin-note-trigger__text"
+          onClick={handleActivate}
+          onKeyDown={handleKeyDown}
+          aria-label={isDesktopNote ? `${title}. Pokaż notatkę na marginesie.` : `${title}. Otwórz notatkę na marginesie.`}
+        >
+          {children}
         </span>
-      </button>
+        <button
+          type="button"
+          className="margin-note-trigger__badge"
+          aria-label={isDesktopNote ? `${title}. Pokaż notatkę na marginesie.` : `${title}. Otwórz notatkę na marginesie.`}
+          data-margin-note-badge
+          onClick={handleActivate}
+        >
+          <Info className="h-3.5 w-3.5" />
+        </button>
+      </span>
 
       {scopeElement && typeof document !== "undefined"
         ? createPortal(

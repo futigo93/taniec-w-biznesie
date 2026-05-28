@@ -441,7 +441,11 @@ html[data-theme="graphite-bold"] {
   }
 
   .margin-note-trigger {
-    @apply inline-flex items-center gap-1 font-semibold transition;
+    @apply inline;
+  }
+
+  .margin-note-trigger__text {
+    @apply inline cursor-pointer font-semibold transition;
     color: color-mix(in srgb, var(--primary) 86%, black 14%);
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
@@ -449,13 +453,19 @@ html[data-theme="graphite-bold"] {
     text-decoration-color: color-mix(in srgb, var(--primary) 34%, transparent);
   }
 
-  .margin-note-trigger:hover {
+  .margin-note-trigger__text:hover {
     color: color-mix(in srgb, var(--primary) 74%, black 26%);
     text-decoration-color: color-mix(in srgb, var(--primary) 54%, transparent);
   }
 
+  .margin-note-trigger__text:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--primary) 34%, transparent);
+    outline-offset: 2px;
+    border-radius: 0.2rem;
+  }
+
   .margin-note-trigger__badge {
-    @apply inline-flex h-5 w-5 items-center justify-center rounded-full border text-[0.65rem] shadow-sm;
+    @apply ml-1 inline-flex h-5 w-5 translate-y-[0.08em] appearance-none items-center justify-center rounded-full border bg-transparent p-0 text-[0.65rem] align-baseline leading-none shadow-sm;
     border-color: color-mix(in srgb, var(--primary) 26%, transparent);
     background: color-mix(in srgb, var(--primary) 11%, white 89%);
     color: color-mix(in srgb, var(--primary) 82%, black 18%);
