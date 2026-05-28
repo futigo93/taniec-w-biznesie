@@ -128,6 +128,44 @@ Zrobione:
 Najbliższy krok:
 - osobny pass mobile dla `/o-mnie`, `/feedback` i pozostałych publicznych podstron, jeśli po obejrzeniu live nadal będą odstawać
 
+### Etap 4.7: Final mobile/content polish
+
+Status: **wdrożony**
+
+Zakres:
+- `/o-mnie`
+- `/feedback`
+- starsze artykuły z lokalnym hero
+- finalny cleanup shared elementów na żywo
+
+Problemy wykryte po obejrzeniu live:
+- `/o-mnie` nadal miało zbyt wysoki koszt wejścia na mobile
+- `/feedback` odstawało rytmem i stylem formularza od nowszych stron
+- część starszych artykułów nadal używała lokalnych hero, mimo że ich układ był już powtarzalny
+
+Zrobione:
+- `/o-mnie` zostało skrócone i zagęszczone na wejściu bez zmiany tonu strony
+- `/feedback` dostało krótszy top i bardziej zwarte wejście do formularza
+- formularz feedback został wizualnie dopasowany do nowszego wzorca newsletter form
+- `ArticleHero` zostało potwierdzone jako wspólny wzorzec i wykorzystane do migracji powtarzalnych hero w starszych wpisach
+- na `ArticleHero` zostały przepięte starsze artykuły:
+  - `instruktor-trener-nauczyciel`
+  - `wartosci-w-tancu`
+  - `instruktor-tanca-tego-nie-zrozumiesz`
+  - `tam-gdzie-nam-zalezy`
+  - `instruktor-tanca-twardy-zad-swiezaka`
+  - `instruktor-tanca-czlowiek-z-misja`
+  - `instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc`
+  - `po-co-tancerzowi-cele`
+- live check na `localhost:3000` potwierdził, że przepięte hero renderują już wspólny układ `ArticleHero`
+
+Świadomie odłożone:
+- pełna migracja absolutnie wszystkich historycznych wpisów do jednego wzorca, jeśli kiedyś pojawią się pojedyncze nietypowe wyjątki
+- dalsze eksperymenty z logiką formularzy lub analytics
+
+Najbliższy krok:
+- końcowy QA po publikacji i już tylko lokalne poprawki, jeśli wyjdą pojedyncze uwagi redakcyjne lub spacingowe
+
 ### Kolejne etapy
 
 - Etap 2: uporządkowanie strony artykułów i lepsza ekspozycja treści dla różnych odbiorców

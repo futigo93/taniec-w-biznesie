@@ -1,9 +1,7 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 export const metadata: Metadata = {
   title: "Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)",
@@ -40,31 +38,16 @@ export default function InstruktorTancaArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Dla instruktorów"
-            title="Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)"
-            description="Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji."
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>9 stycznia 2026</span>
-          </div>
-          <FacebookWidgets path="/artykuly/instruktor-tanca-tego-nie-zrozumiesz" className="mt-5" />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
-            <Image
-              src="/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"
-              alt="Instruktor tańca - tego nie zrozumiesz"
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla instruktorów"
+          title="Instruktor tańca - tego nie zrozumiesz (póki nie doświadczysz)"
+          description="Instruktor nie „prowadzi zajęć”. Instruktor projektuje doświadczenie. To, co kursant odbiera jako atmosferę, tempo, sens albo jego brak, jest wynikiem niezliczonych, drobnych decyzji."
+          path="/artykuly/instruktor-tanca-tego-nie-zrozumiesz"
+          imageSrc="/artykuly/okladki/instruktor-tanca-tego-nie-zrozumiesz-fb.webp"
+          imageAlt="Instruktor tańca - tego nie zrozumiesz"
+          authorName="Jakub Nowak"
+          date="9 stycznia 2026"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           Każdy, kto był kursantem, zna to doświadczenie. Jedne zajęcia mijają szybko, inne się dłużą. Po jednych wychodzisz z

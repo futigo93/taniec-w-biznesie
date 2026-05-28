@@ -72,34 +72,34 @@ export function FeedbackForm({ className }: FeedbackFormProps) {
 
   return (
     <form className={className} onSubmit={handleSubmit(onSubmit)} aria-live="polite">
-      <div className="grid gap-4">
+      <div className="grid gap-4 text-body">
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-name">
+          <label className="text-body-strong text-sm font-medium" htmlFor="feedback-name">
             Imię i nazwisko lub pseudonim*
           </label>
           <Input id="feedback-name" {...register("name")} />
           {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-school">
+          <label className="text-body-strong text-sm font-medium" htmlFor="feedback-school">
             Szkoła
           </label>
           <Input id="feedback-school" {...register("school")} />
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-email">
+          <label className="text-body-strong text-sm font-medium" htmlFor="feedback-email">
             Adres e-mail*
           </label>
           <Input id="feedback-email" type="email" placeholder="kontakt@twojaszkola.pl" {...register("email")} />
           {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-role">
+          <label className="text-body-strong text-sm font-medium" htmlFor="feedback-role">
             Twoja rola*
           </label>
           <select
             id="feedback-role"
-            className="w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground"
+            className="w-full rounded-xl border border-input bg-background px-3 py-2.5 text-sm text-foreground shadow-sm outline-none transition focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/20"
             {...register("role")}
           >
             <option value="">-</option>
@@ -113,7 +113,7 @@ export function FeedbackForm({ className }: FeedbackFormProps) {
           {errors.role && <p className="text-sm text-destructive">{errors.role.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="feedback-message">
+          <label className="text-body-strong text-sm font-medium" htmlFor="feedback-message">
             Feedback
           </label>
           <Textarea
@@ -124,7 +124,7 @@ export function FeedbackForm({ className }: FeedbackFormProps) {
           />
           {errors.feedback && <p className="text-sm text-destructive">{errors.feedback.message}</p>}
         </div>
-        <div className="space-y-3 rounded-2xl border border-border/70 bg-muted/20 p-4 text-sm">
+        <div className="surface-card-inset space-y-3 rounded-2xl border border-border/70 p-4 text-sm">
           <p>
             Zapisuję Twój adres zgodnie z{" "}
             <a href="/polityka-prywatnosci" className="link-accent" target="_blank" rel="noreferrer">
@@ -136,10 +136,10 @@ export function FeedbackForm({ className }: FeedbackFormProps) {
             </a>
             , aby odpowiedzieć na Twój feedback.
           </p>
-          <label className="flex items-start gap-2 text-sm font-medium">
+          <label className="text-body-strong flex items-start gap-2 text-sm font-medium">
             <input
               type="checkbox"
-              className="mt-1"
+              className="mt-1 accent-[hsl(var(--cta-bg))]"
               {...register("regulationsAccepted", { setValueAs: (v) => v === true || v === "on" })}
             />
             <span>
@@ -156,7 +156,7 @@ export function FeedbackForm({ className }: FeedbackFormProps) {
           <label className="flex items-start gap-2 text-sm text-muted-foreground">
             <input
               type="checkbox"
-              className="mt-1"
+              className="mt-1 accent-[hsl(var(--cta-bg))]"
               {...register("marketing", { setValueAs: (v) => v === true || v === "on" })}
             />
             <span>{marketingLabel}</span>

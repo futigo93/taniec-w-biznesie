@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 
 const articleTitle = "Po co tancerzowi cele?";
@@ -43,40 +41,18 @@ export default function PoCoTancerzowiCeleArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Dla tancerzy"
-            title={articleTitle}
-            description={articleDescription}
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <Link
-              href={authorLink}
-              target="_blank"
-              rel="noreferrer"
-              className="link-accent"
-            >
-              Magda Kochmańska - Tanecznik
-            </Link>
-            <span>•</span>
-            <span>30 marca 2026</span>
-            <span>•</span>
-            <span>5 min</span>
-          </div>
-          <FacebookWidgets path="/artykuly/po-co-tancerzowi-cele" className="mt-5" />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
-            <Image
-              src="/artykuly/okladki/po_co_tancerzowi_cele.webp"
-              alt={articleTitle}
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla tancerzy"
+          title={articleTitle}
+          description={articleDescription}
+          path="/artykuly/po-co-tancerzowi-cele"
+          imageSrc="/artykuly/okladki/po_co_tancerzowi_cele.webp"
+          imageAlt={articleTitle}
+          authorName="Magda Kochmańska - Tanecznik"
+          authorHref={authorLink}
+          date="30 marca 2026"
+          readTime="5 min"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           Na początku wszystko jest proste. Idziemy na zajęcia, trochę zestresowani, trochę podekscytowani. Poznajemy

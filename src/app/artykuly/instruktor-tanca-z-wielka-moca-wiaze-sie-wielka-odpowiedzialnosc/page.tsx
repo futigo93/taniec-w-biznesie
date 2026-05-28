@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 const title = "Instruktor tańca - z wielką mocą wiąże się wielka odpowiedzialność";
 const description =
@@ -42,38 +40,18 @@ export default function InstruktorMocOdpowiedzialnoscArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Dla instruktorów"
-            title={title}
-            description={description}
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <Link href="/o-mnie" className="link-accent">
-              Jakub Nowak
-            </Link>
-            <span>•</span>
-            <span>8 kwietnia 2026</span>
-            <span>•</span>
-            <span>8 min</span>
-          </div>
-          <FacebookWidgets
-            path="/artykuly/instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc"
-            className="mt-5"
-          />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4 shadow-lg shadow-black/10">
-            <Image
-              src="/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp"
-              alt={title}
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla instruktorów"
+          title={title}
+          description={description}
+          path="/artykuly/instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc"
+          imageSrc="/artykuly/okladki/instruktor_tanca_-_z_wielka_moca.webp"
+          imageAlt={title}
+          authorName="Jakub Nowak"
+          authorHref="/o-mnie"
+          date="8 kwietnia 2026"
+          readTime="8 min"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           Moje ostatnie lata pracy jako instruktora były dla mnie wyjątkowe. Oczywiście każdy etap tej drogi jest na

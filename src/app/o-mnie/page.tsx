@@ -11,28 +11,27 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="page-wash py-12">
-      <div className="mx-auto grid max-w-5xl gap-8 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-        <div className="space-y-6 text-heading">
+    <div className="page-wash py-8 md:py-12">
+      <div className="mx-auto grid max-w-5xl gap-6 px-4 md:gap-8 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="space-y-5 text-heading">
           <SectionHeading
             eyebrow="O autorze"
             title="Patrzę na szkołę tańca jednocześnie z perspektywy sali, właściciela i człowieka od procesów"
-            description="Przez lata działałem w tańcu jako instruktor, prowadziłem własną szkołę i pracowałem managersko w dużej organizacji. Równolegle zawodowo zajmuję się analizą biznesową i budowaniem rozwiązań, które porządkują pracę od środka."
+            description="Łączę doświadczenie instruktora, właściciela szkoły i analityka, który porządkuje pracę od środka."
             descriptionClassName="text-body"
           />
           <p className="text-body text-sm leading-8 md:text-base">
-            Dzięki temu wiem, jak wygląda szkoła wtedy, gdy z jednej strony żyje energią sali, a z drugiej coraz mocniej
-            zaczyna zależeć od decyzji, komunikacji, rytmu pracy i tego, jak radzi sobie z wyjątkami. Właśnie o tym jest
-            Taniec w Biznesie.
+            Dzięki temu widzę szkołę wtedy, gdy z jednej strony żyje energią sali, a z drugiej coraz mocniej zaczyna
+            zależeć od decyzji, komunikacji i tego, jak radzi sobie z wyjątkami. Właśnie o tym jest Taniec w Biznesie.
           </p>
           <p className="text-body text-sm leading-8 md:text-base">
-            Nie interesuje mnie opowiadanie o prowadzeniu szkoły wyłącznie przez pryzmat motywacji albo przez katalog
-            narzędzi. Bardziej interesuje mnie to, co dzieje się po cichu: gdzie szkoła się rozjeżdża, co najbardziej kosztuje
-            właściciela i jak zacząć to porządkować bez dokładania kolejnej warstwy chaosu.
+            Nie interesuje mnie prowadzenie szkoły opowiadane wyłącznie przez motywację albo katalog narzędzi. Bardziej
+            interesuje mnie to, gdzie szkoła się rozjeżdża, co naprawdę kosztuje właściciela i jak zacząć to porządkować
+            bez dokładania kolejnej warstwy chaosu.
           </p>
           <p className="text-body text-sm leading-8 md:text-base">
-            Z tego miejsca wyrastają ebook, artykuły, case studies i dalsze kierunki wsparcia. Jeśli chcesz porozmawiać o
-            swojej szkole albo po prostu podzielić się tym, co u Ciebie dziś najbardziej waży, napisz.
+            Z tego miejsca wyrastają ebook, artykuły, case studies i dalsze kierunki wsparcia. Jeśli chcesz porozmawiać
+            o swojej szkole albo podzielić się tym, co dziś najbardziej waży, napisz.
           </p>
           <Link href="mailto:kontakt@taniecwbiznesie.pl" className="cta-link">
             kontakt@taniecwbiznesie.pl

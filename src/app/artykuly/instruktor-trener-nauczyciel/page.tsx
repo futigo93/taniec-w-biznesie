@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 export const metadata: Metadata = {
   title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
@@ -39,34 +37,16 @@ export default function NomenklaturaArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Strategia"
-            title="Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub."
-            description="W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom."
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>21 grudnia 2025</span>
-          </div>
-          <FacebookWidgets
-            path="/artykuly/instruktor-trener-nauczyciel"
-            className="mt-5"
-          />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
-            <Image
-              src="/artykuly/okladki/nomenklatura_cover.webp"
-              alt="Instruktor, trener, nauczyciel – okładka"
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Strategia"
+          title="Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub."
+          description="W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. To nie tylko słowa – to kontekst i obietnica, którą szkoła składa klientom."
+          path="/artykuly/instruktor-trener-nauczyciel"
+          imageSrc="/artykuly/okladki/nomenklatura_cover.webp"
+          imageAlt="Instruktor, trener, nauczyciel – okładka"
+          authorName="Jakub Nowak"
+          date="21 grudnia 2025"
+        />
         <SectionSubheading title="Dlaczego nazewnictwo w tańcu nigdy nie jest neutralne." />
         <p className="text-base leading-8 text-foreground/85">
           W branży tańca rzadko kwestionujemy nazewnictwo, dopóki coś nie zacznie „zgrzytać”. Nie dlatego, że uważamy je za

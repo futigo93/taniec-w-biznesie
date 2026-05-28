@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
+import { ArticleHero } from "@/components/articles/article-hero";
 
 const articleTitle = "Wartości w tańcu";
 const articleDescription =
@@ -41,40 +39,18 @@ export default function WartosciWTancuArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Dla tancerzy"
-            title={articleTitle}
-            description={articleDescription}
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <Link
-              href="https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie"
-              target="_blank"
-              rel="noreferrer"
-              className="link-accent"
-            >
-              Magda Kochmańska - Tanecznik
-            </Link>
-            <span>•</span>
-            <span>30 kwietnia 2026</span>
-            <span>•</span>
-            <span>5 min</span>
-          </div>
-          <FacebookWidgets path="/artykuly/wartosci-w-tancu" className="mt-5" />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
-            <Image
-              src="/artykuly/okladki/Wartosci-w-tancu.webp"
-              alt={articleTitle}
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla tancerzy"
+          title={articleTitle}
+          description={articleDescription}
+          path="/artykuly/wartosci-w-tancu"
+          imageSrc="/artykuly/okladki/Wartosci-w-tancu.webp"
+          imageAlt={articleTitle}
+          authorName="Magda Kochmańska - Tanecznik"
+          authorHref="https://tanecznikpodcast.my.canva.site/workbook-trwala-pewnosc-siebie-na-parkiecie"
+          date="30 kwietnia 2026"
+          readTime="5 min"
+        />
 
         <p className="text-base leading-8 text-foreground/85">
           W tańcu bardzo łatwo nam wejść w tryb „więcej”: więcej godzin na sali, więcej figur, więcej warsztatów. Z

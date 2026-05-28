@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
-import { FacebookWidgets } from "@/components/social/facebook-widgets";
+import { ArticleHero } from "@/components/articles/article-hero";
 import { InlineArticlePromo } from "@/components/ads/inline-article-promo";
 
 const title = "Instruktor tańca - to człowiek z misją (zazwyczaj)";
@@ -41,31 +39,16 @@ export default function InstruktorMisjaArticle() {
   return (
     <div className="page-wash py-12">
       <article className="mx-auto max-w-3xl space-y-6 px-4 md:px-0">
-        <div className="surface-feature rounded-3xl p-6 text-heading shadow-xl">
-          <SectionHeading
-            eyebrow="Dla instruktorów"
-            title={title}
-            description={description}
-            descriptionClassName="text-body"
-            className="[&_h2]:text-heading [&_p]:text-body"
-          />
-          <div className="text-body mt-4 flex items-center gap-4 text-sm">
-            <span>Jakub Nowak</span>
-            <span>•</span>
-            <span>12 stycznia 2026</span>
-          </div>
-          <FacebookWidgets path="/artykuly/instruktor-tanca-czlowiek-z-misja" className="mt-5" />
-          <div className="surface-card-inset mt-6 overflow-hidden rounded-2xl p-4">
-            <Image
-              src="/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp"
-              alt={title}
-              width={800}
-              height={420}
-              className="w-full rounded-xl object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <ArticleHero
+          eyebrow="Dla instruktorów"
+          title={title}
+          description={description}
+          path="/artykuly/instruktor-tanca-czlowiek-z-misja"
+          imageSrc="/artykuly/okladki/instruktor-tanca-czlowiek-z-misja-fb.webp"
+          imageAlt={title}
+          authorName="Jakub Nowak"
+          date="12 stycznia 2026"
+        />
 
         <SectionSubheading title="Odpowiedzialność instruktora" />
         <p className="text-base leading-8 text-foreground/85">
