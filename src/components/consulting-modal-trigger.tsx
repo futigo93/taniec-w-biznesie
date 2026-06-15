@@ -9,6 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 type ConsultingModalTriggerProps = {
   buttonLabel: string;
   variant?: "default" | "outline";
+  modalTitle?: string;
+  modalDescription?: string;
+  messagePlaceholder?: string;
+  submitLabel?: string;
+  successMessage?: string;
+  inquiryType?: string;
 };
 
 type FormState = {
@@ -18,7 +24,16 @@ type FormState = {
   regulationsAccepted: boolean;
 };
 
-export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: ConsultingModalTriggerProps) {
+export function ConsultingModalTrigger({
+  buttonLabel,
+  variant = "default",
+  modalTitle = "Umów konsultację",
+  modalDescription = "Zostaw podstawowe informacje, a odezwę się z propozycją terminu i krótką agendą rozmowy.",
+  messagePlaceholder = "Kilka zdań o Twojej szkole i potrzebach",
+  submitLabel = "Wyślij",
+  successMessage = "Dziękuję! Odezwę się wkrótce.",
+  inquiryType = "consulting",
+}: ConsultingModalTriggerProps) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -53,10 +68,8 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
         createPortal(
           <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/70 p-4">
             <div className="surface-card w-full max-w-md rounded-3xl p-6 shadow-2xl">
-              <h2 className="text-heading text-xl font-semibold">Umów konsultację</h2>
-              <p className="text-body mt-2 text-sm">
-                Zostaw podstawowe informacje, a odezwę się z propozycją terminu i krótką agendą rozmowy.
-              </p>
+              <h2 className="text-heading text-xl font-semibold">{modalTitle}</h2>
+              <p className="text-body mt-2 text-sm">{modalDescription}</p>
               <form
                 className="mt-4 space-y-3"
                 onSubmit={async (event) => {
@@ -74,7 +87,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                       headers: {
                         "Content-Type": "application/json",
                       },
-                      body: JSON.stringify(formData),
+                      body: JSON.stringify({ ...formData, inquiryType }),
                     });
                     if (!response.ok) {
                       throw new Error("Request failed");
@@ -102,7 +115,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                 />
                 <Textarea
                   rows={4}
-                  placeholder="Kilka zdań o Twojej szkole i potrzebach"
+                  placeholder={messagePlaceholder}
                   value={formData.message}
                   onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                 />
@@ -116,7 +129,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                     <a href="/polityka-cookies" className="link-accent" target="_blank" rel="noreferrer">
                       Polityką Cookies
                     </a>
-                    , aby odpowiedzieć na Twój feedback.
+                    , aby odpowiedzieć na Twoją wiadomość.
                   </p>
                   <label className="flex items-start gap-2 text-sm font-medium">
                     <input
@@ -142,7 +155,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                   {consentError && <p className="text-sm text-destructive">Zaakceptuj regulamin.</p>}
                 </div>
                 {status === "success" && (
-                  <p className="text-sm text-emerald-600">Dziękuję! Odezwę się wkrótce.</p>
+                  <p className="text-sm text-emerald-600">{successMessage}</p>
                 )}
                 {status === "error" && (
                   <p className="text-sm text-destructive">Nie udało się wysłać zgłoszenia. Spróbuj ponownie.</p>
@@ -152,7 +165,7 @@ export function ConsultingModalTrigger({ buttonLabel, variant = "default" }: Con
                     Zamknij
                   </Button>
                   <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Wysyłanie..." : "Wyślij"}
+                    {isSubmitting ? "Wysyłanie..." : submitLabel}
                   </Button>
                 </div>
               </form>

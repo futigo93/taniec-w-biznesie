@@ -6,6 +6,7 @@ type ConsultingPayload = {
   email: string;
   message?: string;
   regulationsAccepted?: boolean;
+  inquiryType?: string;
 };
 
 export async function POST(request: Request) {
@@ -27,6 +28,7 @@ export async function POST(request: Request) {
   const email = payload.email?.trim();
   const message = payload.message?.trim() ?? "";
   const regulationsAccepted = Boolean(payload.regulationsAccepted);
+  const inquiryType = payload.inquiryType?.trim().toLowerCase() ?? "consulting";
 
   if (!name || !email) {
     return NextResponse.json({ error: "Uzupełnij wymagane pola." }, { status: 400 });
@@ -39,17 +41,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Zbyt długie dane wejściowe." }, { status: 400 });
   }
 
+  const inquiryLabel =
+    inquiryType === "websites" ? "Strony internetowe - prośba o kontakt" : "Consulting - prośba o kontakt";
+
   try {
     await resend.emails.send({
       from: "Taniec w biznesie <kontakt@taniecwbiznesie.pl>",
       to: ["kontakt@taniecwbiznesie.pl"],
       replyTo: email,
-      subject: "Consulting - prośba o kontakt",
+      subject: inquiryLabel,
       text: [
-        "Nowe zgłoszenie konsultacji:",
+        `Nowe zgłoszenie: ${inquiryLabel}`,
         "",
         `Imię i nazwisko: ${name}`,
         `Email: ${email}`,
+        `Typ zapytania: ${inquiryType}`,
         message ? `Opis: ${message}` : "Opis: (brak)",
         `Regulamin zaakceptowany: ${regulationsAccepted ? "tak" : "nie"}`,
       ].join("\n"),
