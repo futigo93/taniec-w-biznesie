@@ -5,7 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { JourneyMarker } from "@/components/journey-marker";
 import { supportPaths } from "@/content/home";
-import { ConsultingModalTrigger } from "@/components/consulting-modal-trigger";
 
 export function ProductsSection() {
   return (
@@ -13,9 +12,9 @@ export function ProductsSection() {
       <JourneyMarker step="3" label="Dalsze wsparcie" />
       <SectionHeading
         title="Kiedy sama wiedza nie wystarcza, są też kierunki głębszego uporządkowania szkoły"
-        description="Jeśli sama lektura to za mało, możesz wejść w porządkowanie ścieżki od oferty do zapisu albo w pracę nad decyzjami właścicielskimi."
+        description="Jeśli sama lektura to za mało, możesz wejść głębiej w zapisy, decyzje właścicielskie albo obecność swojej marki w internecie."
       />
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
         {supportPaths.map((path) => (
           <article
             key={path.title}
@@ -32,23 +31,14 @@ export function ProductsSection() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              {path.ctaModal ? (
-                <ConsultingModalTrigger buttonLabel={path.cta} variant="outline" />
-              ) : (
-                <Link
-                  href={path.url ?? "/uslugi"}
-                  target={path.external ? "_blank" : undefined}
-                  rel={path.external ? "noreferrer" : undefined}
-                  className="cta-link"
-                >
-                  {path.cta}
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              )}
-            </div>
           </article>
         ))}
+      </div>
+      <div className="pt-1">
+        <Link href="/uslugi" className="cta-link">
+          Czytaj więcej o wsparciu
+          <ArrowUpRight className="h-4 w-4" />
+        </Link>
       </div>
     </section>
   );

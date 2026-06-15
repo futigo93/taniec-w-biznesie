@@ -21,10 +21,6 @@ type SupportPath = {
   title: string;
   description: string;
   highlights: string[];
-  cta: string;
-  url?: string;
-  external?: boolean;
-  ctaModal?: boolean;
 };
 
 export const homeValuePoints: ValuePoint[] = [
@@ -197,27 +193,30 @@ export const supportPaths: SupportPath[] = [
     label: "Porządkowanie wejścia i zapisów",
     title: "Baileo",
     description:
-      "Jeśli poza treściami potrzebujesz też lepiej poukładanej drogi od oferty i grafiku do zapisu, pokazuję kierunek dla tego fragmentu szkoły.",
+      "Kierunek dla szkół, które chcą uprościć drogę od oferty i grafiku do zapisu.",
     highlights: [
-      "Jedno sensowne miejsce zamiast rozjazdu między postem, grafikiem i wiadomościami.",
-      "Mniej ręcznego tłumaczenia wyjątków, poziomów i startów grup.",
-      "Model wdrożenia jako osobny hub albo warstwa na stronie szkoły.",
+      "Mniej rozjazdu między postem, grafikiem i wiadomościami.",
+      "Mniej ręcznego tłumaczenia wyjątków i startów grup.",
     ],
-    cta: "Zobacz kierunek Baileo",
-    url: "https://baileo.pl",
-    external: true,
   },
   {
     label: "Wsparcie właściciela",
     title: "Consulting i mentoring",
     description:
-      "Pracuję z właścicielami szkół nad decyzjami, procesami i komunikacją wtedy, gdy sama wiedza to za mało i trzeba przełożyć ją na realia konkretnej szkoły.",
+      "Praca nad decyzjami, procesami i komunikacją wtedy, gdy sama wiedza to za mało.",
     highlights: [
-      "Rozmowa o priorytetach, zanim zaczniesz dokładać kolejne narzędzia i procesy.",
-      "Wsparcie w ofercie, zespole, komunikacji i codziennym ogarnianiu szkoły.",
-      "Podejście branżowe, nie generyczny consulting dla małego biznesu.",
+      "Porządkowanie priorytetów przed dokładaniem kolejnych narzędzi.",
+      "Wsparcie w ofercie, zespole i codziennym prowadzeniu szkoły.",
     ],
-    cta: "Umów rozmowę wstępną",
-    ctaModal: true,
+  },
+  {
+    label: "Obecność w internecie",
+    title: "Tworzenie stron",
+    description:
+      "Strony dla szkół, instruktorów i marek tanecznych, które mają prowadzić użytkownika do działania.",
+    highlights: [
+      "Czytelna prezentacja oferty, cennika i ścieżki zapisu.",
+      "Strona spójna z energią marki i dobrze wyszukiwalna.",
+    ],
   },
 ];
