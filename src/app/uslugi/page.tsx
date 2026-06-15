@@ -148,6 +148,9 @@ export default function ServicesPage() {
               ))}
             </ul>
             <div className="flex flex-wrap gap-3">
+              <Button asChild variant="ghost" className="rounded-full">
+                <Link href="/twoja-strona">Zobacz osobny landing</Link>
+              </Button>
               <ConsultingModalTrigger
                 buttonLabel="Napisz w sprawie strony"
                 variant="outline"

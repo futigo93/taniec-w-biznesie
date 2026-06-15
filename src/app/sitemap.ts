@@ -17,6 +17,7 @@ const staticRoutes = [
   "/polityka-cookies",
   "/lista-podmiotow-przetwarzajacych",
   "/ankiety",
+  "/twoja-strona",
 ];
 
 const articleRoutes = [
@@ -26,6 +27,7 @@ const articleRoutes = [
   "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
   "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
   "/artykuly/instruktor-trener-nauczyciel",
+  "/artykuly/jak-szkola-tanca-przeszla-z-recznie-sklejanych-raportow-do-dojrzalszego-systemu-danych",
   "/artykuly/po-co-tancerzowi-cele",
   "/artykuly/tam-gdzie-nam-zalezy",
   "/artykuly/tancerz-instruktor-wlasciciel",
