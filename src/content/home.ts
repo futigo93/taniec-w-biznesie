@@ -63,6 +63,7 @@ export const articlePreviews: ArticlePreview[] = [
     slug: "tancerz-instruktor-wlasciciel",
     audience: "owner",
     topic: "strategia",
+    cover: "/artykuly/okladki/tancerz-instruktor-wlasciciel.png",
   },
   {
     title: "Instruktor, trener, nauczyciel. Szkoła, studio, akademia, klub.",
