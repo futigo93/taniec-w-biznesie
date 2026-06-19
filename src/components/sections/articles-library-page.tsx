@@ -78,7 +78,7 @@ export function ArticlesLibraryPage({ initialFilterSlug }: { initialFilterSlug?:
           </div>
         </section>
 
-        <section className="surface-section space-y-5 p-5 md:space-y-6 md:p-10">
+        <section id="all" className="surface-section scroll-mt-56 space-y-5 p-5 md:scroll-mt-44 md:space-y-6 md:p-10">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Przeglądaj dalej"
@@ -101,10 +101,6 @@ export function ArticlesLibraryPage({ initialFilterSlug }: { initialFilterSlug?:
               ))}
             </div>
           </div>
-
-          {leadArticle ? (
-            <div id="all" className="scroll-mt-56 md:scroll-mt-44" />
-          ) : null}
 
           {leadArticle ? (
             <ArticleCard article={leadArticle} featured />
