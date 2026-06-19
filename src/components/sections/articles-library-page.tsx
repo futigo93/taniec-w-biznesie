@@ -2,23 +2,38 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { articlePreviews, type ArticlePreview } from "@/content/home";
 import { Button } from "@/components/ui/button";
 
 const filters = [
-  { id: "owner", label: "Dla właściciela" },
-  { id: "instructor", label: "Dla instruktora" },
-  { id: "dancer", label: "Dla tancerza" },
-  { id: "all", label: "Wszystkie teksty" },
+  { id: "owner", slug: "dla-wlasciciela", label: "Dla właściciela" },
+  { id: "instructor", slug: "dla-instruktora", label: "Dla instruktora" },
+  { id: "dancer", slug: "dla-tancerza", label: "Dla tancerza" },
+  { id: "all", slug: "wszystkie", label: "Wszystkie teksty" },
 ] as const;
 
 type FilterId = (typeof filters)[number]["id"];
+type FilterSlug = (typeof filters)[number]["slug"];
 
-export function ArticlesLibraryPage() {
-  const [activeFilter, setActiveFilter] = useState<FilterId>("owner");
+const DEFAULT_FILTER: FilterId = "owner";
+
+function getFilterIdFromSlug(slug?: string): FilterId {
+  return filters.find((filter) => filter.slug === slug)?.id ?? DEFAULT_FILTER;
+}
+
+function getFilterSlug(filterId: FilterId): FilterSlug {
+  return filters.find((filter) => filter.id === filterId)?.slug ?? "dla-wlasciciela";
+}
+
+export function ArticlesLibraryPage({ initialFilterSlug }: { initialFilterSlug?: string }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const activeFilter = getFilterIdFromSlug(searchParams.get("filter") ?? initialFilterSlug);
 
   const featuredArticles = useMemo(
     () => articlePreviews.filter((article) => article.featured || article.audience === "owner").slice(0, 4),
@@ -77,13 +92,19 @@ export function ArticlesLibraryPage() {
                   type="button"
                   variant={activeFilter === filter.id ? "default" : "outline"}
                   className="rounded-full px-4"
-                  onClick={() => setActiveFilter(filter.id)}
+                  onClick={() => {
+                    router.replace(`${pathname}?filter=${getFilterSlug(filter.id)}#all`, { scroll: false });
+                  }}
                 >
                   {filter.label}
                 </Button>
               ))}
             </div>
           </div>
+
+          {leadArticle ? (
+            <div id="all" className="scroll-mt-40" />
+          ) : null}
 
           {leadArticle ? (
             <ArticleCard article={leadArticle} featured />

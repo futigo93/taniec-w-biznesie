@@ -7,6 +7,13 @@ export const metadata: Metadata = {
     "Case study, teksty strategiczne i szersza biblioteka treści dla właścicieli szkół tańca, instruktorów i ludzi tańca.",
 };
 
-export default function ArticlesPage() {
-  return <ArticlesLibraryPage />;
+type ArticlesPageProps = {
+  searchParams?: Promise<{
+    filter?: string;
+  }>;
+};
+
+export default async function ArticlesPage({ searchParams }: ArticlesPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  return <ArticlesLibraryPage initialFilterSlug={resolvedSearchParams?.filter} />;
 }
