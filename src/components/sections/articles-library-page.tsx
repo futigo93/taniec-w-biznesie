@@ -103,7 +103,7 @@ export function ArticlesLibraryPage({ initialFilterSlug }: { initialFilterSlug?:
           </div>
 
           {leadArticle ? (
-            <div id="all" className="scroll-mt-40" />
+            <div id="all" className="scroll-mt-56 md:scroll-mt-44" />
           ) : null}
 
           {leadArticle ? (
