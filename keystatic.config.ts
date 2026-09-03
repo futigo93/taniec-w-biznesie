@@ -4,7 +4,10 @@ import { wrapper, inline, block } from "@keystatic/core/content-components";
 // Local storage while wiring this up (`npm run dev` -> /keystatic works with
 // zero setup). Switch to GitHub storage mode once the GitHub App is
 // connected — see docs/artykuly-mdx-content-model.md.
-const storage = { kind: "local" } as const;
+const storage = {
+  kind: "github",
+  repo: "futigo93/taniec-w-biznesie",
+} as const;
 
 export default config({
   storage,
@@ -66,26 +69,18 @@ export default config({
           label: "Wyróżniony (góra listy i homepage)",
           defaultValue: false,
         }),
-        author: fields.conditional(
-          fields.checkbox({ label: "Inny autor niż domyślny (Jakub Nowak)?", defaultValue: false }),
-          {
-            false: fields.empty(),
-            true: fields.object({
-              name: fields.text({ label: "Imię i nazwisko", validation: { isRequired: true } }),
-              href: fields.url({ label: "Link (opcjonalnie)" }),
-            }),
-          },
-        ),
-        audio: fields.conditional(
-          fields.checkbox({ label: "Ma wersję audio?", defaultValue: false }),
-          {
-            false: fields.empty(),
-            true: fields.object({
-              src: fields.url({ label: "URL pliku audio (mp3)", validation: { isRequired: true } }),
-              description: fields.text({ label: "Opis pod odtwarzaczem (opcjonalnie)" }),
-            }),
-          },
-        ),
+        // Plain objects, not fields.conditional — conditional fields serialize
+        // as Keystatic's own {discriminant, value} wrapper, which doesn't match
+        // the plain nested YAML our existing files already use. Fields inside
+        // are left optional: blank name/src = "not set" (see src/lib/articles.ts).
+        author: fields.object({
+          name: fields.text({ label: "Imię i nazwisko (puste = domyślny: Jakub Nowak)" }),
+          href: fields.url({ label: "Link (opcjonalnie)" }),
+        }),
+        audio: fields.object({
+          src: fields.url({ label: "URL pliku audio, mp3 (puste = brak audio)" }),
+          description: fields.text({ label: "Opis pod odtwarzaczem (opcjonalnie)" }),
+        }),
         content: fields.mdx({
           label: "Treść",
           components: {
@@ -96,8 +91,14 @@ export default config({
             MarginNote: inline({
               label: "Notatka na marginesie",
               schema: {
-                term: fields.child({ kind: "inline", placeholder: "Termin objęty notatką" }),
-                title: fields.text({ label: "Tytuł notatki", validation: { isRequired: true } }),
+                term: fields.child({
+                  kind: "inline",
+                  placeholder: "Termin objęty notatką",
+                }),
+                title: fields.text({
+                  label: "Tytuł notatki",
+                  validation: { isRequired: true },
+                }),
                 note: fields.text({
                   label: "Treść notatki",
                   multiline: true,
@@ -108,22 +109,36 @@ export default config({
             Callout: wrapper({
               label: "Wyróżniona myśl (Callout)",
               schema: {
-                title: fields.text({ label: "Nagłówek (zostaw puste dla prostego wariantu)" }),
+                title: fields.text({
+                  label: "Nagłówek (zostaw puste dla prostego wariantu)",
+                }),
               },
             }),
             Promo: block({
               label: "Blok promo",
               schema: {
                 preset: fields.select({
-                  label: "Gotowy zestaw",
+                  label: "Gotowy zestaw (zostaw '— custom —' i wypełnij pozycje niżej dla własnego zestawu)",
                   options: [
+                    { label: "— custom (patrz pozycje niżej) —", value: "" },
                     { label: "Ebook", value: "ebook" },
                     { label: "Seria o instruktorach", value: "instruktor-series" },
                     { label: "Workbook", value: "workbook" },
                     { label: "Zestaw Baileo", value: "baileo-suite" },
                   ],
-                  defaultValue: "ebook",
+                  defaultValue: "",
                 }),
+                label: fields.text({ label: "Etykieta nad blokiem (np. „Polecane”)" }),
+                ctaLabel: fields.text({ label: "Tekst przycisku (np. „Sprawdź”)" }),
+                items: fields.array(
+                  fields.object({
+                    title: fields.text({ label: "Tytuł" }),
+                    description: fields.text({ label: "Opis", multiline: true }),
+                    href: fields.text({ label: "Link" }),
+                    image: fields.text({ label: "Obrazek (ścieżka lub URL)" }),
+                  }),
+                  { label: "Custom pozycje (gdy preset jest pusty)" },
+                ),
               },
             }),
           },

@@ -21,7 +21,7 @@ title: "Tytuł artykułu"
 description: "Opis 1-3 zdania - używany w SEO, na liście i jako podpis pod nagłówkiem."
 category: "Dla tancerzy"        # wyświetlany chip na liście ORAZ eyebrow nad tytułem
 audience: "dancer"              # "owner" | "instructor" | "dancer"
-cover: "/artykuly/okladki/nazwa-pliku.webp"
+cover: "/artykuly/okladki/<slug-artykulu>/nazwa-pliku.webp"  # podfolder = dokładnie ten sam slug co nazwa pliku .mdx
 date: "2026-06-01"               # ISO, format YYYY-MM-DD
 
 # pola opcjonalne:
@@ -53,7 +53,7 @@ Zarejestrowane globalnie w [src/mdx-components.tsx](../src/mdx-components.tsx) �
 - **`<Callout>...</Callout>`** — krótka, wyróżniona myśl (box z ikoną). *Wstawiana przyciskiem w edytorze `/keystatic`.*
 - **`<Callout title="Nagłówek">- punkt 1\n- punkt 2</Callout>`** — wariant z nagłówkiem i listą "co zapamiętać" (markdown-owa lista wewnątrz renderuje się jako osobne boksy).
 - **`<Promo preset="ebook" />`** — gotowy blok promo z rejestru [src/content/promo-presets.ts](../src/content/promo-presets.ts) (`ebook`, `instruktor-series`, `workbook`, `baileo-suite`). Dodanie nowego presetu = nowy wpis w tym pliku. *Wstawiany przyciskiem w edytorze `/keystatic`.*
-- **`<Promo items={[{ title, description, href, image }]} />`** — w pełni customowy blok promo (np. link do "następnego artykułu z serii"), gdy gotowy preset nie pasuje. *Tylko ręcznie w pliku — nie ma toolbar-owego odpowiednika w Keystatic (na razie).*
+- **`<Promo items={[{ title, description, href, image }]} />`** — w pełni customowy blok promo (np. link do "następnego artykułu z serii"), gdy gotowy preset nie pasuje. *W edytorze `/keystatic` to te same pola `label`/`ctaLabel`/`items` co reszta bloku `Promo` — po prostu zostaw `preset` puste.*
 - **`<ArticleSection label="1. Otwarcie">...</ArticleSection>`** — opcjonalny numerowany układ sekcji w stylu case-study (chip kroku + własny scope dla `MarginNote`). Używać tylko, gdy artykuł ma sens jako numerowana historia — zwykłe artykuły używają zwykłych `##` nagłówków. *Tylko ręcznie w pliku — nie edytować taki artykuł przez `/keystatic`.*
 - **`<MatrixCard title="..." description="..." />`** — pojedyncza karta w siatce porównawczej/macierzy (do własnego układu grid w JSX, jeśli artykuł tego wymaga — patrz `instruktor-tanca-tego-nie-zrozumiesz.mdx` jako wzór). *Tylko ręcznie w pliku — nie edytować taki artykuł przez `/keystatic`.*
 
@@ -65,29 +65,19 @@ Plik audio hostowany zewnętrznie (np. Vercel Blob Storage), nie w repo. `audio.
 
 ## Panel `/keystatic`
 
-Lekki formularz nad tymi samymi plikami (Keystatic, `keystatic.config.ts` w roocie repo). Pola metadanych 1:1 z frontmatterem opisanym wyżej (select dla `audience`/`topic`, przełącznik dla opcjonalnego `author`/`audio`, upload okładki wprost do `public/artykuly/okladki/`), edytor treści wstawia `MarginNote`/`Callout`/`Promo` przyciskiem zamiast ręcznego tagowania.
+Lekki formularz nad tymi samymi plikami (Keystatic, `keystatic.config.ts` w rocie repo). Pola metadanych 1:1 z frontmatterem opisanym wyżej (select dla `audience`/`topic`, upload okładki, date picker), edytor treści wstawia `MarginNote`/`Callout`/`Promo` przyciskiem zamiast ręcznego tagowania.
 
-**Stan obecny: tryb lokalny (`storage: { kind: "local" }`).** Działa tylko na `npm run dev` na Twoim komputerze i zapisuje bezpośrednio na dysku (bez commitowania do gita) — to etap do testowania schematu formularza, zanim przejdziemy na tryb GitHub.
+**Podłączone do GitHuba** (`storage: { kind: "github", repo: "futigo93/taniec-w-biznesie" }`) — zapis w formularzu commituje **od razu na `main`** (bez etapu review/PR), tak samo jak dziś edycja pliku przez appkę GitHub. Logowanie do `/keystatic` idzie przez dedykowaną GitHub App (założoną przez kreator Keystatic na koncie `futigo93`), sekrety (`KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`) siedzą lokalnie w `.env` (nie w gicie) i muszą być też dopisane jako zmienne środowiskowe na Vercelu, żeby `/keystatic` logował się na produkcji.
 
-**Żeby działało z telefonu / na żywej stronie, zostały 2 kroki, które musisz zrobić Ty (ręcznie, w przeglądarce):**
+**Pola `author` i `audio`** to zwykłe obiekty (`fields.object`), zawsze widoczne w formularzu, nie przełącznik — puste `name`/`src` = "nie ustawione" (patrz `resolveAuthor`/`resolveAudio` w `src/lib/articles.ts`). Wybrano to świadomie: `fields.conditional` zapisuje dane we własnym wewnętrznym formacie (`{discriminant, value}`), niezgodnym z prostym, zagnieżdżonym YAML-em, którego już używamy.
 
-1. W `keystatic.config.ts` zmienić `storage` na:
-   ```ts
-   const storage = {
-     kind: "github",
-     repo: "futigo93/taniec-w-biznesie",
-   } as const;
-   ```
-2. `npm run dev`, wejść na `http://localhost:3000/keystatic`, zalogować się w przeglądarce na konto `futigo93` (właściciel repo) i przejść kreator "Connect to GitHub" — Keystatic sam zakłada dedykowaną GitHub App i zapisuje do lokalnego `.env` (nie trafia do gita): `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`.
-3. Skopiować te same 4 wartości do zmiennych środowiskowych projektu na Vercelu — inaczej `/keystatic` na produkcji się nie zaloguje.
-4. Jeśli GitHub zgłosi błąd redirect URI dla adresu produkcyjnego: wejść na `https://github.com/settings/apps/<slug-aplikacji>` i dopisać tam callback URL produkcyjny.
+**Okładki (`cover`)** muszą leżeć w podfolderze nazwanym dokładnie jak slug artykułu: `public/artykuly/okladki/<slug>/nazwa-pliku.webp` — to sztywny wymóg pola `fields.image` w tej wersji Keystatic (inaczej edytor nie pokaże podglądu już wgranej okładki, mimo że strona i tak ją poprawnie wyrenderuje).
 
-Zapis w formularzu commituje **od razu na `main`** (bez etapu review/PR) — tak samo jak dziś edycja pliku przez appkę GitHub.
+**Blok `Promo`** w edytorze ma pole `preset` (gotowy zestaw z `promo-presets.ts`) ORAZ `label`/`ctaLabel`/`items` (dla w pełni customowych wstawek, np. "następny artykuł z serii") — użyj jednego albo drugiego wariantu.
 
 **Znane ograniczenia:**
-- `instruktor-tanca-tego-nie-zrozumiesz.mdx` (macierz umiejętności, ręczny JSX) nie ma zarejestrowanego komponentu w Keystatic — nie otwierać go w tym edytorze, dopóki nie ma pewności, że nieznany JSX nie zniknie przy zapisie. Do jego edycji nadal używać appki GitHub / edytora kodu.
+- `instruktor-tanca-tego-nie-zrozumiesz.mdx` (macierz umiejętności, ręczny JSX) i case study `jak-szkola-tanca-przeszla-...` (`ArticleSection`, ręczny JSX) nie mają zarejestrowanych komponentów w Keystatic — nie otwierać ich w tym edytorze, dopóki nie ma pewności, że nieznany JSX nie zniknie przy zapisie. Do ich edycji nadal używać appki GitHub / edytora kodu.
 - `/keystatic` renderuje się bez nagłówka/stopki strony (`src/components/layout/site-chrome.tsx` wyłącza je dla tej ścieżki) — to pełnoekranowa aplikacja admina, nie podstrona serwisu.
-- Custom `<Promo items={[...]}>` (np. "następny artykuł z serii") nie ma na razie odpowiednika w toolbarze — takie wstawki nadal wymagają edycji pliku ręcznie.
 
 ## Artykuły zewnętrzne (linki do partnerów)
 

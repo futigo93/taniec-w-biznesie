@@ -123,5 +123,13 @@ export function formatArticleDate(iso: string): string {
 }
 
 export function resolveAuthor(meta: ArticleMeta): ArticleAuthor {
-  return meta.author ?? { name: siteConfig.author };
+  // Keystatic writes `author` as a plain (always-present) object with
+  // possibly-empty fields rather than omitting the key entirely, so an
+  // empty `name` means "not set", not "author is named ''".
+  return meta.author?.name ? meta.author : { name: siteConfig.author };
+}
+
+export function resolveAudio(meta: ArticleMeta): ArticleAudio | undefined {
+  // Same reasoning as resolveAuthor: an empty `src` means "no audio".
+  return meta.audio?.src ? meta.audio : undefined;
 }

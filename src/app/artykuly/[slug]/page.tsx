@@ -10,6 +10,7 @@ import {
   getArticleMeta,
   getArticleModule,
   getArticleSlugs,
+  resolveAudio,
   resolveAuthor,
 } from "@/lib/articles";
 
@@ -56,6 +57,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   const { Content, meta } = await getArticleModule(slug);
   const author = resolveAuthor(meta);
+  const audio = resolveAudio(meta);
   const readTime = computeReadTime(slug, meta);
 
   return (
@@ -74,9 +76,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           readTime={readTime}
         />
 
-        {meta.audio ? (
-          <ArticleAudioPlayer src={meta.audio.src} description={meta.audio.description} />
-        ) : null}
+        {audio ? <ArticleAudioPlayer src={audio.src} description={audio.description} /> : null}
 
         <div data-margin-note-scope>
           <Content />
