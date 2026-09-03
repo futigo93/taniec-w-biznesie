@@ -10,7 +10,7 @@ function pickVariant() {
   return VARIANTS[index];
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   if (pathname !== "/ebook" && pathname !== "/ebook/") {
