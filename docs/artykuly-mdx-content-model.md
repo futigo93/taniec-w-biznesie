@@ -10,25 +10,28 @@ Publikacja z telefonu: appka GitHub (albo mobilna przeglądarka → github.com) 
 
 ## Kształt pliku
 
-```mdx
-export const meta = {
-  title: "Tytuł artykułu",
-  description: "Opis 1-3 zdania - używany w SEO, na liście i jako podpis pod nagłówkiem.",
-  category: "Dla tancerzy",       // wyświetlany chip na liście ORAZ eyebrow nad tytułem
-  audience: "dancer",             // "owner" | "instructor" | "dancer"
-  cover: "/artykuly/okladki/nazwa-pliku.webp",
-  date: "2026-06-01",             // ISO, format YYYY-MM-DD
+Metadane to **YAML frontmatter** (`---`), nie eksport JS — dzięki temu ten sam plik da się edytować zarówno ręcznie, jak i przez formularz Keystatic (`/keystatic`, patrz niżej). Kompilacja robi to `remark-frontmatter` + `remark-mdx-frontmatter` skonfigurowane w `next.config.ts`, które wystawiają dane jako `export const frontmatter` czytany przez `src/lib/articles.ts`.
 
-  // pola opcjonalne:
-  topic: "rozwoj",                // "case-study" | "strategia" | "komunikacja" | "zespol" | "rozwoj"
-  readTime: "6 min",              // pomiń, żeby wyliczyło się automatycznie z długości tekstu
-  author: { name: "...", href: "https://..." }, // domyślnie: Jakub Nowak
-  featured: true,                 // wyróżniony artykuł na górze homepage/listingu (tylko jeden naraz ma sens)
-  audio: {
-    src: "https://.../plik.mp3",  // pełny URL (np. Vercel Blob Storage), nie plik w repo
-    description: "Opcjonalny opis pod odtwarzaczem",
-  },
-};
+```mdx
+---
+title: "Tytuł artykułu"
+description: "Opis 1-3 zdania - używany w SEO, na liście i jako podpis pod nagłówkiem."
+category: "Dla tancerzy"        # wyświetlany chip na liście ORAZ eyebrow nad tytułem
+audience: "dancer"              # "owner" | "instructor" | "dancer"
+cover: "/artykuly/okladki/nazwa-pliku.webp"
+date: "2026-06-01"               # ISO, format YYYY-MM-DD
+
+# pola opcjonalne:
+topic: "rozwoj"                  # "case-study" | "strategia" | "komunikacja" | "zespol" | "rozwoj"
+readTime: "6 min"                # pomiń, żeby wyliczyło się automatycznie z długości tekstu
+author:                          # domyślnie: Jakub Nowak
+  name: "..."
+  href: "https://..."
+featured: true                   # wyróżniony artykuł na górze homepage/listingu (tylko jeden naraz ma sens)
+audio:
+  src: "https://.../plik.mp3"    # pełny URL (np. Vercel Blob Storage), nie plik w repo
+  description: "Opcjonalny opis pod odtwarzaczem"
+---
 
 ## Nagłówek sekcji
 
@@ -55,7 +58,7 @@ Zwykłe `##`/`###` nagłówki, akapity, listy, `**pogrubienia**`, `> cytaty` i `
 
 ## Audio
 
-Plik audio hostowany zewnętrznie (np. Vercel Blob Storage), nie w repo. `meta.audio.src` wystarczy — odtwarzacz (`ArticleAudioPlayer`) wstawia się automatycznie zaraz pod nagłówkiem, bez potrzeby ręcznego osadzania w treści.
+Plik audio hostowany zewnętrznie (np. Vercel Blob Storage), nie w repo. `audio.src` we frontmatterze wystarczy — odtwarzacz (`ArticleAudioPlayer`) wstawia się automatycznie zaraz pod nagłówkiem, bez potrzeby ręcznego osadzania w treści.
 
 ## Artykuły zewnętrzne (linki do partnerów)
 

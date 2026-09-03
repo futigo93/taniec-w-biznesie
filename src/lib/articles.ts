@@ -17,9 +17,12 @@ export type ArticleAudio = {
 };
 
 /**
- * Structured metadata every `.mdx` article exports as `export const meta`.
- * This is the single source of truth: it drives the article page's own SEO
- * metadata, the homepage teaser, the /artykuly listing, and the sitemap.
+ * Structured metadata every `.mdx` article carries as YAML frontmatter
+ * (`---\n...\n---` at the top of the file, compiled to `export const
+ * frontmatter` by remark-mdx-frontmatter — see next.config.ts). This is the
+ * single source of truth: it drives the article page's own SEO metadata,
+ * the homepage teaser, the /artykuly listing, and the sitemap. It's also
+ * the shape Keystatic's collection schema (keystatic.config.ts) writes to.
  */
 export type ArticleMeta = {
   title: string;
@@ -66,11 +69,11 @@ const EXTERNAL_ARTICLES: ArticleListItem[] = [
 
 function validateMeta(slug: string, meta: Partial<ArticleMeta> | undefined): asserts meta is ArticleMeta {
   if (!meta) {
-    throw new Error(`Article "${slug}" is missing required "export const meta" in its .mdx file.`);
+    throw new Error(`Article "${slug}" is missing YAML frontmatter (--- ... ---) in its .mdx file.`);
   }
   const missing = REQUIRED_META_FIELDS.filter((key) => !meta[key]);
   if (missing.length > 0) {
-    throw new Error(`Article "${slug}" meta is missing required field(s): ${missing.join(", ")}.`);
+    throw new Error(`Article "${slug}" frontmatter is missing required field(s): ${missing.join(", ")}.`);
   }
 }
 
@@ -93,10 +96,10 @@ export function getArticleSlugs(): string[] {
 export async function getArticleModule(slug: string) {
   const mod = (await import(`@/content/artykuly/${slug}.mdx`)) as {
     default: ComponentType;
-    meta?: Partial<ArticleMeta>;
+    frontmatter?: Partial<ArticleMeta>;
   };
-  validateMeta(slug, mod.meta);
-  return { Content: mod.default, meta: mod.meta };
+  validateMeta(slug, mod.frontmatter);
+  return { Content: mod.default, meta: mod.frontmatter };
 }
 
 export async function getArticleMeta(slug: string): Promise<ArticleMeta> {
