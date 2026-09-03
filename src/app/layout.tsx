@@ -3,8 +3,7 @@ import Script from "next/script";
 import { Inter, Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 
 const inter = Inter({
@@ -93,11 +92,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} ${playfair.variable} font-sans antialiased`}
       >
-        <div className="flex min-h-screen flex-col bg-background text-foreground">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
+        <SiteChrome>{children}</SiteChrome>
         <CookieConsentBanner />
         {gaId && isProd ? (
           <>

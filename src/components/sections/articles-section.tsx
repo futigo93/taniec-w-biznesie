@@ -3,11 +3,12 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { JourneyMarker } from "@/components/journey-marker";
-import { articlePreviews } from "@/content/home";
+import { getAllArticles, type ArticleListItem } from "@/lib/articles";
 
-export function ArticlesSection() {
-  const featuredArticle = articlePreviews.find((article) => article.featured);
-  const supportingArticles = articlePreviews.filter((article) => !article.featured).slice(0, 3);
+export async function ArticlesSection() {
+  const articles = await getAllArticles();
+  const featuredArticle = articles.find((article) => article.featured);
+  const supportingArticles = articles.filter((article) => !article.featured).slice(0, 3);
 
   return (
     <section
@@ -20,7 +21,7 @@ export function ArticlesSection() {
         description="Materiały o decyzjach, procesach i codziennym prowadzeniu szkoły. Szersza biblioteka czeka na stronie artykułów."
       />
       {featuredArticle ? (
-        <FeaturedArticleCard />
+        <FeaturedArticleCard article={featuredArticle} />
       ) : null}
       <div className="grid gap-4 md:grid-cols-3">
         {supportingArticles.map((article) => (
@@ -40,11 +41,7 @@ export function ArticlesSection() {
   );
 }
 
-function FeaturedArticleCard() {
-  const article = articlePreviews.find((entry) => entry.featured);
-
-  if (!article) return null;
-
+function FeaturedArticleCard({ article }: { article: ArticleListItem }) {
   const href = article.external ?? `/artykuly/${article.slug}`;
   const isExternal = Boolean(article.external);
 
@@ -85,7 +82,7 @@ function FeaturedArticleCard() {
   );
 }
 
-function ArticleCard({ article }: { article: (typeof articlePreviews)[number] }) {
+function ArticleCard({ article }: { article: ArticleListItem }) {
   const href = article.external ?? `/artykuly/${article.slug}`;
   const isExternal = Boolean(article.external);
 

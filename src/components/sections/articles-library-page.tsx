@@ -6,7 +6,7 @@ import { useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
-import { articlePreviews, type ArticlePreview } from "@/content/home";
+import type { ArticleListItem } from "@/lib/articles";
 import { Button } from "@/components/ui/button";
 
 const filters = [
@@ -29,21 +29,27 @@ function getFilterSlug(filterId: FilterId): FilterSlug {
   return filters.find((filter) => filter.id === filterId)?.slug ?? "dla-wlasciciela";
 }
 
-export function ArticlesLibraryPage({ initialFilterSlug }: { initialFilterSlug?: string }) {
+export function ArticlesLibraryPage({
+  initialFilterSlug,
+  articles,
+}: {
+  initialFilterSlug?: string;
+  articles: ArticleListItem[];
+}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const activeFilter = getFilterIdFromSlug(searchParams.get("filter") ?? initialFilterSlug);
 
   const featuredArticles = useMemo(
-    () => articlePreviews.filter((article) => article.featured || article.audience === "owner").slice(0, 4),
-    [],
+    () => articles.filter((article) => article.featured || article.audience === "owner").slice(0, 4),
+    [articles],
   );
 
   const filteredArticles = useMemo(() => {
-    if (activeFilter === "all") return articlePreviews;
-    return articlePreviews.filter((article) => article.audience === activeFilter);
-  }, [activeFilter]);
+    if (activeFilter === "all") return articles;
+    return articles.filter((article) => article.audience === activeFilter);
+  }, [articles, activeFilter]);
 
   const [leadArticle, ...libraryArticles] = filteredArticles;
 
@@ -128,7 +134,7 @@ function ArticleCard({
   featured = false,
   compact = true,
 }: {
-  article: ArticlePreview;
+  article: ArticleListItem;
   featured?: boolean;
   compact?: boolean;
 }) {
@@ -192,7 +198,7 @@ function ArticleCard({
   );
 }
 
-function MetaLine({ article, dark = false }: { article: ArticlePreview; dark?: boolean }) {
+function MetaLine({ article, dark = false }: { article: ArticleListItem; dark?: boolean }) {
   return (
     <div
       className={`flex items-center justify-between gap-3 text-xs uppercase tracking-[0.24em] ${
