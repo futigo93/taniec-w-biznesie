@@ -14,7 +14,10 @@ type PromoProps = {
  * custom one-off (e.g. linking to "the next article in this series").
  */
 export function Promo({ preset, items, label, ctaLabel }: PromoProps) {
-  const resolved = items ?? (preset ? promoPresets[preset] : undefined);
+  // Keystatic always writes `items` as an array (possibly empty, e.g. when
+  // only `preset` was set in the form) rather than omitting it, so an empty
+  // array must fall through to the preset — items?.length check, not `??`.
+  const resolved = items && items.length > 0 ? items : preset ? promoPresets[preset] : undefined;
   if (!resolved) return null;
 
   return <InlineArticlePromo items={resolved} label={label} ctaLabel={ctaLabel} />;
