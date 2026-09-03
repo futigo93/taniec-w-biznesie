@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { getAllArticles } from "@/lib/articles";
 
 const staticRoutes = [
   "",
@@ -20,22 +21,10 @@ const staticRoutes = [
   "/twoja-strona",
 ];
 
-const articleRoutes = [
-  "/artykuly/15-lat-doswiadczenia-instruktora-w-200-zdaniach",
-  "/artykuly/instruktor-tanca-czlowiek-z-misja",
-  "/artykuly/instruktor-tanca-z-wielka-moca-wiaze-sie-wielka-odpowiedzialnosc",
-  "/artykuly/instruktor-tanca-tego-nie-zrozumiesz",
-  "/artykuly/instruktor-tanca-twardy-zad-swiezaka",
-  "/artykuly/instruktor-trener-nauczyciel",
-  "/artykuly/jak-szkola-tanca-przeszla-z-recznie-sklejanych-raportow-do-dojrzalszego-systemu-danych",
-  "/artykuly/po-co-tancerzowi-cele",
-  "/artykuly/tam-gdzie-nam-zalezy",
-  "/artykuly/tancerz-instruktor-wlasciciel",
-  "/artykuly/wartosci-w-tancu",
-  "/artykuly/wizerunek-instruktora-tanca-na-co-to-komu",
-];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getAllArticles();
+  const articleRoutes = articles.filter((article) => !article.external).map((article) => `/artykuly/${article.slug}`);
 
-export default function sitemap(): MetadataRoute.Sitemap {
   return [...staticRoutes, ...articleRoutes].map((path) => ({
     url: `${siteConfig.url}${path}`,
     priority: path === "" ? 1 : path.startsWith("/artykuly/") ? 0.8 : 0.6,

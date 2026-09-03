@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticlesLibraryPage } from "@/components/sections/articles-library-page";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Artykuły",
@@ -15,5 +16,6 @@ type ArticlesPageProps = {
 
 export default async function ArticlesPage({ searchParams }: ArticlesPageProps) {
   const resolvedSearchParams = searchParams ? await searchParams : undefined;
-  return <ArticlesLibraryPage initialFilterSlug={resolvedSearchParams?.filter} />;
+  const articles = await getAllArticles();
+  return <ArticlesLibraryPage initialFilterSlug={resolvedSearchParams?.filter} articles={articles} />;
 }

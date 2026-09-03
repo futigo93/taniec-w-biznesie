@@ -1,0 +1,124 @@
+import fs from "node:fs";
+import path from "node:path";
+import type { ComponentType } from "react";
+import { siteConfig } from "@/config/site";
+
+export type ArticleAudience = "owner" | "instructor" | "dancer";
+export type ArticleTopic = "case-study" | "strategia" | "komunikacja" | "zespol" | "rozwoj";
+
+export type ArticleAuthor = {
+  name: string;
+  href?: string;
+};
+
+export type ArticleAudio = {
+  src: string;
+  description?: string;
+};
+
+/**
+ * Structured metadata every `.mdx` article exports as `export const meta`.
+ * This is the single source of truth: it drives the article page's own SEO
+ * metadata, the homepage teaser, the /artykuly listing, and the sitemap.
+ */
+export type ArticleMeta = {
+  title: string;
+  description: string;
+  category: string; // doubles as ArticleHero eyebrow + listing chip
+  audience: ArticleAudience;
+  topic?: ArticleTopic;
+  readTime?: string; // optional override; auto-computed from word count when omitted
+  cover: string;
+  date: string; // ISO "YYYY-MM-DD"
+  author?: ArticleAuthor;
+  featured?: boolean;
+  audio?: ArticleAudio;
+};
+
+export type ArticleListItem = ArticleMeta & { slug: string; external?: string };
+
+const REQUIRED_META_FIELDS = ["title", "description", "category", "audience", "cover", "date"] as const;
+
+const CONTENT_DIR = path.join(process.cwd(), "src/content/artykuly");
+const WORDS_PER_MINUTE = 200;
+
+/**
+ * The one entry that has no local page: a link out to a partner's blog.
+ * Kept here (not as an .mdx file) because it has no body to render and must
+ * be excluded from generateStaticParams/sitemap — everyday phone-publishing
+ * only ever means dropping a new .mdx file into src/content/artykuly/.
+ */
+const EXTERNAL_ARTICLES: ArticleListItem[] = [
+  {
+    slug: "przewodnik-po-widokach-grafiku",
+    title: "Przewodnik po widokach grafiku: dopasuj prezentację zajęć do swojej szkoły tańca",
+    description:
+      "Jak wykorzystać różne widoki grafiku w baileo.pl, aby kursanci łatwiej czytali ofertę i szybciej rezerwowali miejsca.",
+    category: "Narzędzia",
+    audience: "owner",
+    topic: "komunikacja",
+    external: "https://baileo.pl/blog/przewodnik-po-widokach-grafiku",
+    cover: "/przewodnik-po-widokach-grafiku-cover.png",
+    date: "2025-01-01",
+    readTime: "15 min",
+  },
+];
+
+function validateMeta(slug: string, meta: Partial<ArticleMeta> | undefined): asserts meta is ArticleMeta {
+  if (!meta) {
+    throw new Error(`Article "${slug}" is missing required "export const meta" in its .mdx file.`);
+  }
+  const missing = REQUIRED_META_FIELDS.filter((key) => !meta[key]);
+  if (missing.length > 0) {
+    throw new Error(`Article "${slug}" meta is missing required field(s): ${missing.join(", ")}.`);
+  }
+}
+
+export function computeReadTime(slug: string, meta: ArticleMeta): string {
+  if (meta.readTime) return meta.readTime;
+  const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.mdx`), "utf8");
+  const wordCount = raw.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
+  return `${minutes} min`;
+}
+
+export function getArticleSlugs(): string[] {
+  if (!fs.existsSync(CONTENT_DIR)) return [];
+  return fs
+    .readdirSync(CONTENT_DIR)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => file.replace(/\.mdx$/, ""));
+}
+
+export async function getArticleModule(slug: string) {
+  const mod = (await import(`@/content/artykuly/${slug}.mdx`)) as {
+    default: ComponentType;
+    meta?: Partial<ArticleMeta>;
+  };
+  validateMeta(slug, mod.meta);
+  return { Content: mod.default, meta: mod.meta };
+}
+
+export async function getArticleMeta(slug: string): Promise<ArticleMeta> {
+  const { meta } = await getArticleModule(slug);
+  return { ...meta, readTime: computeReadTime(slug, meta) };
+}
+
+export async function getAllArticles(): Promise<ArticleListItem[]> {
+  const local = await Promise.all(
+    getArticleSlugs().map(async (slug) => ({ slug, ...(await getArticleMeta(slug)) })),
+  );
+  const all = [...local, ...EXTERNAL_ARTICLES];
+  return all.sort((a, b) => {
+    if (Boolean(a.featured) !== Boolean(b.featured)) return a.featured ? -1 : 1;
+    return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+  });
+}
+
+export function formatArticleDate(iso: string): string {
+  return new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" }).format(new Date(iso));
+}
+
+export function resolveAuthor(meta: ArticleMeta): ArticleAuthor {
+  return meta.author ?? { name: siteConfig.author };
+}
