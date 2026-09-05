@@ -77,12 +77,27 @@ function validateMeta(slug: string, meta: Partial<ArticleMeta> | undefined): ass
   }
 }
 
+function readRawSource(slug: string): string {
+  return fs.readFileSync(path.join(CONTENT_DIR, `${slug}.mdx`), "utf8");
+}
+
 export function computeReadTime(slug: string, meta: ArticleMeta): string {
   if (meta.readTime) return meta.readTime;
-  const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.mdx`), "utf8");
-  const wordCount = raw.trim().split(/\s+/).filter(Boolean).length;
+  const wordCount = readRawSource(slug).trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
   return `${minutes} min`;
+}
+
+/**
+ * Table-of-contents source: every `<ArticleSection label="...">` in the raw
+ * .mdx body, in order. Empty for regular (non-case-study-style) articles —
+ * TableOfContents renders nothing in that case. A plain regex over the raw
+ * source is enough here; we only need the label text, not a real AST.
+ */
+export function getSectionLabels(slug: string): string[] {
+  const raw = readRawSource(slug);
+  const matches = raw.matchAll(/<ArticleSection\s+label=["']([^"']+)["']/g);
+  return Array.from(matches, (match) => match[1]);
 }
 
 export function getArticleSlugs(): string[] {

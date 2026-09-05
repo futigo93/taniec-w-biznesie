@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleHero } from "@/components/articles/article-hero";
+import { TableOfContents } from "@/components/articles/table-of-contents";
 import { ArticleAudioPlayer } from "@/components/audio/article-audio-player";
 import { siteConfig } from "@/config/site";
 import {
@@ -10,6 +11,7 @@ import {
   getArticleMeta,
   getArticleModule,
   getArticleSlugs,
+  getSectionLabels,
   resolveAudio,
   resolveAuthor,
 } from "@/lib/articles";
@@ -59,6 +61,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const author = resolveAuthor(meta);
   const audio = resolveAudio(meta);
   const readTime = computeReadTime(slug, meta);
+  const sectionLabels = getSectionLabels(slug);
 
   return (
     <div className="page-wash py-12">
@@ -77,6 +80,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         />
 
         {audio ? <ArticleAudioPlayer src={audio.src} description={audio.description} /> : null}
+
+        <TableOfContents labels={sectionLabels} />
 
         <div data-margin-note-scope>
           <Content />
