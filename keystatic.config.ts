@@ -85,9 +85,9 @@ export default config({
           label: "Treść",
           components: {
             // Rozpoznawane, "toolbar-owe" komponenty (patrz docs/artykuly-mdx-content-model.md).
-            // Rzadkie, w pełni customowe bloki JSX (macierz umiejętności, ArticleSection)
-            // celowo NIE są tu zarejestrowane — taki artykuł edytuje się bezpośrednio
-            // jako plik, nie przez ten formularz.
+            // Macierz umiejętności (ręczny grid JSX w jednym artykule) to jedyny
+            // celowo niezarejestrowany przypadek — zbyt jednostkowy, żeby się opłacało
+            // go modelować; ten artykuł nadal edytuje się bezpośrednio jako plik.
             MarginNote: inline({
               label: "Notatka na marginesie",
               schema: {
@@ -111,6 +111,16 @@ export default config({
               schema: {
                 title: fields.text({
                   label: "Nagłówek (zostaw puste dla prostego wariantu)",
+                }),
+              },
+            }),
+            ArticleSection: wrapper({
+              label: "Numerowana sekcja (case study)",
+              description: "Tylko do artykułów w stylu case-study z numerowanymi krokami — buduje też spis treści.",
+              schema: {
+                label: fields.text({
+                  label: "Etykieta sekcji (np. „2. Stan wyjścia: co naprawdę zaczęło boleć”)",
+                  validation: { isRequired: true },
                 }),
               },
             }),
