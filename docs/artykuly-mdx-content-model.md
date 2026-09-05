@@ -49,7 +49,7 @@ Zwykły Markdown: akapity, **pogrubienia**, listy, [linki](https://...), obrazki
 
 Zarejestrowane globalnie w [src/mdx-components.tsx](../src/mdx-components.tsx) — używa się ich jak zwykłych tagów wprost w pliku `.mdx`, bez importu.
 
-- **`<MarginNote title="..." note="...">termin</MarginNote>`** — notatka na marginesie (desktop) / modal (mobile). Zasady użycia: [docs/marginnote-guidelines.md](marginnote-guidelines.md). *Wstawiana przyciskiem w edytorze `/keystatic`.*
+- **`<MarginNote title="..." note="...">termin</MarginNote>`** (ręcznie w pliku) lub **`<MarginNote term="termin" title="..." note="..." />`** (samo-zamykająca się forma — tej używa edytor `/keystatic`, bo tam komponenty "inline" nie mogą mieć dzieci) — notatka na marginesie (desktop) / modal (mobile), obie formy renderują się identycznie. Zasady użycia: [docs/marginnote-guidelines.md](marginnote-guidelines.md). *Wstawiana przyciskiem w edytorze `/keystatic`.*
 - **`<Callout>...</Callout>`** — krótka, wyróżniona myśl (box z ikoną). *Wstawiana przyciskiem w edytorze `/keystatic`.*
 - **`<Callout title="Nagłówek">- punkt 1\n- punkt 2</Callout>`** — wariant z nagłówkiem i listą "co zapamiętać" (markdown-owa lista wewnątrz renderuje się jako osobne boksy).
 - **`<Promo preset="ebook" />`** — gotowy blok promo z rejestru [src/content/promo-presets.ts](../src/content/promo-presets.ts) (`ebook`, `instruktor-series`, `workbook`, `baileo-suite`). Dodanie nowego presetu = nowy wpis w tym pliku. *Wstawiany przyciskiem w edytorze `/keystatic`.*

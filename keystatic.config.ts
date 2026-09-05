@@ -88,12 +88,17 @@ export default config({
             // Macierz umiejętności (ręczny grid JSX w jednym artykule) to jedyny
             // celowo niezarejestrowany przypadek — zbyt jednostkowy, żeby się opłacało
             // go modelować; ten artykuł nadal edytuje się bezpośrednio jako plik.
+            // `inline()` components in Keystatic are self-closing and cannot
+            // have real JSX children (no `fields.child` support there — that
+            // only works inside `block`/`wrapper`), so the anchor text is a
+            // plain `term` prop; MarginNote itself accepts either `term` or
+            // real children (see src/components/articles/margin-note.tsx).
             MarginNote: inline({
               label: "Notatka na marginesie",
               schema: {
-                term: fields.child({
-                  kind: "inline",
-                  placeholder: "Termin objęty notatką",
+                term: fields.text({
+                  label: "Termin objęty notatką",
+                  validation: { isRequired: true },
                 }),
                 title: fields.text({
                   label: "Tytuł notatki",

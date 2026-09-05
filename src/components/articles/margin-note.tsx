@@ -6,7 +6,13 @@ import { Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type MarginNoteProps = {
-  children: React.ReactNode;
+  // Anchor text: either as JSX children (`<MarginNote ...>termin</MarginNote>`,
+  // natural when hand-writing MDX) or as a `term` prop (self-closing
+  // `<MarginNote term="termin" ... />`). The `term` prop exists because
+  // Keystatic's `inline()` content components are self-closing and cannot
+  // have real children — its schema fills `term` instead.
+  children?: React.ReactNode;
+  term?: string;
   title: string;
   note: string;
   className?: string;
@@ -19,7 +25,8 @@ type NotePosition = {
   path: string;
 };
 
-export function MarginNote({ children, title, note, className }: MarginNoteProps) {
+export function MarginNote({ children, term, title, note, className }: MarginNoteProps) {
+  const anchorContent = children ?? term;
   const noteId = useId().replace(/:/g, "");
   const [open, setOpen] = useState(false);
   const [isDesktopNote, setIsDesktopNote] = useState(false);
@@ -226,7 +233,7 @@ export function MarginNote({ children, title, note, className }: MarginNoteProps
           onKeyDown={handleKeyDown}
           aria-label={isDesktopNote ? `${title}. Pokaż notatkę na marginesie.` : `${title}. Otwórz notatkę na marginesie.`}
         >
-          {children}
+          {anchorContent}
         </span>
         <button
           type="button"
